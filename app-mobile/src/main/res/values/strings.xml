@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI School</string>
+    <string name="courses_title">AI School</string>
+    <string name="courses_subtitle">Live syllabus · lillytechsystems.com</string>
+    <string name="back">Back</string>
+    <string name="play_lesson">Play lesson audio</string>
+    <string name="pause_lesson">Pause lesson audio</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading syllabus…</string>
+    <string name="audio_only_badge">Audio</string>
+    <string name="interactive_badge">Interactive</string>
+</resources>

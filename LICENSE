@@ -1,0 +1,16 @@
+Copyright (c) 2026 Lilly Tech Systems. All rights reserved.
+
+This repository is a portfolio and evaluation demo. Permission is granted to
+view, build, and run the software for evaluation purposes.
+
+The "AI School" name, the knowledge-graph logo, and related brand assets are the
+property of Lilly Tech Systems and may not be used to identify or promote other
+products or services without permission.
+
+Bundled typefaces (Inter, Nunito) are licensed separately under the SIL Open
+Font License. The AOSP platform test key included for emulator signing is a
+public test artifact and carries no warranty.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
