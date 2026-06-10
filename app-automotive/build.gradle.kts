@@ -16,7 +16,7 @@ android {
     }
 
     signingConfigs {
-        // PUBLIC AOSP platform *test* key — matches the test-keys emulator
+        // PUBLIC AOSP platform *test* key - matches the test-keys emulator
         // images, so signature-level car permissions (CONTROL_CAR_WINDOWS)
         // are granted and the VHAL window-pause demo runs on the emulator.
         // Never use for production; OEM builds use the OEM platform key.
@@ -48,7 +48,7 @@ android {
 
     // Compile against the android.car stubs that ship with the platform SDK
     // (platforms/android-36/optional/android.car.jar). At runtime the library
-    // is provided by the AAOS framework — see <uses-library> in the manifest.
+    // is provided by the AAOS framework - see <uses-library> in the manifest.
     useLibrary("android.car")
 
     packaging {
@@ -82,7 +82,7 @@ dependencies {
     // MediaBrowserServiceCompat / MediaSessionCompat
     implementation(libs.androidx.media)
 
-    // Compose — VW-style catalog "design preview" screen
+    // Compose - VW-style catalog "design preview" screen
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)

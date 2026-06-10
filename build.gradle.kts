@@ -1,4 +1,4 @@
-// Root build file — plugin versions are resolved from gradle/libs.versions.toml.
+// Root build file - plugin versions are resolved from gradle/libs.versions.toml.
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
