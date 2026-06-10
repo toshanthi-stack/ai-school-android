@@ -36,23 +36,26 @@
             android:required="false" />
 
         <!--
-            Driver-distraction posture: this flavor declares NO activities.
-            All rendering is performed by the vehicle's native IVI media
-            templates. There is no text selection, no keyboard input, no
-            clipboard access, and no copy-paste surface anywhere in this APK.
-        -->
-        <!--
-            VW-style catalog "design preview" screen. Separate from the
-            driver-facing media flow (rendered by the OEM Media Center); shown
-            to demonstrate the VW-styled design direction on a real screen.
-            Landscape, single-task, launched directly via `am start`.
+            Driver-facing media flow: the vehicle's native IVI media templates
+            render everything via AISchoolMediaService below. No text entry,
+            keyboard, clipboard, or copy-paste surface is used in that flow.
+
+            The VW-styled catalog screen is a separate "design preview" of the
+            in-car UI direction. It carries a LAUNCHER entry so it shows in the
+            head unit's app grid and Android Studio offers a run configuration
+            for this module. (The driver-safe media experience is the service.)
         -->
         <activity
             android:name=".vw.VwCatalogActivity"
             android:exported="true"
-            android:label="AI School (VW preview)"
+            android:label="AI School"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Material.NoActionBar" />
+            android:theme="@android:style/Theme.Material.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!--
             Branded artwork provider. Read-only, serves only static pillar art
