@@ -116,7 +116,7 @@ unit the result speaks VW's design language for free.
 
 ## Technical stack
 
-Kotlin, AGP 8.13, Jetpack Compose, Ktor 3, `MediaBrowserServiceCompat` /
+Kotlin, AGP 9.2, Jetpack Compose, Ktor 3, `MediaBrowserServiceCompat` /
 `MediaSessionCompat`, and the `android.car` library. `compileSdk` 36; the
 automotive flavor targets the AAOS baseline (API 29+).
 

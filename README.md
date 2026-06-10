@@ -97,7 +97,7 @@ The automotive debug build is signed with the **public AOSP platform test key**
 
 ## Tech stack
 
-Kotlin · AGP 8.13 · Jetpack Compose · Ktor 3 · `MediaBrowserServiceCompat` /
+Kotlin · AGP 9.2 · Jetpack Compose · Ktor 3 · `MediaBrowserServiceCompat` /
 `MediaSessionCompat` · `android.car` · compileSdk 36.
 
 Fonts: Inter and Nunito (SIL Open Font License). The AI School knowledge-graph

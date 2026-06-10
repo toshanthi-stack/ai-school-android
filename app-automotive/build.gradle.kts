@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -47,17 +46,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    // Kotlin 2.2 compilerOptions DSL (kotlinOptions is deprecated)
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-    }
-}
-
-android {
-
     // Compile against the android.car stubs that ship with the platform SDK
     // (platforms/android-36/optional/android.car.jar). At runtime the library
     // is provided by the AAOS framework — see <uses-library> in the manifest.
@@ -69,6 +57,12 @@ android {
             excludes += "/META-INF/INDEX.LIST"
             excludes += "/META-INF/io.netty.versions.properties"
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
