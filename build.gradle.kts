@@ -6,3 +6,14 @@ plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.compose.compiler) apply false
 }
+
+// Android Studio (the AGP 9 generation) requests
+// :<module>:prepareKotlinBuildScriptModel on every subproject during sync, but
+// Gradle registers that Kotlin-DSL build-script-model task only on the root
+// project. Register a harmless no-op on each subproject so the IDE's task
+// lookup succeeds and Gradle sync completes. No effect on the command-line build.
+subprojects {
+    if (tasks.findByName("prepareKotlinBuildScriptModel") == null) {
+        tasks.register("prepareKotlinBuildScriptModel")
+    }
+}
