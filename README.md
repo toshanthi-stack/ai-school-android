@@ -4,7 +4,7 @@
 
 **A dual-flavor Android app for the AI School learning platform: rich and interactive on a phone, strictly audio-only and distraction-safe in the car.**
 
-[Overview](docs/AI-School-Automotive-Overview.md) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
+[Overview](docs/AI-School-Automotive-Overview.md) · [Sequence diagrams](docs/SEQUENCE-DIAGRAMS.md) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
 
 </div>
 
