@@ -16,7 +16,8 @@ can run from the Terminal tab inside Android Studio.
 1. Launch **Android Studio** (Ladybug 2024.2 or newer).
 2. On the Welcome screen, click **Open** (or **File ▸ Open** if a project is
    already open).
-3. Navigate to the project folder `ai-school-android` and click **Open**.
+3. Navigate to the **`android`** folder inside `ai-school-android` (that is the
+   Gradle project root) and click **Open**.
 4. If asked "Trust the project?", click **Trust Project**.
 5. Wait for the first **Gradle sync** to finish. You will see a progress bar at
    the bottom; it can take a few minutes the first time while it downloads
@@ -271,9 +272,10 @@ avdmanager create avd -n AISchool_AAOS \
   -k "system-images;android-35-ext15;android-automotive;x86_64" \
   -d automotive_1080p_landscape
 
-# each run
+# each run (the Gradle project is in android/)
 emulator -avd AISchool_AAOS &
 adb wait-for-device && until [ "$(adb shell getprop sys.boot_completed)" = "1" ]; do sleep 3; done
+cd android
 ./gradlew :app-automotive:assembleDebug
 adb install -r app-automotive/build/outputs/apk/debug/app-automotive-debug.apk
 # then: open Media Center, play a lesson, and:

@@ -86,9 +86,12 @@ seed fallback. See [`ios/README.md`](ios/README.md) to build and run.
 
 ## Build
 
-Requires a current Android Studio with the Android 36 SDK and JDK 17+.
+Requires a current Android Studio with the Android 36 SDK and JDK 17+. The Gradle
+project lives in [`android/`](android/) (the iOS app is in [`ios/`](ios/)).
 
 ```bash
+cd android
+
 # Mobile (phone/tablet emulator, API 26+)
 ./gradlew :app-mobile:assembleDebug
 
@@ -96,7 +99,8 @@ Requires a current Android Studio with the Android 36 SDK and JDK 17+.
 ./gradlew :app-automotive:assembleDebug
 ```
 
-Pre-built debug APKs are in [`release/`](release/). Run `:app-automotive` on an
+Pre-built debug APKs are in [`android/release/`](android/release/). Run
+`:app-automotive` on an
 Automotive emulator; AI School then appears in the Media Center. To exercise the
 window-pause on an emulator while a lesson plays:
 
@@ -108,7 +112,7 @@ adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0   # close it -> re
 `CONTROL_CAR_WINDOWS` is privileged: on an OEM or platform-signed build it is
 granted and the feature is live; otherwise the monitor disables itself cleanly.
 The automotive debug build is signed with the **public AOSP platform test key**
-(`app-automotive/keystore/`) so the feature runs on `test-keys` emulator images.
+(`android/app-automotive/keystore/`) so the feature runs on `test-keys` emulator images.
 
 ## Tech stack
 

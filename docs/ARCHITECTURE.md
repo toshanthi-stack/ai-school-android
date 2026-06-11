@@ -95,7 +95,7 @@ plays, then the cabin reacts.
 ### 1. Content made safe for the cabin
 
 Before content reaches the car, the data layer strips every visual payload and
-keeps audio plus a one-line summary. Source: `core/model/AutomotiveSafety.kt`.
+keeps audio plus a one-line summary. Source: `android/core/model/AutomotiveSafety.kt`.
 
 ```mermaid
 sequenceDiagram
