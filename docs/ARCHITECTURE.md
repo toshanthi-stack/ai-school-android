@@ -157,6 +157,28 @@ Two distinct layers: what the **app** brands (we control) and what the **OEM**
 themes (the vehicle maker controls). The boundary between them is an important
 architectural distinction in any AAOS app.
 
+### Why some screens look "VW" and some do not
+
+There are two kinds of screens in the automotive flavor, and they are styled by
+different owners. This is intentional, not an inconsistency:
+
+- **App-drawn screens look VW-styled.** The `vw.VwCatalogActivity` preview (home,
+  pill tabs, course tiles, Now Playing with progress) is Compose UI the app
+  renders itself, deliberately styled after VW MIB (dark canvas, Nunito, accent
+  colors).
+- **The real driver-facing screens are drawn by the car, not the app.** The
+  source picker, the browse grid, the lesson lists, and the actual Now Playing are
+  rendered by the AAOS Media Center from the data tree the app supplies. Their look
+  comes from the OEM theme (car-ui-lib RROs), not the app. On the emulator there
+  are no VW overlays, so they appear in the stock AOSP style; on a real VW head
+  unit those same screens would be VW-themed automatically, with zero app changes.
+
+So `VwCatalogActivity` exists precisely because the emulator cannot render the
+real screens in VW's language: it is a hand-painted preview of the design
+direction, while the Media Center screens show the platform default. To see the
+inheritance live, enable a sample OEM theme (see below) and the Media Center
+screens re-skin too.
+
 ### App branding (we control)
 
 Brand system from `lillytechsystems.com/ai-school`:

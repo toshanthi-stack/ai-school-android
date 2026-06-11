@@ -45,6 +45,14 @@ driven directly off the Vehicle HAL.
 |---|---|---|---|
 | ![](docs/screenshots/automotive-2-source-picker-new-icon.png) | ![](docs/screenshots/automotive-3-browse-pillars.png) | ![](docs/screenshots/automotive-5-now-playing.png) | ![](docs/screenshots/automotive-6-paused-after-window.png) |
 
+> **Why the first image looks "VW" and the rest look plain:** the top image is the
+> app-drawn `VwCatalogActivity` design preview, which the app styles itself. The
+> four screens below are the real driver-facing UI, which the **car's Media Center**
+> renders, not the app, so on the emulator they appear in the stock AOSP theme. On
+> a real VW head unit those same screens would be VW-themed automatically via the
+> OEM's car-ui-lib overlays, with no app changes. This app/OEM boundary is by
+> design (details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
+
 ### Mobile
 | Catalog | Course | Audio lesson | Interactive lesson |
 |---|---|---|---|
