@@ -12,28 +12,40 @@ final class SyllabusStore: ObservableObject {
     func load() async {
         isLoading = true
         defer { isLoading = false }
-        do {
-            guard let url = URL(string: Endpoints.syllabusJSON) else {
-                courses = SeedSyllabus.courses; return
-            }
-            var request = URLRequest(url: url)
-            request.setValue("visual", forHTTPHeaderField: "X-AISchool-Payload")
-            request.timeoutInterval = 15
-            let (data, response) = try await URLSession.shared.data(for: request)
-            guard let http = response as? HTTPURLResponse, http.statusCode == 200 else {
-                throw URLError(.badServerResponse)
-            }
-            let decoded = try JSONDecoder().decode([Course].self, from: data)
-            if decoded.isEmpty {
-                courses = SeedSyllabus.courses
-            } else {
-                courses = decoded
-                usingLiveFeed = true
-            }
-        } catch {
-            // Offline, unreachable, or unexpected shape: use the contract-of-record.
-            courses = SeedSyllabus.courses
+
+        // 1. Live feed (the content pipeline's published syllabus.json), preferred.
+        if let live = try? await fetchRemoteFeed(), !live.isEmpty {
+            courses = live
+            usingLiveFeed = true
+            return
         }
+        // 2. Bundled feed: the adapted real catalog shipped with the app.
+        if let bundled = loadBundledFeed() {
+            courses = bundled
+            return
+        }
+        // 3. Offline contract-of-record.
+        courses = SeedSyllabus.courses
+    }
+
+    private func fetchRemoteFeed() async throws -> [Course] {
+        guard let url = URL(string: Endpoints.syllabusJSON) else { return [] }
+        var request = URLRequest(url: url)
+        request.setValue("visual", forHTTPHeaderField: "X-AISchool-Payload")
+        request.timeoutInterval = 15
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let http = response as? HTTPURLResponse, http.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+        return try JSONDecoder().decode([Course].self, from: data)
+    }
+
+    private func loadBundledFeed() -> [Course]? {
+        guard let url = Bundle.main.url(forResource: "syllabus", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let decoded = try? JSONDecoder().decode([Course].self, from: data),
+              !decoded.isEmpty else { return nil }
+        return decoded
     }
 
     /// Courses grouped by pillar, in the canonical pillar order.

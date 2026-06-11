@@ -37,7 +37,7 @@ private struct LessonRow: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            Image(systemName: lesson.hasVisualPayload ? "safari" : "waveform")
+            Image(systemName: "waveform")
                 .font(.system(size: 18))
                 .foregroundStyle(Brand.accent(for: course.category))
                 .frame(width: 44, height: 44)
@@ -47,7 +47,7 @@ private struct LessonRow: View {
                 Text(lesson.title)
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Brand.text)
-                Text("\(lesson.hasVisualPayload ? "Interactive" : "Audio") · \(lesson.durationMinutes) min")
+                Text("\(lesson.isCodeHeavy ? "Audio + Code" : "Audio") · \(lesson.durationMinutes) min")
                     .font(.caption)
                     .foregroundStyle(Brand.textDim)
             }

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "path-ai-engineering-prompting",
+    "title": "Prompt Engineering",
+    "description": "Treat prompts as a measurable discipline: versioning, review, and benchmarking.",
+    "category": "AI Engineering",
+    "lessons": [
+      {
+        "id": "real-prompt-discipline",
+        "title": "Prompt Engineering as a Real Discipline",
+        "durationSeconds": 47,
+        "audioUrl": "https://www.lillytechsystems.com/ai-school/audio/real-prompt-discipline.m4a",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-prompts/index.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Why prompt engineering is a measurable discipline, not folk wisdom: template families, versioning, and benchmarking."
+      }
+    ]
+  },
+  {
+    "id": "path-ai-engineering-models",
+    "title": "Working with AI Models",
+    "description": "Choose among frontier, open-weight, and specialized models by capability, cost, and latency.",
+    "category": "AI Engineering",
+    "lessons": [
+      {
+        "id": "real-choosing-models",
+        "title": "Choosing the Right AI Model",
+        "durationSeconds": 44,
+        "audioUrl": "https://www.lillytechsystems.com/ai-school/audio/real-choosing-models.m4a",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-models/index.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Picking a model by the three trade-offs: capability, cost, and latency; prototype frontier, ship the cheapest that passes evals."
+      }
+    ]
+  },
+  {
+    "id": "path-ai-apis",
+    "title": "Frontier LLM APIs",
+    "description": "Call the major LLM APIs: OpenAI, Anthropic, Gemini, and the open-model and cloud platforms.",
+    "category": "AI APIs",
+    "lessons": [
+      {
+        "id": "real-frontier-apis",
+        "title": "Calling Frontier LLM APIs",
+        "durationSeconds": 56,
+        "audioUrl": "https://www.lillytechsystems.com/ai-school/audio/real-frontier-apis.m4a",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-apis/index.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "A spoken tour of the LLM API landscape; the request code lives in the read view, open it on your phone to copy."
+      }
+    ]
+  }
+]

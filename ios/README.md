@@ -10,9 +10,13 @@ the iOS 26 SDK, deployment target iOS 18, and App Store submission readiness
 
 ## Screenshots
 
-| Catalog | Course | Audio lesson | Interactive lesson |
+| Catalog (real feed) | Course | Audio lesson | Code lesson + read view |
 |---|---|---|---|
-| ![](docs/screenshots/01-catalog.png) | ![](docs/screenshots/02-course-detail.png) | ![](docs/screenshots/03-lesson-audio.png) | ![](docs/screenshots/04-lesson-interactive.png) |
+| ![](docs/screenshots/01-catalog.png) | ![](docs/screenshots/02-course-detail.png) | ![](docs/screenshots/03-lesson-audio.png) | ![](docs/screenshots/04-lesson-code.png) |
+
+The catalog above is **real AI School content** adapted by the content pipeline
+(see [`docs/CONTENT-PIPELINE.md`](../docs/CONTENT-PIPELINE.md)): every lesson is
+audio-first, and code-heavy lessons open the real web page to read/copy the code.
 
 ## Features
 
