@@ -1,31 +1,28 @@
 # AI School - Automotive Sequence Diagrams
 
-Three simple flows for the in-vehicle build. Rendered by GitHub natively
+Three simple flows for the in-vehicle build, in the order they happen: content is
+made safe, a lesson plays, then the cabin reacts. Rendered by GitHub natively
 (Mermaid).
 
 ---
 
-## 1. Window-open pause, window-closed resume (the anchor feature)
+## 1. Content made safe for the cabin
 
-A lesson pauses the instant a window opens, and resumes once every window is
-closed again.
+Before content reaches the car, the data layer strips every visual payload and
+keeps audio plus a one-line summary.
 
-Source: `CabinWindowMonitor.kt`, `AISchoolMediaService.kt`.
+Source: `core/model/AutomotiveSafety.kt`.
 
 ```mermaid
 sequenceDiagram
-    actor Driver
-    participant Car as Vehicle HAL
     participant App as AI School app
+    participant Data as Content layer
     participant IVI as Media Center
 
-    Note over App,IVI: a lesson is playing
-    Driver->>Car: opens a window
-    Car->>App: window-position changed
-    App->>IVI: pause
-    Driver->>Car: closes the window
-    Car->>App: window-position changed
-    App->>IVI: resume
+    App->>Data: load syllabus
+    Data->>Data: strip visuals, keep audio + summary
+    Data->>App: audio-only catalog
+    App->>IVI: safe browse tree
 ```
 
 ---
@@ -50,23 +47,27 @@ sequenceDiagram
 
 ---
 
-## 3. Content made safe for the cabin
+## 3. Window-open pause, window-closed resume (the anchor feature)
 
-Before content reaches the car, the data layer strips every visual payload and
-keeps audio plus a one-line summary.
+A lesson pauses the instant a window opens, and resumes once every window is
+closed again.
 
-Source: `core/model/AutomotiveSafety.kt`.
+Source: `CabinWindowMonitor.kt`, `AISchoolMediaService.kt`.
 
 ```mermaid
 sequenceDiagram
+    actor Driver
+    participant Car as Vehicle HAL
     participant App as AI School app
-    participant Data as Content layer
     participant IVI as Media Center
 
-    App->>Data: load syllabus
-    Data->>Data: strip visuals, keep audio + summary
-    Data->>App: audio-only catalog
-    App->>IVI: safe browse tree
+    Note over App,IVI: a lesson is playing
+    Driver->>Car: opens a window
+    Car->>App: window-position changed
+    App->>IVI: pause
+    Driver->>Car: closes the window
+    Car->>App: window-position changed
+    App->>IVI: resume
 ```
 
 ---
