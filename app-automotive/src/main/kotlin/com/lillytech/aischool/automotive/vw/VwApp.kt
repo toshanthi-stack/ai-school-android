@@ -58,7 +58,7 @@ import com.lillytech.aischool.core.model.Lesson
 /**
  * VW-styled preview flow for the AI School catalog. Large, glanceable
  * typography (Nunito), generous touch targets, dark canvas with translucent
- * tiles and pill tabs — matching the VW MIB design language. No app-drawn
+ * tiles and pill tabs, matching the VW MIB design language. No app-drawn
  * status or climate bars: the real AAOS system chrome frames the content.
  */
 @Composable
@@ -98,7 +98,7 @@ private fun VwHome(courses: List<Course>, onCourse: (Course) -> Unit) {
 
     Column(Modifier.fillMaxSize().padding(horizontal = 28.dp)) {
         Spacer(Modifier.height(18.dp))
-        // Compact brand header (no clock — AAOS shows the time)
+        // Compact brand header (no clock, AAOS shows the time)
         Row(verticalAlignment = Alignment.CenterVertically) {
             BrandGlyph(40.dp)
             Spacer(Modifier.width(12.dp))
@@ -111,7 +111,7 @@ private fun VwHome(courses: List<Course>, onCourse: (Course) -> Unit) {
             )
         }
         Spacer(Modifier.height(18.dp))
-        // Pill tabs — short labels, large, never truncate
+        // Pill tabs, short labels, large, never truncate
         Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
             PILLARS.forEachIndexed { i, p ->
                 val active = i == selected
@@ -208,11 +208,11 @@ private fun CourseTile(course: Course, onClick: () -> Unit) {
 private fun VwNowPlaying(course: Course, lesson: Lesson, onBack: () -> Unit) {
     val accent = Vw.accentFor(course.category)
     val total = lesson.durationSeconds.coerceAtLeast(1)
-    // Live playback position. Keyed on the lesson so it resets to 0 when the
-    // lesson changes; auto-plays on entry.
-    var positionSec by remember(lesson.title) { mutableIntStateOf(0) }
-    var playing by remember(lesson.title) { mutableStateOf(true) }
-    LaunchedEffect(lesson.title, playing) {
+    // Live playback position. Keyed on the lesson id so it resets to 0 when the
+    // lesson changes, auto-plays on entry.
+    var positionSec by remember(lesson.id) { mutableIntStateOf(0) }
+    var playing by remember(lesson.id) { mutableStateOf(true) }
+    LaunchedEffect(lesson.id, playing) {
         while (playing && positionSec < total) {
             delay(1000L)
             positionSec += 1
@@ -274,7 +274,10 @@ private fun VwNowPlaying(course: Course, lesson: Lesson, onBack: () -> Unit) {
             Icon(Icons.Filled.SkipPrevious, "Previous", tint = Vw.Text, modifier = Modifier.size(48.dp))
             Spacer(Modifier.width(40.dp))
             Box(
-                modifier = Modifier.size(84.dp).clip(CircleShape).background(accent).clickable { playing = !playing },
+                modifier = Modifier.size(84.dp).clip(CircleShape).background(accent).clickable {
+                    if (!playing && positionSec >= total) positionSec = 0 // replay from start
+                    playing = !playing
+                },
                 contentAlignment = Alignment.Center,
             ) {
                 Icon(

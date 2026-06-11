@@ -18,7 +18,7 @@ import com.lillytech.aischool.core.model.MediaIds
  *   root ─ pillar category (browsable, grid)
  *            └─ course (browsable, list)
  *                  └─ lesson (playable; subtitle/description carry only the
- *                             short semantic audioSummary — never raw text)
+ *                             short semantic audioSummary, never raw text)
  */
 class BrowseTree(
     private val context: Context,

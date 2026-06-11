@@ -150,14 +150,15 @@ Android Automotive OS is used here as a representative software-defined-vehicle
 surface. The decisions on display are platform-agnostic: a content-safety policy
 enforced in the data layer, integration with live vehicle signals, an offline
 strategy, and a clean boundary between app brand and OEM chrome. Those patterns
-carry directly onto a CARIAD or MIB environment and onto a Rivian-derived stack,
-which is the more relevant target for VW's North American software direction.
+carry directly onto a CARIAD or MIB environment, or any modern software-defined
+vehicle stack.
 
 ---
 
 ## Materials in this package
 
-- `automotive-demo.mp4` · 26-second captioned walkthrough
-- `00-Automotive-overview.png`, `00-Mobile-overview.png` · labeled screenshot sheets
-- `screenshots-automotive/`, `screenshots-mobile/` · full sets
-- `extras/` · VW-styled integration mockup, app icon, VW MIB reference
+- `automotive-demo.mp4` · captioned walkthrough
+- `screenshots/` · full screenshot set (mobile and automotive)
+- `vw-reference/` · VW-styled integration mockup and MIB design reference
+- `brand/` · brand assets (logo, graph mark, launcher master)
+- `SEQUENCE-DIAGRAMS.md` · the three core flows

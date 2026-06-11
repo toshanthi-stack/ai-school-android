@@ -5,7 +5,7 @@ package com.lillytech.aischool.core.model
  *
  * A lesson reaching the vehicle must carry a streamable audio track and zero
  * visual payload. Lessons flagged `isAutomotiveSafe = false` (heavy Python
- * scripts, raw JSON, architecture diagrams) are NOT dropped — they are
+ * scripts, raw JSON, architecture diagrams) are NOT dropped, they are
  * sanitized: the visual payload is stripped and the short [Lesson.audioSummary]
  * becomes the only text the IVI is allowed to render.
  */

@@ -107,7 +107,7 @@ fun LessonScreen(
     }
 }
 
-/** Centered, branded layout for audio-only lessons — no empty dead space. */
+/** Centered, branded layout for audio-only lessons, no empty dead space. */
 @Composable
 private fun AudioLessonBody(
     course: Course,
@@ -167,7 +167,7 @@ private fun AudioLessonBody(
     }
 }
 
-/** Bottom transport bar — insets for the system navigation bar. */
+/** Bottom transport bar, insets for the system navigation bar. */
 @Composable
 private fun PlayerBar(
     course: Course,
@@ -261,6 +261,12 @@ private fun LessonWebView(url: String, modifier: Modifier = Modifier) {
         },
         update = { webView ->
             if (webView.url != url) webView.loadUrl(url)
+        },
+        onRelease = { webView ->
+            // Tear down the WebView so its JS context is not leaked when the
+            // lesson is left.
+            webView.stopLoading()
+            webView.destroy()
         },
     )
 }

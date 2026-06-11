@@ -26,7 +26,7 @@ object SeedSyllabus {
         Course(
             id = "genai-foundations",
             title = "Generative AI Foundations",
-            description = "From tokens to transformers — the working mental model every AI practitioner needs.",
+            description = "From tokens to transformers, the working mental model every AI practitioner needs.",
             category = AiSchoolPillars.GENERATIVE_AI,
             lessons = listOf(
                 Lesson(
@@ -63,7 +63,7 @@ object SeedSyllabus {
                     audioUrl = AUDIO_BASE + "genai-104.mp3",
                     visualContentUrl = "ai-apis".liveTopicPage(),
                     isAutomotiveSafe = false, // live code editor with copy-paste snippets
-                    audioSummary = "API design choices — system prompts, tools, streaming — explained as an audio walkthrough.",
+                    audioSummary = "API design choices (system prompts, tools, streaming) explained as an audio walkthrough.",
                 ),
             ),
         ),
@@ -80,7 +80,7 @@ object SeedSyllabus {
                     audioUrl = AUDIO_BASE + "agents-201.mp3",
                     visualContentUrl = "ai-agents".liveTopicPage(),
                     isAutomotiveSafe = false, // raw JSON tool schemas on screen
-                    audioSummary = "How models call tools: schemas, dispatch loops, and failure handling — summarized for listening.",
+                    audioSummary = "How models call tools: schemas, dispatch loops, and failure handling, summarized for listening.",
                 ),
                 Lesson(
                     id = "agents-202",
@@ -89,7 +89,7 @@ object SeedSyllabus {
                     audioUrl = AUDIO_BASE + "agents-202.mp3",
                     visualContentUrl = null,
                     isAutomotiveSafe = true,
-                    audioSummary = "Planner-worker, debate, and pipeline topologies — when each wins and where they break.",
+                    audioSummary = "Planner-worker, debate, and pipeline topologies, when each wins and where they break.",
                 ),
                 Lesson(
                     id = "agents-203",
@@ -126,7 +126,7 @@ object SeedSyllabus {
                     audioUrl = AUDIO_BASE + "bw-302.mp3",
                     visualContentUrl = "ai-hardware".liveTopicPage(),
                     isAutomotiveSafe = false, // dense interconnect/architecture diagrams
-                    audioSummary = "Why memory bandwidth, not FLOPs, bounds modern inference — narrated without the diagrams.",
+                    audioSummary = "Why memory bandwidth, not FLOPs, bounds modern inference, narrated without the diagrams.",
                 ),
                 Lesson(
                     id = "bw-303",
@@ -152,7 +152,7 @@ object SeedSyllabus {
                     audioUrl = AUDIO_BASE + "cuda-401.mp3",
                     visualContentUrl = "ai-architectures".liveTopicPage(),
                     isAutomotiveSafe = false, // kernel source code on screen
-                    audioSummary = "Grids, blocks, warps, and occupancy — the execution model explained conversationally.",
+                    audioSummary = "Grids, blocks, warps, and occupancy, the execution model explained conversationally.",
                 ),
                 Lesson(
                     id = "cuda-402",
@@ -207,7 +207,7 @@ object SeedSyllabus {
                     audioUrl = AUDIO_BASE + "vec-503.mp3",
                     visualContentUrl = "ai-frameworks".liveTopicPage(),
                     isAutomotiveSafe = false, // interactive evaluation notebook
-                    audioSummary = "Groundedness, answer relevance, and retrieval precision — how to score a RAG system end to end.",
+                    audioSummary = "Groundedness, answer relevance, and retrieval precision, how to score a RAG system end to end.",
                 ),
             ),
         ),
@@ -242,7 +242,7 @@ object SeedSyllabus {
                     audioUrl = AUDIO_BASE + "ft-603.mp3",
                     visualContentUrl = "ai-projects".liveTopicPage(),
                     isAutomotiveSafe = false, // full Python training scripts in a sandbox
-                    audioSummary = "The full fine-tuning recipe — data prep, hyperparameters, evaluation — as a narrated walkthrough.",
+                    audioSummary = "The full fine-tuning recipe (data prep, hyperparameters, evaluation) as a narrated walkthrough.",
                 ),
             ),
         ),

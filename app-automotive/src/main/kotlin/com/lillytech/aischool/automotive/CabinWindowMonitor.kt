@@ -10,7 +10,7 @@ import android.util.Log
 import androidx.core.content.ContextCompat
 
 /**
- * Task D — Vehicle Hardware Abstraction Layer (VHAL) integration.
+ * Vehicle Hardware Abstraction Layer (VHAL) integration.
  *
  * Real-time tracker over `VehiclePropertyIds.WINDOW_POS` across every window
  * zone in the cabin (`VEHICLE_AREA_TYPE_WINDOW`). Window position semantics:
@@ -21,11 +21,11 @@ import androidx.core.content.ContextCompat
  * Graceful degradation: reading WINDOW_POS requires the signature|privileged
  * permission `android.car.permission.CONTROL_CAR_WINDOWS`. On builds where it
  * is not granted (e.g. Play-delivered installs), [start] logs once and the
- * feature disables itself cleanly — playback and browsing are unaffected.
+ * feature disables itself cleanly, playback and browsing are unaffected.
  *
  * Lifecycle: [start] connects to the car service asynchronously
  * (`Car.createCar` with `CAR_WAIT_TIMEOUT_DO_NOT_WAIT`); [stop] unregisters
- * the VHAL callback and disconnects, releasing all infotainment compute —
+ * the VHAL callback and disconnects, releasing all infotainment compute,
  * call it from the owning service's `onDestroy()` to avoid leaks.
  */
 class CabinWindowMonitor(
@@ -57,7 +57,7 @@ class CabinWindowMonitor(
                 Log.i(
                     TAG,
                     "Cabin change: window areaId=0x${Integer.toHexString(areaId)} " +
-                        "moved to position=$position — requesting systemic pause",
+                        "moved to position=$position, requesting systemic pause",
                 )
                 onCabinWindowOpened(areaId, position)
             } else {
@@ -68,7 +68,7 @@ class CabinWindowMonitor(
                 Log.i(
                     TAG,
                     "Cabin change: window areaId=0x${Integer.toHexString(areaId)} " +
-                        "fully closed${if (allClosed) " — all windows closed, eligible to resume" else ""}",
+                        "fully closed${if (allClosed) ", all windows closed, eligible to resume" else ""}",
                 )
                 if (allClosed) onAllWindowsClosed()
             }

@@ -5,7 +5,7 @@ import android.net.Uri
 
 /**
  * Bundled lesson narrations (res/raw) used as the offline fallback when the
- * production audio stream is unreachable — the demo keeps working in
+ * production audio stream is unreachable, the demo keeps working in
  * airplane mode, tunnels, and interview rooms with hostile Wi-Fi.
  *
  * Files are named after the lesson id with hyphens mapped to underscores

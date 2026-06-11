@@ -87,8 +87,8 @@ Automotive emulator; AI School then appears in the Media Center. To exercise the
 window-pause on an emulator while a lesson plays:
 
 ```bash
-adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 4   # open driver window
-adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0   # close it
+adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 3   # open driver window -> pause
+adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0   # close it -> resume
 ```
 
 `CONTROL_CAR_WINDOWS` is privileged: on an OEM or platform-signed build it is
@@ -109,8 +109,8 @@ mark and brand assets belong to Lilly Tech Systems.
 Android Automotive OS is used here as a representative software-defined-vehicle
 surface. The decisions on display are platform-agnostic: a content-safety policy
 in the data layer, live vehicle-signal integration, an offline strategy, and a
-clean boundary between app brand and OEM chrome. Those patterns carry onto a
-CARIAD or MIB environment and onto a Rivian-derived stack.
+clean boundary between app brand and OEM chrome. Those patterns carry onto any
+modern software-defined-vehicle stack, including a CARIAD or MIB environment.
 
 ## License
 

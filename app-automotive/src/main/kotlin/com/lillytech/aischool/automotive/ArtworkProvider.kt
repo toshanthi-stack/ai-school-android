@@ -75,7 +75,7 @@ class ArtworkProvider : ContentProvider() {
         return cacheFile
     }
 
-    // Read-only image provider — the rest of the CRUD surface is unused.
+    // Read-only image provider, the rest of the CRUD surface is unused.
     override fun query(
         uri: Uri,
         projection: Array<out String>?,

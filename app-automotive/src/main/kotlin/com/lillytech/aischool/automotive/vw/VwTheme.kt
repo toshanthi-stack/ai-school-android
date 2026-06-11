@@ -9,14 +9,14 @@ import com.lillytech.aischool.automotive.R
 /**
  * Design tokens for the VW-style catalog preview. The palette echoes VW MIB4
  * (near-black canvas, translucent tiles, an amber climate strip) while the
- * accents stay on the AI School brand. The typeface is Nunito — a rounded
+ * accents stay on the AI School brand. The typeface is Nunito, a rounded
  * humanist sans, the open-source stand-in for VW's friendly rounded look
  * (SF Rounded, which can't be redistributed in an app).
  */
 object Vw {
     val Bg = Color(0xFF0B0B10)
     val BgTop = Color(0xFF14141C)
-    val Tile = Color(0x14FFFFFF)        // ~8% white — translucent tile
+    val Tile = Color(0x14FFFFFF)        // ~8% white, translucent tile
     val TileBorder = Color(0x26FFFFFF)  // ~15% white hairline
     val Text = Color(0xFFEDEEF2)
     val TextDim = Color(0xFF9CA0AC)

@@ -22,7 +22,7 @@ import kotlinx.serialization.json.Json
  * [AiSchoolEndpoints.BASE_URL].
  *
  * Dual-payload handling: every request declares its payload mode via the
- * `X-AISchool-Payload` header — [PayloadMode.VISUAL] for the mobile flavor
+ * `X-AISchool-Payload` header, [PayloadMode.VISUAL] for the mobile flavor
  * (videos, code editors, interactive sandboxes) and [PayloadMode.AUDIO_ONLY]
  * for the vehicle (audio streams + short semantic summaries only).
  *
@@ -92,7 +92,7 @@ class AISchoolApiClient(
      *   audio stream plus short semantic summary;
      * - lessons with no audio track, and courses left empty, are dropped.
      *
-     * The result is a clean tree of audio streams and summaries — the only
+     * The result is a clean tree of audio streams and summaries, the only
      * content shape the vehicle service will ever see.
      */
     suspend fun fetchAutomotiveSafeSyllabus(): List<Course> =

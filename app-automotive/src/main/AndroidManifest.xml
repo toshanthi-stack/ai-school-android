@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!--
-        VHAL window-position monitoring (Task D).
+        VHAL window-position monitoring.
         CONTROL_CAR_WINDOWS is a signature|privileged permission: it is granted
         only on OEM/system-signed (or priv-app allowlisted) builds. The app
         checks for it at runtime (CabinWindowMonitor) and degrades gracefully

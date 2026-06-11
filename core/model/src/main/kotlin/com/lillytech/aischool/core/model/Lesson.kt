@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  *   for lessons published to the automotive surface.
  * @property visualContentUrl Rich visual payload (video player, code editor,
  *   interactive sandbox) rendered by the mobile flavor only. `null` for
- *   audio-only lectures — and always stripped before reaching the vehicle.
+ *   audio-only lectures, and always stripped before reaching the vehicle.
  * @property isAutomotiveSafe `false` for lessons whose primary content is
  *   visually dense (raw Python scripts, JSON payloads, architecture diagrams).
  *   The automotive layer must never surface their raw text; it exposes

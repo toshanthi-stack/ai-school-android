@@ -7,7 +7,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.TextStyle
 import com.lillytech.aischool.mobile.R
 
-/** Inter — the AI School brand typeface (from lillytechsystems.com). */
+/** Inter, the AI School brand typeface (from lillytechsystems.com). */
 val Inter = FontFamily(
     Font(R.font.inter_regular, FontWeight.Normal),
     Font(R.font.inter_medium, FontWeight.Medium),

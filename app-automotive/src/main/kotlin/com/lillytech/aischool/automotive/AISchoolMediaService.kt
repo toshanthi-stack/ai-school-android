@@ -26,17 +26,17 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
- * Task C — AI School media browser service for Android Automotive OS.
+ * AI School media browser service for Android Automotive OS.
  *
  * The vehicle's native IVI media template is the only UI: this APK declares
  * no activities and exposes no text-selection, keyboard-input, clipboard, or
  * copy-paste surface of any kind. Content reaching this service has already
- * been sanitized by [AISchoolApiClient.fetchAutomotiveSafeSyllabus] — audio
+ * been sanitized by [AISchoolApiClient.fetchAutomotiveSafeSyllabus]: audio
  * streams plus short semantic summaries only.
  *
- * Task D is delegated to [CabinWindowMonitor]: whenever any cabin window
- * moves away from fully-closed, the active lesson is systemically paused via
- * the session's transport controls.
+ * Cabin-window handling is delegated to [CabinWindowMonitor]: whenever any
+ * window moves away from fully-closed, the active lesson is systemically paused
+ * via the session's transport controls, and resumes when all windows close.
  */
 class AISchoolMediaService : MediaBrowserServiceCompat() {
 
@@ -60,9 +60,17 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
     /**
      * True when playback was paused by a cabin window opening (not by the
      * driver). Gates auto-resume so closing all windows only resumes a lesson
-     * the window paused — a manual pause is never overridden.
+     * the window paused, never one the driver paused by hand. All access is on
+     * the main thread (the VHAL callbacks marshal onto [serviceScope]).
      */
     private var pausedByCabinWindow = false
+
+    /**
+     * Set just before the window-initiated pause so [onPause] can tell a
+     * window pause from a driver pause: a driver pause clears
+     * [pausedByCabinWindow] and cancels auto-resume, a window pause does not.
+     */
+    private var windowInitiatedPause = false
 
     private lateinit var audioManager: AudioManager
     private var audioFocusRequest: AudioFocusRequest? = null
@@ -96,21 +104,29 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
         sessionToken = session.sessionToken
         setPlaybackState(PlaybackStateCompat.STATE_NONE)
 
-        // Task D: real-time VHAL cabin tracking. A window leaving fully-closed
-        // triggers a systemic pause; once every window is closed again the
+        // Real-time VHAL cabin tracking. A window leaving fully-closed triggers
+        // a systemic pause, and once every window is closed again the
         // window-paused lesson resumes (a manual pause is never overridden).
+        // The VHAL callbacks may arrive off the main thread; marshal onto
+        // serviceScope (Main) so media-session and playback state are only ever
+        // touched from one thread.
         cabinWindowMonitor = CabinWindowMonitor(
             context = this,
             onCabinWindowOpened = { _, _ ->
-                if (mediaPlayer?.isPlaying == true) {
-                    pausedByCabinWindow = true
-                    session.controller.transportControls.pause()
+                serviceScope.launch {
+                    if (mediaPlayer?.isPlaying == true) {
+                        pausedByCabinWindow = true
+                        windowInitiatedPause = true
+                        session.controller.transportControls.pause()
+                    }
                 }
             },
             onAllWindowsClosed = {
-                if (pausedByCabinWindow) {
-                    pausedByCabinWindow = false
-                    session.controller.transportControls.play()
+                serviceScope.launch {
+                    if (pausedByCabinWindow) {
+                        pausedByCabinWindow = false
+                        session.controller.transportControls.play()
+                    }
                 }
             },
         )
@@ -133,8 +149,8 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
     }
 
     override fun onDestroy() {
-        // Task D lifecycle hook: unregister the VHAL callback and disconnect
-        // from the car service — no leaked callbacks, no idle IVI compute.
+        // Lifecycle hook: unregister the VHAL callback and disconnect
+        // from the car service, no leaked callbacks, no idle IVI compute.
         cabinWindowMonitor.stop()
 
         releasePlayer()
@@ -200,6 +216,7 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
         override fun onPlay() {
             // Once playing, there is nothing pending for the window to resume.
             pausedByCabinWindow = false
+            windowInitiatedPause = false
             val player = mediaPlayer
             when {
                 player != null && playerPrepared && !player.isPlaying -> {
@@ -215,6 +232,13 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
         }
 
         override fun onPause() {
+            // Distinguish a window-initiated pause (keep auto-resume armed) from
+            // a driver pause (cancel auto-resume so closing windows won't resume).
+            if (windowInitiatedPause) {
+                windowInitiatedPause = false
+            } else {
+                pausedByCabinWindow = false
+            }
             val player = mediaPlayer ?: return
             if (playerPrepared && player.isPlaying) {
                 player.pause()
@@ -224,6 +248,7 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
 
         override fun onStop() {
             pausedByCabinWindow = false
+            windowInitiatedPause = false
             releasePlayer()
             abandonAudioFocus()
             session.isActive = false
@@ -317,7 +342,7 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
 
     private fun publishMetadata(course: Course, lesson: Lesson) {
         val meta: AudioMetadata = AudioMetadata.forLesson(course, lesson)
-        // Branded artwork as a content:// URI served by ArtworkProvider — the
+        // Branded artwork as a content:// URI served by ArtworkProvider, the
         // form the AAOS Media Center's image loader can actually resolve.
         val artUri = ArtworkProvider.forCategory(this, course.category)
         grantArtworkReadPermission(artUri)
@@ -345,7 +370,7 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
             try {
                 grantUriPermission(pkg, artUri, android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION)
             } catch (_: Exception) {
-                // Package may be absent on a given head unit — best effort.
+                // Package may be absent on a given head unit, best effort.
             }
         }
     }
