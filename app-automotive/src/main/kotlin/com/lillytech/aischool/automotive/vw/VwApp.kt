@@ -33,10 +33,13 @@ import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -204,6 +207,19 @@ private fun CourseTile(course: Course, onClick: () -> Unit) {
 @Composable
 private fun VwNowPlaying(course: Course, lesson: Lesson, onBack: () -> Unit) {
     val accent = Vw.accentFor(course.category)
+    val total = lesson.durationSeconds.coerceAtLeast(1)
+    // Live playback position. Keyed on the lesson so it resets to 0 when the
+    // lesson changes; auto-plays on entry.
+    var positionSec by remember(lesson.title) { mutableIntStateOf(0) }
+    var playing by remember(lesson.title) { mutableStateOf(true) }
+    LaunchedEffect(lesson.title, playing) {
+        while (playing && positionSec < total) {
+            delay(1000L)
+            positionSec += 1
+            if (positionSec >= total) playing = false
+        }
+    }
+    val fraction = (positionSec.toFloat() / total).coerceIn(0f, 1f)
     Column(Modifier.fillMaxSize().padding(horizontal = 32.dp, vertical = 22.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.clickable(onClick = onBack)) {
             Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Vw.Text, modifier = Modifier.size(30.dp))
@@ -238,11 +254,18 @@ private fun VwNowPlaying(course: Course, lesson: Lesson, onBack: () -> Unit) {
             }
         }
         Spacer(Modifier.height(28.dp))
-        // progress bar
+        // progress bar (live playback position)
         Box(Modifier.fillMaxWidth().height(6.dp).clip(CircleShape).background(Vw.Tile)) {
-            Box(Modifier.fillMaxWidth(0.18f).height(6.dp).clip(CircleShape).background(accent))
+            if (fraction > 0f) {
+                Box(Modifier.fillMaxWidth(fraction).height(6.dp).clip(CircleShape).background(accent))
+            }
         }
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(8.dp))
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            Text(formatTime(positionSec), color = Vw.TextDim, fontFamily = Vw.Nunito, fontWeight = FontWeight.SemiBold, fontSize = 15.sp)
+            Text(formatTime(total), color = Vw.TextDim, fontFamily = Vw.Nunito, fontWeight = FontWeight.SemiBold, fontSize = 15.sp)
+        }
+        Spacer(Modifier.height(16.dp))
         Row(
             Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center,
@@ -251,15 +274,26 @@ private fun VwNowPlaying(course: Course, lesson: Lesson, onBack: () -> Unit) {
             Icon(Icons.Filled.SkipPrevious, "Previous", tint = Vw.Text, modifier = Modifier.size(48.dp))
             Spacer(Modifier.width(40.dp))
             Box(
-                modifier = Modifier.size(84.dp).clip(CircleShape).background(accent),
+                modifier = Modifier.size(84.dp).clip(CircleShape).background(accent).clickable { playing = !playing },
                 contentAlignment = Alignment.Center,
             ) {
-                Icon(Icons.Filled.Pause, "Pause", tint = Color.White, modifier = Modifier.size(44.dp))
+                Icon(
+                    if (playing) Icons.Filled.Pause else Icons.Filled.PlayArrow,
+                    if (playing) "Pause" else "Play",
+                    tint = Color.White,
+                    modifier = Modifier.size(44.dp),
+                )
             }
             Spacer(Modifier.width(40.dp))
             Icon(Icons.Filled.SkipNext, "Next", tint = Vw.Text, modifier = Modifier.size(48.dp))
         }
     }
+}
+
+private fun formatTime(seconds: Int): String {
+    val m = seconds / 60
+    val s = seconds % 60
+    return "%d:%02d".format(m, s)
 }
 
 @Composable
