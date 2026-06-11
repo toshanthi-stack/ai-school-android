@@ -57,6 +57,13 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
     private var currentLesson: Lesson? = null
     private var playerPrepared = false
 
+    /**
+     * True when playback was paused by a cabin window opening (not by the
+     * driver). Gates auto-resume so closing all windows only resumes a lesson
+     * the window paused — a manual pause is never overridden.
+     */
+    private var pausedByCabinWindow = false
+
     private lateinit var audioManager: AudioManager
     private var audioFocusRequest: AudioFocusRequest? = null
     private val audioFocusListener = AudioManager.OnAudioFocusChangeListener { change ->
@@ -89,11 +96,24 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
         sessionToken = session.sessionToken
         setPlaybackState(PlaybackStateCompat.STATE_NONE)
 
-        // Task D: real-time VHAL cabin tracking. Any window moving away from
-        // fully-closed triggers a systemic pause on the active media session.
-        cabinWindowMonitor = CabinWindowMonitor(this) { _, _ ->
-            session.controller.transportControls.pause()
-        }
+        // Task D: real-time VHAL cabin tracking. A window leaving fully-closed
+        // triggers a systemic pause; once every window is closed again the
+        // window-paused lesson resumes (a manual pause is never overridden).
+        cabinWindowMonitor = CabinWindowMonitor(
+            context = this,
+            onCabinWindowOpened = { _, _ ->
+                if (mediaPlayer?.isPlaying == true) {
+                    pausedByCabinWindow = true
+                    session.controller.transportControls.pause()
+                }
+            },
+            onAllWindowsClosed = {
+                if (pausedByCabinWindow) {
+                    pausedByCabinWindow = false
+                    session.controller.transportControls.play()
+                }
+            },
+        )
         cabinWindowMonitor.start()
 
         loadSyllabus()
@@ -178,6 +198,8 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
         }
 
         override fun onPlay() {
+            // Once playing, there is nothing pending for the window to resume.
+            pausedByCabinWindow = false
             val player = mediaPlayer
             when {
                 player != null && playerPrepared && !player.isPlaying -> {
@@ -201,6 +223,7 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
         }
 
         override fun onStop() {
+            pausedByCabinWindow = false
             releasePlayer()
             abandonAudioFocus()
             session.isActive = false

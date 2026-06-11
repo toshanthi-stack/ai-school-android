@@ -31,10 +31,14 @@ import androidx.core.content.ContextCompat
 class CabinWindowMonitor(
     private val context: Context,
     private val onCabinWindowOpened: (areaId: Int, position: Int) -> Unit,
+    private val onAllWindowsClosed: () -> Unit,
 ) {
 
     private var car: Car? = null
     private var propertyManager: CarPropertyManager? = null
+
+    /** AreaIds of cabin windows currently away from fully-closed. */
+    private val openWindows = mutableSetOf<Int>()
 
     @Volatile
     private var callbackRegistered = false
@@ -47,13 +51,26 @@ class CabinWindowMonitor(
         override fun onChangeEvent(value: CarPropertyValue<*>) {
             if (value.propertyId != VehiclePropertyIds.WINDOW_POS) return
             val position = value.value as? Int ?: return
+            val areaId = value.areaId
             if (position != WINDOW_FULLY_CLOSED) {
+                synchronized(openWindows) { openWindows.add(areaId) }
                 Log.i(
                     TAG,
-                    "Cabin change: window areaId=0x${Integer.toHexString(value.areaId)} " +
+                    "Cabin change: window areaId=0x${Integer.toHexString(areaId)} " +
                         "moved to position=$position — requesting systemic pause",
                 )
-                onCabinWindowOpened(value.areaId, position)
+                onCabinWindowOpened(areaId, position)
+            } else {
+                val allClosed = synchronized(openWindows) {
+                    openWindows.remove(areaId)
+                    openWindows.isEmpty()
+                }
+                Log.i(
+                    TAG,
+                    "Cabin change: window areaId=0x${Integer.toHexString(areaId)} " +
+                        "fully closed${if (allClosed) " — all windows closed, eligible to resume" else ""}",
+                )
+                if (allClosed) onAllWindowsClosed()
             }
         }
 

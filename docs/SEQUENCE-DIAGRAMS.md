@@ -10,8 +10,10 @@ the diagrams double as a map into the source. Rendered by GitHub natively
 ## 1. Window-open auto-pause (the anchor feature)
 
 When any cabin window leaves the fully-closed position, the active lesson is
-paused systemically through the media session, not by a local hack. Closing the
-window does not auto-resume; the driver stays in control.
+paused systemically through the media session, not by a local hack. Once every
+cabin window is closed again, the lesson resumes automatically. The resume is
+guarded: only a lesson the window paused resumes, never one the driver paused by
+hand.
 
 Source: `CabinWindowMonitor.kt`, `AISchoolMediaService.kt`.
 
@@ -37,14 +39,28 @@ sequenceDiagram
     Driver->>VHAL: opens a window (pos 0 -> non-zero)
     VHAL-->>CPM: property change event
     CPM-->>Monitor: onChangeEvent(CarPropertyValue)
-    Monitor->>Monitor: position != WINDOW_FULLY_CLOSED ?
+    Monitor->>Monitor: position != WINDOW_FULLY_CLOSED -> track areaId open
     Monitor->>Service: onCabinWindowOpened(areaId, position)
+    Service->>Service: mediaPlayer.isPlaying ? set pausedByCabinWindow = true
     Service->>Session: controller.transportControls.pause()
     Session-->>Service: sessionCallback.onPause()
     Service->>Player: pause()
     Service->>Session: setPlaybackState(STATE_PAUSED)
     Session-->>IVI: playback state -> PAUSED
     Note over IVI: Now Playing, steering-wheel state,<br/>all surfaces update together
+
+    Driver->>VHAL: closes the window (pos -> 0)
+    VHAL-->>CPM: property change event
+    CPM-->>Monitor: onChangeEvent(CarPropertyValue)
+    Monitor->>Monitor: last open window now closed -> set empty
+    Monitor->>Service: onAllWindowsClosed()
+    Service->>Service: pausedByCabinWindow ? clear flag
+    Service->>Session: controller.transportControls.play()
+    Session-->>Service: sessionCallback.onPlay()
+    Service->>Player: start()
+    Service->>Session: setPlaybackState(STATE_PLAYING)
+    Session-->>IVI: playback state -> PLAYING
+    Note over IVI: resumes only if the window paused it,<br/>never a manual pause
 ```
 
 ---
@@ -126,7 +142,7 @@ See [`RUNNING-AUTOMOTIVE.md`](RUNNING-AUTOMOTIVE.md) and
 ```bash
 # pause: open a window (any non-zero position)
 adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 3
-# "close" the window (no auto-resume by design)
+# resume: close the window again (auto-resumes the window-paused lesson)
 adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0
 ```
 

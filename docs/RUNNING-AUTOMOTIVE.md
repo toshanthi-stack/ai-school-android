@@ -137,11 +137,12 @@ On the emulator screen (this is the car's display):
 
 ---
 
-## Step 6 · Demo the window-open auto-pause
+## Step 6 · Demo the window-open auto-pause / window-closed auto-resume
 
-This is the headline feature: the lesson pauses the instant a window opens.
+This is the headline feature: the lesson pauses the instant a window opens, and
+resumes once every window is closed again.
 
-You will send one small command. The easiest place to run it is the **Terminal
+You will send two small commands. The easiest place to run them is the **Terminal
 tab inside Android Studio**:
 
 1. Open the Terminal: **View ▸ Tool Windows ▸ Terminal** (or click **Terminal**
@@ -150,11 +151,12 @@ tab inside Android Studio**:
 3. Paste this and press Enter to open the driver's window:
 
    ```bash
-   adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 4
+   adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 3
    ```
 
    The lesson pauses immediately on the Now Playing screen.
-4. Close the window again (playback does not auto-resume; the driver decides):
+4. Close the window again and the lesson resumes (it only resumes a lesson the
+   window paused, never one you paused by hand):
 
    ```bash
    adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0
@@ -250,7 +252,7 @@ adb wait-for-device && until [ "$(adb shell getprop sys.boot_completed)" = "1" ]
 ./gradlew :app-automotive:assembleDebug
 adb install -r app-automotive/build/outputs/apk/debug/app-automotive-debug.apk
 # then: open Media Center, play a lesson, and:
-adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 4   # pause
-adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0   # close window
+adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 3   # open window -> pause
+adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0   # close window -> resume
 adb shell am start -n com.lillytech.aischool.automotive/.vw.VwCatalogActivity
 ```

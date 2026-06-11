@@ -25,9 +25,10 @@ driven directly off the Vehicle HAL.
 - **Driver-distraction safe by design** · the automotive flavor is a
   `MediaBrowserService` with no UI of its own; the car's Media Center renders
   everything, and visually dense lessons are sanitized to audio in the data layer.
-- **Window-open auto-pause (VHAL)** · a `CarPropertyManager` callback on
-  `WINDOW_POS` pauses playback through the media session the moment any window
-  leaves the closed position. Systemic, not a local hack.
+- **Window-open auto-pause / window-closed auto-resume (VHAL)** · a
+  `CarPropertyManager` callback on `WINDOW_POS` pauses playback through the media
+  session the moment any window leaves the closed position, and resumes once every
+  window is closed again (only if the window paused it). Systemic, not a local hack.
 - **Offline-resilient** · streaming first, bundled-narration fallback, seeded
   catalog. The cabin never depends on connectivity.
 - **OEM-themable + a VW-styled preview** · the production in-car UI is OEM-themed

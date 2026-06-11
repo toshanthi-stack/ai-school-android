@@ -61,13 +61,14 @@ keep the audio stream and the spoken summary, and drop anything with no audio.
 The browse tree the head unit receives is structurally incapable of presenting
 distracting content.
 
-**3. The cabin is an input: window-open auto-pause.**
+**3. The cabin is an input: window-open auto-pause, window-closed auto-resume.**
 A `CarPropertyManager` callback subscribes to `WINDOW_POS` across every cabin
 window zone. When any window leaves the fully-closed position, playback is paused
 through the media session's transport controls, so the IVI, the steering-wheel
-state, and any connected surface all update together. It is a systemic pause,
-not a local workaround. Closing the window does not auto-resume; the driver stays
-in control. Details:
+state, and any connected surface all update together. Once every cabin window is
+closed again, the lesson resumes automatically. It is a systemic pause/resume,
+not a local workaround. The resume is guarded: only a lesson the *window* paused
+resumes, never one the driver paused by hand. Details:
 - Uses the current `subscribePropertyEvents` API with a fallback to the legacy
   callback for older Car API levels.
 - Reads `WINDOW_POS` (`0` = closed; any non-zero value = cracked or open) per
@@ -94,8 +95,9 @@ this flow on the head unit:
 2. **Browse by pillar** · Generative AI Skills, AI Infrastructure & Hardware,
    Advanced LLM Tuning, each opening to its courses and lessons.
 3. **Now Playing** · a real media session with standard transport controls.
-4. **Window opens, audio auto-pauses** · the Vehicle HAL event pauses the lesson
-   instantly. This is the anchor moment.
+4. **Window opens, audio auto-pauses; window closes, audio resumes** · the
+   Vehicle HAL event pauses the lesson instantly, and closing every window resumes
+   it. This is the anchor moment.
 5. **VW-styled design direction** · see below.
 
 ---
@@ -129,11 +131,11 @@ For an engineer who wants to try it:
 1. Open the project in a current Android Studio with the Android 36 SDK.
 2. Create an **Automotive** emulator (Android 33+ Automotive image) and run the
    `:app-automotive` configuration. AI School appears in the Media Center.
-3. To exercise the window-pause on an emulator, inject a window-position event
-   while a lesson plays:
+3. To exercise the window pause/resume on an emulator, inject window-position
+   events while a lesson plays:
    ```
-   adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 4   # open driver window
-   adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0   # close it
+   adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 3   # open driver window -> pauses
+   adb shell cmd car_service inject-vhal-event WINDOW_POS 0x10 0   # close it -> resumes
    ```
    On a Play-delivered install the privileged permission is not granted, so the
    monitor disables itself; an OEM or platform-signed build runs it live.
