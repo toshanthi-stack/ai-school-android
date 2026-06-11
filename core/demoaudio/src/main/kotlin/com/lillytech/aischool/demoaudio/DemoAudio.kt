@@ -5,11 +5,11 @@ import android.net.Uri
 
 /**
  * Bundled lesson narrations (res/raw) used as the offline fallback when the
- * production audio stream is unreachable, the demo keeps working in
- * airplane mode, tunnels, and interview rooms with hostile Wi-Fi.
+ * production audio stream is unreachable, so playback keeps working in airplane
+ * mode, tunnels, parking garages, and other low-connectivity areas.
  *
  * Files are named after the lesson id with hyphens mapped to underscores
- * (`genai-101` → `raw/genai_101.m4a`).
+ * (`genai-101` becomes `raw/genai_101.m4a`).
  */
 object DemoAudio {
 
