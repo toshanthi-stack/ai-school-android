@@ -1,10 +1,10 @@
 <div align="center">
 
-# AI School · Android
+# AI School · Android &amp; iOS
 
-**A dual-flavor Android app for the AI School learning platform: rich and interactive on a phone, strictly audio-only and distraction-safe in the car.**
+**A dual-flavor Android app for the AI School learning platform (rich and interactive on a phone, strictly audio-only and distraction-safe in the car), plus a native SwiftUI iOS app.**
 
-[Architecture](docs/ARCHITECTURE.md) · [Run guide](docs/RUNNING.md) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
+[Architecture](docs/ARCHITECTURE.md) · [Run guide](docs/RUNNING.md) · [iOS app](ios/) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
 
 </div>
 
@@ -76,6 +76,13 @@ A multi-module Gradle (Kotlin DSL) monorepo:
 The full design write-up, sequence diagrams, and branding/theming notes are in
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md); setup and run steps are in
 [docs/RUNNING.md](docs/RUNNING.md).
+
+## iOS (SwiftUI)
+
+A native SwiftUI port of the mobile experience lives in [`ios/`](ios/): the same
+catalog, courses, and lessons, with an `AVPlayer` audio player (bundled offline
+narration), a `WKWebView` for interactive lessons, and the same live-feed with
+seed fallback. See [`ios/README.md`](ios/README.md) to build and run.
 
 ## Build
 
