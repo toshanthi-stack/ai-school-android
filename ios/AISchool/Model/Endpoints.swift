@@ -10,6 +10,9 @@ enum Endpoints {
 
     static var website: URL { URL(string: baseURL)! }
 
+    /// Lilly Tech Systems (the company behind AI School).
+    static var company: URL { URL(string: "https://www.lillytechsystems.com")! }
+
     /// Live topic page on the production site, e.g.
     /// `liveTopicPage("ai-prompts")` -> `.../ai-prompts/index.html`.
     static func liveTopicPage(_ slug: String) -> String {

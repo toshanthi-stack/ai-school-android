@@ -1,7 +1,8 @@
 import SwiftUI
 
-/// The catalog: courses grouped by pillar, with a tappable link to the AI
-/// School website. Root of the navigation stack.
+/// The catalog: courses grouped by pillar, with the AI School brand mark, a link
+/// to the website, and Lilly Tech Systems attribution. Root of the navigation
+/// stack.
 struct CourseListView: View {
     @StateObject private var store = SyllabusStore()
 
@@ -19,9 +20,10 @@ struct CourseListView: View {
                         ForEach(store.orderedCategories, id: \.self) { category in
                             pillarSection(category)
                         }
+                        footer
                     }
-                    Spacer(minLength: 24)
                 }
+                .padding(.bottom, 24)
             }
             .background(Brand.bg.ignoresSafeArea())
             .toolbar(.hidden, for: .navigationBar)
@@ -35,10 +37,16 @@ struct CourseListView: View {
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("AI School")
-                .font(.system(size: 30, weight: .bold))
-                .foregroundStyle(Brand.text)
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 12) {
+                Image("BrandMark")
+                    .resizable()
+                    .frame(width: 42, height: 42)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                Text("AI School")
+                    .font(.system(size: 30, weight: .bold))
+                    .foregroundStyle(Brand.text)
+            }
             Link(destination: Endpoints.website) {
                 HStack(spacing: 4) {
                     Text("Live syllabus · lillytechsystems.com")
@@ -73,6 +81,22 @@ struct CourseListView: View {
                 .buttonStyle(.plain)
             }
         }
+    }
+
+    private var footer: some View {
+        VStack(spacing: 4) {
+            Text("An AI School product")
+                .font(.caption)
+                .foregroundStyle(Brand.textDim)
+            Link(destination: Endpoints.company) {
+                Text("by Lilly Tech Systems")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Brand.primary)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 32)
+        .padding(.bottom, 8)
     }
 }
 
