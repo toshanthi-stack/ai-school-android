@@ -4,7 +4,7 @@
 
 **A dual-flavor Android app for the AI School learning platform: rich and interactive on a phone, strictly audio-only and distraction-safe in the car.**
 
-[Overview](docs/AI-School-Automotive-Overview.md) · [Sequence diagrams](docs/SEQUENCE-DIAGRAMS.md) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
+[Architecture](docs/ARCHITECTURE.md) · [Run guide](docs/RUNNING.md) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
 
 </div>
 
@@ -65,10 +65,9 @@ A multi-module Gradle (Kotlin DSL) monorepo:
 | `:app-mobile` | Jetpack Compose app (catalog, audio + interactive lessons) |
 | `:app-automotive` | Media browser service, VHAL cabin monitor, VW-styled preview |
 
-The full design write-up is in
-[docs/AI-School-Automotive-Overview.md](docs/AI-School-Automotive-Overview.md);
-branding and theming notes are in
-[docs/BRANDING_AND_THEMING.md](docs/BRANDING_AND_THEMING.md).
+The full design write-up, sequence diagrams, and branding/theming notes are in
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md); setup and run steps are in
+[docs/RUNNING.md](docs/RUNNING.md).
 
 ## Build
 

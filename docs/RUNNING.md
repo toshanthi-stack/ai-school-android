@@ -215,6 +215,31 @@ production, the OEM themes the real in-car UI through car-ui-lib overlays.
 
 ---
 
+## Optional: one clean screen instead of two
+
+The Automotive emulator renders a second "instrument cluster" panel (528x792,
+portrait) next to the main 1080x600 infotainment display. The cluster is part of
+the system image at the vendor/HWC level, so no AVD-config change removes it from
+a standalone emulator window. To present a single clean screen, run the emulator
+headless and mirror only display 0 with [scrcpy](https://github.com/Genymobile/scrcpy)
+(`brew install scrcpy`):
+
+```bash
+# boot the emulator headless (no dual-pane window)
+emulator -avd AISchool_AAOS -no-snapshot -no-window &
+
+# once booted, launch the VW preview on display 0
+adb shell am start -n com.lillytech.aischool.automotive/.vw.VwCatalogActivity
+
+# mirror display 0 only: clean, resizable, interactive
+scrcpy --display-id=0 --window-title="AI School - VW Infotainment"
+```
+
+The window pause/resume still works underneath, using the inject commands from
+Step 6.
+
+---
+
 ## Troubleshooting
 
 | Symptom | What to do |
