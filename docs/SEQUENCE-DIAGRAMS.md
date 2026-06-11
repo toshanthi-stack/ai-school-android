@@ -32,34 +32,34 @@ sequenceDiagram
     Note over Service,Monitor: onCreate(): feature arms itself
     Service->>Monitor: start()
     Monitor->>CPM: subscribePropertyEvents(WINDOW_POS, callback)
-    Note right of Monitor: needs CONTROL_CAR_WINDOWS<br/>(privileged); else disables cleanly
+    Note right of Monitor: needs CONTROL_CAR_WINDOWS<br/>(privileged), else disables cleanly
 
     Note over Player,IVI: a lesson is PLAYING
 
-    Driver->>VHAL: opens a window (pos 0 -> non-zero)
+    Driver->>VHAL: opens a window (pos 0 to non-zero)
     VHAL-->>CPM: property change event
     CPM-->>Monitor: onChangeEvent(CarPropertyValue)
-    Monitor->>Monitor: position != WINDOW_FULLY_CLOSED -> track areaId open
+    Monitor->>Monitor: position not fully-closed, track areaId open
     Monitor->>Service: onCabinWindowOpened(areaId, position)
-    Service->>Service: mediaPlayer.isPlaying ? set pausedByCabinWindow = true
+    Service->>Service: if mediaPlayer.isPlaying, set pausedByCabinWindow true
     Service->>Session: controller.transportControls.pause()
     Session-->>Service: sessionCallback.onPause()
     Service->>Player: pause()
     Service->>Session: setPlaybackState(STATE_PAUSED)
-    Session-->>IVI: playback state -> PAUSED
+    Session-->>IVI: playback state is PAUSED
     Note over IVI: Now Playing, steering-wheel state,<br/>all surfaces update together
 
-    Driver->>VHAL: closes the window (pos -> 0)
+    Driver->>VHAL: closes the window (pos to 0)
     VHAL-->>CPM: property change event
     CPM-->>Monitor: onChangeEvent(CarPropertyValue)
-    Monitor->>Monitor: last open window now closed -> set empty
+    Monitor->>Monitor: last open window now closed, set empty
     Monitor->>Service: onAllWindowsClosed()
-    Service->>Service: pausedByCabinWindow ? clear flag
+    Service->>Service: if pausedByCabinWindow, clear flag
     Service->>Session: controller.transportControls.play()
     Session-->>Service: sessionCallback.onPlay()
     Service->>Player: start()
     Service->>Session: setPlaybackState(STATE_PLAYING)
-    Session-->>IVI: playback state -> PLAYING
+    Session-->>IVI: playback state is PLAYING
     Note over IVI: resumes only if the window paused it,<br/>never a manual pause
 ```
 
@@ -85,14 +85,14 @@ sequenceDiagram
 
     IVI->>Service: onGetRoot() / onLoadChildren(parentId)
     Service->>Tree: children(parentId)
-    Tree-->>Service: MediaItems (pillars -> courses -> lessons)
+    Tree-->>Service: MediaItems (pillars, courses, lessons)
     Service-->>IVI: browse results
     Driver->>IVI: taps a lesson
     IVI->>Session: transportControls.playFromMediaId(id)
     Session-->>Service: sessionCallback.onPlayFromMediaId(id)
     Service->>Service: playLesson(course, lesson)
     Service->>Player: setDataSource(audioUrl) + prepareAsync()
-    Note right of Service: stream first;<br/>bundled narration fallback
+    Note right of Service: stream first,<br/>bundled narration fallback
     Player-->>Service: onPrepared()
     Service->>Service: requestAudioFocus()
     Service->>Player: start()
@@ -119,11 +119,11 @@ sequenceDiagram
     participant Safety as toAutomotiveSafeSyllabus()
     participant IVI as Media Center
 
-    Service->>Repo: load syllabus (List<Course>)
+    Service->>Repo: load syllabus (list of Course)
     Repo-->>Service: full catalog (visual + audio payloads)
-    Service->>Safety: List<Course>.toAutomotiveSafeSyllabus()
+    Service->>Safety: toAutomotiveSafeSyllabus() on the course list
     loop each lesson
-        Safety->>Safety: audioUrl blank? -> drop (null)
+        Safety->>Safety: if audioUrl blank, drop (null)
         Safety->>Safety: copy(visualContentUrl = null)
         Note right of Safety: audioSummary becomes the<br/>only permitted text surface
     end
