@@ -2,29 +2,39 @@ import SwiftUI
 
 /// The catalog: courses grouped by pillar, with the AI School brand mark, a link
 /// to the website, and Lilly Tech Systems attribution. Root of the navigation
-/// stack.
+/// stack. Uses a List so scrolling is reliable with tappable navigation rows.
 struct CourseListView: View {
     @StateObject private var store = SyllabusStore()
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
-                    header
-                    if store.isLoading {
-                        ProgressView()
-                            .tint(Brand.primary)
-                            .frame(maxWidth: .infinity)
-                            .padding(.top, 80)
-                    } else {
-                        ForEach(store.orderedCategories, id: \.self) { category in
-                            pillarSection(category)
+            List {
+                header
+                    .plainRow(top: 12, bottom: 8)
+
+                if store.isLoading {
+                    ProgressView()
+                        .tint(Brand.primary)
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 60)
+                        .plainRow()
+                } else {
+                    ForEach(store.orderedCategories, id: \.self) { category in
+                        pillarHeader(category)
+                            .plainRow(top: 20, bottom: 4)
+                        ForEach(store.courses(in: category)) { course in
+                            NavigationLink(value: course) {
+                                CourseCard(course: course)
+                            }
+                            .plainRow(top: 6, bottom: 6)
                         }
-                        footer
                     }
+                    footer
+                        .plainRow(top: 32, bottom: 12)
                 }
-                .padding(.bottom, 24)
             }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
             .background(Brand.bg.ignoresSafeArea())
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: Course.self) { CourseDetailView(course: $0) }
@@ -57,29 +67,15 @@ struct CourseListView: View {
                 .foregroundStyle(Brand.primary)
             }
         }
-        .padding(.horizontal, 20)
-        .padding(.top, 12)
-        .padding(.bottom, 8)
     }
 
-    private func pillarSection(_ category: String) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 8) {
-                Image(systemName: Brand.icon(for: category))
-                    .foregroundStyle(Brand.accent(for: category))
-                Text(category)
-                    .font(.headline)
-                    .foregroundStyle(Brand.text)
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 20)
-
-            ForEach(store.courses(in: category)) { course in
-                NavigationLink(value: course) {
-                    CourseCard(course: course)
-                }
-                .buttonStyle(.plain)
-            }
+    private func pillarHeader(_ category: String) -> some View {
+        HStack(spacing: 8) {
+            Image(systemName: Brand.icon(for: category))
+                .foregroundStyle(Brand.accent(for: category))
+            Text(category)
+                .font(.headline)
+                .foregroundStyle(Brand.text)
         }
     }
 
@@ -95,8 +91,17 @@ struct CourseListView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.top, 32)
-        .padding(.bottom, 8)
+    }
+}
+
+/// Shared row styling: transparent background, no separators, edge-to-edge with
+/// brand horizontal padding.
+private extension View {
+    func plainRow(top: CGFloat = 0, bottom: CGFloat = 0) -> some View {
+        self
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: top, leading: 16, bottom: bottom, trailing: 16))
     }
 }
 
@@ -119,18 +124,10 @@ private struct CourseCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .background(Brand.card, in: RoundedCornerShape())
-        .overlay(RoundedCornerShape().stroke(Brand.border, lineWidth: 1))
-        .padding(.horizontal, 16)
-    }
-}
-
-private struct RoundedCornerShape: InsettableShape {
-    var inset: CGFloat = 0
-    func path(in rect: CGRect) -> Path {
-        Path(roundedRect: rect.insetBy(dx: inset, dy: inset), cornerRadius: 16)
-    }
-    func inset(by amount: CGFloat) -> some InsettableShape {
-        var copy = self; copy.inset += amount; return copy
+        .background(Brand.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(Brand.border, lineWidth: 1)
+        )
     }
 }
