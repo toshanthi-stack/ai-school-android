@@ -4,6 +4,16 @@ A native SwiftUI port of the AI School mobile experience: the same catalog,
 courses, and lessons as the Android mobile flavor, driven by the same shared
 domain model and the same backend.
 
+Built with the latest toolchain: **Swift 6** (complete strict concurrency),
+the iOS 26 SDK, deployment target iOS 18, and App Store submission readiness
+(app icon, privacy manifest, encryption-exempt declaration).
+
+## Screenshots
+
+| Catalog | Course | Audio lesson | Interactive lesson |
+|---|---|---|---|
+| ![](docs/screenshots/01-catalog.png) | ![](docs/screenshots/02-course-detail.png) | ![](docs/screenshots/03-lesson-audio.png) | ![](docs/screenshots/04-lesson-interactive.png) |
+
 ## Features
 
 - **Catalog** grouped by the three pillars (Generative AI, AI Infrastructure &
@@ -51,6 +61,21 @@ regenerate it after changing sources or settings:
 brew install xcodegen   # one-time
 cd ios && xcodegen generate
 ```
+
+## App Store readiness
+
+The project is set up to submit to the App Store:
+
+- **App icon** (`Assets.xcassets/AppIcon.appiconset`, opaque 1024, no alpha).
+- **Privacy manifest** (`PrivacyInfo.xcprivacy`): no tracking, no collected data.
+- **Encryption-exempt** declaration (`ITSAppUsesNonExemptEncryption = false`) so
+  uploads skip the export-compliance prompt.
+- Versioned (`MARKETING_VERSION` 1.0, `CURRENT_PROJECT_VERSION` 1), portrait,
+  background-audio capable.
+
+To submit: open the project, set your **Team** under Signing & Capabilities
+(automatic signing), then Archive and distribute. Verified to build and run in
+the iOS Simulator and type-checks clean under Swift 6 complete concurrency.
 
 ## Scope
 
