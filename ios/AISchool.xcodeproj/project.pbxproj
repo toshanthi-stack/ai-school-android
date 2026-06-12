@@ -7,124 +7,224 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C66845C5565044AFCE795D4 /* genai_104.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D9218EC591FCF9201B078E0 /* genai_104.m4a */; };
-		0F2DD1F4D8C384EE59AC466B /* agents_202.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1FFED9D96455B0923BA2095C /* agents_202.m4a */; };
+		00965279FDC9BEBC7AB82041 /* ai_models_claude_opus_4_7_opus_4_7_agents.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EFC916297B66AD9095F12F0E /* ai_models_claude_opus_4_7_opus_4_7_agents.m4a */; };
+		00D8FEDDF592A38B81BD0BDA /* ai_models_claude_sonnet_4_6_sonnet_4_6_vision.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2943ACDF5F5F4948C93818F6 /* ai_models_claude_sonnet_4_6_sonnet_4_6_vision.m4a */; };
+		02D4C3D19BC6147365CD8F79 /* ai_models_gpt_5_gpt_5_production.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 79C3FD76EBFF412A73AA0C44 /* ai_models_gpt_5_gpt_5_production.m4a */; };
+		046CBD756EDAFC94F4920C22 /* ai_tools_claude_code_claude_code_slash_commands.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 009A1124321056E613F9C508 /* ai_tools_claude_code_claude_code_slash_commands.m4a */; };
+		067FCAD81F5DF7826797D445 /* ai_models_claude_opus_4_7_opus_4_7_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94E4D8EF537E7C23D0EE0670 /* ai_models_claude_opus_4_7_opus_4_7_overview.m4a */; };
+		0E81BDC5E353787D60E6D636 /* ai_tools_github_copilot_tool_copilot_inline_chat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9302B5B8A37DE0DBBDE4C361 /* ai_tools_github_copilot_tool_copilot_inline_chat.m4a */; };
+		0E9977E757904F0137FDFF3E /* ai_tools_github_copilot_tool_copilot_enterprise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7FF3E3D221331917B7BBFEDF /* ai_tools_github_copilot_tool_copilot_enterprise.m4a */; };
 		0FF694E56B8B6FB5261F8395 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53861EFE29112694C05914D /* CourseListView.swift */; };
+		1215EF68FDD4FABDDF86ED36 /* ai_models_gpt_4o_gpt_4o_vision.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DFC05A08D38F9F73A9BAF687 /* ai_models_gpt_4o_gpt_4o_vision.m4a */; };
 		1358D1A825A1EE74A5B16BF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C8B8188F00693AB88BB471 /* Assets.xcassets */; };
-		1398D8FF07CD46CA796B3F77 /* ft_603.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 70EA1EE17E42F74DD5BDDD7E /* ft_603.m4a */; };
-		14CEC4673BAF11D249B1A292 /* ai_tools_aider.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1076A6EF7BCD1D3F9A42F9E4 /* ai_tools_aider.m4a */; };
-		24AB31E36554BB22740FD7C5 /* ai_models_claude_sonnet_4_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1225C4629A37B387B2A906BA /* ai_models_claude_sonnet_4_6.m4a */; };
-		256BD82CFF3F3B7AAC500775 /* genai_101.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9F816D69156C30E0ACA6711D /* genai_101.m4a */; };
-		26A9D6AD8D74C4DAE17B6442 /* ai_models_gpt_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AA7AA1E62B9417E9BE52658B /* ai_models_gpt_5.m4a */; };
+		14CAEDDF5B83A2A9E8326A1E /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9DDC261E9B5453DBFB016ED1 /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a */; };
+		17A674F6331ACC3AF15C8BED /* anthropic_claude_opus_deep_dive_opus_47_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C41495BBC32632655ADECD39 /* anthropic_claude_opus_deep_dive_opus_47_overview.m4a */; };
+		23B5C6D10777DE1E338678BB /* ai_models_claude_opus_4_7_opus_4_7_coding.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 38C27F2B6ED65C296FB08DF3 /* ai_models_claude_opus_4_7_opus_4_7_coding.m4a */; };
+		244273F3E79C7CB0ADAE9BCB /* ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66EA8106C314D7B4F42A89AA /* ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a */; };
+		2785E672ED7CFFABCD94D6F5 /* ai_tools_cursor_editor_cursor_rules.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 03DA93F0362A8ABC5C13EAB8 /* ai_tools_cursor_editor_cursor_rules.m4a */; };
+		279CFA08E6E0787CFA5ACB1B /* ai_models_gpt_4o_gpt_4o_structured_outputs.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DEE5C49DEF1CCD21724F65EB /* ai_models_gpt_4o_gpt_4o_structured_outputs.m4a */; };
 		283B0394690168E3A2C2F5BD /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02A134AB776338B675AEE55 /* AudioPlayer.swift */; };
-		3695202981BA6D849539850F /* cuda_403.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E7319DEBC142D456C0A77067 /* cuda_403.m4a */; };
-		3AAB28E8FBACB779777DC109 /* ai_models_gemini_2_5_pro.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8105BE2A29DD3E2379A5A53C /* ai_models_gemini_2_5_pro.m4a */; };
-		3EEC272AEE67988EB9BB1C9D /* bw_301.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D4AB684AF5018455E9CA95E /* bw_301.m4a */; };
+		293267FF38E05952CE553B03 /* ai_tools_claude_code_claude_code_hooks.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8398682DB4A14D20D7F0DCEB /* ai_tools_claude_code_claude_code_hooks.m4a */; };
+		2A0396DD9CDD8C57EC199479 /* anthropic_claude_model_selection_model_selection_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C9FB74DC523824891AAFCC5C /* anthropic_claude_model_selection_model_selection_overview.m4a */; };
+		2A376B6275D4DB63728DF2B5 /* anthropic_claude_model_selection_cascade_pattern.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C33D0A3683D146630A9763A5 /* anthropic_claude_model_selection_cascade_pattern.m4a */; };
+		303A2A74853592D87243A9E4 /* ai_tools_github_copilot_tool_copilot_instructions.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0FB7F6F2B3DCB4E252429ACF /* ai_tools_github_copilot_tool_copilot_instructions.m4a */; };
+		3247E1393EF0128BF7071435 /* ai_tools_aider_aider_repo_map.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C6673A327BF009FD10A2B8B8 /* ai_tools_aider_aider_repo_map.m4a */; };
+		333A3938434C7108E9975B3F /* ai_models_gpt_4o_gpt_4o_audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E981D7B7FB79DFAF8EB6C31F /* ai_models_gpt_4o_gpt_4o_audio.m4a */; };
 		439087345E185785533B527E /* SeedSyllabus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915656A1FFA2E07AA6E4B96F /* SeedSyllabus.swift */; };
+		4811750116219E248C481AD9 /* ai_tools_claude_code_claude_code_subagents.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3548D9052C4016BA952BCD20 /* ai_tools_claude_code_claude_code_subagents.m4a */; };
 		4A643A5F01553E2D37FA49B3 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2093111E569E55269D99ED /* Endpoints.swift */; };
-		4B717D2230889BF57B21E529 /* ft_601.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E970672207657D2C9656C638 /* ft_601.m4a */; };
-		4C658AC96CCC0390F5813385 /* bw_303.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A064DB9026C99F1284832553 /* bw_303.m4a */; };
-		58438C3DBD0BD4FE0ACBF693 /* vec_501.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BDD680ECB73A400D4D211C1B /* vec_501.m4a */; };
-		5B9144C52E841FA5AB07401A /* real_prompt_discipline.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BEADD469BA549C8298D6DA21 /* real_prompt_discipline.m4a */; };
+		4C005CFB08CFC865919C3A2A /* ai_models_claude_opus_4_7_opus_4_7_1m_context.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 743930524942AB49C6CD433A /* ai_models_claude_opus_4_7_opus_4_7_1m_context.m4a */; };
+		4CECAEBACA380A9508C8E933 /* ai_models_claude_haiku_4_5_haiku_4_5_batch.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 057F52356B33A099EAAECE85 /* ai_models_claude_haiku_4_5_haiku_4_5_batch.m4a */; };
+		4FB090070625A211BFC4EFF4 /* ai_tools_claude_code_claude_code_team_workflows.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD78120E400A91E38C926FCA /* ai_tools_claude_code_claude_code_team_workflows.m4a */; };
+		561FD32C60C61CAE51E7923D /* anthropic_claude_sonnet_deep_dive_price_quality_latency_trade_off.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E7B23EE9AE8B0AE58F8F60C2 /* anthropic_claude_sonnet_deep_dive_price_quality_latency_trade_off.m4a */; };
+		5755BD642FB2D6BF20F85488 /* anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 463E0955DB79F6769175DEED /* anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a */; };
+		5806B3155E84E7F4F8D51A85 /* ai_models_gpt_4o_gpt_4o_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 86F7DB870ACC0D48F2BA68DF /* ai_models_gpt_4o_gpt_4o_overview.m4a */; };
 		60EC698969AD2308B7A6BC32 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 6AC727628CBFAD20395D1D08 /* PrivacyInfo.xcprivacy */; };
-		629446FC192961E7CD2AE7FB /* cuda_401.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D1DD9C74E1D32ABDAE5D1BD /* cuda_401.m4a */; };
-		62FFEFDEA30B9CA37A0F889D /* anthropic_claude_sonnet_deep_dive.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AE4FF26F69604EAADD6E75ED /* anthropic_claude_sonnet_deep_dive.m4a */; };
 		665CFC28E10D5BD18BC2A1D9 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C316774CB8A7822405467 /* LessonView.swift */; };
-		6DFC11F50A0F118B1394ABAD /* ft_602.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9B79C756B5E3CDA34DF308D3 /* ft_602.m4a */; };
-		72DB65F30F7694D472AC4488 /* cuda_402.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 344F58422D5E58590A6FB15F /* cuda_402.m4a */; };
-		73EE24701E33D92E6B98E74A /* vec_503.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E29D2FEBF554093505185D35 /* vec_503.m4a */; };
-		7A07B8B472FA814DC9BBD3B6 /* ai_models_claude_haiku_4_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5B3FE7E8AA9BB7CB13EC27D3 /* ai_models_claude_haiku_4_5.m4a */; };
+		6858701CAD3AF0DF6D0CD8A4 /* ai_tools_continue_dev_continue_custom_commands.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6F088EC8D0E93B2941272F28 /* ai_tools_continue_dev_continue_custom_commands.m4a */; };
+		6B8ACF19C01450C94BEB99D6 /* ai_tools_continue_dev_continue_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7F298F76FC9C15523D153E08 /* ai_tools_continue_dev_continue_overview.m4a */; };
+		6C9E8FEB95AD79FD593CE52C /* ai_models_claude_sonnet_4_6_sonnet_4_6_production.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB96B326B126B0673B073541 /* ai_models_claude_sonnet_4_6_sonnet_4_6_production.m4a */; };
+		6DAB3D44324D5123CCFAA127 /* anthropic_claude_haiku_deep_dive_fast_cheap_positioning.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BF562CBAB1DAF54A7BCB8B75 /* anthropic_claude_haiku_deep_dive_fast_cheap_positioning.m4a */; };
+		6E13D388087A5BF9F9577A9A /* ai_models_gpt_5_gpt_5_capabilities.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 343EF40B6347A5ACAF62CBFC /* ai_models_gpt_5_gpt_5_capabilities.m4a */; };
+		6F89FB047C4F5EA677440253 /* ai_tools_aider_aider_voice.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 45545C253C15F2C71B4CE76D /* ai_tools_aider_aider_voice.m4a */; };
+		7044160E96C42768665D4C98 /* ai_models_gpt_5_gpt_5_context_multimodal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C7E8728DA32C5373524DD4DC /* ai_models_gpt_5_gpt_5_context_multimodal.m4a */; };
+		7804A0C4C2276685298A5E66 /* ai_tools_cursor_editor_cursor_mcp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 995F4A3A5A3E0D7FCA6CB4C7 /* ai_tools_cursor_editor_cursor_mcp.m4a */; };
 		7A123DACA20BA94740F98402 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236EB4F5397317DFE07620F /* WebView.swift */; };
-		7E0F277D897E351EE89D2346 /* anthropic_claude_claude_version_history.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2B6DB19F59778BCC7E15817D /* anthropic_claude_claude_version_history.m4a */; };
+		7C335A1D03A354A37EF3E7E3 /* anthropic_claude_model_selection_decision_framework.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BFE6872920A08647573FB144 /* anthropic_claude_model_selection_decision_framework.m4a */; };
+		7D9473C925F01F5DFAF9CD5D /* anthropic_claude_haiku_deep_dive_cost_optimisation.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 012B9C620BFDC74A474F8C35 /* anthropic_claude_haiku_deep_dive_cost_optimisation.m4a */; };
+		7E51E2E8DD6E014A5556C511 /* ai_tools_aider_aider_git.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0CB08268AD42F0E736FAD837 /* ai_tools_aider_aider_git.m4a */; };
 		7EB55FB2DB935E8CF2827441 /* CarPlayPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07656F58D84B0DB205833394 /* CarPlayPlaybackController.swift */; };
-		7FAFB741790FF0283752835C /* agents_203.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 46182880199C924A1EE76AA0 /* agents_203.m4a */; };
+		7F408630ACA1AD8601383D68 /* anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1AA1551234439122C73AF6D1 /* anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a */; };
+		7FC7EE43E43E87A6AFE32717 /* ai_models_gpt_5_gpt_5_tool_use.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4BD92A046132373E41B17C2C /* ai_models_gpt_5_gpt_5_tool_use.m4a */; };
+		8015A804E8AA68AA002A8789 /* ai_models_claude_haiku_4_5_haiku_4_5_latency.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 069A931B7ED1560F03DDF43F /* ai_models_claude_haiku_4_5_haiku_4_5_latency.m4a */; };
 		801C4389510EA7C4804831A9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD205F09F6E6105A33A2ED7 /* Models.swift */; };
-		8190F35C06E979AB5F69ACB6 /* ai_models_gpt_4o.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AA1E3CCBC13E53AF38FA49F7 /* ai_models_gpt_4o.m4a */; };
-		82D3560FAFE1259D7959FCE9 /* ai_models_claude_opus_4_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3CADAC5065A947E29B12385F /* ai_models_claude_opus_4_7.m4a */; };
-		90B9ED8ADE9A10FBFCF23366 /* ai_tools_claude_code.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BFFAE4D154A63CBB5F539D58 /* ai_tools_claude_code.m4a */; };
+		83D43373E09A12104FA0BE27 /* ai_tools_claude_code_claude_code_mcp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BE4E258FD0E3E9B58928E489 /* ai_tools_claude_code_claude_code_mcp.m4a */; };
+		844A3EEB85EB3E47FA5EA702 /* ai_models_gpt_5_gpt_5_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EFE184DAAEC4D11EBD23F236 /* ai_models_gpt_5_gpt_5_overview.m4a */; };
+		884F4E6B6434707AD040DBB5 /* anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8154B9FC1C220616A5A82EB1 /* anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a */; };
+		88F2C921D00CDF39C946C53F /* anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7A3A26590BE398E8B304B9C5 /* anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a */; };
+		8B7AB5296CC2C926FE546959 /* ai_tools_aider_aider_architect_edit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D5F42D09CEFA950875CD7B44 /* ai_tools_aider_aider_architect_edit.m4a */; };
 		915D8343D9AA04F181AC48CA /* SyllabusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577FAC88094FE7F5B98B93C /* SyllabusStore.swift */; };
-		994DB8957C7F4D221425A779 /* agents_201.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A3F24BE7EDDFFFEBD5268A8D /* agents_201.m4a */; };
-		9D32A91DBDAC155B77264A30 /* genai_102.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95AA06691DAC8F7030A278E2 /* genai_102.m4a */; };
-		9D94FD54FEA6C19B8791F79A /* bw_302.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 789A77754BBEFEB1A65EACE6 /* bw_302.m4a */; };
-		A2F5710BB97B5384565972A6 /* ai_tools_github_copilot_tool.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 880FB5D4A5A1C516B0CF1F15 /* ai_tools_github_copilot_tool.m4a */; };
+		989DB520648B04124537FFC2 /* anthropic_claude_model_selection_selection_template.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D2303C80A3F9B48ABF6A00B8 /* anthropic_claude_model_selection_selection_template.m4a */; };
+		991D6215A61487A15ABFA102 /* ai_tools_cursor_editor_cursor_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94728D0E9102BE04DE07C10D /* ai_tools_cursor_editor_cursor_overview.m4a */; };
+		996933480DA12C50C0D3D9B0 /* anthropic_claude_claude_models_overview_context_windows_across_the_family.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 34D28735643C63BD29AFC2EF /* anthropic_claude_claude_models_overview_context_windows_across_the_family.m4a */; };
+		9B221AEC616CA1C6030E886D /* ai_models_claude_haiku_4_5_haiku_4_5_routing.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA617860F79F17A0013B4A0F /* ai_models_claude_haiku_4_5_haiku_4_5_routing.m4a */; };
+		9B32C4F5851EF9EA592EA6B9 /* ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 099242305EE10AE1CEF37578 /* ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a */; };
+		9D245D5088459E4361B7818C /* anthropic_claude_model_selection_benchmark_mapping.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4CB965BA6F7D6728CC3722E4 /* anthropic_claude_model_selection_benchmark_mapping.m4a */; };
+		9D9AC33D09E50E2B436B292B /* ai_tools_github_copilot_tool_copilot_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DB41B3796CD7C4F7D61F014E /* ai_tools_github_copilot_tool_copilot_overview.m4a */; };
+		A3755C5E61E4918C20D8E5DF /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0DAE652FB276B4CA17642992 /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a */; };
+		A4D6161353E6FEDB26BEA8BC /* anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CBC45B191A9F5A597E1DCA57 /* anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a */; };
 		A4F2683F1C48A4766CC53752 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665711085AC4DAD676EEB693 /* Theme.swift */; };
-		A54319C991E1E5802BBE4CB2 /* ai_tools_cursor_editor.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 961E651FED80EF1CAD14B031 /* ai_tools_cursor_editor.m4a */; };
-		AA4D64249203C42BDBCEB711 /* anthropic_claude_haiku_deep_dive.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 308902516D3F9C2D030AE98C /* anthropic_claude_haiku_deep_dive.m4a */; };
-		AE9B779950FB9957F456C9AF /* anthropic_claude_model_selection.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FCFB65BF7284864AE4EC4EF6 /* anthropic_claude_model_selection.m4a */; };
-		B9803CB3D14EEEA2DBCF5492 /* real_choosing_models.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 24D21B75CA9DE378FD89CBA2 /* real_choosing_models.m4a */; };
+		A57536E5C77084E81A6A67C5 /* anthropic_claude_claude_models_overview_family_vs_external_models.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F334D05FF1DE6BA081949EEC /* anthropic_claude_claude_models_overview_family_vs_external_models.m4a */; };
+		A92F5B9C01867CFB99B5B5BE /* anthropic_claude_claude_models_overview_family_pricing_shape.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 080C69B7E770DE26472A9375 /* anthropic_claude_claude_models_overview_family_pricing_shape.m4a */; };
+		AA096B0A188A775E6A8AECEC /* anthropic_claude_sonnet_deep_dive_opus_sonnet_cascade.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC8250B3AF7D1D0C5D6D807D /* anthropic_claude_sonnet_deep_dive_opus_sonnet_cascade.m4a */; };
+		AAFDD2681A4F60A9130E0106 /* ai_tools_continue_dev_continue_vs_cursor.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DB5DAD04B6E4B2903E82627D /* ai_tools_continue_dev_continue_vs_cursor.m4a */; };
+		B3D0F11F40BDB06AB93995B5 /* anthropic_claude_opus_deep_dive_1m_context_capability.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EE4B5BD7AB15769EF7179C53 /* anthropic_claude_opus_deep_dive_1m_context_capability.m4a */; };
+		B591971B2EE9F173CE349DC8 /* ai_models_gpt_4o_gpt_4o_mini.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F622417153306B803A9BC6AF /* ai_models_gpt_4o_gpt_4o_mini.m4a */; };
+		B9BCFF69A724A76A3466F8AE /* ai_models_claude_sonnet_4_6_sonnet_4_6_cost_quality.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1AACB05CD66A208D31406C74 /* ai_models_claude_sonnet_4_6_sonnet_4_6_cost_quality.m4a */; };
+		BB429BF3B7C147220E0075C5 /* ai_models_claude_haiku_4_5_haiku_4_5_production.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F5538E723ED637589CAE1390 /* ai_models_claude_haiku_4_5_haiku_4_5_production.m4a */; };
 		BDB10B5EAD1E9021F08F5971 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580900A2ABEF106E743CF642 /* CourseDetailView.swift */; };
-		C88E9F227288BDAA10C7B6AD /* anthropic_claude_claude_models_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 50D7645C7A736B5DC4ED9956 /* anthropic_claude_claude_models_overview.m4a */; };
-		CC644F4D540529BE1974E538 /* real_frontier_apis.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9F5667B35FD7519A0886FD63 /* real_frontier_apis.m4a */; };
+		C032B5E7178E00F7DDAB3A2B /* ai_tools_cursor_editor_cursor_tab.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8DBE3D8E6104B0764ADFD102 /* ai_tools_cursor_editor_cursor_tab.m4a */; };
+		C0459AFB1E91367193AA8154 /* anthropic_claude_opus_deep_dive_cost_latency_profile.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 381937492876CA78BB330606 /* anthropic_claude_opus_deep_dive_cost_latency_profile.m4a */; };
+		C17BD017D18FCEA8261F6D2B /* ai_tools_claude_code_claude_code_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 364F279B5BC30F52BC07E4D6 /* ai_tools_claude_code_claude_code_overview.m4a */; };
+		C24A8813E124C55B47FAF684 /* anthropic_claude_claude_models_overview_picking_a_family_tier.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D8AB90D026B154B2631B344C /* anthropic_claude_claude_models_overview_picking_a_family_tier.m4a */; };
+		C36A1FC70AA65654439F8ED7 /* anthropic_claude_haiku_deep_dive_haiku_45_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FCD95DF402A4C25B565F6782 /* anthropic_claude_haiku_deep_dive_haiku_45_overview.m4a */; };
+		C473D8F8EF9D6FD50DBB57A6 /* ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0D41B586BC6378D94337CB32 /* ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a */; };
+		CA18672D435B6EE241AE227A /* anthropic_claude_model_selection_eval_discipline.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 65EB5A22E52C7EC1B2068F94 /* anthropic_claude_model_selection_eval_discipline.m4a */; };
+		CB9E5F4838B4556CBDB6C0D9 /* anthropic_claude_opus_deep_dive_frontier_reasoning.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A678FE0F18F11B55B5B7B89F /* anthropic_claude_opus_deep_dive_frontier_reasoning.m4a */; };
+		CCB8077664101123900C7D82 /* ai_tools_continue_dev_continue_self_hosted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ACC914DC991EB1C1C5883A83 /* ai_tools_continue_dev_continue_self_hosted.m4a */; };
+		CD111879CBF9B103A35027C5 /* anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 45DEDC6699F7F824D2FF3154 /* anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a */; };
+		D1A037757CFD67F55EA4A994 /* ai_tools_github_copilot_tool_copilot_workspace.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D25AF297AE521DDB82B0444E /* ai_tools_github_copilot_tool_copilot_workspace.m4a */; };
+		D568162FA15AA70702FB1C6C /* ai_tools_cursor_editor_cursor_team.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 50EE41769456B3CC7C7CBC43 /* ai_tools_cursor_editor_cursor_team.m4a */; };
 		D6757EA4EB90EB40E4C058B6 /* AISchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F8ED864E9EF6BD2F8ED29 /* AISchoolApp.swift */; };
-		D77805E7378614ACDF69AEDC /* anthropic_claude_opus_deep_dive.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5833B501A59CB1E7EAB1676A /* anthropic_claude_opus_deep_dive.m4a */; };
-		D89855D1C4582F721E789818 /* ai_tools_continue_dev.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E63FC771EDDDA39D4C6B57D /* ai_tools_continue_dev.m4a */; };
-		DF3C720AB0C4D2FBE9AF9FE2 /* vec_502.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 34BA531CF48640E032E20EE8 /* vec_502.m4a */; };
+		D68DD51213FBDB92A90C3C95 /* anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 860760BA2B21DA042085C246 /* anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a */; };
+		D72E652C3E54E816CCE72687 /* ai_tools_aider_aider_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A214EC91806DDBDA3E8EADB3 /* ai_tools_aider_aider_overview.m4a */; };
+		D794C4731AB56AAD09886088 /* ai_tools_continue_dev_continue_context_providers.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C400AEC7EBB531F57E012C17 /* ai_tools_continue_dev_continue_context_providers.m4a */; };
+		DED392FF1451546802065CA5 /* ai_models_gpt_5_gpt_5_pricing.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8DD293B64A5DDBA01010ADEA /* ai_models_gpt_5_gpt_5_pricing.m4a */; };
+		DF6FB1F78B6A82C72F37177A /* anthropic_claude_sonnet_deep_dive_sonnet_workload_patterns.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5D88E8D36893741AB0B46ABC /* anthropic_claude_sonnet_deep_dive_sonnet_workload_patterns.m4a */; };
+		E05BC1FBAD8FDC1CAB71C3D7 /* ai_tools_github_copilot_tool_copilot_agent_mode.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 36F74C6510EC60E91053FDC8 /* ai_tools_github_copilot_tool_copilot_agent_mode.m4a */; };
+		E1E7EC90B8CDC694892C9704 /* ai_models_claude_haiku_4_5_haiku_4_5_vs_mini.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F38190A31B06B09FDDE7AAFC /* ai_models_claude_haiku_4_5_haiku_4_5_vs_mini.m4a */; };
+		E68ED04355DD906FB16C8018 /* ai_tools_aider_aider_models.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6199D8AD8CADC8AF072A6180 /* ai_tools_aider_aider_models.m4a */; };
 		ECE3B3EF4BD87313D3F2AA77 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1745726FCC2B6050CF075F3E /* CarPlaySceneDelegate.swift */; };
+		ED66AC7D870067E12AF5213F /* ai_models_claude_opus_4_7_opus_4_7_vs_sonnet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E13AD87AEA7C6E2B0F5DD22C /* ai_models_claude_opus_4_7_opus_4_7_vs_sonnet.m4a */; };
+		EFBC70FE1B2B0AE13EA5C992 /* anthropic_claude_haiku_deep_dive_latency_targets.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD6B5D15251CD15F4A6A6B48 /* anthropic_claude_haiku_deep_dive_latency_targets.m4a */; };
+		F057C966B76D18BDBCAECC67 /* ai_tools_continue_dev_continue_config.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2CB972E77A262F45092F5DD6 /* ai_tools_continue_dev_continue_config.m4a */; };
 		F1726C787496C704B77E4A8B /* syllabus.json in Resources */ = {isa = PBXBuildFile; fileRef = F753D37CB9782C25D17D2B73 /* syllabus.json */; };
-		FB98308933126EC77C8F5176 /* genai_103.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C0030CC3A8A2D451CE6C0EB /* genai_103.m4a */; };
-		FEF12644C43699E76EFEDA80 /* ai_tools_cline_vscode.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7CDE8E008953160A201B522F /* ai_tools_cline_vscode.m4a */; };
+		F659AEE70527855E05C80930 /* ai_models_claude_opus_4_7_opus_4_7_production.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CC134880D9D6A98DC935D8ED /* ai_models_claude_opus_4_7_opus_4_7_production.m4a */; };
+		F74F6D2814A37DF046E187A1 /* ai_tools_cursor_editor_cursor_composer_agent.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F732853162BBBB3C85D72043 /* ai_tools_cursor_editor_cursor_composer_agent.m4a */; };
+		FA8F66D9EEDCC253BF087340 /* anthropic_claude_claude_models_overview_claude_family_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9C9B4E11BB0E47588610D842 /* anthropic_claude_claude_models_overview_claude_family_overview.m4a */; };
+		FBD98590B2655D0ABA149BCC /* ai_models_gpt_4o_gpt_4o_production.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3F41380F16CE598ADB9D4E31 /* ai_models_gpt_4o_gpt_4o_production.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		009A1124321056E613F9C508 /* ai_tools_claude_code_claude_code_slash_commands.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code_claude_code_slash_commands.m4a; sourceTree = "<group>"; };
+		012B9C620BFDC74A474F8C35 /* anthropic_claude_haiku_deep_dive_cost_optimisation.m4a */ = {isa = PBXFileReference; path = anthropic_claude_haiku_deep_dive_cost_optimisation.m4a; sourceTree = "<group>"; };
+		03DA93F0362A8ABC5C13EAB8 /* ai_tools_cursor_editor_cursor_rules.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_rules.m4a; sourceTree = "<group>"; };
+		057F52356B33A099EAAECE85 /* ai_models_claude_haiku_4_5_haiku_4_5_batch.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5_haiku_4_5_batch.m4a; sourceTree = "<group>"; };
+		069A931B7ED1560F03DDF43F /* ai_models_claude_haiku_4_5_haiku_4_5_latency.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5_haiku_4_5_latency.m4a; sourceTree = "<group>"; };
 		07656F58D84B0DB205833394 /* CarPlayPlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayPlaybackController.swift; sourceTree = "<group>"; };
+		080C69B7E770DE26472A9375 /* anthropic_claude_claude_models_overview_family_pricing_shape.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_family_pricing_shape.m4a; sourceTree = "<group>"; };
 		08C8B8188F00693AB88BB471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1076A6EF7BCD1D3F9A42F9E4 /* ai_tools_aider.m4a */ = {isa = PBXFileReference; path = ai_tools_aider.m4a; sourceTree = "<group>"; };
-		1225C4629A37B387B2A906BA /* ai_models_claude_sonnet_4_6.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6.m4a; sourceTree = "<group>"; };
+		099242305EE10AE1CEF37578 /* ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a; sourceTree = "<group>"; };
+		0CB08268AD42F0E736FAD837 /* ai_tools_aider_aider_git.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_git.m4a; sourceTree = "<group>"; };
+		0D41B586BC6378D94337CB32 /* ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a; sourceTree = "<group>"; };
+		0DAE652FB276B4CA17642992 /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a; sourceTree = "<group>"; };
+		0FB7F6F2B3DCB4E252429ACF /* ai_tools_github_copilot_tool_copilot_instructions.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_instructions.m4a; sourceTree = "<group>"; };
 		1745726FCC2B6050CF075F3E /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		1FFED9D96455B0923BA2095C /* agents_202.m4a */ = {isa = PBXFileReference; path = agents_202.m4a; sourceTree = "<group>"; };
-		24D21B75CA9DE378FD89CBA2 /* real_choosing_models.m4a */ = {isa = PBXFileReference; path = real_choosing_models.m4a; sourceTree = "<group>"; };
+		1AA1551234439122C73AF6D1 /* anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a; sourceTree = "<group>"; };
+		1AACB05CD66A208D31406C74 /* ai_models_claude_sonnet_4_6_sonnet_4_6_cost_quality.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6_sonnet_4_6_cost_quality.m4a; sourceTree = "<group>"; };
+		2943ACDF5F5F4948C93818F6 /* ai_models_claude_sonnet_4_6_sonnet_4_6_vision.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6_sonnet_4_6_vision.m4a; sourceTree = "<group>"; };
 		2B5F1A8A8934BDBB09EDAFEF /* AISchool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AISchool.entitlements; sourceTree = "<group>"; };
-		2B6DB19F59778BCC7E15817D /* anthropic_claude_claude_version_history.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_version_history.m4a; sourceTree = "<group>"; };
-		2C0030CC3A8A2D451CE6C0EB /* genai_103.m4a */ = {isa = PBXFileReference; path = genai_103.m4a; sourceTree = "<group>"; };
 		2C4ED4ECD5C560EEE96F59AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		308902516D3F9C2D030AE98C /* anthropic_claude_haiku_deep_dive.m4a */ = {isa = PBXFileReference; path = anthropic_claude_haiku_deep_dive.m4a; sourceTree = "<group>"; };
+		2CB972E77A262F45092F5DD6 /* ai_tools_continue_dev_continue_config.m4a */ = {isa = PBXFileReference; path = ai_tools_continue_dev_continue_config.m4a; sourceTree = "<group>"; };
 		3236EB4F5397317DFE07620F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		344F58422D5E58590A6FB15F /* cuda_402.m4a */ = {isa = PBXFileReference; path = cuda_402.m4a; sourceTree = "<group>"; };
-		34BA531CF48640E032E20EE8 /* vec_502.m4a */ = {isa = PBXFileReference; path = vec_502.m4a; sourceTree = "<group>"; };
-		3CADAC5065A947E29B12385F /* ai_models_claude_opus_4_7.m4a */ = {isa = PBXFileReference; path = ai_models_claude_opus_4_7.m4a; sourceTree = "<group>"; };
-		46182880199C924A1EE76AA0 /* agents_203.m4a */ = {isa = PBXFileReference; path = agents_203.m4a; sourceTree = "<group>"; };
-		4E63FC771EDDDA39D4C6B57D /* ai_tools_continue_dev.m4a */ = {isa = PBXFileReference; path = ai_tools_continue_dev.m4a; sourceTree = "<group>"; };
-		50D7645C7A736B5DC4ED9956 /* anthropic_claude_claude_models_overview.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview.m4a; sourceTree = "<group>"; };
+		343EF40B6347A5ACAF62CBFC /* ai_models_gpt_5_gpt_5_capabilities.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_capabilities.m4a; sourceTree = "<group>"; };
+		34D28735643C63BD29AFC2EF /* anthropic_claude_claude_models_overview_context_windows_across_the_family.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_context_windows_across_the_family.m4a; sourceTree = "<group>"; };
+		3548D9052C4016BA952BCD20 /* ai_tools_claude_code_claude_code_subagents.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code_claude_code_subagents.m4a; sourceTree = "<group>"; };
+		364F279B5BC30F52BC07E4D6 /* ai_tools_claude_code_claude_code_overview.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code_claude_code_overview.m4a; sourceTree = "<group>"; };
+		36F74C6510EC60E91053FDC8 /* ai_tools_github_copilot_tool_copilot_agent_mode.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_agent_mode.m4a; sourceTree = "<group>"; };
+		381937492876CA78BB330606 /* anthropic_claude_opus_deep_dive_cost_latency_profile.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_cost_latency_profile.m4a; sourceTree = "<group>"; };
+		38C27F2B6ED65C296FB08DF3 /* ai_models_claude_opus_4_7_opus_4_7_coding.m4a */ = {isa = PBXFileReference; path = ai_models_claude_opus_4_7_opus_4_7_coding.m4a; sourceTree = "<group>"; };
+		3F41380F16CE598ADB9D4E31 /* ai_models_gpt_4o_gpt_4o_production.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o_gpt_4o_production.m4a; sourceTree = "<group>"; };
+		45545C253C15F2C71B4CE76D /* ai_tools_aider_aider_voice.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_voice.m4a; sourceTree = "<group>"; };
+		45DEDC6699F7F824D2FF3154 /* anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a; sourceTree = "<group>"; };
+		463E0955DB79F6769175DEED /* anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a; sourceTree = "<group>"; };
+		4BD92A046132373E41B17C2C /* ai_models_gpt_5_gpt_5_tool_use.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_tool_use.m4a; sourceTree = "<group>"; };
+		4CB965BA6F7D6728CC3722E4 /* anthropic_claude_model_selection_benchmark_mapping.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection_benchmark_mapping.m4a; sourceTree = "<group>"; };
+		50EE41769456B3CC7C7CBC43 /* ai_tools_cursor_editor_cursor_team.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_team.m4a; sourceTree = "<group>"; };
 		580900A2ABEF106E743CF642 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
-		5833B501A59CB1E7EAB1676A /* anthropic_claude_opus_deep_dive.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive.m4a; sourceTree = "<group>"; };
-		5B3FE7E8AA9BB7CB13EC27D3 /* ai_models_claude_haiku_4_5.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5.m4a; sourceTree = "<group>"; };
+		5D88E8D36893741AB0B46ABC /* anthropic_claude_sonnet_deep_dive_sonnet_workload_patterns.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_sonnet_workload_patterns.m4a; sourceTree = "<group>"; };
+		6199D8AD8CADC8AF072A6180 /* ai_tools_aider_aider_models.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_models.m4a; sourceTree = "<group>"; };
+		65EB5A22E52C7EC1B2068F94 /* anthropic_claude_model_selection_eval_discipline.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection_eval_discipline.m4a; sourceTree = "<group>"; };
 		665711085AC4DAD676EEB693 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		66EA8106C314D7B4F42A89AA /* ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a; sourceTree = "<group>"; };
 		6AC727628CBFAD20395D1D08 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		70EA1EE17E42F74DD5BDDD7E /* ft_603.m4a */ = {isa = PBXFileReference; path = ft_603.m4a; sourceTree = "<group>"; };
-		789A77754BBEFEB1A65EACE6 /* bw_302.m4a */ = {isa = PBXFileReference; path = bw_302.m4a; sourceTree = "<group>"; };
-		7CDE8E008953160A201B522F /* ai_tools_cline_vscode.m4a */ = {isa = PBXFileReference; path = ai_tools_cline_vscode.m4a; sourceTree = "<group>"; };
-		8105BE2A29DD3E2379A5A53C /* ai_models_gemini_2_5_pro.m4a */ = {isa = PBXFileReference; path = ai_models_gemini_2_5_pro.m4a; sourceTree = "<group>"; };
-		880FB5D4A5A1C516B0CF1F15 /* ai_tools_github_copilot_tool.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool.m4a; sourceTree = "<group>"; };
+		6F088EC8D0E93B2941272F28 /* ai_tools_continue_dev_continue_custom_commands.m4a */ = {isa = PBXFileReference; path = ai_tools_continue_dev_continue_custom_commands.m4a; sourceTree = "<group>"; };
+		743930524942AB49C6CD433A /* ai_models_claude_opus_4_7_opus_4_7_1m_context.m4a */ = {isa = PBXFileReference; path = ai_models_claude_opus_4_7_opus_4_7_1m_context.m4a; sourceTree = "<group>"; };
+		79C3FD76EBFF412A73AA0C44 /* ai_models_gpt_5_gpt_5_production.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_production.m4a; sourceTree = "<group>"; };
+		7A3A26590BE398E8B304B9C5 /* anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a */ = {isa = PBXFileReference; path = anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a; sourceTree = "<group>"; };
+		7F298F76FC9C15523D153E08 /* ai_tools_continue_dev_continue_overview.m4a */ = {isa = PBXFileReference; path = ai_tools_continue_dev_continue_overview.m4a; sourceTree = "<group>"; };
+		7FF3E3D221331917B7BBFEDF /* ai_tools_github_copilot_tool_copilot_enterprise.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_enterprise.m4a; sourceTree = "<group>"; };
+		8154B9FC1C220616A5A82EB1 /* anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a */ = {isa = PBXFileReference; path = anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a; sourceTree = "<group>"; };
+		8398682DB4A14D20D7F0DCEB /* ai_tools_claude_code_claude_code_hooks.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code_claude_code_hooks.m4a; sourceTree = "<group>"; };
+		860760BA2B21DA042085C246 /* anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a; sourceTree = "<group>"; };
+		86F7DB870ACC0D48F2BA68DF /* ai_models_gpt_4o_gpt_4o_overview.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o_gpt_4o_overview.m4a; sourceTree = "<group>"; };
 		8A94F89CB8EBC0281FCBBBD1 /* AISchool.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AISchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D4AB684AF5018455E9CA95E /* bw_301.m4a */ = {isa = PBXFileReference; path = bw_301.m4a; sourceTree = "<group>"; };
+		8DBE3D8E6104B0764ADFD102 /* ai_tools_cursor_editor_cursor_tab.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_tab.m4a; sourceTree = "<group>"; };
+		8DD293B64A5DDBA01010ADEA /* ai_models_gpt_5_gpt_5_pricing.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_pricing.m4a; sourceTree = "<group>"; };
 		915656A1FFA2E07AA6E4B96F /* SeedSyllabus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedSyllabus.swift; sourceTree = "<group>"; };
+		9302B5B8A37DE0DBBDE4C361 /* ai_tools_github_copilot_tool_copilot_inline_chat.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_inline_chat.m4a; sourceTree = "<group>"; };
+		94728D0E9102BE04DE07C10D /* ai_tools_cursor_editor_cursor_overview.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_overview.m4a; sourceTree = "<group>"; };
+		94E4D8EF537E7C23D0EE0670 /* ai_models_claude_opus_4_7_opus_4_7_overview.m4a */ = {isa = PBXFileReference; path = ai_models_claude_opus_4_7_opus_4_7_overview.m4a; sourceTree = "<group>"; };
 		9577FAC88094FE7F5B98B93C /* SyllabusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllabusStore.swift; sourceTree = "<group>"; };
-		95AA06691DAC8F7030A278E2 /* genai_102.m4a */ = {isa = PBXFileReference; path = genai_102.m4a; sourceTree = "<group>"; };
-		961E651FED80EF1CAD14B031 /* ai_tools_cursor_editor.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor.m4a; sourceTree = "<group>"; };
-		9B79C756B5E3CDA34DF308D3 /* ft_602.m4a */ = {isa = PBXFileReference; path = ft_602.m4a; sourceTree = "<group>"; };
+		995F4A3A5A3E0D7FCA6CB4C7 /* ai_tools_cursor_editor_cursor_mcp.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_mcp.m4a; sourceTree = "<group>"; };
 		9BD205F09F6E6105A33A2ED7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		9D1DD9C74E1D32ABDAE5D1BD /* cuda_401.m4a */ = {isa = PBXFileReference; path = cuda_401.m4a; sourceTree = "<group>"; };
-		9D9218EC591FCF9201B078E0 /* genai_104.m4a */ = {isa = PBXFileReference; path = genai_104.m4a; sourceTree = "<group>"; };
-		9F5667B35FD7519A0886FD63 /* real_frontier_apis.m4a */ = {isa = PBXFileReference; path = real_frontier_apis.m4a; sourceTree = "<group>"; };
-		9F816D69156C30E0ACA6711D /* genai_101.m4a */ = {isa = PBXFileReference; path = genai_101.m4a; sourceTree = "<group>"; };
+		9C9B4E11BB0E47588610D842 /* anthropic_claude_claude_models_overview_claude_family_overview.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_claude_family_overview.m4a; sourceTree = "<group>"; };
+		9DDC261E9B5453DBFB016ED1 /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a; sourceTree = "<group>"; };
 		A02A134AB776338B675AEE55 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		A064DB9026C99F1284832553 /* bw_303.m4a */ = {isa = PBXFileReference; path = bw_303.m4a; sourceTree = "<group>"; };
-		A3F24BE7EDDFFFEBD5268A8D /* agents_201.m4a */ = {isa = PBXFileReference; path = agents_201.m4a; sourceTree = "<group>"; };
-		AA1E3CCBC13E53AF38FA49F7 /* ai_models_gpt_4o.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o.m4a; sourceTree = "<group>"; };
-		AA7AA1E62B9417E9BE52658B /* ai_models_gpt_5.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5.m4a; sourceTree = "<group>"; };
+		A214EC91806DDBDA3E8EADB3 /* ai_tools_aider_aider_overview.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_overview.m4a; sourceTree = "<group>"; };
+		A678FE0F18F11B55B5B7B89F /* anthropic_claude_opus_deep_dive_frontier_reasoning.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_frontier_reasoning.m4a; sourceTree = "<group>"; };
 		AC2093111E569E55269D99ED /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		AE4FF26F69604EAADD6E75ED /* anthropic_claude_sonnet_deep_dive.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive.m4a; sourceTree = "<group>"; };
+		AC8250B3AF7D1D0C5D6D807D /* anthropic_claude_sonnet_deep_dive_opus_sonnet_cascade.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_opus_sonnet_cascade.m4a; sourceTree = "<group>"; };
+		ACC914DC991EB1C1C5883A83 /* ai_tools_continue_dev_continue_self_hosted.m4a */ = {isa = PBXFileReference; path = ai_tools_continue_dev_continue_self_hosted.m4a; sourceTree = "<group>"; };
 		BA0C316774CB8A7822405467 /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
-		BDD680ECB73A400D4D211C1B /* vec_501.m4a */ = {isa = PBXFileReference; path = vec_501.m4a; sourceTree = "<group>"; };
-		BEADD469BA549C8298D6DA21 /* real_prompt_discipline.m4a */ = {isa = PBXFileReference; path = real_prompt_discipline.m4a; sourceTree = "<group>"; };
+		BE4E258FD0E3E9B58928E489 /* ai_tools_claude_code_claude_code_mcp.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code_claude_code_mcp.m4a; sourceTree = "<group>"; };
 		BF1F8ED864E9EF6BD2F8ED29 /* AISchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISchoolApp.swift; sourceTree = "<group>"; };
-		BFFAE4D154A63CBB5F539D58 /* ai_tools_claude_code.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code.m4a; sourceTree = "<group>"; };
-		E29D2FEBF554093505185D35 /* vec_503.m4a */ = {isa = PBXFileReference; path = vec_503.m4a; sourceTree = "<group>"; };
-		E7319DEBC142D456C0A77067 /* cuda_403.m4a */ = {isa = PBXFileReference; path = cuda_403.m4a; sourceTree = "<group>"; };
-		E970672207657D2C9656C638 /* ft_601.m4a */ = {isa = PBXFileReference; path = ft_601.m4a; sourceTree = "<group>"; };
+		BF562CBAB1DAF54A7BCB8B75 /* anthropic_claude_haiku_deep_dive_fast_cheap_positioning.m4a */ = {isa = PBXFileReference; path = anthropic_claude_haiku_deep_dive_fast_cheap_positioning.m4a; sourceTree = "<group>"; };
+		BFE6872920A08647573FB144 /* anthropic_claude_model_selection_decision_framework.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection_decision_framework.m4a; sourceTree = "<group>"; };
+		C33D0A3683D146630A9763A5 /* anthropic_claude_model_selection_cascade_pattern.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection_cascade_pattern.m4a; sourceTree = "<group>"; };
+		C400AEC7EBB531F57E012C17 /* ai_tools_continue_dev_continue_context_providers.m4a */ = {isa = PBXFileReference; path = ai_tools_continue_dev_continue_context_providers.m4a; sourceTree = "<group>"; };
+		C41495BBC32632655ADECD39 /* anthropic_claude_opus_deep_dive_opus_47_overview.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_opus_47_overview.m4a; sourceTree = "<group>"; };
+		C6673A327BF009FD10A2B8B8 /* ai_tools_aider_aider_repo_map.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_repo_map.m4a; sourceTree = "<group>"; };
+		C7E8728DA32C5373524DD4DC /* ai_models_gpt_5_gpt_5_context_multimodal.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_context_multimodal.m4a; sourceTree = "<group>"; };
+		C9FB74DC523824891AAFCC5C /* anthropic_claude_model_selection_model_selection_overview.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection_model_selection_overview.m4a; sourceTree = "<group>"; };
+		CBC45B191A9F5A597E1DCA57 /* anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a; sourceTree = "<group>"; };
+		CC134880D9D6A98DC935D8ED /* ai_models_claude_opus_4_7_opus_4_7_production.m4a */ = {isa = PBXFileReference; path = ai_models_claude_opus_4_7_opus_4_7_production.m4a; sourceTree = "<group>"; };
+		CD6B5D15251CD15F4A6A6B48 /* anthropic_claude_haiku_deep_dive_latency_targets.m4a */ = {isa = PBXFileReference; path = anthropic_claude_haiku_deep_dive_latency_targets.m4a; sourceTree = "<group>"; };
+		CD78120E400A91E38C926FCA /* ai_tools_claude_code_claude_code_team_workflows.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code_claude_code_team_workflows.m4a; sourceTree = "<group>"; };
+		D2303C80A3F9B48ABF6A00B8 /* anthropic_claude_model_selection_selection_template.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection_selection_template.m4a; sourceTree = "<group>"; };
+		D25AF297AE521DDB82B0444E /* ai_tools_github_copilot_tool_copilot_workspace.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_workspace.m4a; sourceTree = "<group>"; };
+		D5F42D09CEFA950875CD7B44 /* ai_tools_aider_aider_architect_edit.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_architect_edit.m4a; sourceTree = "<group>"; };
+		D8AB90D026B154B2631B344C /* anthropic_claude_claude_models_overview_picking_a_family_tier.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_picking_a_family_tier.m4a; sourceTree = "<group>"; };
+		DA617860F79F17A0013B4A0F /* ai_models_claude_haiku_4_5_haiku_4_5_routing.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5_haiku_4_5_routing.m4a; sourceTree = "<group>"; };
+		DB41B3796CD7C4F7D61F014E /* ai_tools_github_copilot_tool_copilot_overview.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_overview.m4a; sourceTree = "<group>"; };
+		DB5DAD04B6E4B2903E82627D /* ai_tools_continue_dev_continue_vs_cursor.m4a */ = {isa = PBXFileReference; path = ai_tools_continue_dev_continue_vs_cursor.m4a; sourceTree = "<group>"; };
+		DEE5C49DEF1CCD21724F65EB /* ai_models_gpt_4o_gpt_4o_structured_outputs.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o_gpt_4o_structured_outputs.m4a; sourceTree = "<group>"; };
+		DFC05A08D38F9F73A9BAF687 /* ai_models_gpt_4o_gpt_4o_vision.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o_gpt_4o_vision.m4a; sourceTree = "<group>"; };
+		E13AD87AEA7C6E2B0F5DD22C /* ai_models_claude_opus_4_7_opus_4_7_vs_sonnet.m4a */ = {isa = PBXFileReference; path = ai_models_claude_opus_4_7_opus_4_7_vs_sonnet.m4a; sourceTree = "<group>"; };
+		E7B23EE9AE8B0AE58F8F60C2 /* anthropic_claude_sonnet_deep_dive_price_quality_latency_trade_off.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_price_quality_latency_trade_off.m4a; sourceTree = "<group>"; };
+		E981D7B7FB79DFAF8EB6C31F /* ai_models_gpt_4o_gpt_4o_audio.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o_gpt_4o_audio.m4a; sourceTree = "<group>"; };
+		EE4B5BD7AB15769EF7179C53 /* anthropic_claude_opus_deep_dive_1m_context_capability.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_1m_context_capability.m4a; sourceTree = "<group>"; };
+		EFC916297B66AD9095F12F0E /* ai_models_claude_opus_4_7_opus_4_7_agents.m4a */ = {isa = PBXFileReference; path = ai_models_claude_opus_4_7_opus_4_7_agents.m4a; sourceTree = "<group>"; };
+		EFE184DAAEC4D11EBD23F236 /* ai_models_gpt_5_gpt_5_overview.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_overview.m4a; sourceTree = "<group>"; };
+		F334D05FF1DE6BA081949EEC /* anthropic_claude_claude_models_overview_family_vs_external_models.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_family_vs_external_models.m4a; sourceTree = "<group>"; };
+		F38190A31B06B09FDDE7AAFC /* ai_models_claude_haiku_4_5_haiku_4_5_vs_mini.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5_haiku_4_5_vs_mini.m4a; sourceTree = "<group>"; };
 		F53861EFE29112694C05914D /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
+		F5538E723ED637589CAE1390 /* ai_models_claude_haiku_4_5_haiku_4_5_production.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5_haiku_4_5_production.m4a; sourceTree = "<group>"; };
+		F622417153306B803A9BC6AF /* ai_models_gpt_4o_gpt_4o_mini.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o_gpt_4o_mini.m4a; sourceTree = "<group>"; };
+		F732853162BBBB3C85D72043 /* ai_tools_cursor_editor_cursor_composer_agent.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_composer_agent.m4a; sourceTree = "<group>"; };
 		F753D37CB9782C25D17D2B73 /* syllabus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = syllabus.json; sourceTree = "<group>"; };
-		FCFB65BF7284864AE4EC4EF6 /* anthropic_claude_model_selection.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection.m4a; sourceTree = "<group>"; };
+		FB96B326B126B0673B073541 /* ai_models_claude_sonnet_4_6_sonnet_4_6_production.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6_sonnet_4_6_production.m4a; sourceTree = "<group>"; };
+		FCD95DF402A4C25B565F6782 /* anthropic_claude_haiku_deep_dive_haiku_45_overview.m4a */ = {isa = PBXFileReference; path = anthropic_claude_haiku_deep_dive_haiku_45_overview.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -229,46 +329,96 @@
 		FF2A857A38EAD873387ABABB /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				A3F24BE7EDDFFFEBD5268A8D /* agents_201.m4a */,
-				1FFED9D96455B0923BA2095C /* agents_202.m4a */,
-				46182880199C924A1EE76AA0 /* agents_203.m4a */,
-				5B3FE7E8AA9BB7CB13EC27D3 /* ai_models_claude_haiku_4_5.m4a */,
-				3CADAC5065A947E29B12385F /* ai_models_claude_opus_4_7.m4a */,
-				1225C4629A37B387B2A906BA /* ai_models_claude_sonnet_4_6.m4a */,
-				8105BE2A29DD3E2379A5A53C /* ai_models_gemini_2_5_pro.m4a */,
-				AA1E3CCBC13E53AF38FA49F7 /* ai_models_gpt_4o.m4a */,
-				AA7AA1E62B9417E9BE52658B /* ai_models_gpt_5.m4a */,
-				1076A6EF7BCD1D3F9A42F9E4 /* ai_tools_aider.m4a */,
-				BFFAE4D154A63CBB5F539D58 /* ai_tools_claude_code.m4a */,
-				7CDE8E008953160A201B522F /* ai_tools_cline_vscode.m4a */,
-				4E63FC771EDDDA39D4C6B57D /* ai_tools_continue_dev.m4a */,
-				961E651FED80EF1CAD14B031 /* ai_tools_cursor_editor.m4a */,
-				880FB5D4A5A1C516B0CF1F15 /* ai_tools_github_copilot_tool.m4a */,
-				50D7645C7A736B5DC4ED9956 /* anthropic_claude_claude_models_overview.m4a */,
-				2B6DB19F59778BCC7E15817D /* anthropic_claude_claude_version_history.m4a */,
-				308902516D3F9C2D030AE98C /* anthropic_claude_haiku_deep_dive.m4a */,
-				FCFB65BF7284864AE4EC4EF6 /* anthropic_claude_model_selection.m4a */,
-				5833B501A59CB1E7EAB1676A /* anthropic_claude_opus_deep_dive.m4a */,
-				AE4FF26F69604EAADD6E75ED /* anthropic_claude_sonnet_deep_dive.m4a */,
-				8D4AB684AF5018455E9CA95E /* bw_301.m4a */,
-				789A77754BBEFEB1A65EACE6 /* bw_302.m4a */,
-				A064DB9026C99F1284832553 /* bw_303.m4a */,
-				9D1DD9C74E1D32ABDAE5D1BD /* cuda_401.m4a */,
-				344F58422D5E58590A6FB15F /* cuda_402.m4a */,
-				E7319DEBC142D456C0A77067 /* cuda_403.m4a */,
-				E970672207657D2C9656C638 /* ft_601.m4a */,
-				9B79C756B5E3CDA34DF308D3 /* ft_602.m4a */,
-				70EA1EE17E42F74DD5BDDD7E /* ft_603.m4a */,
-				9F816D69156C30E0ACA6711D /* genai_101.m4a */,
-				95AA06691DAC8F7030A278E2 /* genai_102.m4a */,
-				2C0030CC3A8A2D451CE6C0EB /* genai_103.m4a */,
-				9D9218EC591FCF9201B078E0 /* genai_104.m4a */,
-				24D21B75CA9DE378FD89CBA2 /* real_choosing_models.m4a */,
-				9F5667B35FD7519A0886FD63 /* real_frontier_apis.m4a */,
-				BEADD469BA549C8298D6DA21 /* real_prompt_discipline.m4a */,
-				BDD680ECB73A400D4D211C1B /* vec_501.m4a */,
-				34BA531CF48640E032E20EE8 /* vec_502.m4a */,
-				E29D2FEBF554093505185D35 /* vec_503.m4a */,
+				057F52356B33A099EAAECE85 /* ai_models_claude_haiku_4_5_haiku_4_5_batch.m4a */,
+				069A931B7ED1560F03DDF43F /* ai_models_claude_haiku_4_5_haiku_4_5_latency.m4a */,
+				0D41B586BC6378D94337CB32 /* ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a */,
+				F5538E723ED637589CAE1390 /* ai_models_claude_haiku_4_5_haiku_4_5_production.m4a */,
+				DA617860F79F17A0013B4A0F /* ai_models_claude_haiku_4_5_haiku_4_5_routing.m4a */,
+				F38190A31B06B09FDDE7AAFC /* ai_models_claude_haiku_4_5_haiku_4_5_vs_mini.m4a */,
+				743930524942AB49C6CD433A /* ai_models_claude_opus_4_7_opus_4_7_1m_context.m4a */,
+				EFC916297B66AD9095F12F0E /* ai_models_claude_opus_4_7_opus_4_7_agents.m4a */,
+				38C27F2B6ED65C296FB08DF3 /* ai_models_claude_opus_4_7_opus_4_7_coding.m4a */,
+				94E4D8EF537E7C23D0EE0670 /* ai_models_claude_opus_4_7_opus_4_7_overview.m4a */,
+				CC134880D9D6A98DC935D8ED /* ai_models_claude_opus_4_7_opus_4_7_production.m4a */,
+				E13AD87AEA7C6E2B0F5DD22C /* ai_models_claude_opus_4_7_opus_4_7_vs_sonnet.m4a */,
+				1AACB05CD66A208D31406C74 /* ai_models_claude_sonnet_4_6_sonnet_4_6_cost_quality.m4a */,
+				099242305EE10AE1CEF37578 /* ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a */,
+				FB96B326B126B0673B073541 /* ai_models_claude_sonnet_4_6_sonnet_4_6_production.m4a */,
+				9DDC261E9B5453DBFB016ED1 /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a */,
+				2943ACDF5F5F4948C93818F6 /* ai_models_claude_sonnet_4_6_sonnet_4_6_vision.m4a */,
+				66EA8106C314D7B4F42A89AA /* ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a */,
+				E981D7B7FB79DFAF8EB6C31F /* ai_models_gpt_4o_gpt_4o_audio.m4a */,
+				F622417153306B803A9BC6AF /* ai_models_gpt_4o_gpt_4o_mini.m4a */,
+				86F7DB870ACC0D48F2BA68DF /* ai_models_gpt_4o_gpt_4o_overview.m4a */,
+				3F41380F16CE598ADB9D4E31 /* ai_models_gpt_4o_gpt_4o_production.m4a */,
+				DEE5C49DEF1CCD21724F65EB /* ai_models_gpt_4o_gpt_4o_structured_outputs.m4a */,
+				DFC05A08D38F9F73A9BAF687 /* ai_models_gpt_4o_gpt_4o_vision.m4a */,
+				343EF40B6347A5ACAF62CBFC /* ai_models_gpt_5_gpt_5_capabilities.m4a */,
+				C7E8728DA32C5373524DD4DC /* ai_models_gpt_5_gpt_5_context_multimodal.m4a */,
+				EFE184DAAEC4D11EBD23F236 /* ai_models_gpt_5_gpt_5_overview.m4a */,
+				8DD293B64A5DDBA01010ADEA /* ai_models_gpt_5_gpt_5_pricing.m4a */,
+				79C3FD76EBFF412A73AA0C44 /* ai_models_gpt_5_gpt_5_production.m4a */,
+				4BD92A046132373E41B17C2C /* ai_models_gpt_5_gpt_5_tool_use.m4a */,
+				D5F42D09CEFA950875CD7B44 /* ai_tools_aider_aider_architect_edit.m4a */,
+				0CB08268AD42F0E736FAD837 /* ai_tools_aider_aider_git.m4a */,
+				6199D8AD8CADC8AF072A6180 /* ai_tools_aider_aider_models.m4a */,
+				A214EC91806DDBDA3E8EADB3 /* ai_tools_aider_aider_overview.m4a */,
+				C6673A327BF009FD10A2B8B8 /* ai_tools_aider_aider_repo_map.m4a */,
+				45545C253C15F2C71B4CE76D /* ai_tools_aider_aider_voice.m4a */,
+				8398682DB4A14D20D7F0DCEB /* ai_tools_claude_code_claude_code_hooks.m4a */,
+				BE4E258FD0E3E9B58928E489 /* ai_tools_claude_code_claude_code_mcp.m4a */,
+				364F279B5BC30F52BC07E4D6 /* ai_tools_claude_code_claude_code_overview.m4a */,
+				009A1124321056E613F9C508 /* ai_tools_claude_code_claude_code_slash_commands.m4a */,
+				3548D9052C4016BA952BCD20 /* ai_tools_claude_code_claude_code_subagents.m4a */,
+				CD78120E400A91E38C926FCA /* ai_tools_claude_code_claude_code_team_workflows.m4a */,
+				2CB972E77A262F45092F5DD6 /* ai_tools_continue_dev_continue_config.m4a */,
+				C400AEC7EBB531F57E012C17 /* ai_tools_continue_dev_continue_context_providers.m4a */,
+				6F088EC8D0E93B2941272F28 /* ai_tools_continue_dev_continue_custom_commands.m4a */,
+				7F298F76FC9C15523D153E08 /* ai_tools_continue_dev_continue_overview.m4a */,
+				ACC914DC991EB1C1C5883A83 /* ai_tools_continue_dev_continue_self_hosted.m4a */,
+				DB5DAD04B6E4B2903E82627D /* ai_tools_continue_dev_continue_vs_cursor.m4a */,
+				F732853162BBBB3C85D72043 /* ai_tools_cursor_editor_cursor_composer_agent.m4a */,
+				995F4A3A5A3E0D7FCA6CB4C7 /* ai_tools_cursor_editor_cursor_mcp.m4a */,
+				94728D0E9102BE04DE07C10D /* ai_tools_cursor_editor_cursor_overview.m4a */,
+				03DA93F0362A8ABC5C13EAB8 /* ai_tools_cursor_editor_cursor_rules.m4a */,
+				8DBE3D8E6104B0764ADFD102 /* ai_tools_cursor_editor_cursor_tab.m4a */,
+				50EE41769456B3CC7C7CBC43 /* ai_tools_cursor_editor_cursor_team.m4a */,
+				36F74C6510EC60E91053FDC8 /* ai_tools_github_copilot_tool_copilot_agent_mode.m4a */,
+				7FF3E3D221331917B7BBFEDF /* ai_tools_github_copilot_tool_copilot_enterprise.m4a */,
+				9302B5B8A37DE0DBBDE4C361 /* ai_tools_github_copilot_tool_copilot_inline_chat.m4a */,
+				0FB7F6F2B3DCB4E252429ACF /* ai_tools_github_copilot_tool_copilot_instructions.m4a */,
+				DB41B3796CD7C4F7D61F014E /* ai_tools_github_copilot_tool_copilot_overview.m4a */,
+				D25AF297AE521DDB82B0444E /* ai_tools_github_copilot_tool_copilot_workspace.m4a */,
+				9C9B4E11BB0E47588610D842 /* anthropic_claude_claude_models_overview_claude_family_overview.m4a */,
+				34D28735643C63BD29AFC2EF /* anthropic_claude_claude_models_overview_context_windows_across_the_family.m4a */,
+				080C69B7E770DE26472A9375 /* anthropic_claude_claude_models_overview_family_pricing_shape.m4a */,
+				F334D05FF1DE6BA081949EEC /* anthropic_claude_claude_models_overview_family_vs_external_models.m4a */,
+				1AA1551234439122C73AF6D1 /* anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a */,
+				D8AB90D026B154B2631B344C /* anthropic_claude_claude_models_overview_picking_a_family_tier.m4a */,
+				012B9C620BFDC74A474F8C35 /* anthropic_claude_haiku_deep_dive_cost_optimisation.m4a */,
+				BF562CBAB1DAF54A7BCB8B75 /* anthropic_claude_haiku_deep_dive_fast_cheap_positioning.m4a */,
+				FCD95DF402A4C25B565F6782 /* anthropic_claude_haiku_deep_dive_haiku_45_overview.m4a */,
+				7A3A26590BE398E8B304B9C5 /* anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a */,
+				8154B9FC1C220616A5A82EB1 /* anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a */,
+				CD6B5D15251CD15F4A6A6B48 /* anthropic_claude_haiku_deep_dive_latency_targets.m4a */,
+				4CB965BA6F7D6728CC3722E4 /* anthropic_claude_model_selection_benchmark_mapping.m4a */,
+				C33D0A3683D146630A9763A5 /* anthropic_claude_model_selection_cascade_pattern.m4a */,
+				BFE6872920A08647573FB144 /* anthropic_claude_model_selection_decision_framework.m4a */,
+				65EB5A22E52C7EC1B2068F94 /* anthropic_claude_model_selection_eval_discipline.m4a */,
+				C9FB74DC523824891AAFCC5C /* anthropic_claude_model_selection_model_selection_overview.m4a */,
+				D2303C80A3F9B48ABF6A00B8 /* anthropic_claude_model_selection_selection_template.m4a */,
+				EE4B5BD7AB15769EF7179C53 /* anthropic_claude_opus_deep_dive_1m_context_capability.m4a */,
+				381937492876CA78BB330606 /* anthropic_claude_opus_deep_dive_cost_latency_profile.m4a */,
+				A678FE0F18F11B55B5B7B89F /* anthropic_claude_opus_deep_dive_frontier_reasoning.m4a */,
+				C41495BBC32632655ADECD39 /* anthropic_claude_opus_deep_dive_opus_47_overview.m4a */,
+				860760BA2B21DA042085C246 /* anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a */,
+				0DAE652FB276B4CA17642992 /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a */,
+				45DEDC6699F7F824D2FF3154 /* anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a */,
+				AC8250B3AF7D1D0C5D6D807D /* anthropic_claude_sonnet_deep_dive_opus_sonnet_cascade.m4a */,
+				E7B23EE9AE8B0AE58F8F60C2 /* anthropic_claude_sonnet_deep_dive_price_quality_latency_trade_off.m4a */,
+				463E0955DB79F6769175DEED /* anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a */,
+				CBC45B191A9F5A597E1DCA57 /* anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a */,
+				5D88E8D36893741AB0B46ABC /* anthropic_claude_sonnet_deep_dive_sonnet_workload_patterns.m4a */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -334,47 +484,97 @@
 			files = (
 				1358D1A825A1EE74A5B16BF3 /* Assets.xcassets in Resources */,
 				60EC698969AD2308B7A6BC32 /* PrivacyInfo.xcprivacy in Resources */,
-				994DB8957C7F4D221425A779 /* agents_201.m4a in Resources */,
-				0F2DD1F4D8C384EE59AC466B /* agents_202.m4a in Resources */,
-				7FAFB741790FF0283752835C /* agents_203.m4a in Resources */,
-				7A07B8B472FA814DC9BBD3B6 /* ai_models_claude_haiku_4_5.m4a in Resources */,
-				82D3560FAFE1259D7959FCE9 /* ai_models_claude_opus_4_7.m4a in Resources */,
-				24AB31E36554BB22740FD7C5 /* ai_models_claude_sonnet_4_6.m4a in Resources */,
-				3AAB28E8FBACB779777DC109 /* ai_models_gemini_2_5_pro.m4a in Resources */,
-				8190F35C06E979AB5F69ACB6 /* ai_models_gpt_4o.m4a in Resources */,
-				26A9D6AD8D74C4DAE17B6442 /* ai_models_gpt_5.m4a in Resources */,
-				14CEC4673BAF11D249B1A292 /* ai_tools_aider.m4a in Resources */,
-				90B9ED8ADE9A10FBFCF23366 /* ai_tools_claude_code.m4a in Resources */,
-				FEF12644C43699E76EFEDA80 /* ai_tools_cline_vscode.m4a in Resources */,
-				D89855D1C4582F721E789818 /* ai_tools_continue_dev.m4a in Resources */,
-				A54319C991E1E5802BBE4CB2 /* ai_tools_cursor_editor.m4a in Resources */,
-				A2F5710BB97B5384565972A6 /* ai_tools_github_copilot_tool.m4a in Resources */,
-				C88E9F227288BDAA10C7B6AD /* anthropic_claude_claude_models_overview.m4a in Resources */,
-				7E0F277D897E351EE89D2346 /* anthropic_claude_claude_version_history.m4a in Resources */,
-				AA4D64249203C42BDBCEB711 /* anthropic_claude_haiku_deep_dive.m4a in Resources */,
-				AE9B779950FB9957F456C9AF /* anthropic_claude_model_selection.m4a in Resources */,
-				D77805E7378614ACDF69AEDC /* anthropic_claude_opus_deep_dive.m4a in Resources */,
-				62FFEFDEA30B9CA37A0F889D /* anthropic_claude_sonnet_deep_dive.m4a in Resources */,
-				3EEC272AEE67988EB9BB1C9D /* bw_301.m4a in Resources */,
-				9D94FD54FEA6C19B8791F79A /* bw_302.m4a in Resources */,
-				4C658AC96CCC0390F5813385 /* bw_303.m4a in Resources */,
-				629446FC192961E7CD2AE7FB /* cuda_401.m4a in Resources */,
-				72DB65F30F7694D472AC4488 /* cuda_402.m4a in Resources */,
-				3695202981BA6D849539850F /* cuda_403.m4a in Resources */,
-				4B717D2230889BF57B21E529 /* ft_601.m4a in Resources */,
-				6DFC11F50A0F118B1394ABAD /* ft_602.m4a in Resources */,
-				1398D8FF07CD46CA796B3F77 /* ft_603.m4a in Resources */,
-				256BD82CFF3F3B7AAC500775 /* genai_101.m4a in Resources */,
-				9D32A91DBDAC155B77264A30 /* genai_102.m4a in Resources */,
-				FB98308933126EC77C8F5176 /* genai_103.m4a in Resources */,
-				0C66845C5565044AFCE795D4 /* genai_104.m4a in Resources */,
-				B9803CB3D14EEEA2DBCF5492 /* real_choosing_models.m4a in Resources */,
-				CC644F4D540529BE1974E538 /* real_frontier_apis.m4a in Resources */,
-				5B9144C52E841FA5AB07401A /* real_prompt_discipline.m4a in Resources */,
+				4CECAEBACA380A9508C8E933 /* ai_models_claude_haiku_4_5_haiku_4_5_batch.m4a in Resources */,
+				8015A804E8AA68AA002A8789 /* ai_models_claude_haiku_4_5_haiku_4_5_latency.m4a in Resources */,
+				C473D8F8EF9D6FD50DBB57A6 /* ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a in Resources */,
+				BB429BF3B7C147220E0075C5 /* ai_models_claude_haiku_4_5_haiku_4_5_production.m4a in Resources */,
+				9B221AEC616CA1C6030E886D /* ai_models_claude_haiku_4_5_haiku_4_5_routing.m4a in Resources */,
+				E1E7EC90B8CDC694892C9704 /* ai_models_claude_haiku_4_5_haiku_4_5_vs_mini.m4a in Resources */,
+				4C005CFB08CFC865919C3A2A /* ai_models_claude_opus_4_7_opus_4_7_1m_context.m4a in Resources */,
+				00965279FDC9BEBC7AB82041 /* ai_models_claude_opus_4_7_opus_4_7_agents.m4a in Resources */,
+				23B5C6D10777DE1E338678BB /* ai_models_claude_opus_4_7_opus_4_7_coding.m4a in Resources */,
+				067FCAD81F5DF7826797D445 /* ai_models_claude_opus_4_7_opus_4_7_overview.m4a in Resources */,
+				F659AEE70527855E05C80930 /* ai_models_claude_opus_4_7_opus_4_7_production.m4a in Resources */,
+				ED66AC7D870067E12AF5213F /* ai_models_claude_opus_4_7_opus_4_7_vs_sonnet.m4a in Resources */,
+				B9BCFF69A724A76A3466F8AE /* ai_models_claude_sonnet_4_6_sonnet_4_6_cost_quality.m4a in Resources */,
+				9B32C4F5851EF9EA592EA6B9 /* ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a in Resources */,
+				6C9E8FEB95AD79FD593CE52C /* ai_models_claude_sonnet_4_6_sonnet_4_6_production.m4a in Resources */,
+				14CAEDDF5B83A2A9E8326A1E /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a in Resources */,
+				00D8FEDDF592A38B81BD0BDA /* ai_models_claude_sonnet_4_6_sonnet_4_6_vision.m4a in Resources */,
+				244273F3E79C7CB0ADAE9BCB /* ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a in Resources */,
+				333A3938434C7108E9975B3F /* ai_models_gpt_4o_gpt_4o_audio.m4a in Resources */,
+				B591971B2EE9F173CE349DC8 /* ai_models_gpt_4o_gpt_4o_mini.m4a in Resources */,
+				5806B3155E84E7F4F8D51A85 /* ai_models_gpt_4o_gpt_4o_overview.m4a in Resources */,
+				FBD98590B2655D0ABA149BCC /* ai_models_gpt_4o_gpt_4o_production.m4a in Resources */,
+				279CFA08E6E0787CFA5ACB1B /* ai_models_gpt_4o_gpt_4o_structured_outputs.m4a in Resources */,
+				1215EF68FDD4FABDDF86ED36 /* ai_models_gpt_4o_gpt_4o_vision.m4a in Resources */,
+				6E13D388087A5BF9F9577A9A /* ai_models_gpt_5_gpt_5_capabilities.m4a in Resources */,
+				7044160E96C42768665D4C98 /* ai_models_gpt_5_gpt_5_context_multimodal.m4a in Resources */,
+				844A3EEB85EB3E47FA5EA702 /* ai_models_gpt_5_gpt_5_overview.m4a in Resources */,
+				DED392FF1451546802065CA5 /* ai_models_gpt_5_gpt_5_pricing.m4a in Resources */,
+				02D4C3D19BC6147365CD8F79 /* ai_models_gpt_5_gpt_5_production.m4a in Resources */,
+				7FC7EE43E43E87A6AFE32717 /* ai_models_gpt_5_gpt_5_tool_use.m4a in Resources */,
+				8B7AB5296CC2C926FE546959 /* ai_tools_aider_aider_architect_edit.m4a in Resources */,
+				7E51E2E8DD6E014A5556C511 /* ai_tools_aider_aider_git.m4a in Resources */,
+				E68ED04355DD906FB16C8018 /* ai_tools_aider_aider_models.m4a in Resources */,
+				D72E652C3E54E816CCE72687 /* ai_tools_aider_aider_overview.m4a in Resources */,
+				3247E1393EF0128BF7071435 /* ai_tools_aider_aider_repo_map.m4a in Resources */,
+				6F89FB047C4F5EA677440253 /* ai_tools_aider_aider_voice.m4a in Resources */,
+				293267FF38E05952CE553B03 /* ai_tools_claude_code_claude_code_hooks.m4a in Resources */,
+				83D43373E09A12104FA0BE27 /* ai_tools_claude_code_claude_code_mcp.m4a in Resources */,
+				C17BD017D18FCEA8261F6D2B /* ai_tools_claude_code_claude_code_overview.m4a in Resources */,
+				046CBD756EDAFC94F4920C22 /* ai_tools_claude_code_claude_code_slash_commands.m4a in Resources */,
+				4811750116219E248C481AD9 /* ai_tools_claude_code_claude_code_subagents.m4a in Resources */,
+				4FB090070625A211BFC4EFF4 /* ai_tools_claude_code_claude_code_team_workflows.m4a in Resources */,
+				F057C966B76D18BDBCAECC67 /* ai_tools_continue_dev_continue_config.m4a in Resources */,
+				D794C4731AB56AAD09886088 /* ai_tools_continue_dev_continue_context_providers.m4a in Resources */,
+				6858701CAD3AF0DF6D0CD8A4 /* ai_tools_continue_dev_continue_custom_commands.m4a in Resources */,
+				6B8ACF19C01450C94BEB99D6 /* ai_tools_continue_dev_continue_overview.m4a in Resources */,
+				CCB8077664101123900C7D82 /* ai_tools_continue_dev_continue_self_hosted.m4a in Resources */,
+				AAFDD2681A4F60A9130E0106 /* ai_tools_continue_dev_continue_vs_cursor.m4a in Resources */,
+				F74F6D2814A37DF046E187A1 /* ai_tools_cursor_editor_cursor_composer_agent.m4a in Resources */,
+				7804A0C4C2276685298A5E66 /* ai_tools_cursor_editor_cursor_mcp.m4a in Resources */,
+				991D6215A61487A15ABFA102 /* ai_tools_cursor_editor_cursor_overview.m4a in Resources */,
+				2785E672ED7CFFABCD94D6F5 /* ai_tools_cursor_editor_cursor_rules.m4a in Resources */,
+				C032B5E7178E00F7DDAB3A2B /* ai_tools_cursor_editor_cursor_tab.m4a in Resources */,
+				D568162FA15AA70702FB1C6C /* ai_tools_cursor_editor_cursor_team.m4a in Resources */,
+				E05BC1FBAD8FDC1CAB71C3D7 /* ai_tools_github_copilot_tool_copilot_agent_mode.m4a in Resources */,
+				0E9977E757904F0137FDFF3E /* ai_tools_github_copilot_tool_copilot_enterprise.m4a in Resources */,
+				0E81BDC5E353787D60E6D636 /* ai_tools_github_copilot_tool_copilot_inline_chat.m4a in Resources */,
+				303A2A74853592D87243A9E4 /* ai_tools_github_copilot_tool_copilot_instructions.m4a in Resources */,
+				9D9AC33D09E50E2B436B292B /* ai_tools_github_copilot_tool_copilot_overview.m4a in Resources */,
+				D1A037757CFD67F55EA4A994 /* ai_tools_github_copilot_tool_copilot_workspace.m4a in Resources */,
+				FA8F66D9EEDCC253BF087340 /* anthropic_claude_claude_models_overview_claude_family_overview.m4a in Resources */,
+				996933480DA12C50C0D3D9B0 /* anthropic_claude_claude_models_overview_context_windows_across_the_family.m4a in Resources */,
+				A92F5B9C01867CFB99B5B5BE /* anthropic_claude_claude_models_overview_family_pricing_shape.m4a in Resources */,
+				A57536E5C77084E81A6A67C5 /* anthropic_claude_claude_models_overview_family_vs_external_models.m4a in Resources */,
+				7F408630ACA1AD8601383D68 /* anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a in Resources */,
+				C24A8813E124C55B47FAF684 /* anthropic_claude_claude_models_overview_picking_a_family_tier.m4a in Resources */,
+				7D9473C925F01F5DFAF9CD5D /* anthropic_claude_haiku_deep_dive_cost_optimisation.m4a in Resources */,
+				6DAB3D44324D5123CCFAA127 /* anthropic_claude_haiku_deep_dive_fast_cheap_positioning.m4a in Resources */,
+				C36A1FC70AA65654439F8ED7 /* anthropic_claude_haiku_deep_dive_haiku_45_overview.m4a in Resources */,
+				88F2C921D00CDF39C946C53F /* anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a in Resources */,
+				884F4E6B6434707AD040DBB5 /* anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a in Resources */,
+				EFBC70FE1B2B0AE13EA5C992 /* anthropic_claude_haiku_deep_dive_latency_targets.m4a in Resources */,
+				9D245D5088459E4361B7818C /* anthropic_claude_model_selection_benchmark_mapping.m4a in Resources */,
+				2A376B6275D4DB63728DF2B5 /* anthropic_claude_model_selection_cascade_pattern.m4a in Resources */,
+				7C335A1D03A354A37EF3E7E3 /* anthropic_claude_model_selection_decision_framework.m4a in Resources */,
+				CA18672D435B6EE241AE227A /* anthropic_claude_model_selection_eval_discipline.m4a in Resources */,
+				2A0396DD9CDD8C57EC199479 /* anthropic_claude_model_selection_model_selection_overview.m4a in Resources */,
+				989DB520648B04124537FFC2 /* anthropic_claude_model_selection_selection_template.m4a in Resources */,
+				B3D0F11F40BDB06AB93995B5 /* anthropic_claude_opus_deep_dive_1m_context_capability.m4a in Resources */,
+				C0459AFB1E91367193AA8154 /* anthropic_claude_opus_deep_dive_cost_latency_profile.m4a in Resources */,
+				CB9E5F4838B4556CBDB6C0D9 /* anthropic_claude_opus_deep_dive_frontier_reasoning.m4a in Resources */,
+				17A674F6331ACC3AF15C8BED /* anthropic_claude_opus_deep_dive_opus_47_overview.m4a in Resources */,
+				D68DD51213FBDB92A90C3C95 /* anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a in Resources */,
+				A3755C5E61E4918C20D8E5DF /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a in Resources */,
+				CD111879CBF9B103A35027C5 /* anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a in Resources */,
+				AA096B0A188A775E6A8AECEC /* anthropic_claude_sonnet_deep_dive_opus_sonnet_cascade.m4a in Resources */,
+				561FD32C60C61CAE51E7923D /* anthropic_claude_sonnet_deep_dive_price_quality_latency_trade_off.m4a in Resources */,
+				5755BD642FB2D6BF20F85488 /* anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a in Resources */,
+				A4D6161353E6FEDB26BEA8BC /* anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a in Resources */,
+				DF6FB1F78B6A82C72F37177A /* anthropic_claude_sonnet_deep_dive_sonnet_workload_patterns.m4a in Resources */,
 				F1726C787496C704B77E4A8B /* syllabus.json in Resources */,
-				58438C3DBD0BD4FE0ACBF693 /* vec_501.m4a in Resources */,
-				DF3C720AB0C4D2FBE9AF9FE2 /* vec_502.m4a in Resources */,
-				73EE24701E33D92E6B98E74A /* vec_503.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

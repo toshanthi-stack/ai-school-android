@@ -38,11 +38,14 @@ ACRONYM_FIX = {
 
 
 def clean_title(title: str) -> str:
+    import re
     words = [ACRONYM_FIX.get(w, w) for w in title.split()]
     out = " ".join(words)
-    # Join version digit runs: "4 7" -> "4.7".
-    import re
-    return re.sub(r"(?<=\d) (?=\d)", ".", out)
+    out = re.sub(r"(?<=\d) (?=\d)", ".", out)   # "4 7" -> "4.7"
+    out = re.sub(r"\bGPT (\d)", r"GPT-\1", out)  # "GPT 5" -> "GPT-5"
+    if out.count("(") > out.count(")"):          # drop a dangling "(Realtime"
+        out = out[: out.rfind("(")].strip()
+    return out
 
 
 def cleaned_courses(feed: list) -> list:
@@ -114,19 +117,30 @@ def emit_kotlin(courses: list) -> str:
     return "\n".join(L)
 
 
-def copy_audio(audio_dir: str) -> int:
-    # Sync: the app audio dirs should contain exactly this feed's narration, so
-    # clear previously-bundled .m4a first (no orphans from earlier batches).
+def referenced_audio(courses: list) -> list:
+    """Audio filenames this feed needs (lesson id with hyphens -> underscores)."""
+    names = []
+    for c in courses:
+        for le in c["lessons"]:
+            names.append(le["id"].replace("-", "_") + ".m4a")
+    return names
+
+
+def copy_audio(audio_dir: str, wanted: list) -> int:
+    # Sync: the app audio dirs should hold exactly this feed's narration, so
+    # clear previously-bundled .m4a first (no orphans from earlier batches),
+    # then copy only the files this feed references (out/ may hold stale ones).
     for d in (IOS_AUDIO, AND_RAW):
         os.makedirs(d, exist_ok=True)
         for f in os.listdir(d):
             if f.endswith(".m4a"):
                 os.remove(os.path.join(d, f))
     n = 0
-    for name in sorted(os.listdir(audio_dir)):
-        if not name.endswith(".m4a"):
-            continue
+    for name in wanted:
         src = os.path.join(audio_dir, name)
+        if not os.path.exists(src):
+            print(f"  WARN missing audio for feed lesson: {name}")
+            continue
         shutil.copy2(src, os.path.join(IOS_AUDIO, name))
         shutil.copy2(src, os.path.join(AND_RAW, name))
         n += 1
@@ -148,7 +162,7 @@ def main() -> None:
     with open(AND_SEED, "w") as f:
         f.write(emit_kotlin(courses))
 
-    n_audio = copy_audio(audio_dir)
+    n_audio = copy_audio(audio_dir, referenced_audio(courses))
     n_lessons = sum(len(c["lessons"]) for c in courses)
     print(f"bundled {len(courses)} courses / {n_lessons} lessons")
     print(f"  iOS feed   -> {os.path.relpath(os.path.join(IOS_RES, 'syllabus.json'), REPO)}")
