@@ -28,6 +28,23 @@ python3 -m venv .venv
 export ANTHROPIC_API_KEY=sk-ant-...      # your Anthropic API key
 ```
 
+## Make (chained crawl + build)
+
+A `Makefile` wraps the steps below; it uses the venv and creates it on first use.
+
+```bash
+make install                 # create .venv and install dependencies
+make check                   # show selected TTS backend and which keys are set
+make crawl MAX_PATHS=5 MAX_TOPICS=8   # crawl the site -> lessons.json
+make build AUDIO_URL_BASE=https://www.lillytechsystems.com/ai-school/audio
+make feed                    # crawl then build (the full chain)
+make clean                   # remove out/
+```
+
+`make crawl` needs no API key; `make build` / `make feed` require `ANTHROPIC_API_KEY`
+(and pick up `ELEVENLABS_API_KEY` / `OPENAI_API_KEY` for production TTS). Run `make`
+with no target for the full list.
+
 ## Generate the catalog (crawler)
 
 `lessons.json` ships as a small curated example. To build it from the live site,
