@@ -73,9 +73,26 @@ prefer the live feed) or bundle them into the apps.
   runs over thousands of tutorials, switch to a cheaper model
   (`claude-sonnet-4-6` / `claude-haiku-4-5`) - both support the structured output
   used here. That's a cost decision for the operator.
-- **TTS**: the prototype uses macOS `say` (the same voice as the demo audio).
-  For production quality, replace `synthesize` in `tts.py` with a real TTS
-  service; keep the signature and `build_feed.py` is unchanged.
+- **TTS**: `tts.py` ships with three backends, chosen by `TTS_BACKEND` or
+  auto-detected from whichever key is present:
+
+  | Backend | Set | Needs | Output |
+  |---|---|---|---|
+  | `elevenlabs` | production narration | `ELEVENLABS_API_KEY` | mp3 |
+  | `openai` | production | `OPENAI_API_KEY` | mp3 |
+  | `say` | local prototype (default) | nothing | m4a |
+
+  ```bash
+  export ELEVENLABS_API_KEY=...        # auto-selects elevenlabs
+  # or: export OPENAI_API_KEY=...      # auto-selects openai
+  # or: export TTS_BACKEND=say         # force the local prototype
+  ```
+
+  Voice/model overrides: `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL`,
+  `OPENAI_TTS_VOICE`, `OPENAI_TTS_MODEL`. Both mp3 and m4a play natively on iOS
+  and Android, so the feed can reference either. Pass
+  `build_feed.py --audio-url-base https://www.lillytechsystems.com/ai-school/audio`
+  to set each lesson's `audioUrl` to where you host the files.
 
 ## Scaling
 

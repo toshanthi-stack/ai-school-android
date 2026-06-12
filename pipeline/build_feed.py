@@ -19,7 +19,7 @@ from adapt_lesson import adapt
 from tts import synthesize
 
 
-def build(config: str, audio_dir: str, out: str) -> None:
+def build(config: str, audio_dir: str, out: str, audio_url_base: str = "") -> None:
     with open(config) as f:
         cfg = json.load(f)
 
@@ -35,15 +35,20 @@ def build(config: str, audio_dir: str, out: str) -> None:
             print(f"  adapting {lesson['id']:<22} <- {url}")
             adaptation = adapt(url, client)
 
-            audio_file = os.path.join(audio_dir, lesson["id"].replace("-", "_") + ".m4a")
-            duration = synthesize(adaptation.spoken_script, audio_file)
-            print(f"    -> {adaptation.content_type:<10} {duration}s  {os.path.basename(audio_file)}")
+            audio_base = os.path.join(audio_dir, lesson["id"].replace("-", "_"))
+            audio_path, duration = synthesize(adaptation.spoken_script, audio_base)
+            audio_name = os.path.basename(audio_path)
+            print(f"    -> {adaptation.content_type:<10} {duration}s  {audio_name}")
+
+            audio_url = lesson.get("audioUrl", "")
+            if audio_url_base:
+                audio_url = f"{audio_url_base.rstrip('/')}/{audio_name}"
 
             lessons.append({
                 "id": lesson["id"],
                 "title": lesson["title"],
                 "durationSeconds": duration,
-                "audioUrl": lesson.get("audioUrl", ""),
+                "audioUrl": audio_url,
                 "visualContentUrl": url,
                 "isAutomotiveSafe": True,
                 "contentType": adaptation.content_type,
@@ -69,4 +74,7 @@ if __name__ == "__main__":
     parser.add_argument("--config", default="lessons.json")
     parser.add_argument("--audio-dir", default="out/audio")
     parser.add_argument("--out", default="out/syllabus.json")
+    parser.add_argument("--audio-url-base", default="",
+                       help="public base URL where the audio will be hosted; "
+                            "sets each lesson's audioUrl to <base>/<file>")
     build(**vars(parser.parse_args()))
