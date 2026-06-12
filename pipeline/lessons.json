@@ -1,0 +1,69 @@
+{
+  "courses": [
+    {
+      "id": "path-ai-engineering-prompting",
+      "title": "Prompt Engineering",
+      "description": "Treat prompts as a measurable discipline: versioning, review, and benchmarking.",
+      "category": "AI Engineering",
+      "lessons": [
+        {
+          "id": "real-prompt-discipline",
+          "title": "Prompt Engineering as a Real Discipline",
+          "webUrl": "https://www.lillytechsystems.com/ai-prompts/index.html"
+        }
+      ]
+    },
+    {
+      "id": "path-ai-engineering-models",
+      "title": "Working with AI Models",
+      "description": "Choose among frontier, open-weight, and specialized models by capability, cost, and latency.",
+      "category": "AI Engineering",
+      "lessons": [
+        {
+          "id": "real-choosing-models",
+          "title": "Choosing the Right AI Model",
+          "webUrl": "https://www.lillytechsystems.com/ai-models/index.html"
+        }
+      ]
+    },
+    {
+      "id": "path-ai-apis",
+      "title": "Frontier LLM APIs",
+      "description": "Call the major LLM APIs: OpenAI, Anthropic, Gemini, and the open-model and cloud platforms.",
+      "category": "AI APIs",
+      "lessons": [
+        {
+          "id": "real-frontier-apis",
+          "title": "Calling Frontier LLM APIs",
+          "webUrl": "https://www.lillytechsystems.com/ai-apis/index.html"
+        }
+      ]
+    },
+    {
+      "id": "path-ai-agents",
+      "title": "Building AI Agents",
+      "description": "Tool use, multi-agent orchestration, and the guardrails that make agents shippable.",
+      "category": "AI Agents",
+      "lessons": [
+        {
+          "id": "real-agents-intro",
+          "title": "What Makes an AI Agent",
+          "webUrl": "https://www.lillytechsystems.com/ai-agents/index.html"
+        }
+      ]
+    },
+    {
+      "id": "path-ai-hardware",
+      "title": "AI Infrastructure & Hardware",
+      "description": "GPUs, accelerators, memory, and interconnect: what bounds training and inference.",
+      "category": "AI Infrastructure",
+      "lessons": [
+        {
+          "id": "real-hardware-intro",
+          "title": "The AI Hardware Landscape",
+          "webUrl": "https://www.lillytechsystems.com/ai-hardware/index.html"
+        }
+      ]
+    }
+  ]
+}
