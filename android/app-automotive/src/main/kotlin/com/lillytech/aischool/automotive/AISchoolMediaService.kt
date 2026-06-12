@@ -1,5 +1,6 @@
 package com.lillytech.aischool.automotive
 
+import android.content.pm.PackageManager
 import android.media.AudioAttributes
 import android.media.AudioFocusRequest
 import android.media.AudioManager
@@ -42,7 +43,13 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
 
     private lateinit var session: MediaSessionCompat
     private lateinit var packageValidator: PackageValidator
-    private lateinit var cabinWindowMonitor: CabinWindowMonitor
+
+    /**
+     * VHAL cabin-window monitor. Null on non-automotive devices (e.g. if the
+     * APK is sideloaded onto a phone), where there is no `android.car`, so the
+     * service still starts and serves browse/playback without it.
+     */
+    private var cabinWindowMonitor: CabinWindowMonitor? = null
 
     private val serviceJob = SupervisorJob()
     private val serviceScope = CoroutineScope(Dispatchers.Main + serviceJob)
@@ -110,27 +117,31 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
         // The VHAL callbacks may arrive off the main thread; marshal onto
         // serviceScope (Main) so media-session and playback state are only ever
         // touched from one thread.
-        cabinWindowMonitor = CabinWindowMonitor(
-            context = this,
-            onCabinWindowOpened = { _, _ ->
-                serviceScope.launch {
-                    if (mediaPlayer?.isPlaying == true) {
-                        pausedByCabinWindow = true
-                        windowInitiatedPause = true
-                        session.controller.transportControls.pause()
+        // Construct the VHAL monitor only on automotive hardware. On a phone
+        // (no android.car) building it would load car-lib classes and crash;
+        // skipping it keeps a sideloaded build fully functional without VHAL.
+        if (packageManager.hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)) {
+            cabinWindowMonitor = CabinWindowMonitor(
+                context = this,
+                onCabinWindowOpened = { _, _ ->
+                    serviceScope.launch {
+                        if (mediaPlayer?.isPlaying == true) {
+                            pausedByCabinWindow = true
+                            windowInitiatedPause = true
+                            session.controller.transportControls.pause()
+                        }
                     }
-                }
-            },
-            onAllWindowsClosed = {
-                serviceScope.launch {
-                    if (pausedByCabinWindow) {
-                        pausedByCabinWindow = false
-                        session.controller.transportControls.play()
+                },
+                onAllWindowsClosed = {
+                    serviceScope.launch {
+                        if (pausedByCabinWindow) {
+                            pausedByCabinWindow = false
+                            session.controller.transportControls.play()
+                        }
                     }
-                }
-            },
-        )
-        cabinWindowMonitor.start()
+                },
+            ).also { it.start() }
+        }
 
         loadSyllabus()
     }
@@ -151,7 +162,8 @@ class AISchoolMediaService : MediaBrowserServiceCompat() {
     override fun onDestroy() {
         // Lifecycle hook: unregister the VHAL callback and disconnect
         // from the car service, no leaked callbacks, no idle IVI compute.
-        cabinWindowMonitor.stop()
+        // Null on non-automotive devices where it was never constructed.
+        cabinWindowMonitor?.stop()
 
         releasePlayer()
         abandonAudioFocus()

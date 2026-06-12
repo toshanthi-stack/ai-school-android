@@ -47,7 +47,16 @@ class CabinWindowMonitor(
     @Volatile
     private var usedSubscribeApi = false
 
-    private val propertyCallback = object : CarPropertyManager.CarPropertyEventCallback {
+    /**
+     * Built lazily so that merely constructing a [CabinWindowMonitor] never
+     * loads any `android.car` class. Instantiating this anonymous subclass of
+     * `CarPropertyManager.CarPropertyEventCallback` forces the car-lib class to
+     * resolve, which throws `NoClassDefFoundError` on a non-automotive device
+     * (no `android.car`). [start] returns at its feature/permission guard before
+     * this is ever touched, so the monitor is safe to construct on any device.
+     */
+    private val propertyCallback: CarPropertyManager.CarPropertyEventCallback by lazy {
+      object : CarPropertyManager.CarPropertyEventCallback {
         override fun onChangeEvent(value: CarPropertyValue<*>) {
             if (value.propertyId != VehiclePropertyIds.WINDOW_POS) return
             val position = value.value as? Int ?: return
@@ -81,6 +90,7 @@ class CabinWindowMonitor(
                     "areaId=0x${Integer.toHexString(areaId)}",
             )
         }
+      }
     }
 
     /** Connects to the car service and registers the WINDOW_POS callback. */
