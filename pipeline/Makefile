@@ -13,6 +13,8 @@ PIP  := $(VENV)/bin/pip
 # Tunables
 MAX_PATHS      ?= 0
 MAX_TOPICS     ?= 0
+MAX_LESSONS    ?= 0
+MODEL          ?= claude-opus-4-8
 INCLUDE_CORE   ?=
 AUDIO_URL_BASE ?=
 LESSONS        ?= lessons.json
@@ -26,6 +28,9 @@ CRAWL_FLAGS += --max-paths $(MAX_PATHS)
 endif
 ifneq ($(MAX_TOPICS),0)
 CRAWL_FLAGS += --max-topics $(MAX_TOPICS)
+endif
+ifneq ($(MAX_LESSONS),0)
+CRAWL_FLAGS += --max-lessons $(MAX_LESSONS)
 endif
 ifneq ($(strip $(INCLUDE_CORE)),)
 CRAWL_FLAGS += --include-core
@@ -46,7 +51,7 @@ help:
 	@echo "  make crawl           crawl the site into $(LESSONS)"
 	@echo "                         tunables: MAX_PATHS= MAX_TOPICS= INCLUDE_CORE=1"
 	@echo "  make build           adapt + synthesize $(LESSONS) -> $(OUT) + audio"
-	@echo "                         tunable:  AUDIO_URL_BASE=https://.../audio"
+	@echo "                         tunables: AUDIO_URL_BASE=...  MODEL=claude-haiku-4-5"
 	@echo "  make feed            crawl then build (the full chain)"
 	@echo "  make adapt URL=...   adapt one lesson URL and print the result"
 	@echo "  make check           show selected TTS backend and which keys are set"
@@ -71,7 +76,7 @@ crawl: $(VENV)
 	$(PY) crawl_catalog.py $(CRAWL_FLAGS)
 
 build: $(VENV) check-anthropic
-	$(PY) build_feed.py $(BUILD_FLAGS)
+	ADAPT_MODEL=$(MODEL) $(PY) build_feed.py $(BUILD_FLAGS)
 
 feed: crawl build
 

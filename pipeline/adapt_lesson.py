@@ -7,6 +7,7 @@ structured result the feed builder turns into a syllabus entry.
 """
 from __future__ import annotations
 
+import os
 import re
 
 import anthropic
@@ -14,11 +15,11 @@ import requests
 from bs4 import BeautifulSoup
 from pydantic import BaseModel
 
-# Anthropic's most capable model (per the Claude API guidance, the default).
-# For bulk runs over thousands of tutorials this is the operator's cost lever:
-# claude-sonnet-4-6 or claude-haiku-4-5 are cheaper and also support the
-# structured output used here. Change MODEL, not the call shape.
-MODEL = "claude-opus-4-8"
+# Anthropic's most capable model is the default. For bulk runs over thousands of
+# tutorials, set ADAPT_MODEL to a cheaper model (e.g. claude-haiku-4-5 or
+# claude-sonnet-4-6) - both support the structured output used here. This is the
+# operator's cost lever; the call shape is unchanged.
+MODEL = os.environ.get("ADAPT_MODEL", "claude-opus-4-8")
 
 MAX_INPUT_CHARS = 20_000
 

@@ -61,10 +61,12 @@ run the crawler (no API key needed):
 .venv/bin/python crawl_catalog.py --include-core
 ```
 
-It maps the site to `lessons.json`: category = learning path, course = topic,
-lesson = the topic page (the pipeline summarizes each into one spoken lesson).
-Mind the scale before a full `build_feed.py` run: every lesson is one Claude call
-plus one TTS synthesis.
+It maps the site to `lessons.json` three levels deep: category = learning path,
+course = topic, lesson = each real lesson page (a topic links ~6 lesson pages of
+real content). So one topic becomes a course of ~6 audio lessons. Use
+`--max-lessons` to cap lessons per topic. Mind the scale before a full
+`build_feed.py` run: every lesson is one Claude call plus one TTS synthesis, and
+audio is bundled in the apps (keep batches ~100 lessons unless you host audio).
 
 ## Run
 

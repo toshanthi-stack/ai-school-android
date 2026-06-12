@@ -27,23 +27,22 @@ AND_SEED = os.path.join(
     "com", "lillytech", "aischool", "core", "model", "SeedSyllabus.kt",
 )
 
-# Explicit title fixes for slugs the generic titleizer cannot get right.
-TITLE_OVERRIDES = {
-    "ai-tools-github-copilot-tool": "GitHub Copilot",
-    "ai-tools-continue-dev": "Continue",
-    "ai-tools-cline-vscode": "Cline (VS Code)",
-    "ai-tools-cursor-editor": "Cursor",
-    "ai-models-gpt-5": "GPT-5",
-    "ai-models-gpt-4o": "GPT-4o",
-    "ai-models-claude-opus-4-7": "Claude Opus 4.7",
-    "ai-models-claude-sonnet-4-6": "Claude Sonnet 4.6",
-    "ai-models-claude-haiku-4-5": "Claude Haiku 4.5",
-    "ai-models-gemini-2-5-pro": "Gemini 2.5 Pro",
+# Word-level casing fixes for titles derived from URL slugs.
+ACRONYM_FIX = {
+    "Gpt": "GPT", "Api": "API", "Apis": "APIs", "Llm": "LLM", "Llms": "LLMs",
+    "Sdk": "SDK", "Gpu": "GPU", "Gpus": "GPUs", "Ai": "AI", "Ui": "UI",
+    "Ux": "UX", "Cli": "CLI", "Aws": "AWS", "Gcp": "GCP", "Mcp": "MCP",
+    "Rag": "RAG", "Ml": "ML", "Nlp": "NLP", "Iot": "IoT", "Sql": "SQL",
+    "Cuda": "CUDA", "Vscode": "VS Code", "Github": "GitHub", "Tpu": "TPU",
 }
 
 
-def clean_title(lesson_id: str, title: str) -> str:
-    return TITLE_OVERRIDES.get(lesson_id, title)
+def clean_title(title: str) -> str:
+    words = [ACRONYM_FIX.get(w, w) for w in title.split()]
+    out = " ".join(words)
+    # Join version digit runs: "4 7" -> "4.7".
+    import re
+    return re.sub(r"(?<=\d) (?=\d)", ".", out)
 
 
 def cleaned_courses(feed: list) -> list:
@@ -52,14 +51,13 @@ def cleaned_courses(feed: list) -> list:
         lessons = []
         first_summary = ""
         for i, lesson in enumerate(course.get("lessons", [])):
-            lid = lesson["id"]
             lesson = dict(lesson)
-            lesson["title"] = clean_title(lid, lesson["title"])
+            lesson["title"] = clean_title(lesson["title"])
             if i == 0:
                 first_summary = lesson.get("audioSummary", "")
             lessons.append(lesson)
         course = dict(course)
-        course["title"] = clean_title(course["id"], course["title"])
+        course["title"] = clean_title(course["title"])
         # A real one-line summary reads better than "<title>, part of <path>".
         if first_summary:
             course["description"] = first_summary
@@ -117,8 +115,13 @@ def emit_kotlin(courses: list) -> str:
 
 
 def copy_audio(audio_dir: str) -> int:
-    os.makedirs(IOS_AUDIO, exist_ok=True)
-    os.makedirs(AND_RAW, exist_ok=True)
+    # Sync: the app audio dirs should contain exactly this feed's narration, so
+    # clear previously-bundled .m4a first (no orphans from earlier batches).
+    for d in (IOS_AUDIO, AND_RAW):
+        os.makedirs(d, exist_ok=True)
+        for f in os.listdir(d):
+            if f.endswith(".m4a"):
+                os.remove(os.path.join(d, f))
     n = 0
     for name in sorted(os.listdir(audio_dir)):
         if not name.endswith(".m4a"):
