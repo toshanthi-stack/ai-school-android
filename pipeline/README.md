@@ -117,3 +117,19 @@ prefer the live feed) or bundle them into the apps.
 crawling the site's learning-path index pages (each lists ~50 topics), then run
 `build_feed.py` on a schedule when new content is published so the feed stays
 current without app releases.
+
+## Scheduled builds (CI)
+
+`.github/workflows/refresh-feed.yml` runs `make feed` weekly (and on demand) and
+uploads the result as a `feed` artifact you can download and host. To enable it:
+
+1. Add repo secrets (Settings > Secrets and variables > Actions): `ANTHROPIC_API_KEY`,
+   plus `ELEVENLABS_API_KEY` or `OPENAI_API_KEY` (Linux runners have no `say` fallback).
+2. Optional: set repo variables `FEED_MAX_PATHS` / `FEED_MAX_TOPICS` to control scope
+   (every lesson is one Claude call plus one TTS call, so scope is a cost decision).
+3. Optional: set variable `PUBLISH_PAGES=true` and enable Pages (Settings > Pages >
+   Source = GitHub Actions) to publish `syllabus.json` + audio to a public Pages URL;
+   audio URLs are pointed there automatically. Otherwise host the artifact yourself.
+
+Until the secrets are set the workflow preflights and exits with a clear message, so
+it is inert rather than noisy.

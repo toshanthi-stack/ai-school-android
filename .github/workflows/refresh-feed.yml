@@ -1,0 +1,123 @@
+# Rebuild the AI School audio feed and publish it, so the apps stay current
+# without a new release. Runs weekly and on demand.
+#
+# Required repo secrets (Settings > Secrets and variables > Actions):
+#   ANTHROPIC_API_KEY   the rewrite step (required)
+#   ELEVENLABS_API_KEY  production TTS  (set this OR OPENAI_API_KEY; one is
+#   OPENAI_API_KEY      production TTS   required, since the macOS 'say' fallback
+#                                        does not exist on Linux runners)
+#
+# Optional repo variables (Settings > Secrets and variables > Actions > Variables):
+#   FEED_MAX_PATHS      learning paths to crawl   (default 8)
+#   FEED_MAX_TOPICS     topics per path           (default 10)
+#   PUBLISH_PAGES       'true' to deploy the feed to GitHub Pages (default off;
+#                       enable Pages first: Settings > Pages > Source = Actions)
+#
+# Scale is a cost decision: every lesson is one Claude call plus one TTS call.
+# The defaults build a bounded subset. Raise the variables (or dispatch inputs)
+# deliberately. With PUBLISH_PAGES off the feed is uploaded as a build artifact
+# you can download and host wherever you like (e.g. lillytechsystems.com).
+
+name: refresh-feed
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      max_paths:
+        description: "Learning paths to crawl (0 = all)"
+        default: "8"
+      max_topics:
+        description: "Topics per path (0 = all)"
+        default: "10"
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: pipeline
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      published: ${{ steps.publish_flag.outputs.pages }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: Preflight (required keys)
+        run: |
+          : "${ANTHROPIC_API_KEY:?ANTHROPIC_API_KEY secret is not set (the rewrite step needs it)}"
+          if [ -z "$ELEVENLABS_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::Set ELEVENLABS_API_KEY or OPENAI_API_KEY. Linux runners have no 'say' fallback."
+            exit 1
+          fi
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Resolve settings
+        id: settings
+        run: |
+          echo "max_paths=${{ github.event.inputs.max_paths || vars.FEED_MAX_PATHS || '8' }}" >> "$GITHUB_OUTPUT"
+          echo "max_topics=${{ github.event.inputs.max_topics || vars.FEED_MAX_TOPICS || '10' }}" >> "$GITHUB_OUTPUT"
+          if [ "${{ vars.PUBLISH_PAGES }}" = "true" ]; then
+            echo "audio_base=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/audio" >> "$GITHUB_OUTPUT"
+          else
+            echo "audio_base=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build feed (crawl + adapt + TTS)
+        run: |
+          make feed \
+            MAX_PATHS=${{ steps.settings.outputs.max_paths }} \
+            MAX_TOPICS=${{ steps.settings.outputs.max_topics }} \
+            AUDIO_URL_BASE="${{ steps.settings.outputs.audio_base }}"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Upload feed artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: feed
+          path: pipeline/out
+          if-no-files-found: error
+
+      - name: Flag Pages publish
+        id: publish_flag
+        run: echo "pages=${{ vars.PUBLISH_PAGES }}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Pages artifact
+        if: steps.publish_flag.outputs.pages == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: pipeline/out
+
+  deploy-pages:
+    needs: build
+    if: needs.build.outputs.published == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
