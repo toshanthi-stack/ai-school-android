@@ -25,6 +25,7 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        CODE_SIGN_ENTITLEMENTS: AISchool/Resources/AISchool.entitlements
     info:
       path: AISchool/Resources/Info.plist
       properties:
@@ -36,3 +37,11 @@ targets:
           - UIInterfaceOrientationPortrait
         UIBackgroundModes:
           - audio
+        # CarPlay audio scene. Only the CarPlay scene needs a custom delegate;
+        # the SwiftUI App keeps vending the phone window scene automatically.
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+          UISceneConfigurations:
+            CPTemplateApplicationSceneSessionRoleApplication:
+              - UISceneConfigurationName: CarPlay
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).CarPlaySceneDelegate

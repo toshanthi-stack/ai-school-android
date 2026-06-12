@@ -29,6 +29,7 @@
 		72DB65F30F7694D472AC4488 /* cuda_402.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 344F58422D5E58590A6FB15F /* cuda_402.m4a */; };
 		73EE24701E33D92E6B98E74A /* vec_503.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E29D2FEBF554093505185D35 /* vec_503.m4a */; };
 		7A123DACA20BA94740F98402 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236EB4F5397317DFE07620F /* WebView.swift */; };
+		7EB55FB2DB935E8CF2827441 /* CarPlayPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07656F58D84B0DB205833394 /* CarPlayPlaybackController.swift */; };
 		7FAFB741790FF0283752835C /* agents_203.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 46182880199C924A1EE76AA0 /* agents_203.m4a */; };
 		801C4389510EA7C4804831A9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD205F09F6E6105A33A2ED7 /* Models.swift */; };
 		915D8343D9AA04F181AC48CA /* SyllabusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577FAC88094FE7F5B98B93C /* SyllabusStore.swift */; };
@@ -41,14 +42,18 @@
 		CC644F4D540529BE1974E538 /* real_frontier_apis.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9F5667B35FD7519A0886FD63 /* real_frontier_apis.m4a */; };
 		D6757EA4EB90EB40E4C058B6 /* AISchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F8ED864E9EF6BD2F8ED29 /* AISchoolApp.swift */; };
 		DF3C720AB0C4D2FBE9AF9FE2 /* vec_502.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 34BA531CF48640E032E20EE8 /* vec_502.m4a */; };
+		ECE3B3EF4BD87313D3F2AA77 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1745726FCC2B6050CF075F3E /* CarPlaySceneDelegate.swift */; };
 		F1726C787496C704B77E4A8B /* syllabus.json in Resources */ = {isa = PBXBuildFile; fileRef = F753D37CB9782C25D17D2B73 /* syllabus.json */; };
 		FB98308933126EC77C8F5176 /* genai_103.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C0030CC3A8A2D451CE6C0EB /* genai_103.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07656F58D84B0DB205833394 /* CarPlayPlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayPlaybackController.swift; sourceTree = "<group>"; };
 		08C8B8188F00693AB88BB471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1745726FCC2B6050CF075F3E /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
 		1FFED9D96455B0923BA2095C /* agents_202.m4a */ = {isa = PBXFileReference; path = agents_202.m4a; sourceTree = "<group>"; };
 		24D21B75CA9DE378FD89CBA2 /* real_choosing_models.m4a */ = {isa = PBXFileReference; path = real_choosing_models.m4a; sourceTree = "<group>"; };
+		2B5F1A8A8934BDBB09EDAFEF /* AISchool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AISchool.entitlements; sourceTree = "<group>"; };
 		2C0030CC3A8A2D451CE6C0EB /* genai_103.m4a */ = {isa = PBXFileReference; path = genai_103.m4a; sourceTree = "<group>"; };
 		2C4ED4ECD5C560EEE96F59AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3236EB4F5397317DFE07620F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 		2EB29CC4375431F880F8355E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2B5F1A8A8934BDBB09EDAFEF /* AISchool.entitlements */,
 				08C8B8188F00693AB88BB471 /* Assets.xcassets */,
 				2C4ED4ECD5C560EEE96F59AA /* Info.plist */,
 				6AC727628CBFAD20395D1D08 /* PrivacyInfo.xcprivacy */,
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				1346F5DB228492F118244B0C /* App */,
+				D57078B55B0A76A9AC79868B /* CarPlay */,
 				EB5B85F706EFE728C507C16B /* Data */,
 				302E722817612FDAEA42D544 /* Model */,
 				2EB29CC4375431F880F8355E /* Resources */,
@@ -147,6 +154,15 @@
 				40D5461C368EE8D0DF57CC31 /* Views */,
 			);
 			path = AISchool;
+			sourceTree = "<group>";
+		};
+		D57078B55B0A76A9AC79868B /* CarPlay */ = {
+			isa = PBXGroup;
+			children = (
+				07656F58D84B0DB205833394 /* CarPlayPlaybackController.swift */,
+				1745726FCC2B6050CF075F3E /* CarPlaySceneDelegate.swift */,
+			);
+			path = CarPlay;
 			sourceTree = "<group>";
 		};
 		DCFAF30CD86FCFFF3BCBF196 /* Products */ = {
@@ -299,6 +315,8 @@
 			files = (
 				D6757EA4EB90EB40E4C058B6 /* AISchoolApp.swift in Sources */,
 				283B0394690168E3A2C2F5BD /* AudioPlayer.swift in Sources */,
+				7EB55FB2DB935E8CF2827441 /* CarPlayPlaybackController.swift in Sources */,
+				ECE3B3EF4BD87313D3F2AA77 /* CarPlaySceneDelegate.swift in Sources */,
 				BDB10B5EAD1E9021F08F5971 /* CourseDetailView.swift in Sources */,
 				0FF694E56B8B6FB5261F8395 /* CourseListView.swift in Sources */,
 				4A643A5F01553E2D37FA49B3 /* Endpoints.swift in Sources */,
@@ -386,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AISchool/Resources/AISchool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AISchool/Resources/Info.plist;
@@ -465,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AISchool/Resources/AISchool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AISchool/Resources/Info.plist;

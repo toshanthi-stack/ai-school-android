@@ -82,7 +82,9 @@ The full design write-up, sequence diagrams, and branding/theming notes are in
 A native SwiftUI port of the mobile experience lives in [`ios/`](ios/): the same
 catalog, courses, and lessons, with an `AVPlayer` audio player (bundled offline
 narration), a `WKWebView` for interactive lessons, and the same live-feed with
-seed fallback. See [`ios/README.md`](ios/README.md) to build and run.
+seed fallback. It also ships a **CarPlay** audio scene, the iOS analog of the
+Android Automotive flavor (audio-only browse plus Now Playing). See
+[`ios/README.md`](ios/README.md) to build and run.
 
 ## Build
 

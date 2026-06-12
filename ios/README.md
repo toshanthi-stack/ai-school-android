@@ -33,6 +33,33 @@ audio-first, and code-heavy lessons open the real web page to read/copy the code
 - **Data**: prefers the live `syllabus.json` feed, falls back to the bundled
   `SeedSyllabus` (the contract-of-record), so it works offline.
 - **Dark-first brand theme** matching the AI School palette.
+- **CarPlay** (audio-only, the iOS analog of the Android Automotive flavor),
+  see below.
+
+## CarPlay (in the car)
+
+![](docs/screenshots/07-carplay-home.png)
+
+A CarPlay audio scene mirrors the Android Automotive media service: the driver
+browses pillars then courses then lessons, every item is audio, and playback
+runs through the system Now Playing template and the remote command center
+(steering-wheel / dashboard controls). Like the car flavor on Android, only
+`isAutomotiveSafe` lessons are listed, code-heavy lessons stay on the phone.
+
+It reuses the same `SyllabusStore` (live feed then bundled then seed) and the
+same bundled-narration-first loading as the phone, so it works offline too. The
+implementation is in [`AISchool/CarPlay/`](AISchool/CarPlay):
+`CarPlaySceneDelegate` builds the templates, `CarPlayPlaybackController` drives
+`AVPlayer` + `MPNowPlayingInfoCenter`.
+
+**Testing it:** run the app in the iOS Simulator, then in the Simulator menu
+choose **I/O > External Displays > CarPlay**. AI School appears on the CarPlay
+home screen (above). Selecting a lesson plays it and shows Now Playing.
+
+**Shipping it:** the `com.apple.developer.carplay-audio` entitlement is declared
+(`AISchool/Resources/AISchool.entitlements`). It works in the CarPlay Simulator
+as-is; releasing to a device or the App Store additionally requires Apple to
+grant the CarPlay audio entitlement on the App ID (a one-time request to Apple).
 
 ## Structure
 
@@ -45,7 +72,8 @@ ios/
     Data/                     SyllabusStore (repository), AudioPlayer
     Theme/                    brand palette
     Views/                    CourseList, CourseDetail, Lesson, WebView
-    Resources/                bundled narration, asset catalog, Info.plist
+    CarPlay/                  CarPlay scene delegate + audio controller
+    Resources/                bundled narration, asset catalog, Info.plist, entitlements
 ```
 
 ## Build and run
@@ -83,5 +111,5 @@ the iOS Simulator and type-checks clean under Swift 6 complete concurrency.
 
 ## Scope
 
-Mobile (iPhone) only for now. The Android repo also has an Android Automotive OS
-flavor; an iOS CarPlay equivalent is a possible future addition.
+iPhone plus CarPlay (audio-only). This mirrors the Android repo's split of a
+rich phone app and a distraction-safe in-car flavor.
