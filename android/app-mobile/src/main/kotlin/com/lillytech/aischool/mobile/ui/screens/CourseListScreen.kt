@@ -216,7 +216,8 @@ private fun CourseCard(course: Course, onClick: (String) -> Unit) {
                 modifier = Modifier.padding(top = 4.dp),
             )
             Text(
-                "${course.lessons.size} lessons · ${course.totalDurationSeconds / 60} min",
+                "${course.lessons.size} ${if (course.lessons.size == 1) "lesson" else "lessons"} · " +
+                    "${maxOf(1, (course.totalDurationSeconds + 59) / 60)} min",
                 style = MaterialTheme.typography.labelMedium,
                 modifier = Modifier.padding(top = 8.dp),
             )

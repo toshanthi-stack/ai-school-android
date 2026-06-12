@@ -59,7 +59,7 @@ struct CourseListView: View {
             }
             Link(destination: Endpoints.website) {
                 HStack(spacing: 4) {
-                    Text("Live syllabus · lillytechsystems.com")
+                    Text("Open AI School · lillytechsystems.com")
                         .font(.subheadline)
                     Image(systemName: "arrow.up.right.square")
                         .font(.system(size: 12))
@@ -117,7 +117,7 @@ private struct CourseCard: View {
                 .font(.subheadline)
                 .foregroundStyle(Brand.text)
                 .fixedSize(horizontal: false, vertical: true)
-            Text("\(course.lessons.count) lessons · \(course.totalDurationMinutes) min")
+            Text("\(course.lessons.count) \(course.lessons.count == 1 ? "lesson" : "lessons") · \(course.totalDurationMinutes) min")
                 .font(.caption)
                 .foregroundStyle(Brand.textDim)
                 .padding(.top, 2)

@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">AI School</string>
     <string name="courses_title">AI School</string>
-    <string name="courses_subtitle">Live syllabus · lillytechsystems.com</string>
+    <string name="courses_subtitle">Open AI School · lillytechsystems.com</string>
     <string name="open_ai_school_website">Open the AI School website</string>
     <string name="back">Back</string>
     <string name="play_lesson">Play lesson audio</string>
