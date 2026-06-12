@@ -16,7 +16,8 @@ for the architecture and feed schema.
 | `adapt_lesson.py` | Fetch a URL, classify + rewrite via Claude (structured output) |
 | `tts.py` | Text-to-speech (prototype: macOS `say`; swap in a production TTS) |
 | `build_feed.py` | Run every lesson in `lessons.json` -> `out/syllabus.json` + `out/audio/` |
-| `lessons.json` | Input config: courses -> lessons with `webUrl` |
+| `crawl_catalog.py` | Crawl the live site into a `lessons.json` (the full catalog) |
+| `lessons.json` | Input config: courses -> lessons with `webUrl` (a small curated example; regenerate with the crawler) |
 
 ## Setup
 
@@ -26,6 +27,27 @@ python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 export ANTHROPIC_API_KEY=sk-ant-...      # your Anthropic API key
 ```
+
+## Generate the catalog (crawler)
+
+`lessons.json` ships as a small curated example. To build it from the live site,
+run the crawler (no API key needed):
+
+```bash
+# everything: ~33 learning paths x ~50-60 topics each (~2,000+ lessons)
+.venv/bin/python crawl_catalog.py
+
+# a manageable subset to start
+.venv/bin/python crawl_catalog.py --max-paths 5 --max-topics 8
+
+# also include the ~379 "AI School Core" course pages
+.venv/bin/python crawl_catalog.py --include-core
+```
+
+It maps the site to `lessons.json`: category = learning path, course = topic,
+lesson = the topic page (the pipeline summarizes each into one spoken lesson).
+Mind the scale before a full `build_feed.py` run: every lesson is one Claude call
+plus one TTS synthesis.
 
 ## Run
 
