@@ -1,8 +1,9 @@
 import SwiftUI
 
-/// The catalog: courses grouped by pillar, with the AI School brand mark, a link
-/// to the website, and Lilly Tech Systems attribution. Root of the navigation
-/// stack. Uses a List so scrolling is reliable with tappable navigation rows.
+/// Home (catalog root): the top-level learning tracks, so the catalog opens
+/// collapsed and the user picks a track first, then drills into its courses,
+/// then lessons. Carries the AI School brand mark, the website link, and Lilly
+/// Tech Systems attribution. Uses a List so scrolling stays reliable.
 struct CourseListView: View {
     @StateObject private var store = SyllabusStore()
 
@@ -19,16 +20,18 @@ struct CourseListView: View {
                         .padding(.top, 60)
                         .plainRow()
                 } else {
+                    Text("Choose a track to start learning.")
+                        .font(.subheadline)
+                        .foregroundStyle(Brand.textDim)
+                        .plainRow(top: 4, bottom: 4)
+
                     ForEach(store.orderedCategories, id: \.self) { category in
-                        pillarHeader(category)
-                            .plainRow(top: 20, bottom: 4)
-                        ForEach(store.courses(in: category)) { course in
-                            NavigationLink(value: course) {
-                                CourseCard(course: course)
-                            }
-                            .plainRow(top: 6, bottom: 6)
+                        NavigationLink(value: category) {
+                            CategoryCard(category: category, courses: store.courses(in: category))
                         }
+                        .plainRow(top: 6, bottom: 6)
                     }
+
                     footer
                         .plainRow(top: 32, bottom: 12)
                 }
@@ -37,6 +40,9 @@ struct CourseListView: View {
             .scrollContentBackground(.hidden)
             .background(Brand.bg.ignoresSafeArea())
             .toolbar(.hidden, for: .navigationBar)
+            .navigationDestination(for: String.self) { category in
+                CategoryCoursesView(category: category, store: store)
+            }
             .navigationDestination(for: Course.self) { CourseDetailView(course: $0) }
             .navigationDestination(for: LessonRoute.self) {
                 LessonView(course: $0.course, lesson: $0.lesson)
@@ -69,16 +75,6 @@ struct CourseListView: View {
         }
     }
 
-    private func pillarHeader(_ category: String) -> some View {
-        HStack(spacing: 8) {
-            Image(systemName: Brand.icon(for: category))
-                .foregroundStyle(Brand.accent(for: category))
-            Text(category)
-                .font(.headline)
-                .foregroundStyle(Brand.text)
-        }
-    }
-
     private var footer: some View {
         VStack(spacing: 4) {
             Text("An AI School product")
@@ -94,6 +90,29 @@ struct CourseListView: View {
     }
 }
 
+/// Courses within one track, reached from the home. Standard nav bar with the
+/// track title and a back button.
+struct CategoryCoursesView: View {
+    let category: String
+    @ObservedObject var store: SyllabusStore
+
+    var body: some View {
+        List {
+            ForEach(store.courses(in: category)) { course in
+                NavigationLink(value: course) {
+                    CourseCard(course: course)
+                }
+                .plainRow(top: 6, bottom: 6)
+            }
+        }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+        .background(Brand.bg.ignoresSafeArea())
+        .navigationTitle(category)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
 /// Shared row styling: transparent background, no separators, edge-to-edge with
 /// brand horizontal padding.
 private extension View {
@@ -102,6 +121,38 @@ private extension View {
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
             .listRowInsets(EdgeInsets(top: top, leading: 16, bottom: bottom, trailing: 16))
+    }
+}
+
+private struct CategoryCard: View {
+    let category: String
+    let courses: [Course]
+
+    private var lessonCount: Int { courses.reduce(0) { $0 + $1.lessons.count } }
+
+    var body: some View {
+        HStack(spacing: 14) {
+            Image(systemName: Brand.icon(for: category))
+                .font(.title2)
+                .foregroundStyle(Brand.accent(for: category))
+                .frame(width: 32)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(category)
+                    .font(.headline)
+                    .foregroundStyle(Brand.secondary)
+                Text("\(courses.count) \(courses.count == 1 ? "course" : "courses") · \(lessonCount) lessons")
+                    .font(.caption)
+                    .foregroundStyle(Brand.textDim)
+            }
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(16)
+        .background(Brand.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(Brand.border, lineWidth: 1)
+        )
     }
 }
 
