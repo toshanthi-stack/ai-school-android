@@ -19,14 +19,17 @@
 		1358D1A825A1EE74A5B16BF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C8B8188F00693AB88BB471 /* Assets.xcassets */; };
 		14CAEDDF5B83A2A9E8326A1E /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9DDC261E9B5453DBFB016ED1 /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a */; };
 		17A674F6331ACC3AF15C8BED /* anthropic_claude_opus_deep_dive_opus_47_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C41495BBC32632655ADECD39 /* anthropic_claude_opus_deep_dive_opus_47_overview.m4a */; };
+		188C94E1D64067A7BF0B2CC0 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE70DECEC1ACE1ABD4C3CD0 /* Inter-Bold.ttf */; };
 		23B5C6D10777DE1E338678BB /* ai_models_claude_opus_4_7_opus_4_7_coding.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 38C27F2B6ED65C296FB08DF3 /* ai_models_claude_opus_4_7_opus_4_7_coding.m4a */; };
 		244273F3E79C7CB0ADAE9BCB /* ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 66EA8106C314D7B4F42A89AA /* ai_models_claude_sonnet_4_6_sonnet_4_6_vs_others.m4a */; };
+		277DC2F886BBF551B095D523 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A48CC512DB78E85494492C1 /* Inter-Regular.ttf */; };
 		2785E672ED7CFFABCD94D6F5 /* ai_tools_cursor_editor_cursor_rules.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 03DA93F0362A8ABC5C13EAB8 /* ai_tools_cursor_editor_cursor_rules.m4a */; };
 		279CFA08E6E0787CFA5ACB1B /* ai_models_gpt_4o_gpt_4o_structured_outputs.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DEE5C49DEF1CCD21724F65EB /* ai_models_gpt_4o_gpt_4o_structured_outputs.m4a */; };
 		283B0394690168E3A2C2F5BD /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02A134AB776338B675AEE55 /* AudioPlayer.swift */; };
 		293267FF38E05952CE553B03 /* ai_tools_claude_code_claude_code_hooks.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8398682DB4A14D20D7F0DCEB /* ai_tools_claude_code_claude_code_hooks.m4a */; };
 		2A0396DD9CDD8C57EC199479 /* anthropic_claude_model_selection_model_selection_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C9FB74DC523824891AAFCC5C /* anthropic_claude_model_selection_model_selection_overview.m4a */; };
 		2A376B6275D4DB63728DF2B5 /* anthropic_claude_model_selection_cascade_pattern.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C33D0A3683D146630A9763A5 /* anthropic_claude_model_selection_cascade_pattern.m4a */; };
+		2CF9F1930E80AFC606902928 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FDC763EB09F008B1058AB20 /* Inter-ExtraBold.ttf */; };
 		303A2A74853592D87243A9E4 /* ai_tools_github_copilot_tool_copilot_instructions.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0FB7F6F2B3DCB4E252429ACF /* ai_tools_github_copilot_tool_copilot_instructions.m4a */; };
 		3247E1393EF0128BF7071435 /* ai_tools_aider_aider_repo_map.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C6673A327BF009FD10A2B8B8 /* ai_tools_aider_aider_repo_map.m4a */; };
 		333A3938434C7108E9975B3F /* ai_models_gpt_4o_gpt_4o_audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E981D7B7FB79DFAF8EB6C31F /* ai_models_gpt_4o_gpt_4o_audio.m4a */; };
@@ -62,6 +65,7 @@
 		844A3EEB85EB3E47FA5EA702 /* ai_models_gpt_5_gpt_5_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EFE184DAAEC4D11EBD23F236 /* ai_models_gpt_5_gpt_5_overview.m4a */; };
 		884F4E6B6434707AD040DBB5 /* anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8154B9FC1C220616A5A82EB1 /* anthropic_claude_haiku_deep_dive_haiku_workload_patterns.m4a */; };
 		88F2C921D00CDF39C946C53F /* anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7A3A26590BE398E8B304B9C5 /* anthropic_claude_haiku_deep_dive_haiku_first_design_pattern.m4a */; };
+		897586527258385D19F6CF61 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB009C9C24C062BDA43A8B3 /* Inter-SemiBold.ttf */; };
 		8B7AB5296CC2C926FE546959 /* ai_tools_aider_aider_architect_edit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D5F42D09CEFA950875CD7B44 /* ai_tools_aider_aider_architect_edit.m4a */; };
 		915D8343D9AA04F181AC48CA /* SyllabusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577FAC88094FE7F5B98B93C /* SyllabusStore.swift */; };
 		989DB520648B04124537FFC2 /* anthropic_claude_model_selection_selection_template.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D2303C80A3F9B48ABF6A00B8 /* anthropic_claude_model_selection_selection_template.m4a */; };
@@ -71,6 +75,7 @@
 		9B32C4F5851EF9EA592EA6B9 /* ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 099242305EE10AE1CEF37578 /* ai_models_claude_sonnet_4_6_sonnet_4_6_overview.m4a */; };
 		9D245D5088459E4361B7818C /* anthropic_claude_model_selection_benchmark_mapping.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4CB965BA6F7D6728CC3722E4 /* anthropic_claude_model_selection_benchmark_mapping.m4a */; };
 		9D9AC33D09E50E2B436B292B /* ai_tools_github_copilot_tool_copilot_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DB41B3796CD7C4F7D61F014E /* ai_tools_github_copilot_tool_copilot_overview.m4a */; };
+		9FF2C5DEDD1186C89360F51C /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD84CF41DCF1520C9264C02 /* Inter-Medium.ttf */; };
 		A3755C5E61E4918C20D8E5DF /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0DAE652FB276B4CA17642992 /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a */; };
 		A4D6161353E6FEDB26BEA8BC /* anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CBC45B191A9F5A597E1DCA57 /* anthropic_claude_sonnet_deep_dive_sonnet_46_overview.m4a */; };
 		A4F2683F1C48A4766CC53752 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665711085AC4DAD676EEB693 /* Theme.swift */; };
@@ -128,6 +133,7 @@
 		0CB08268AD42F0E736FAD837 /* ai_tools_aider_aider_git.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_git.m4a; sourceTree = "<group>"; };
 		0D41B586BC6378D94337CB32 /* ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a */ = {isa = PBXFileReference; path = ai_models_claude_haiku_4_5_haiku_4_5_overview.m4a; sourceTree = "<group>"; };
 		0DAE652FB276B4CA17642992 /* anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_opus_workload_patterns.m4a; sourceTree = "<group>"; };
+		0FB009C9C24C062BDA43A8B3 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		0FB7F6F2B3DCB4E252429ACF /* ai_tools_github_copilot_tool_copilot_instructions.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_instructions.m4a; sourceTree = "<group>"; };
 		1745726FCC2B6050CF075F3E /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
 		1AA1551234439122C73AF6D1 /* anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_opus_sonnet_haiku_positioning.m4a; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 		45545C253C15F2C71B4CE76D /* ai_tools_aider_aider_voice.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_voice.m4a; sourceTree = "<group>"; };
 		45DEDC6699F7F824D2FF3154 /* anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_migrating_from_earlier_sonnet.m4a; sourceTree = "<group>"; };
 		463E0955DB79F6769175DEED /* anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a */ = {isa = PBXFileReference; path = anthropic_claude_sonnet_deep_dive_production_workhorse_positioning.m4a; sourceTree = "<group>"; };
+		4AE70DECEC1ACE1ABD4C3CD0 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		4BD92A046132373E41B17C2C /* ai_models_gpt_5_gpt_5_tool_use.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_tool_use.m4a; sourceTree = "<group>"; };
 		4CB965BA6F7D6728CC3722E4 /* anthropic_claude_model_selection_benchmark_mapping.m4a */ = {isa = PBXFileReference; path = anthropic_claude_model_selection_benchmark_mapping.m4a; sourceTree = "<group>"; };
 		50EE41769456B3CC7C7CBC43 /* ai_tools_cursor_editor_cursor_team.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_team.m4a; sourceTree = "<group>"; };
@@ -168,9 +175,11 @@
 		8398682DB4A14D20D7F0DCEB /* ai_tools_claude_code_claude_code_hooks.m4a */ = {isa = PBXFileReference; path = ai_tools_claude_code_claude_code_hooks.m4a; sourceTree = "<group>"; };
 		860760BA2B21DA042085C246 /* anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_opus_vs_sonnet_decision.m4a; sourceTree = "<group>"; };
 		86F7DB870ACC0D48F2BA68DF /* ai_models_gpt_4o_gpt_4o_overview.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_4o_gpt_4o_overview.m4a; sourceTree = "<group>"; };
+		8A48CC512DB78E85494492C1 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		8A94F89CB8EBC0281FCBBBD1 /* AISchool.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AISchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBE3D8E6104B0764ADFD102 /* ai_tools_cursor_editor_cursor_tab.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_tab.m4a; sourceTree = "<group>"; };
 		8DD293B64A5DDBA01010ADEA /* ai_models_gpt_5_gpt_5_pricing.m4a */ = {isa = PBXFileReference; path = ai_models_gpt_5_gpt_5_pricing.m4a; sourceTree = "<group>"; };
+		8FDC763EB09F008B1058AB20 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		915656A1FFA2E07AA6E4B96F /* SeedSyllabus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedSyllabus.swift; sourceTree = "<group>"; };
 		9302B5B8A37DE0DBBDE4C361 /* ai_tools_github_copilot_tool_copilot_inline_chat.m4a */ = {isa = PBXFileReference; path = ai_tools_github_copilot_tool_copilot_inline_chat.m4a; sourceTree = "<group>"; };
 		94728D0E9102BE04DE07C10D /* ai_tools_cursor_editor_cursor_overview.m4a */ = {isa = PBXFileReference; path = ai_tools_cursor_editor_cursor_overview.m4a; sourceTree = "<group>"; };
@@ -180,6 +189,7 @@
 		9BD205F09F6E6105A33A2ED7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		9C9B4E11BB0E47588610D842 /* anthropic_claude_claude_models_overview_claude_family_overview.m4a */ = {isa = PBXFileReference; path = anthropic_claude_claude_models_overview_claude_family_overview.m4a; sourceTree = "<group>"; };
 		9DDC261E9B5453DBFB016ED1 /* ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a */ = {isa = PBXFileReference; path = ai_models_claude_sonnet_4_6_sonnet_4_6_tool_use.m4a; sourceTree = "<group>"; };
+		9FD84CF41DCF1520C9264C02 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		A02A134AB776338B675AEE55 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		A214EC91806DDBDA3E8EADB3 /* ai_tools_aider_aider_overview.m4a */ = {isa = PBXFileReference; path = ai_tools_aider_aider_overview.m4a; sourceTree = "<group>"; };
 		A678FE0F18F11B55B5B7B89F /* anthropic_claude_opus_deep_dive_frontier_reasoning.m4a */ = {isa = PBXFileReference; path = anthropic_claude_opus_deep_dive_frontier_reasoning.m4a; sourceTree = "<group>"; };
@@ -253,6 +263,7 @@
 				6AC727628CBFAD20395D1D08 /* PrivacyInfo.xcprivacy */,
 				F753D37CB9782C25D17D2B73 /* syllabus.json */,
 				FF2A857A38EAD873387ABABB /* Audio */,
+				A1650BD7C1D8CFBD3BC95248 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -276,6 +287,18 @@
 				3236EB4F5397317DFE07620F /* WebView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A1650BD7C1D8CFBD3BC95248 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4AE70DECEC1ACE1ABD4C3CD0 /* Inter-Bold.ttf */,
+				8FDC763EB09F008B1058AB20 /* Inter-ExtraBold.ttf */,
+				9FD84CF41DCF1520C9264C02 /* Inter-Medium.ttf */,
+				8A48CC512DB78E85494492C1 /* Inter-Regular.ttf */,
+				0FB009C9C24C062BDA43A8B3 /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C49A6C906D3E2F0CF0A8BDBB /* AISchool */ = {
@@ -483,6 +506,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1358D1A825A1EE74A5B16BF3 /* Assets.xcassets in Resources */,
+				188C94E1D64067A7BF0B2CC0 /* Inter-Bold.ttf in Resources */,
+				2CF9F1930E80AFC606902928 /* Inter-ExtraBold.ttf in Resources */,
+				9FF2C5DEDD1186C89360F51C /* Inter-Medium.ttf in Resources */,
+				277DC2F886BBF551B095D523 /* Inter-Regular.ttf in Resources */,
+				897586527258385D19F6CF61 /* Inter-SemiBold.ttf in Resources */,
 				60EC698969AD2308B7A6BC32 /* PrivacyInfo.xcprivacy in Resources */,
 				4CECAEBACA380A9508C8E933 /* ai_models_claude_haiku_4_5_haiku_4_5_batch.m4a in Resources */,
 				8015A804E8AA68AA002A8789 /* ai_models_claude_haiku_4_5_haiku_4_5_latency.m4a in Resources */,

@@ -56,14 +56,14 @@ struct CourseListView: View {
         VStack(spacing: 6) {
             Image("BrandMark")
                 .resizable()
-                .frame(width: 70, height: 70)
-                .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
+                .frame(width: 92, height: 92)
+                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
             Text("ai school")
-                .font(.system(size: 44, weight: .bold))
+                .font(.custom("Inter-Bold", size: 34))
                 .foregroundStyle(Brand.text)
             Link(destination: Endpoints.website) {
                 HStack(spacing: 4) {
-                    Text("Open AI School · lillytechsystems.com")
+                    Text("lillytechsystems.com")
                         .font(.subheadline)
                     Image(systemName: "arrow.up.right.square")
                         .font(.system(size: 12))

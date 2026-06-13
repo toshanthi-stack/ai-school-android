@@ -59,6 +59,7 @@ import com.lillytech.aischool.core.model.AiSchoolPillars
 import com.lillytech.aischool.mobile.R
 import com.lillytech.aischool.mobile.ui.SyllabusUiState
 import com.lillytech.aischool.mobile.ui.SyllabusViewModel
+import com.lillytech.aischool.mobile.ui.theme.Inter
 
 private const val COMPANY_URL = "https://www.lillytechsystems.com"
 
@@ -110,11 +111,12 @@ internal fun BrandHeader(context: Context) {
         Image(
             painter = painterResource(R.drawable.brand_mark),
             contentDescription = null,
-            modifier = Modifier.size(68.dp).clip(RoundedCornerShape(17.dp)),
+            modifier = Modifier.size(92.dp).clip(RoundedCornerShape(22.dp)),
         )
         Text(
             text = "ai school",
-            fontSize = 40.sp,
+            fontFamily = Inter,
+            fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.padding(top = 8.dp),
