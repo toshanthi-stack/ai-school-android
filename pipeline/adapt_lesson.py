@@ -40,13 +40,15 @@ hands-free learning app used in cars and on phones. For each tutorial:
      copy-paste snippets.
    - "conceptual" otherwise (ideas, explanations, trade-offs, mental models).
 
-2. Write spoken_script: a natural, podcast-style narration of the lesson,
-   150-260 words, that a listener follows with no screen. Explain the ideas;
-   for code, describe what the code DOES and why, but never read literal code,
-   commands, file paths, URLs, or copy-paste text aloud (they are useless as
-   audio and unsafe to follow while driving). For a code-heavy lesson, end by
-   telling the listener the exact code is in the written lesson to open on
-   their phone.
+2. Write spoken_script: a natural, podcast-style narration that actually
+   TEACHES the whole lesson, 400-650 words (roughly three to five minutes
+   spoken), that a listener follows with no screen. Cover the lesson's real
+   substance: the key ideas, how things work, the trade-offs, and concrete
+   takeaways - do not just give a high-level overview. For code, describe what
+   the code DOES and why, but never read literal code, commands, file paths,
+   URLs, or copy-paste text aloud (useless as audio and unsafe while driving).
+   For a code-heavy lesson, end by telling the listener the exact code is in the
+   written lesson to open on their phone.
 
 3. Write audio_summary: one short sentence summarizing the lesson.
 
@@ -71,7 +73,7 @@ def adapt(url: str, client: anthropic.Anthropic | None = None) -> LessonAdaptati
     content = fetch_text(url)
     response = client.messages.parse(
         model=MODEL,
-        max_tokens=2000,
+        max_tokens=3000,
         system=SYSTEM,
         messages=[{
             "role": "user",
