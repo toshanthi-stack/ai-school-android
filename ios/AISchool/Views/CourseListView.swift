@@ -2,42 +2,41 @@ import SwiftUI
 
 /// Home (catalog root): the top-level learning tracks, so the catalog opens
 /// collapsed and the user picks a track first, then drills into its courses,
-/// then lessons. Carries the AI School brand mark, the website link, and Lilly
-/// Tech Systems attribution. Uses a List so scrolling stays reliable.
+/// then lessons. The large, centered "ai school" lockup is pinned (stays while
+/// the list scrolls); Lilly Tech Systems is shown with its flower logo footer.
 struct CourseListView: View {
     @StateObject private var store = SyllabusStore()
 
     var body: some View {
         NavigationStack {
-            List {
-                header
-                    .plainRow(top: 12, bottom: 8)
+            VStack(spacing: 0) {
+                brandHeader
 
                 if store.isLoading {
-                    ProgressView()
-                        .tint(Brand.primary)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 60)
-                        .plainRow()
+                    Spacer()
+                    ProgressView().tint(Brand.primary)
+                    Spacer()
                 } else {
-                    Text("Choose a track to start learning.")
-                        .font(.subheadline)
-                        .foregroundStyle(Brand.textDim)
-                        .plainRow(top: 4, bottom: 4)
+                    List {
+                        Text("Choose a track to start learning.")
+                            .font(.subheadline)
+                            .foregroundStyle(Brand.textDim)
+                            .plainRow(top: 4, bottom: 4)
 
-                    ForEach(store.orderedCategories, id: \.self) { category in
-                        NavigationLink(value: category) {
-                            CategoryCard(category: category, courses: store.courses(in: category))
+                        ForEach(store.orderedCategories, id: \.self) { category in
+                            NavigationLink(value: category) {
+                                CategoryCard(category: category, courses: store.courses(in: category))
+                            }
+                            .plainRow(top: 6, bottom: 6)
                         }
-                        .plainRow(top: 6, bottom: 6)
-                    }
 
-                    footer
-                        .plainRow(top: 32, bottom: 12)
+                        footer
+                            .plainRow(top: 32, bottom: 12)
+                    }
+                    .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
                 }
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
             .background(Brand.bg.ignoresSafeArea())
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: String.self) { category in
@@ -52,17 +51,16 @@ struct CourseListView: View {
         .task { await store.load() }
     }
 
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 12) {
-                Image("BrandMark")
-                    .resizable()
-                    .frame(width: 42, height: 42)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                Text("AI School")
-                    .font(.system(size: 30, weight: .bold))
-                    .foregroundStyle(Brand.text)
-            }
+    /// Large, centered, pinned AI School lockup.
+    private var brandHeader: some View {
+        VStack(spacing: 6) {
+            Image("BrandMark")
+                .resizable()
+                .frame(width: 70, height: 70)
+                .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
+            Text("ai school")
+                .font(.system(size: 44, weight: .bold))
+                .foregroundStyle(Brand.text)
             Link(destination: Endpoints.website) {
                 HStack(spacing: 4) {
                     Text("Open AI School · lillytechsystems.com")
@@ -73,17 +71,21 @@ struct CourseListView: View {
                 .foregroundStyle(Brand.primary)
             }
         }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 8)
+        .padding(.bottom, 14)
     }
 
     private var footer: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 10) {
             Text("An AI School product")
                 .font(.caption)
                 .foregroundStyle(Brand.textDim)
             Link(destination: Endpoints.company) {
-                Text("by Lilly Tech Systems")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(Brand.primary)
+                Image("LillyTechLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 96)
             }
         }
         .frame(maxWidth: .infinity)
