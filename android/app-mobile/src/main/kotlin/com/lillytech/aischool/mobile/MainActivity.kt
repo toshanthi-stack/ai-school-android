@@ -1,5 +1,6 @@
 package com.lillytech.aischool.mobile
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,6 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.lillytech.aischool.mobile.ui.SyllabusUiState
 import com.lillytech.aischool.mobile.ui.SyllabusViewModel
+import com.lillytech.aischool.mobile.ui.screens.CategoryListScreen
 import com.lillytech.aischool.mobile.ui.screens.CourseDetailScreen
 import com.lillytech.aischool.mobile.ui.screens.CourseListScreen
 import com.lillytech.aischool.mobile.ui.screens.LessonScreen
@@ -38,10 +40,12 @@ class MainActivity : ComponentActivity() {
 }
 
 private object Routes {
-    const val COURSES = "courses"
+    const val CATEGORIES = "categories"
+    const val CATEGORY = "category/{category}"
     const val COURSE = "course/{courseId}"
     const val LESSON = "lesson/{lessonId}"
 
+    fun category(category: String) = "category/${Uri.encode(category)}"
     fun course(courseId: String) = "course/$courseId"
     fun lesson(lessonId: String) = "lesson/$lessonId"
 }
@@ -52,11 +56,23 @@ fun AiSchoolNavHost(viewModel: SyllabusViewModel = viewModel()) {
     // Recompose route content once the syllabus arrives.
     val state by viewModel.uiState.collectAsState()
 
-    NavHost(navController = navController, startDestination = Routes.COURSES) {
-        composable(Routes.COURSES) {
+    NavHost(navController = navController, startDestination = Routes.CATEGORIES) {
+        composable(Routes.CATEGORIES) {
+            CategoryListScreen(
+                viewModel = viewModel,
+                onCategoryClick = { navController.navigate(Routes.category(it)) },
+            )
+        }
+        composable(
+            route = Routes.CATEGORY,
+            arguments = listOf(navArgument("category") { type = NavType.StringType }),
+        ) { backStackEntry ->
+            val category = Uri.decode(backStackEntry.arguments?.getString("category").orEmpty())
             CourseListScreen(
                 viewModel = viewModel,
+                category = category,
                 onCourseClick = { navController.navigate(Routes.course(it)) },
+                onBack = { navController.popBackStack() },
             )
         }
         composable(

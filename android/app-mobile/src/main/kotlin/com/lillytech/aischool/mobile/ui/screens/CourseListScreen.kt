@@ -1,32 +1,22 @@
 package com.lillytech.aischool.mobile.ui.screens
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
-import android.net.Uri
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.OpenInNew
-import androidx.compose.material.icons.filled.AutoAwesome
-import androidx.compose.material.icons.filled.Memory
-import androidx.compose.material.icons.filled.Tune
-import androidx.compose.material3.Button
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -37,61 +27,38 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.lillytech.aischool.core.model.AiSchoolEndpoints
-import com.lillytech.aischool.core.model.AiSchoolPillars
 import com.lillytech.aischool.core.model.Course
 import com.lillytech.aischool.mobile.R
 import com.lillytech.aischool.mobile.ui.SyllabusUiState
 import com.lillytech.aischool.mobile.ui.SyllabusViewModel
 
+/**
+ * Courses within one learning track ([category]), reached from the category
+ * home. Each course opens its lessons.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CourseListScreen(
     viewModel: SyllabusViewModel,
+    category: String,
     onCourseClick: (String) -> Unit,
+    onBack: () -> Unit,
 ) {
     val state by viewModel.uiState.collectAsState()
-    val context = LocalContext.current
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = {
-                    Column {
-                        Text(
-                            stringResource(R.string.courses_title),
-                            fontWeight = FontWeight.Bold,
+                title = { Text(category, fontWeight = FontWeight.Bold) },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = stringResource(R.string.back),
                         )
-                        // Tappable: opens the AI School website in the browser.
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.clickable {
-                                try {
-                                    context.startActivity(
-                                        Intent(Intent.ACTION_VIEW, Uri.parse(AiSchoolEndpoints.BASE_URL)),
-                                    )
-                                } catch (_: ActivityNotFoundException) {
-                                    // No browser available; nothing to open.
-                                }
-                            },
-                        ) {
-                            Text(
-                                stringResource(R.string.courses_subtitle),
-                                style = MaterialTheme.typography.labelMedium,
-                                color = MaterialTheme.colorScheme.primary,
-                            )
-                            Spacer(Modifier.width(4.dp))
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Filled.OpenInNew,
-                                contentDescription = stringResource(R.string.open_ai_school_website),
-                                tint = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.size(14.dp),
-                            )
-                        }
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -102,39 +69,16 @@ fun CourseListScreen(
         },
     ) { padding ->
         when (val s = state) {
-            is SyllabusUiState.Loading -> Box(
-                modifier = Modifier.fillMaxSize().padding(padding),
-                contentAlignment = Alignment.Center,
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    CircularProgressIndicator()
-                    Text(
-                        stringResource(R.string.loading),
-                        modifier = Modifier.padding(top = 16.dp),
-                    )
-                }
-            }
-
-            is SyllabusUiState.Error -> Box(
-                modifier = Modifier.fillMaxSize().padding(padding),
-                contentAlignment = Alignment.Center,
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(s.message, style = MaterialTheme.typography.bodyLarge)
-                    Button(
-                        onClick = viewModel::refresh,
-                        modifier = Modifier.padding(top = 16.dp),
-                    ) {
-                        Text(stringResource(R.string.retry))
-                    }
-                }
-            }
-
             is SyllabusUiState.Ready -> CourseList(
-                courses = s.courses,
+                courses = s.courses.filter { it.category == category },
                 contentPadding = padding,
                 onCourseClick = onCourseClick,
             )
+
+            else -> Box(
+                modifier = Modifier.fillMaxSize().padding(padding),
+                contentAlignment = Alignment.Center,
+            ) { CircularProgressIndicator() }
         }
     }
 }
@@ -145,49 +89,13 @@ private fun CourseList(
     contentPadding: PaddingValues,
     onCourseClick: (String) -> Unit,
 ) {
-    val grouped = courses.groupBy { it.category }
-    val orderedCategories =
-        AiSchoolPillars.ALL.filter { it in grouped } + (grouped.keys - AiSchoolPillars.ALL.toSet())
-
     LazyColumn(
         contentPadding = contentPadding,
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        orderedCategories.forEach { category ->
-            item(key = "header-$category") {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 16.dp, end = 16.dp, top = 20.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Icon(
-                        imageVector = when (category) {
-                            AiSchoolPillars.INFRASTRUCTURE -> Icons.Filled.Memory
-                            AiSchoolPillars.ADVANCED_TUNING -> Icons.Filled.Tune
-                            else -> Icons.Filled.AutoAwesome
-                        },
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier.size(20.dp),
-                    )
-                    Text(
-                        category,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(start = 8.dp),
-                    )
-                }
-            }
-            items(
-                count = grouped.getValue(category).size,
-                key = { idx -> grouped.getValue(category)[idx].id },
-            ) { idx ->
-                CourseCard(
-                    course = grouped.getValue(category)[idx],
-                    onClick = onCourseClick,
-                )
-            }
+        item(key = "spacer") { Box(Modifier.padding(top = 4.dp)) }
+        items(courses, key = { it.id }) { course ->
+            CourseCard(course = course, onClick = onCourseClick)
         }
     }
 }
