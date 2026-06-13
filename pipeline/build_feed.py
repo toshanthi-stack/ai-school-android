@@ -19,23 +19,67 @@ from adapt_lesson import adapt
 from tts import synthesize
 
 
+def _cached_audio(audio_base: str) -> str | None:
+    """Existing audio file for a lesson (.m4a or .mp3), if already generated."""
+    for ext in (".m4a", ".mp3"):
+        if os.path.exists(audio_base + ext):
+            return audio_base + ext
+    return None
+
+
+def _load_existing(out: str) -> dict:
+    """Map lesson id -> prior feed entry, so re-runs can skip what's done."""
+    by_id: dict = {}
+    if os.path.exists(out):
+        try:
+            with open(out) as f:
+                for course in json.load(f):
+                    for lesson in course.get("lessons", []):
+                        by_id[lesson["id"]] = lesson
+        except Exception:
+            pass
+    return by_id
+
+
 def build(config: str, audio_dir: str, out: str, audio_url_base: str = "") -> None:
     with open(config) as f:
         cfg = json.load(f)
 
     os.makedirs(audio_dir, exist_ok=True)
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
-    client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY
+
+    # Incremental: reuse any lesson already in out/ (entry + audio on disk) so a
+    # re-run only spends Claude/TTS on NEW lessons. The Anthropic client is
+    # created lazily, so a fully-cached run needs no API call.
+    existing = _load_existing(out)
+    client = None
+    reused = 0
+    built = 0
 
     courses = []
     for course in cfg["courses"]:
         lessons = []
         for lesson in course["lessons"]:
+            lid = lesson["id"]
             url = lesson["webUrl"]
-            print(f"  adapting {lesson['id']:<22} <- {url}")
-            adaptation = adapt(url, client)
+            audio_base = os.path.join(audio_dir, lid.replace("-", "_"))
+            cached = _cached_audio(audio_base)
 
-            audio_base = os.path.join(audio_dir, lesson["id"].replace("-", "_"))
+            if lid in existing and cached:
+                entry = dict(existing[lid])
+                # Keep title/source fresh from the config; reuse the rest.
+                entry["title"] = lesson["title"]
+                entry["visualContentUrl"] = url
+                if audio_url_base:
+                    entry["audioUrl"] = f"{audio_url_base.rstrip('/')}/{os.path.basename(cached)}"
+                lessons.append(entry)
+                reused += 1
+                continue
+
+            if client is None:
+                client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY
+            print(f"  adapting {lid:<28} <- {url}")
+            adaptation = adapt(url, client)
             audio_path, duration = synthesize(adaptation.spoken_script, audio_base)
             audio_name = os.path.basename(audio_path)
             print(f"    -> {adaptation.content_type:<10} {duration}s  {audio_name}")
@@ -45,7 +89,7 @@ def build(config: str, audio_dir: str, out: str, audio_url_base: str = "") -> No
                 audio_url = f"{audio_url_base.rstrip('/')}/{audio_name}"
 
             lessons.append({
-                "id": lesson["id"],
+                "id": lid,
                 "title": lesson["title"],
                 "durationSeconds": duration,
                 "audioUrl": audio_url,
@@ -54,6 +98,7 @@ def build(config: str, audio_dir: str, out: str, audio_url_base: str = "") -> No
                 "contentType": adaptation.content_type,
                 "audioSummary": adaptation.audio_summary,
             })
+            built += 1
 
         courses.append({
             "id": course["id"],
@@ -66,7 +111,8 @@ def build(config: str, audio_dir: str, out: str, audio_url_base: str = "") -> No
     with open(out, "w") as f:
         json.dump(courses, f, indent=2)
     n_lessons = sum(len(c["lessons"]) for c in courses)
-    print(f"wrote {out}: {len(courses)} courses, {n_lessons} lessons; audio in {audio_dir}/")
+    print(f"wrote {out}: {len(courses)} courses, {n_lessons} lessons "
+          f"({built} new, {reused} reused); audio in {audio_dir}/")
 
 
 if __name__ == "__main__":
