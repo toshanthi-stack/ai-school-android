@@ -22,7 +22,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
@@ -44,7 +43,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -52,14 +50,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.lillytech.aischool.core.model.Course
 import com.lillytech.aischool.core.model.AiSchoolEndpoints
 import com.lillytech.aischool.core.model.AiSchoolPillars
 import com.lillytech.aischool.mobile.R
 import com.lillytech.aischool.mobile.ui.SyllabusUiState
 import com.lillytech.aischool.mobile.ui.SyllabusViewModel
-import com.lillytech.aischool.mobile.ui.theme.Inter
 
 private const val COMPANY_URL = "https://www.lillytechsystems.com"
 
@@ -109,21 +105,14 @@ internal fun BrandHeader(context: Context) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
-            painter = painterResource(R.drawable.brand_mark),
-            contentDescription = null,
-            modifier = Modifier.size(92.dp).clip(RoundedCornerShape(22.dp)),
-        )
-        Text(
-            text = "ai school",
-            fontFamily = Inter,
-            fontSize = 32.sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSurface,
-            modifier = Modifier.padding(top = 8.dp),
+            painter = painterResource(R.drawable.brand_lockup),
+            contentDescription = "ai school",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier.height(132.dp),
         )
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(top = 2.dp).clickable { open(context, AiSchoolEndpoints.BASE_URL) },
+            modifier = Modifier.padding(top = 10.dp).clickable { open(context, AiSchoolEndpoints.BASE_URL) },
         ) {
             Text(
                 stringResource(R.string.courses_subtitle),
@@ -219,7 +208,7 @@ private fun LillyTechFooter() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            "An AI School product",
+            "A product of",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.Center,

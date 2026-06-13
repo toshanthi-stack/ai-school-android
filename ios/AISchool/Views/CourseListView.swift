@@ -54,13 +54,10 @@ struct CourseListView: View {
     /// Large, centered, pinned AI School lockup.
     private var brandHeader: some View {
         VStack(spacing: 6) {
-            Image("BrandMark")
+            Image("BrandLockup")
                 .resizable()
-                .frame(width: 92, height: 92)
-                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-            Text("ai school")
-                .font(.custom("Inter-Bold", size: 34))
-                .foregroundStyle(Brand.text)
+                .scaledToFit()
+                .frame(height: 132)
             Link(destination: Endpoints.website) {
                 HStack(spacing: 4) {
                     Text("lillytechsystems.com")
@@ -78,7 +75,7 @@ struct CourseListView: View {
 
     private var footer: some View {
         VStack(spacing: 10) {
-            Text("An AI School product")
+            Text("A product of")
                 .font(.caption)
                 .foregroundStyle(Brand.textDim)
             Link(destination: Endpoints.company) {
