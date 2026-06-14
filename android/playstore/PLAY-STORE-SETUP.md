@@ -8,7 +8,8 @@ Publisher: **Lilly Tech Systems LLC** (Organization account).
 ---
 
 ## What I (the build side) have already prepared
-- Signed release **AAB**: `android/app-mobile/build/outputs/bundle/release/app-mobile-release.aab`
+- Signed release **AAB** (~13 MB - streams content from the hosted feed):
+  `android/app-mobile/build/outputs/bundle/release/app-mobile-release.aab`
 - Hi-res **icon** (512): `android/playstore/icon-512.png`
 - **Feature graphic** (1024x500): `android/playstore/feature-graphic.png`
 - **Screenshots** (1080x2160): `android/playstore/screenshots/01-04`
@@ -22,7 +23,11 @@ An Organization account avoids Google's "20 testers for 14 days" closed-test
 gate that applies to new *personal* accounts, so you can go straight to
 production. It needs business verification (incl. a free D-U-N-S number).
 
-## Step 1 - Create the Play Developer account (you)
+## Step 1 - Create the Play Developer account (DONE)
+Account created. Finish any remaining **business/identity verification** Google
+asks for (Organization accounts need it before publishing).
+
+### (original instructions, for reference)
 1. Go to **play.google.com/console**, sign in with the Google account you want
    to own it.
 2. Choose **Organization** as the account type.
@@ -39,10 +44,11 @@ App Signing recovery) you can't update the app. Back up BOTH, somewhere safe
 - Its password: in `android/keystore.properties` (gitignored - it is only on
   your Mac, never committed)
 
-## Step 3 - Host the privacy policy (you)
-Publish the text in `android/playstore/privacy-policy.md` to a public page on
-**lillytechsystems.com** (e.g. lillytechsystems.com/ai-school/privacy) and copy
-that URL - Play requires it in the listing.
+## Step 3 - Privacy policy URL (DONE - hosted for you)
+Already published and live (free, on the content host):
+**https://toshanthi-stack.github.io/ai-school-feed/privacy.html**
+Paste that into the Play listing's Privacy policy field. (If you later want it on
+lillytechsystems.com, the text is in `privacy-policy.md`.)
 
 ## Step 4 - Create the app in Play Console (you)
 1. **Create app** -> name "AI School: Learn AI by Ear", Education, Free, App.

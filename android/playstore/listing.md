@@ -14,11 +14,10 @@ Every lesson is audio-first, rewritten into a clear spoken script, so you can
 learn the way you listen to a podcast: hands-free, eyes-up, on the go.
 
 LEARN BY EAR
-- Short, focused lessons you can finish in a few minutes.
+- Focused, few-minute lessons you can listen to anywhere.
 - Real, current topics: large language models, AI coding tools, and the APIs
   that power them.
-- Plays offline once installed, so it works on the subway, in a tunnel, or on
-  a plane.
+- A growing catalog that updates with new lessons - no app update needed.
 
 BUILT FOR THE PHONE AND THE CAR
 - On your phone: listen first, then open the full written lesson to read the
