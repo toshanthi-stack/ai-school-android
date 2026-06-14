@@ -18,9 +18,10 @@ struct CourseListView: View {
                     Spacer()
                 } else {
                     List {
-                        Text("Choose a track to start learning.")
+                        Text("Choose a track to start learning!")
                             .font(.subheadline)
                             .foregroundStyle(Brand.textDim)
+                            .frame(maxWidth: .infinity, alignment: .center)
                             .plainRow(top: 4, bottom: 4)
 
                         ForEach(store.orderedCategories, id: \.self) { category in

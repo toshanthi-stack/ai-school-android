@@ -146,10 +146,11 @@ private fun CategoryList(
     ) {
         item(key = "intro") {
             Text(
-                "Choose a track to start learning.",
+                "Choose a track to start learning!",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 12.dp),
             )
         }
         items(ordered, key = { it }) { category ->
