@@ -1018,5 +1018,1705 @@
         "audioSummary": "Learn when and how to deploy Claude Haiku 4.5 in production by matching the model to your workload's actual requirements rather than defaults."
       }
     ]
+  },
+  {
+    "id": "ai-skills-advanced-prompt-engineering",
+    "title": "Advanced Prompt Engineering",
+    "description": "Learn how to structure production prompts strategically\u2014using system messages, role design, and deliberate parameter tuning\u2014rather than treating them as black boxes.",
+    "category": "AI Skills",
+    "lessons": [
+      {
+        "id": "ai-skills-advanced-prompt-engineering-prompt-anatomy",
+        "title": "Start Skill",
+        "durationSeconds": 228,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/advanced-prompt-engineering/prompt-anatomy.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to structure production prompts strategically\u2014using system messages, role design, and deliberate parameter tuning\u2014rather than treating them as black boxes."
+      },
+      {
+        "id": "ai-skills-advanced-prompt-engineering-system-vs-user-messages",
+        "title": "System vs User Messages",
+        "durationSeconds": 160,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/advanced-prompt-engineering/system-vs-user-messages.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to strategically use system and user messages in API calls to control AI model behavior and ship more reliable production systems."
+      },
+      {
+        "id": "ai-skills-advanced-prompt-engineering-output-contracts",
+        "title": "Output Contracts and JSON Mode",
+        "durationSeconds": 230,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/advanced-prompt-engineering/output-contracts.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how output contracts and JSON mode give you predictable, structured responses from language models in production systems."
+      },
+      {
+        "id": "ai-skills-advanced-prompt-engineering-prompt-chaining",
+        "title": "Prompt Chaining Patterns",
+        "durationSeconds": 180,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/advanced-prompt-engineering/prompt-chaining.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Prompt chaining patterns are a deliberate tuning technique for production AI systems that separates expert practitioners from beginners through understanding mechanics, not memorization."
+      },
+      {
+        "id": "ai-skills-advanced-prompt-engineering-prompt-debugging",
+        "title": "Debugging Bad Prompts",
+        "durationSeconds": 180,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/advanced-prompt-engineering/prompt-debugging.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to systematically debug and improve prompts by treating them as tunable levers rather than black boxes, using measurement and iteration to bridge the gap between beginner and expert results."
+      },
+      {
+        "id": "ai-skills-advanced-prompt-engineering-prompt-versioning",
+        "title": "Versioning and Testing Prompts",
+        "durationSeconds": 203,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/advanced-prompt-engineering/prompt-versioning.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to version, test, and systematically improve prompts in production by treating them as tunable parameters rather than fixed artifacts."
+      }
+    ]
+  },
+  {
+    "id": "ai-skills-chain-of-thought-prompting",
+    "title": "Chain Of Thought Prompting",
+    "description": "Zero-shot chain-of-thought is a technique that dramatically improves LLM reasoning on complex tasks by asking the model to think step-by-step, and understanding when and how to apply it separates expert practitioners from beginners.",
+    "category": "AI Skills",
+    "lessons": [
+      {
+        "id": "ai-skills-chain-of-thought-prompting-zero-shot-cot",
+        "title": "Start Skill",
+        "durationSeconds": 198,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/chain-of-thought-prompting/zero-shot-cot.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Zero-shot chain-of-thought is a technique that dramatically improves LLM reasoning on complex tasks by asking the model to think step-by-step, and understanding when and how to apply it separates expert practitioners from beginners."
+      },
+      {
+        "id": "ai-skills-chain-of-thought-prompting-few-shot-cot",
+        "title": "Few-Shot Chain-of-Thought",
+        "durationSeconds": 209,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/chain-of-thought-prompting/few-shot-cot.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Few-shot chain-of-thought is a technique that improves LLM accuracy by showing the model examples of step-by-step reasoning before asking it to solve a new problem."
+      },
+      {
+        "id": "ai-skills-chain-of-thought-prompting-self-consistency",
+        "title": "Self-Consistency Sampling",
+        "durationSeconds": 161,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/chain-of-thought-prompting/self-consistency.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Self-consistency sampling improves LLM accuracy by generating multiple reasoning paths and selecting the most common answer, transforming a single uncertain response into a more reliable one."
+      },
+      {
+        "id": "ai-skills-chain-of-thought-prompting-least-to-most",
+        "title": "Least-to-Most Prompting",
+        "durationSeconds": 193,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/chain-of-thought-prompting/least-to-most.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Least-to-most prompting is a technique for breaking down complex problems into manageable steps to dramatically improve LLM accuracy on reasoning tasks."
+      },
+      {
+        "id": "ai-skills-chain-of-thought-prompting-scratchpad-reasoning",
+        "title": "Scratchpad and Hidden Reasoning",
+        "durationSeconds": 221,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/chain-of-thought-prompting/scratchpad-reasoning.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn scratchpad and hidden reasoning\u2014a chain-of-thought technique that improves LLM accuracy on complex tasks by letting the model work through problems step-by-step."
+      },
+      {
+        "id": "ai-skills-chain-of-thought-prompting-cot-pitfalls",
+        "title": "When CoT Hurts More Than Helps",
+        "durationSeconds": 171,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/chain-of-thought-prompting/cot-pitfalls.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn when chain-of-thought prompting actually hurts performance and how to decide if it's worth the added cost and complexity for your use case."
+      }
+    ]
+  },
+  {
+    "id": "ai-skills-few-shot-learning",
+    "title": "Few Shot Learning",
+    "description": "Learn how to select the right examples for few-shot prompting to unlock dramatic improvements in LLM performance without fine-tuning.",
+    "category": "AI Skills",
+    "lessons": [
+      {
+        "id": "ai-skills-few-shot-learning-example-selection",
+        "title": "Start Skill",
+        "durationSeconds": 242,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/few-shot-learning/example-selection.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to select the right examples for few-shot prompting to unlock dramatic improvements in LLM performance without fine-tuning."
+      },
+      {
+        "id": "ai-skills-few-shot-learning-example-ordering",
+        "title": "Example Ordering Effects",
+        "durationSeconds": 239,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/few-shot-learning/example-ordering.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how the order you present examples to an AI language model dramatically affects its accuracy, and when to use this technique in production systems."
+      },
+      {
+        "id": "ai-skills-few-shot-learning-dynamic-few-shot",
+        "title": "Dynamic Few-Shot Retrieval",
+        "durationSeconds": 182,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/few-shot-learning/dynamic-few-shot.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Dynamic few-shot retrieval teaches LLMs new tasks by showing a few carefully selected examples instead of fine-tuning, and mastering this technique separates expert AI engineers from beginners."
+      },
+      {
+        "id": "ai-skills-few-shot-learning-balancing-classes",
+        "title": "Balancing Class Distribution",
+        "durationSeconds": 227,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/few-shot-learning/balancing-classes.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to balance class distribution in few-shot learning by showing LLMs diverse examples across all categories, dramatically improving model performance with just a few well-chosen prompts."
+      },
+      {
+        "id": "ai-skills-few-shot-learning-negative-examples",
+        "title": "Using Negative Examples",
+        "durationSeconds": 184,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/few-shot-learning/negative-examples.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to use negative examples in few-shot prompting to teach language models new tasks with just a handful of examples instead of expensive fine-tuning."
+      },
+      {
+        "id": "ai-skills-few-shot-learning-scaling-shots",
+        "title": "How Many Examples Is Enough",
+        "durationSeconds": 269,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/few-shot-learning/scaling-shots.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how many examples to include in few-shot prompts to teach LLMs new tasks effectively, and the practical trade-offs between quality and effort."
+      }
+    ]
+  },
+  {
+    "id": "ai-skills-role-based-prompting",
+    "title": "Role Based Prompting",
+    "description": "Learn how to design effective personas in AI prompts to steer model behavior, tone, and expertise for production systems.",
+    "category": "AI Skills",
+    "lessons": [
+      {
+        "id": "ai-skills-role-based-prompting-persona-design",
+        "title": "Start Skill",
+        "durationSeconds": 215,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/role-based-prompting/persona-design.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to design effective personas in AI prompts to steer model behavior, tone, and expertise for production systems."
+      },
+      {
+        "id": "ai-skills-role-based-prompting-expert-roles",
+        "title": "Expert Role Prompting",
+        "durationSeconds": 237,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/role-based-prompting/expert-roles.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Expert role prompting uses well-defined personas to steer AI model behavior, tone, and expertise in production systems."
+      },
+      {
+        "id": "ai-skills-role-based-prompting-multi-persona",
+        "title": "Multi-Persona Conversations",
+        "durationSeconds": 219,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/role-based-prompting/multi-persona.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to use multi-persona conversations to steer LLM behavior, tone, and expertise in production systems by understanding the underlying mechanics rather than just copying templates."
+      },
+      {
+        "id": "ai-skills-role-based-prompting-tone-control",
+        "title": "Tone and Voice Control",
+        "durationSeconds": 205,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/role-based-prompting/tone-control.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to use role and persona prompting to control an AI assistant's tone, expertise, and behavior for production systems."
+      },
+      {
+        "id": "ai-skills-role-based-prompting-persona-consistency",
+        "title": "Maintaining Persona Across Turns",
+        "durationSeconds": 197,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/role-based-prompting/persona-consistency.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to maintain a consistent persona across multiple conversation turns with an LLM, and understand when this technique is worth the engineering effort in production systems."
+      },
+      {
+        "id": "ai-skills-role-based-prompting-persona-jailbreaks",
+        "title": "Avoiding Persona Hijacks",
+        "durationSeconds": 193,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/role-based-prompting/persona-jailbreaks.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to prevent persona hijacks in role-based prompting so your AI assistants stay true to their intended character and behavior in production systems."
+      }
+    ]
+  },
+  {
+    "id": "ai-skills-prompt-compression",
+    "title": "Prompt Compression",
+    "description": "Learn why and when to compress prompts in production AI systems to reduce costs by 50-90% while maintaining accuracy.",
+    "category": "AI Skills",
+    "lessons": [
+      {
+        "id": "ai-skills-prompt-compression-why-compress",
+        "title": "Start Skill",
+        "durationSeconds": 250,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/prompt-compression/why-compress.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn why and when to compress prompts in production AI systems to reduce costs by 50-90% while maintaining accuracy."
+      },
+      {
+        "id": "ai-skills-prompt-compression-llmlingua",
+        "title": "LLMLingua and Selective Compression",
+        "durationSeconds": 186,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/prompt-compression/llmlingua.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "LLMLingua and selective compression reduce prompt tokens by fifty to ninety percent while preserving accuracy by intelligently identifying and removing less important information."
+      },
+      {
+        "id": "ai-skills-prompt-compression-schema-compression",
+        "title": "Compressing Schemas and Examples",
+        "durationSeconds": 243,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/prompt-compression/schema-compression.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to compress schemas and examples in prompts to cut token usage by 50-90% while maintaining accuracy in production AI systems."
+      },
+      {
+        "id": "ai-skills-prompt-compression-summarize-context",
+        "title": "Summarize-Then-Answer Patterns",
+        "durationSeconds": 214,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/prompt-compression/summarize-context.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Summarize-then-answer patterns are a foundational prompt compression technique that can reduce token costs by fifty to ninety percent while maintaining accuracy, requiring practitioners to understand the underlying mechanics and tune parameters deliberately for their specific workload."
+      },
+      {
+        "id": "ai-skills-prompt-compression-compression-tradeoffs",
+        "title": "Quality vs Token Tradeoffs",
+        "durationSeconds": 243,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/prompt-compression/compression-tradeoffs.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to reduce prompt tokens by 50-90% without sacrificing quality by understanding the mechanics of compression tradeoffs and when to apply them."
+      },
+      {
+        "id": "ai-skills-prompt-compression-measuring-savings",
+        "title": "Measuring Cost Savings",
+        "durationSeconds": 203,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-skills/prompt-compression/measuring-savings.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to measure and validate cost savings from prompt compression in production systems by setting up baselines, choosing the right metrics, and iterating deliberately."
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-langgraph-agents",
+    "title": "Langgraph Agents",
+    "description": "Learn the core design principles and architecture of LangGraph to build reliable, production-grade AI agents that actually work at scale.",
+    "category": "AI Agents",
+    "lessons": [
+      {
+        "id": "ai-agents-langgraph-agents-langgraph-fundamentals",
+        "title": "LangGraph Fundamentals",
+        "durationSeconds": 236,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/langgraph-agents/langgraph-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the core design principles and architecture of LangGraph to build reliable, production-grade AI agents that actually work at scale."
+      },
+      {
+        "id": "ai-agents-langgraph-agents-nodes-edges-state",
+        "title": "Nodes, Edges, and State",
+        "durationSeconds": 236,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/langgraph-agents/nodes-edges-state.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how nodes, edges, and state form the foundation of production-ready LangGraph agents\u2014the building blocks that separate demo agents from reliable systems at scale."
+      },
+      {
+        "id": "ai-agents-langgraph-agents-conditional-routing",
+        "title": "Conditional Routing",
+        "durationSeconds": 215,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/langgraph-agents/conditional-routing.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to use conditional routing in LangGraph agents to direct execution flow dynamically based on agent state, a critical technique for building reliable production agents."
+      },
+      {
+        "id": "ai-agents-langgraph-agents-checkpointing-persistence",
+        "title": "Checkpointing and Persistence",
+        "durationSeconds": 225,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/langgraph-agents/checkpointing-persistence.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Checkpointing and persistence in LangGraph agents is about deliberately saving agent state at key points to build reliable, production-grade systems that can recover from failures and iterate effectively."
+      },
+      {
+        "id": "ai-agents-langgraph-agents-human-in-the-loop",
+        "title": "Human-in-the-Loop with LangGraph",
+        "durationSeconds": 219,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/langgraph-agents/human-in-the-loop.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to implement human-in-the-loop workflows in LangGraph agents to build reliable production systems that balance automation with human oversight."
+      },
+      {
+        "id": "ai-agents-langgraph-agents-langgraph-production",
+        "title": "LangGraph in Production",
+        "durationSeconds": 269,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/langgraph-agents/langgraph-production.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to build reliable, production-grade LangGraph agents by understanding stateful graph design, instrumentation, and the key decisions that separate demos from systems that scale."
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-crewai-multi-agent",
+    "title": "Crewai Multi Agent",
+    "description": "Learn the core principles of CrewAI that separate production multi-agent systems from demos: how to design agents, define tasks, choose processes, and apply reliability patterns.",
+    "category": "AI Agents",
+    "lessons": [
+      {
+        "id": "ai-agents-crewai-multi-agent-crewai-fundamentals",
+        "title": "CrewAI Fundamentals",
+        "durationSeconds": 249,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/crewai-multi-agent/crewai-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the core principles of CrewAI that separate production multi-agent systems from demos: how to design agents, define tasks, choose processes, and apply reliability patterns."
+      },
+      {
+        "id": "ai-agents-crewai-multi-agent-agents-and-roles",
+        "title": "Designing Agents and Roles",
+        "durationSeconds": 223,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/crewai-multi-agent/agents-and-roles.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Design agents and roles in CrewAI by defining clear contracts, picking the right models, and instrumenting from day one to ship reliable production systems."
+      },
+      {
+        "id": "ai-agents-crewai-multi-agent-tasks-and-processes",
+        "title": "Tasks, Processes, and Flows",
+        "durationSeconds": 251,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/crewai-multi-agent/tasks-and-processes.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to structure CrewAI agents using tasks, processes, and flows to build reliable multi-agent systems that work in production."
+      },
+      {
+        "id": "ai-agents-crewai-multi-agent-hierarchical-crews",
+        "title": "Hierarchical Crews",
+        "durationSeconds": 269,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/crewai-multi-agent/hierarchical-crews.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design and implement hierarchical crews in CrewAI where specialized agents work together in structured workflows to build reliable production systems."
+      },
+      {
+        "id": "ai-agents-crewai-multi-agent-crewai-tools",
+        "title": "CrewAI Tools and Custom Tools",
+        "durationSeconds": 209,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/crewai-multi-agent/crewai-tools.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design and implement tools for CrewAI agents in production, treating tool selection as a deliberate engineering choice rather than a default configuration."
+      },
+      {
+        "id": "ai-agents-crewai-multi-agent-crewai-deployment",
+        "title": "Deploying CrewAI to Production",
+        "durationSeconds": 211,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/crewai-multi-agent/crewai-deployment.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to deploy CrewAI multi-agent systems to production by understanding the key design decisions, patterns, and checklist that separate reliable agent systems from fragile demos."
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-microsoft-autogen",
+    "title": "Microsoft Autogen",
+    "description": "Learn the core principles and production patterns for building reliable multi-agent systems with Microsoft AutoGen.",
+    "category": "AI Agents",
+    "lessons": [
+      {
+        "id": "ai-agents-microsoft-autogen-autogen-fundamentals",
+        "title": "AutoGen Fundamentals",
+        "durationSeconds": 264,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/microsoft-autogen/autogen-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the core principles and production patterns for building reliable multi-agent systems with Microsoft AutoGen."
+      },
+      {
+        "id": "ai-agents-microsoft-autogen-conversable-agents",
+        "title": "Conversable Agents",
+        "durationSeconds": 249,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/microsoft-autogen/conversable-agents.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to design and deploy conversable agents in Microsoft AutoGen for reliable multi-agent systems that handle real production workloads."
+      },
+      {
+        "id": "ai-agents-microsoft-autogen-group-chat",
+        "title": "GroupChat Orchestration",
+        "durationSeconds": 238,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/microsoft-autogen/group-chat.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to orchestrate multi-agent conversations in Microsoft AutoGen by setting up agents, defining clear contracts, and instrumenting your system for production reliability."
+      },
+      {
+        "id": "ai-agents-microsoft-autogen-autogen-code-execution",
+        "title": "Code Execution Agents",
+        "durationSeconds": 271,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/microsoft-autogen/autogen-code-execution.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how code execution agents in Microsoft AutoGen enable reliable production systems by understanding the mechanics, design patterns, and production checklist that separate demos from real-world agents."
+      },
+      {
+        "id": "ai-agents-microsoft-autogen-autogen-studio",
+        "title": "AutoGen Studio",
+        "durationSeconds": 214,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/microsoft-autogen/autogen-studio.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "AutoGen Studio is a framework for building production-grade multi-agent systems where agents collaborate through structured conversation, and the difference between demos and reliable production systems comes down to how well you tune the mechanics."
+      },
+      {
+        "id": "ai-agents-microsoft-autogen-autogen-vs-crewai",
+        "title": "AutoGen vs CrewAI vs LangGraph",
+        "durationSeconds": 231,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/microsoft-autogen/autogen-vs-crewai.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to choose between AutoGen, CrewAI, and LangGraph for building reliable multi-agent systems in production, and understand the design principles that separate demos from real systems."
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-llamaindex-agents",
+    "title": "Llamaindex Agents",
+    "description": "Learn how to build production-ready LlamaIndex agents using ReAct and function calling patterns with proper instrumentation and evaluation.",
+    "category": "AI Agents",
+    "lessons": [
+      {
+        "id": "ai-agents-llamaindex-agents-llamaindex-agents-intro",
+        "title": "LlamaIndex Agents Intro",
+        "durationSeconds": 232,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/llamaindex-agents/llamaindex-agents-intro.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to build production-ready LlamaIndex agents using ReAct and function calling patterns with proper instrumentation and evaluation."
+      },
+      {
+        "id": "ai-agents-llamaindex-agents-function-calling-agent",
+        "title": "FunctionCallingAgent",
+        "durationSeconds": 223,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/llamaindex-agents/function-calling-agent.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "FunctionCallingAgent is a LlamaIndex technique for building reliable production agents by giving language models access to tools and functions, requiring deliberate design choices around model selection, tracing, and evaluation."
+      },
+      {
+        "id": "ai-agents-llamaindex-agents-react-agent",
+        "title": "LlamaIndex ReActAgent",
+        "durationSeconds": 243,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/llamaindex-agents/react-agent.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how ReActAgent works in LlamaIndex, when to use it in production, and the decision-making framework experienced teams use to ship reliable agents."
+      },
+      {
+        "id": "ai-agents-llamaindex-agents-query-engine-tools",
+        "title": "Query Engines as Tools",
+        "durationSeconds": 238,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/llamaindex-agents/query-engine-tools.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to turn query engines into tools within LlamaIndex agents for building reliable, production-grade RAG systems."
+      },
+      {
+        "id": "ai-agents-llamaindex-agents-agent-workflows",
+        "title": "Agent Workflows",
+        "durationSeconds": 207,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/llamaindex-agents/agent-workflows.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Agent workflows are deliberate design choices that separate reliable production agents from demos, requiring clear contracts, proper instrumentation, and iteration on real failure modes rather than synthetic examples."
+      },
+      {
+        "id": "ai-agents-llamaindex-agents-llamaindex-multi-agent",
+        "title": "Multi-Agent Patterns",
+        "durationSeconds": 247,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/llamaindex-agents/llamaindex-multi-agent.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Multi-agent patterns are deliberate architectural choices that separate production-grade agents from demos, requiring clear contracts, proper instrumentation, and iteration on real failure modes."
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-pydantic-ai",
+    "title": "Pydantic AI",
+    "description": "Pydantic AI is a framework for building type-safe, production-grade agents with structured outputs, validation, and dependency injection that separate reliable systems from demos.",
+    "category": "AI Agents",
+    "lessons": [
+      {
+        "id": "ai-agents-pydantic-ai-pydantic-ai-intro",
+        "title": "Pydantic AI Intro",
+        "durationSeconds": 264,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/pydantic-ai/pydantic-ai-intro.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Pydantic AI is a framework for building type-safe, production-grade agents with structured outputs, validation, and dependency injection that separate reliable systems from demos."
+      },
+      {
+        "id": "ai-agents-pydantic-ai-typed-agents",
+        "title": "Typed Agents and Outputs",
+        "durationSeconds": 259,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/pydantic-ai/typed-agents.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to build type-safe, production-grade agents in Pydantic AI using typed dependencies, structured outputs, and validation."
+      },
+      {
+        "id": "ai-agents-pydantic-ai-dependency-injection",
+        "title": "Dependency Injection",
+        "durationSeconds": 213,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/pydantic-ai/dependency-injection.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Dependency injection is a deliberate design pattern for building reliable, type-safe production agents by managing how tools and services are passed to agent components."
+      },
+      {
+        "id": "ai-agents-pydantic-ai-pydantic-ai-tools",
+        "title": "Tools with Pydantic AI",
+        "durationSeconds": 190,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/pydantic-ai/pydantic-ai-tools.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to build type-safe, production-grade AI agents using Pydantic AI's tools system with structured inputs, outputs, validation, and the right patterns to ship reliable agents at scale."
+      },
+      {
+        "id": "ai-agents-pydantic-ai-streaming-responses",
+        "title": "Streaming and Async",
+        "durationSeconds": 239,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/pydantic-ai/streaming-responses.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn when and how to use streaming and async in Pydantic AI agents to build reliable production systems, and understand the mental model behind these design choices."
+      },
+      {
+        "id": "ai-agents-pydantic-ai-pydantic-ai-testing",
+        "title": "Testing Pydantic AI Agents",
+        "durationSeconds": 251,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-agents/pydantic-ai/pydantic-ai-testing.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to test Pydantic AI agents in production by treating testing as a deliberate design choice, understanding what each lever controls, and building evals from real failure modes rather than synthetic examples."
+      }
+    ]
+  },
+  {
+    "id": "ai-vector-databases-pinecone-mastery",
+    "title": "Pinecone Mastery",
+    "description": "Learn how to set up and optimize Pinecone vector databases for production by understanding indexing strategies, metrics, and evaluation patterns that prevent costly scaling mistakes.",
+    "category": "AI Vector Databases",
+    "lessons": [
+      {
+        "id": "ai-vector-databases-pinecone-mastery-pinecone-fundamentals",
+        "title": "Pinecone Fundamentals",
+        "durationSeconds": 215,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/pinecone-mastery/pinecone-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to set up and optimize Pinecone vector databases for production by understanding indexing strategies, metrics, and evaluation patterns that prevent costly scaling mistakes."
+      },
+      {
+        "id": "ai-vector-databases-pinecone-mastery-indexes-and-namespaces",
+        "title": "Indexes and Namespaces",
+        "durationSeconds": 259,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/pinecone-mastery/indexes-and-namespaces.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design and configure Pinecone indexes and namespaces to balance recall, latency, and cost in production vector search systems."
+      },
+      {
+        "id": "ai-vector-databases-pinecone-mastery-upserts-and-queries",
+        "title": "Upserts and Queries",
+        "durationSeconds": 216,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/pinecone-mastery/upserts-and-queries.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design upserts and queries in Pinecone to balance recall, latency, and cost in production vector search systems."
+      },
+      {
+        "id": "ai-vector-databases-pinecone-mastery-metadata-filtering-pinecone",
+        "title": "Metadata Filtering",
+        "durationSeconds": 232,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/pinecone-mastery/metadata-filtering-pinecone.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how metadata filtering in Pinecone lets you pre-filter vector search results by document properties, dramatically improving recall, latency, and cost at scale."
+      },
+      {
+        "id": "ai-vector-databases-pinecone-mastery-pinecone-hybrid-search",
+        "title": "Hybrid Search with Pinecone",
+        "durationSeconds": 261,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/pinecone-mastery/pinecone-hybrid-search.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Hybrid search in Pinecone combines vector similarity and metadata filtering to balance recall, latency, and cost\u2014master the engineering fundamentals to avoid costly mistakes at scale."
+      },
+      {
+        "id": "ai-vector-databases-pinecone-mastery-pinecone-production",
+        "title": "Pinecone in Production",
+        "durationSeconds": 233,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/pinecone-mastery/pinecone-production.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to deploy Pinecone vector databases to production with the right index choices, metrics, and monitoring patterns that prevent costly mistakes at scale."
+      }
+    ]
+  },
+  {
+    "id": "ai-vector-databases-weaviate-mastery",
+    "title": "Weaviate Mastery",
+    "description": "Master Weaviate's core concepts: schema design, vectorizers, and the engineering discipline needed to build high-quality vector search systems at scale.",
+    "category": "AI Vector Databases",
+    "lessons": [
+      {
+        "id": "ai-vector-databases-weaviate-mastery-weaviate-fundamentals",
+        "title": "Weaviate Fundamentals",
+        "durationSeconds": 249,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/weaviate-mastery/weaviate-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Master Weaviate's core concepts: schema design, vectorizers, and the engineering discipline needed to build high-quality vector search systems at scale."
+      },
+      {
+        "id": "ai-vector-databases-weaviate-mastery-collections-and-schema",
+        "title": "Collections and Schema",
+        "durationSeconds": 233,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/weaviate-mastery/collections-and-schema.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design collections and schema in Weaviate to build fast, reliable, cost-effective vector search systems at scale."
+      },
+      {
+        "id": "ai-vector-databases-weaviate-mastery-graphql-queries",
+        "title": "GraphQL and gRPC Queries",
+        "durationSeconds": 209,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/weaviate-mastery/graphql-queries.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to use GraphQL and gRPC queries in Weaviate to build fast, reliable vector search systems that scale."
+      },
+      {
+        "id": "ai-vector-databases-weaviate-mastery-weaviate-modules",
+        "title": "Vectorizers and Generative Modules",
+        "durationSeconds": 241,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/weaviate-mastery/weaviate-modules.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to choose and configure vectorizers and generative modules in Weaviate to build fast, cost-effective vector search systems that scale reliably."
+      },
+      {
+        "id": "ai-vector-databases-weaviate-mastery-weaviate-multi-tenancy",
+        "title": "Multi-Tenancy",
+        "durationSeconds": 243,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/weaviate-mastery/weaviate-multi-tenancy.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Multi-tenancy in Weaviate is a deliberate engineering decision that separates data and queries by tenant to optimize recall, latency, and cost at scale."
+      },
+      {
+        "id": "ai-vector-databases-weaviate-mastery-weaviate-production",
+        "title": "Weaviate in Production",
+        "durationSeconds": 180,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/weaviate-mastery/weaviate-production.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the production engineering practices, configuration decisions, and monitoring patterns that separate reliable, cost-efficient Weaviate deployments from slow, expensive ones at scale."
+      }
+    ]
+  },
+  {
+    "id": "ai-vector-databases-qdrant-mastery",
+    "title": "Qdrant Mastery",
+    "description": "Learn Qdrant fundamentals: how to set up collections, configure indexing, filter payloads, and measure performance to build reliable vector search at scale.",
+    "category": "AI Vector Databases",
+    "lessons": [
+      {
+        "id": "ai-vector-databases-qdrant-mastery-qdrant-fundamentals",
+        "title": "Qdrant Fundamentals",
+        "durationSeconds": 261,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/qdrant-mastery/qdrant-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn Qdrant fundamentals: how to set up collections, configure indexing, filter payloads, and measure performance to build reliable vector search at scale."
+      },
+      {
+        "id": "ai-vector-databases-qdrant-mastery-qdrant-collections",
+        "title": "Collections and Vectors",
+        "durationSeconds": 270,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/qdrant-mastery/qdrant-collections.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design collections and vectors in Qdrant for production vector search systems, covering schema design, distance metrics, and the engineering decisions that separate fast, efficient systems from slow and expensive ones."
+      },
+      {
+        "id": "ai-vector-databases-qdrant-mastery-payload-filtering",
+        "title": "Payload Filtering",
+        "durationSeconds": 204,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/qdrant-mastery/payload-filtering.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to use payload filtering in Qdrant to add conditional constraints to vector searches, improving recall and cost efficiency at scale."
+      },
+      {
+        "id": "ai-vector-databases-qdrant-mastery-qdrant-sharding",
+        "title": "Sharding and Replication",
+        "durationSeconds": 220,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/qdrant-mastery/qdrant-sharding.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how sharding and replication in Qdrant distribute data and queries across nodes to achieve scale, reliability, and cost efficiency in production vector search systems."
+      },
+      {
+        "id": "ai-vector-databases-qdrant-mastery-qdrant-quantization",
+        "title": "Quantization in Qdrant",
+        "durationSeconds": 246,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/qdrant-mastery/qdrant-quantization.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Quantization in Qdrant is a deliberate engineering decision that dramatically affects vector search quality, cost, and speed\u2014master the mechanics and production patterns to avoid common pitfalls at scale."
+      },
+      {
+        "id": "ai-vector-databases-qdrant-mastery-qdrant-production",
+        "title": "Qdrant in Production",
+        "durationSeconds": 214,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/qdrant-mastery/qdrant-production.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn the engineering discipline of running Qdrant vector databases reliably in production, from schema design and metric selection through monitoring and load testing."
+      }
+    ]
+  },
+  {
+    "id": "ai-vector-databases-chroma-mastery",
+    "title": "Chroma Mastery",
+    "description": "Learn the core principles and production patterns for using Chroma, a vector database designed for LLM applications, from schema design to performance measurement.",
+    "category": "AI Vector Databases",
+    "lessons": [
+      {
+        "id": "ai-vector-databases-chroma-mastery-chroma-fundamentals",
+        "title": "Chroma Fundamentals",
+        "durationSeconds": 301,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/chroma-mastery/chroma-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the core principles and production patterns for using Chroma, a vector database designed for LLM applications, from schema design to performance measurement."
+      },
+      {
+        "id": "ai-vector-databases-chroma-mastery-chroma-collections",
+        "title": "Collections and Documents",
+        "durationSeconds": 274,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/chroma-mastery/chroma-collections.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to create and query collections in Chroma, the vector database, and master the engineering decisions that prevent slow or expensive systems at scale."
+      },
+      {
+        "id": "ai-vector-databases-chroma-mastery-embedding-functions",
+        "title": "Embedding Functions",
+        "durationSeconds": 209,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/chroma-mastery/embedding-functions.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Embedding functions are critical engineering decisions in vector databases that directly impact recall, latency, and cost\u2014treat them as deliberate choices, not defaults."
+      },
+      {
+        "id": "ai-vector-databases-chroma-mastery-persistent-vs-inmemory",
+        "title": "Persistent vs In-Memory",
+        "durationSeconds": 232,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/chroma-mastery/persistent-vs-inmemory.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn when and how to choose between persistent storage and in-memory vector databases in Chroma, and why this decision dramatically affects performance, cost, and recall at scale."
+      },
+      {
+        "id": "ai-vector-databases-chroma-mastery-chroma-where-filters",
+        "title": "Where Filters",
+        "durationSeconds": 191,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/chroma-mastery/chroma-where-filters.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to use where filters in Chroma to restrict vector searches by metadata, improving performance and recall in production systems."
+      },
+      {
+        "id": "ai-vector-databases-chroma-mastery-chroma-production",
+        "title": "Chroma in Production",
+        "durationSeconds": 254,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/chroma-mastery/chroma-production.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to deploy Chroma vector databases reliably in production by mastering indexing decisions, measuring recall and latency, and following proven engineering patterns."
+      }
+    ]
+  },
+  {
+    "id": "ai-vector-databases-milvus-mastery",
+    "title": "Milvus Mastery",
+    "description": "Learn Milvus fundamentals: the essential architecture, schema design, indexing choices, and production patterns that separate high-performance vector search from slow and expensive systems at scale.",
+    "category": "AI Vector Databases",
+    "lessons": [
+      {
+        "id": "ai-vector-databases-milvus-mastery-milvus-fundamentals",
+        "title": "Milvus Fundamentals",
+        "durationSeconds": 262,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/milvus-mastery/milvus-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn Milvus fundamentals: the essential architecture, schema design, indexing choices, and production patterns that separate high-performance vector search from slow and expensive systems at scale."
+      },
+      {
+        "id": "ai-vector-databases-milvus-mastery-milvus-architecture",
+        "title": "Distributed Architecture",
+        "durationSeconds": 182,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/milvus-mastery/milvus-architecture.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to design and tune distributed architecture in Milvus for production vector database workloads at scale."
+      },
+      {
+        "id": "ai-vector-databases-milvus-mastery-milvus-collections",
+        "title": "Collections and Partitions",
+        "durationSeconds": 189,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/milvus-mastery/milvus-collections.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design and configure Milvus collections and partitions to achieve reliable, cost-effective vector search at scale."
+      },
+      {
+        "id": "ai-vector-databases-milvus-mastery-milvus-indexes",
+        "title": "Indexes in Milvus",
+        "durationSeconds": 252,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/milvus-mastery/milvus-indexes.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to strategically choose and configure indexes in Milvus to balance recall, latency, and cost at scale."
+      },
+      {
+        "id": "ai-vector-databases-milvus-mastery-milvus-search",
+        "title": "Search and Filtering",
+        "durationSeconds": 237,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/milvus-mastery/milvus-search.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design and execute vector search and filtering in Milvus at scale, from schema decisions through production monitoring."
+      },
+      {
+        "id": "ai-vector-databases-milvus-mastery-milvus-production",
+        "title": "Milvus at Billion Scale",
+        "durationSeconds": 210,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-vector-databases/milvus-mastery/milvus-production.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to architect and operate Milvus at billion-scale workloads, balancing recall, latency, and cost through deliberate schema design, index choices, and continuous measurement."
+      }
+    ]
+  },
+  {
+    "id": "ai-hardware-nvidia-h100",
+    "title": "Nvidia H100",
+    "description": "Master the NVIDIA H100's architecture and learn how to extract peak performance through deliberate engineering choices around memory, precision, and interconnects.",
+    "category": "AI Hardware",
+    "lessons": [
+      {
+        "id": "ai-hardware-nvidia-h100-h100-architecture",
+        "title": "H100 Architecture",
+        "durationSeconds": 248,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h100/h100-architecture.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Master the NVIDIA H100's architecture and learn how to extract peak performance through deliberate engineering choices around memory, precision, and interconnects."
+      },
+      {
+        "id": "ai-hardware-nvidia-h100-transformer-engine",
+        "title": "Transformer Engine and FP8",
+        "durationSeconds": 262,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h100/transformer-engine.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "FP8 and Transformer Engine on NVIDIA H100 let you run large AI models faster and cheaper by using lower precision arithmetic strategically, but only when you've measured the bottleneck first."
+      },
+      {
+        "id": "ai-hardware-nvidia-h100-h100-nvlink",
+        "title": "NVLink and NVSwitch on H100",
+        "durationSeconds": 253,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h100/h100-nvlink.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "NVLink and NVSwitch on H100 are critical interconnect technologies that determine whether your GPU cluster runs efficiently or sits idle, and understanding their mechanics prevents costly performance cliffs at scale."
+      },
+      {
+        "id": "ai-hardware-nvidia-h100-h100-mig",
+        "title": "MIG",
+        "durationSeconds": 263,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h100/h100-mig.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "MIG (Multi-Instance GPU) is a deliberate engineering technique for maximizing GPU cluster utilization on NVIDIA H100s, where small topology and configuration decisions compound massively at scale."
+      },
+      {
+        "id": "ai-hardware-nvidia-h100-h100-vs-a100",
+        "title": "H100 vs A100 Tradeoffs",
+        "durationSeconds": 269,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h100/h100-vs-a100.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Understanding when and how to choose between NVIDIA H100 and A100 GPUs based on your workload, scale, and precision requirements."
+      },
+      {
+        "id": "ai-hardware-nvidia-h100-h100-tuning",
+        "title": "Tuning H100 for LLM Workloads",
+        "durationSeconds": 211,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h100/h100-tuning.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn the engineering discipline of tuning NVIDIA H100 GPUs for large language model workloads to unlock 2-5x throughput improvements through hardware verification, precision selection, profiling, and systematic optimization."
+      }
+    ]
+  },
+  {
+    "id": "ai-hardware-nvidia-h200",
+    "title": "Nvidia H200",
+    "description": "The H200 is an upgraded H100 GPU with 141GB of memory and 1.4x faster LLM inference; master it as a deliberate engineering choice by understanding memory bandwidth, precision tradeoffs, and profiling before optimizing.",
+    "category": "AI Hardware",
+    "lessons": [
+      {
+        "id": "ai-hardware-nvidia-h200-h200-overview",
+        "title": "H200 Overview",
+        "durationSeconds": 276,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h200/h200-overview.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "The H200 is an upgraded H100 GPU with 141GB of memory and 1.4x faster LLM inference; master it as a deliberate engineering choice by understanding memory bandwidth, precision tradeoffs, and profiling before optimizing."
+      },
+      {
+        "id": "ai-hardware-nvidia-h200-h200-vs-h100",
+        "title": "H200 vs H100",
+        "durationSeconds": 279,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h200/h200-vs-h100.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the key differences between NVIDIA's H200 and H100 GPUs, when to upgrade, and the engineering principles that drive real-world performance gains in production AI clusters."
+      },
+      {
+        "id": "ai-hardware-nvidia-h200-h200-memory-bandwidth",
+        "title": "141GB HBM3e Memory",
+        "durationSeconds": 242,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h200/h200-memory-bandwidth.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "The NVIDIA H200's 141GB HBM3e memory is a key hardware capability that can drive significant throughput improvements, but requires deliberate engineering and careful profiling to extract real value at scale."
+      },
+      {
+        "id": "ai-hardware-nvidia-h200-h200-llm-inference",
+        "title": "LLM Inference on H200",
+        "durationSeconds": 212,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h200/h200-llm-inference.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to optimize LLM inference on NVIDIA's H200 GPU by understanding memory bandwidth, precision choices, profiling, and production deployment patterns."
+      },
+      {
+        "id": "ai-hardware-nvidia-h200-h200-sxm-vs-pcie",
+        "title": "SXM vs PCIe H200",
+        "durationSeconds": 273,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h200/h200-sxm-vs-pcie.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the critical differences between SXM and PCIe H200 configurations and how to choose the right one for your AI workload."
+      },
+      {
+        "id": "ai-hardware-nvidia-h200-h200-cluster-design",
+        "title": "Cluster Design with H200",
+        "durationSeconds": 257,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-h200/h200-cluster-design.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to design GPU clusters with NVIDIA H200s by measuring bottlenecks, choosing the right precision, and tuning systematically to avoid 2-5x throughput differences between poorly and well-optimized teams."
+      }
+    ]
+  },
+  {
+    "id": "ai-hardware-nvidia-blackwell-b200",
+    "title": "Nvidia Blackwell B200",
+    "description": "Blackwell architecture is NVIDIA's frontier GPU design combining high-bandwidth memory, advanced precision formats, and interconnect topology choices that directly impact real-world AI workload throughput and cost.",
+    "category": "AI Hardware",
+    "lessons": [
+      {
+        "id": "ai-hardware-nvidia-blackwell-b200-blackwell-architecture",
+        "title": "Blackwell Architecture",
+        "durationSeconds": 184,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-blackwell-b200/blackwell-architecture.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Blackwell architecture is NVIDIA's frontier GPU design combining high-bandwidth memory, advanced precision formats, and interconnect topology choices that directly impact real-world AI workload throughput and cost."
+      },
+      {
+        "id": "ai-hardware-nvidia-blackwell-b200-fp4-precision",
+        "title": "FP4 Precision Training",
+        "durationSeconds": 268,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-blackwell-b200/fp4-precision.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "FP4 precision training on NVIDIA's Blackwell GPUs is a deliberate engineering decision that can unlock 2-5x throughput improvements, but only when you've measured your actual bottleneck and the workload justifies the complexity."
+      },
+      {
+        "id": "ai-hardware-nvidia-blackwell-b200-transformer-engine-v2",
+        "title": "Transformer Engine v2",
+        "durationSeconds": 236,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-blackwell-b200/transformer-engine-v2.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Transformer Engine v2 is NVIDIA's precision-optimization tool for Blackwell GPUs that can deliver 2-5x throughput gains when properly tuned, but only if you measure bottlenecks first and understand the underlying mechanics."
+      },
+      {
+        "id": "ai-hardware-nvidia-blackwell-b200-gb200-superchip",
+        "title": "GB200 Grace Blackwell Superchip",
+        "durationSeconds": 266,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-blackwell-b200/gb200-superchip.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Master GB200 Grace Blackwell Superchip architecture, precision trade-offs, and production profiling patterns to unlock 2-5x throughput gains on large-scale AI clusters."
+      },
+      {
+        "id": "ai-hardware-nvidia-blackwell-b200-nvlink5-switch",
+        "title": "NVLink 5 and NVSwitch",
+        "durationSeconds": 235,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-blackwell-b200/nvlink5-switch.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "NVLink 5 and NVSwitch are high-bandwidth interconnects that let multiple Blackwell GPUs communicate efficiently, and understanding their mechanics is critical for avoiding throughput losses that compound at scale."
+      },
+      {
+        "id": "ai-hardware-nvidia-blackwell-b200-blackwell-tuning",
+        "title": "Tuning Blackwell for AI",
+        "durationSeconds": 205,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-blackwell-b200/blackwell-tuning.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to systematically tune NVIDIA's Blackwell B200 GPU for AI workloads by measuring bottlenecks, choosing the right precision, and validating cost-per-token rather than peak throughput."
+      }
+    ]
+  },
+  {
+    "id": "ai-hardware-nvidia-a100",
+    "title": "Nvidia A100",
+    "description": "Learn how NVIDIA A100 Ampere architecture works, why precision and memory bandwidth matter, and the engineering patterns that separate well-tuned clusters from idle ones.",
+    "category": "AI Hardware",
+    "lessons": [
+      {
+        "id": "ai-hardware-nvidia-a100-a100-architecture",
+        "title": "A100 Ampere Architecture",
+        "durationSeconds": 253,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-a100/a100-architecture.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how NVIDIA A100 Ampere architecture works, why precision and memory bandwidth matter, and the engineering patterns that separate well-tuned clusters from idle ones."
+      },
+      {
+        "id": "ai-hardware-nvidia-a100-a100-tensor-cores",
+        "title": "3rd-Gen Tensor Cores",
+        "durationSeconds": 256,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-a100/a100-tensor-cores.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Understanding 3rd-generation tensor cores in the NVIDIA A100: when to use them, how they drive real performance improvements at scale, and the engineering discipline required to deploy them effectively."
+      },
+      {
+        "id": "ai-hardware-nvidia-a100-a100-mig",
+        "title": "MIG on A100",
+        "durationSeconds": 256,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-a100/a100-mig.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "MIG on A100 is a deliberate engineering decision that multiplies throughput gains across large GPU clusters by making strategic topology and resource allocation choices."
+      },
+      {
+        "id": "ai-hardware-nvidia-a100-a100-bf16-tf32",
+        "title": "BF16 and TF32 Precision",
+        "durationSeconds": 257,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-a100/a100-bf16-tf32.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how BF16 and TF32 precision formats work on NVIDIA A100 GPUs and when to use them to unlock 2-5x throughput gains in production AI workloads."
+      },
+      {
+        "id": "ai-hardware-nvidia-a100-a100-vs-h100",
+        "title": "A100 vs H100 Decision",
+        "durationSeconds": 276,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-a100/a100-vs-h100.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to make the strategic choice between NVIDIA A100 and H100 GPUs based on workload characteristics, precision requirements, and cost efficiency rather than defaulting to the newest hardware."
+      },
+      {
+        "id": "ai-hardware-nvidia-a100-a100-tuning",
+        "title": "Tuning A100 Workloads",
+        "durationSeconds": 237,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-a100/a100-tuning.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to systematically tune NVIDIA A100 GPU workloads by profiling bottlenecks, choosing the right precision, and validating cost-per-token rather than peak throughput."
+      }
+    ]
+  },
+  {
+    "id": "ai-hardware-nvidia-l40s-l4",
+    "title": "Nvidia L40s L4",
+    "description": "Learn how the NVIDIA L40S Ada architecture works, why it matters for production inference, and the engineering patterns that separate well-optimized clusters from poorly-tuned ones.",
+    "category": "AI Hardware",
+    "lessons": [
+      {
+        "id": "ai-hardware-nvidia-l40s-l4-l40s-architecture",
+        "title": "L40S Ada Architecture",
+        "durationSeconds": 279,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-l40s-l4/l40s-architecture.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how the NVIDIA L40S Ada architecture works, why it matters for production inference, and the engineering patterns that separate well-optimized clusters from poorly-tuned ones."
+      },
+      {
+        "id": "ai-hardware-nvidia-l40s-l4-l4-architecture",
+        "title": "L4 for Efficient Inference",
+        "durationSeconds": 242,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-l40s-l4/l4-architecture.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to use NVIDIA L4 GPUs for efficient inference by understanding hardware constraints, precision choices, and tuning strategies that compound to create massive throughput gains at scale."
+      },
+      {
+        "id": "ai-hardware-nvidia-l40s-l4-l40s-fp8",
+        "title": "FP8 on L40S",
+        "durationSeconds": 223,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-l40s-l4/l40s-fp8.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "FP8 precision on NVIDIA L40S GPUs is a deliberate engineering decision that can deliver 2-5x throughput improvements when applied correctly, but only if you've measured the bottleneck first."
+      },
+      {
+        "id": "ai-hardware-nvidia-l40s-l4-l40s-rendering-ai",
+        "title": "Rendering + AI on L40S",
+        "durationSeconds": 244,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-l40s-l4/l40s-rendering-ai.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to effectively combine rendering and AI workloads on NVIDIA L40S and L4 GPUs by understanding hardware mechanics, precision choices, and profiling strategies to avoid costly mistakes at scale."
+      },
+      {
+        "id": "ai-hardware-nvidia-l40s-l4-l40s-vs-h100",
+        "title": "L40S vs H100 for Inference",
+        "durationSeconds": 258,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-l40s-l4/l40s-vs-h100.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to choose between NVIDIA's L40S and H100 GPUs for inference workloads and understand the hardware mechanics that drive real-world performance differences."
+      },
+      {
+        "id": "ai-hardware-nvidia-l40s-l4-l4-deployment",
+        "title": "L4 Deployment Patterns",
+        "durationSeconds": 244,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-hardware/nvidia-l40s-l4/l4-deployment.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn the core principles and practical patterns for deploying NVIDIA L4 and L40S GPUs efficiently in production, where small engineering decisions compound into massive throughput gains at scale."
+      }
+    ]
+  },
+  {
+    "id": "ai-frameworks-pytorch-mastery",
+    "title": "Pytorch Mastery",
+    "description": "Learn PyTorch fundamentals: tensors, modules, automatic differentiation, and the design patterns that power 80% of production AI systems.",
+    "category": "AI Frameworks",
+    "lessons": [
+      {
+        "id": "ai-frameworks-pytorch-mastery-pytorch-fundamentals",
+        "title": "PyTorch Fundamentals",
+        "durationSeconds": 226,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/pytorch-mastery/pytorch-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn PyTorch fundamentals: tensors, modules, automatic differentiation, and the design patterns that power 80% of production AI systems."
+      },
+      {
+        "id": "ai-frameworks-pytorch-mastery-autograd-deep-dive",
+        "title": "Autograd Deep Dive",
+        "durationSeconds": 305,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/pytorch-mastery/autograd-deep-dive.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Autograd is PyTorch's automatic differentiation engine that computes gradients for backpropagation, and mastering its mechanics and design patterns is essential for productive deep learning development."
+      },
+      {
+        "id": "ai-frameworks-pytorch-mastery-nn-module-patterns",
+        "title": "nn.Module Patterns",
+        "durationSeconds": 264,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/pytorch-mastery/nn-module-patterns.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn nn.Module patterns in PyTorch: the design patterns and best practices that separate productive workflows from constant friction."
+      },
+      {
+        "id": "ai-frameworks-pytorch-mastery-dataloader-pipelines",
+        "title": "DataLoader Pipelines",
+        "durationSeconds": 208,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/pytorch-mastery/dataloader-pipelines.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to design and implement efficient DataLoader pipelines in PyTorch, understanding the mechanics behind data loading, batching, and optimization rather than just following API defaults."
+      },
+      {
+        "id": "ai-frameworks-pytorch-mastery-torch-compile",
+        "title": "torch.compile and Inductor",
+        "durationSeconds": 197,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/pytorch-mastery/torch-compile.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "torch.compile and Inductor are PyTorch optimization tools that can double your model's speed, but only when your use case genuinely fits PyTorch's design philosophy and you commit to its idioms."
+      },
+      {
+        "id": "ai-frameworks-pytorch-mastery-pytorch-production",
+        "title": "PyTorch in Production",
+        "durationSeconds": 189,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/pytorch-mastery/pytorch-production.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to deploy PyTorch models in production by understanding framework idioms, making deliberate design choices, and following proven patterns that experienced engineers use to ship reliable AI systems."
+      }
+    ]
+  },
+  {
+    "id": "ai-frameworks-tensorflow-keras3",
+    "title": "Tensorflow Keras3",
+    "description": "TensorFlow and Keras 3 is a powerful, multi-backend deep learning framework that rewards deliberate design choices and working with the framework's idioms rather than against them.",
+    "category": "AI Frameworks",
+    "lessons": [
+      {
+        "id": "ai-frameworks-tensorflow-keras3-tf-keras-overview",
+        "title": "TensorFlow / Keras 3 Overview",
+        "durationSeconds": 211,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/tensorflow-keras3/tf-keras-overview.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "TensorFlow and Keras 3 is a powerful, multi-backend deep learning framework that rewards deliberate design choices and working with the framework's idioms rather than against them."
+      },
+      {
+        "id": "ai-frameworks-tensorflow-keras3-functional-vs-subclassing",
+        "title": "Functional API vs Subclassing",
+        "durationSeconds": 212,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/tensorflow-keras3/functional-vs-subclassing.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn when to use Keras functional API versus subclassing, and how to choose the right approach for your deep learning project."
+      },
+      {
+        "id": "ai-frameworks-tensorflow-keras3-tf-data-pipelines",
+        "title": "tf.data Pipelines",
+        "durationSeconds": 189,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/tensorflow-keras3/tf-data-pipelines.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how tf.data pipelines optimize data loading and preprocessing in TensorFlow by chaining operations like shuffling, batching, and prefetching to keep your GPU fed with data."
+      },
+      {
+        "id": "ai-frameworks-tensorflow-keras3-tf-function-graph",
+        "title": "tf.function and Graph Mode",
+        "durationSeconds": 241,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/tensorflow-keras3/tf-function-graph.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn when and how to use tf.function and graph mode in TensorFlow, focusing on design decisions and production patterns rather than just the mechanics."
+      },
+      {
+        "id": "ai-frameworks-tensorflow-keras3-keras3-multi-backend",
+        "title": "Keras 3 Multi-Backend",
+        "durationSeconds": 243,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/tensorflow-keras3/keras3-multi-backend.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Keras 3 Multi-Backend lets you write neural network code once and run it on TensorFlow, JAX, or PyTorch by treating backend choice as a deliberate design decision rather than an afterthought."
+      },
+      {
+        "id": "ai-frameworks-tensorflow-keras3-tflite-deployment",
+        "title": "TFLite Deployment",
+        "durationSeconds": 250,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/tensorflow-keras3/tflite-deployment.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to deploy trained neural networks efficiently to mobile and edge devices using TensorFlow Lite, and why treating deployment as a deliberate design choice from the start matters more than the specific tools."
+      }
+    ]
+  },
+  {
+    "id": "ai-frameworks-jax-mastery",
+    "title": "Jax Mastery",
+    "description": "JAX is a high-performance numerical computing library that combines NumPy's familiar syntax with automatic differentiation and compiled performance through XLA, and mastering its fundamentals means understanding when and how to use its core features like JIT compilation, automatic gradients, and vectorization.",
+    "category": "AI Frameworks",
+    "lessons": [
+      {
+        "id": "ai-frameworks-jax-mastery-jax-fundamentals",
+        "title": "JAX Fundamentals",
+        "durationSeconds": 197,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/jax-mastery/jax-fundamentals.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "JAX is a high-performance numerical computing library that combines NumPy's familiar syntax with automatic differentiation and compiled performance through XLA, and mastering its fundamentals means understanding when and how to use its core features like JIT compilation, automatic gradients, and vectorization."
+      },
+      {
+        "id": "ai-frameworks-jax-mastery-jit-grad-vmap",
+        "title": "jit, grad, vmap",
+        "durationSeconds": 225,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/jax-mastery/jit-grad-vmap.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Master JAX's three core transformations\u2014jit for compilation, grad for automatic differentiation, and vmap for vectorization\u2014to write fast, scalable machine learning code."
+      },
+      {
+        "id": "ai-frameworks-jax-mastery-pmap-shard-map",
+        "title": "pmap and shard_map",
+        "durationSeconds": 248,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/jax-mastery/pmap-shard-map.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how pmap and shard_map distribute computations across multiple devices in JAX for data parallelism and efficient scaling."
+      },
+      {
+        "id": "ai-frameworks-jax-mastery-jax-pytrees",
+        "title": "JAX Pytrees",
+        "durationSeconds": 256,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/jax-mastery/jax-pytrees.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "JAX Pytrees are a core abstraction that lets you work with nested data structures efficiently in JAX, and mastering them early prevents friction throughout your projects."
+      },
+      {
+        "id": "ai-frameworks-jax-mastery-functional-randomness",
+        "title": "Functional Randomness",
+        "durationSeconds": 215,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/jax-mastery/functional-randomness.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Functional randomness in JAX is a design philosophy that treats randomness as a pure function, enabling reproducibility and composability in machine learning workflows."
+      },
+      {
+        "id": "ai-frameworks-jax-mastery-jax-vs-pytorch",
+        "title": "JAX vs PyTorch",
+        "durationSeconds": 200,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/jax-mastery/jax-vs-pytorch.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn when and how to choose between JAX and PyTorch by understanding each framework's design philosophy and production trade-offs."
+      }
+    ]
+  },
+  {
+    "id": "ai-frameworks-flax-jax",
+    "title": "Flax Jax",
+    "description": "Flax is JAX's most popular neural network library, and mastering its design philosophy and idioms means shipping faster and avoiding constant friction with your tools.",
+    "category": "AI Frameworks",
+    "lessons": [
+      {
+        "id": "ai-frameworks-flax-jax-flax-overview",
+        "title": "Flax Overview",
+        "durationSeconds": 220,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/flax-jax/flax-overview.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Flax is JAX's most popular neural network library, and mastering its design philosophy and idioms means shipping faster and avoiding constant friction with your tools."
+      },
+      {
+        "id": "ai-frameworks-flax-jax-flax-nnx",
+        "title": "Flax NNX",
+        "durationSeconds": 266,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/flax-jax/flax-nnx.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Flax NNX is JAX's modern neural network API that prioritizes developer productivity through a deliberate design philosophy, and choosing to work with rather than against a framework's idioms is what separates fast shipping from constant friction."
+      },
+      {
+        "id": "ai-frameworks-flax-jax-flax-linen",
+        "title": "Flax Linen",
+        "durationSeconds": 237,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/flax-jax/flax-linen.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Flax Linen is a legacy API for building neural networks with JAX that requires thoughtful design decisions and framework-aligned patterns to use productively in real systems."
+      },
+      {
+        "id": "ai-frameworks-flax-jax-flax-training-loops",
+        "title": "Training Loops with Flax",
+        "durationSeconds": 263,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/flax-jax/flax-training-loops.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to build effective training loops in Flax using the modern NNX API, understanding the design patterns and mental models that separate productive frameworks use from constant friction."
+      },
+      {
+        "id": "ai-frameworks-flax-jax-flax-checkpointing",
+        "title": "Checkpointing in Flax",
+        "durationSeconds": 213,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/flax-jax/flax-checkpointing.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn why checkpointing in Flax matters for production neural networks, how to implement it correctly, and when to actually use it versus simpler alternatives."
+      },
+      {
+        "id": "ai-frameworks-flax-jax-pytorch-to-flax",
+        "title": "Porting PyTorch to Flax",
+        "durationSeconds": 239,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/flax-jax/pytorch-to-flax.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to port PyTorch models to Flax by understanding JAX's design philosophy and mastering the NNX API for building, training, and deploying neural networks."
+      }
+    ]
+  },
+  {
+    "id": "ai-frameworks-equinox-jax",
+    "title": "Equinox Jax",
+    "description": "Equinox is a JAX framework for building PyTorch-style neural networks with full pytree compatibility, designed around clean patterns for research and production code.",
+    "category": "AI Frameworks",
+    "lessons": [
+      {
+        "id": "ai-frameworks-equinox-jax-equinox-overview",
+        "title": "Equinox Overview",
+        "durationSeconds": 228,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/equinox-jax/equinox-overview.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Equinox is a JAX framework for building PyTorch-style neural networks with full pytree compatibility, designed around clean patterns for research and production code."
+      },
+      {
+        "id": "ai-frameworks-equinox-jax-equinox-modules",
+        "title": "Equinox Modules",
+        "durationSeconds": 251,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/equinox-jax/equinox-modules.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how to structure neural networks in JAX using Equinox modules, a PyTorch-like approach that respects JAX's pytree design."
+      },
+      {
+        "id": "ai-frameworks-equinox-jax-filtered-jit",
+        "title": "Filtered JIT and Vmap",
+        "durationSeconds": 199,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/equinox-jax/filtered-jit.html",
+        "isAutomotiveSafe": true,
+        "contentType": "code",
+        "audioSummary": "Learn how filtered JIT and vmap work in Equinox to efficiently compile and vectorize neural network training code while maintaining clean, readable JAX patterns."
+      },
+      {
+        "id": "ai-frameworks-equinox-jax-equinox-vs-flax",
+        "title": "Equinox vs Flax",
+        "durationSeconds": 253,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/equinox-jax/equinox-vs-flax.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn when and how to choose between Equinox and Flax for JAX deep learning, focusing on design philosophy and production patterns rather than framework mechanics."
+      },
+      {
+        "id": "ai-frameworks-equinox-jax-equinox-state",
+        "title": "Stateful Layers in Equinox",
+        "durationSeconds": 212,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/equinox-jax/equinox-state.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Stateful layers in Equinox let you build neural networks in JAX with clean, modular code by treating state deliberately as a design choice rather than a default."
+      },
+      {
+        "id": "ai-frameworks-equinox-jax-equinox-research",
+        "title": "Equinox for Research",
+        "durationSeconds": 274,
+        "audioUrl": "",
+        "visualContentUrl": "https://www.lillytechsystems.com/ai-frameworks/equinox-jax/equinox-research.html",
+        "isAutomotiveSafe": true,
+        "contentType": "conceptual",
+        "audioSummary": "Learn how to use Equinox for research by understanding its design philosophy, leveraging PyTorch-style neural networks in JAX, and applying proven patterns that accelerate development."
+      }
+    ]
   }
 ]
