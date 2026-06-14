@@ -2,1020 +2,1020 @@
   {
     "id": "anthropic-claude-claude-models-overview",
     "title": "Claude Models Overview",
-    "description": "Learn the Claude model family tiers\u2014Opus, Sonnet, and Haiku\u2014and how to make model-selection, prompt, tool, and production decisions that ship better products faster and cheaper.",
+    "description": "Master the Claude model family tiers and the decision chain that turns them into production features.",
     "category": "Anthropic Claude",
     "lessons": [
       {
         "id": "anthropic-claude-claude-models-overview-claude-family-overview",
         "title": "Claude Family Overview",
-        "durationSeconds": 79,
+        "durationSeconds": 238,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/claude-models-overview/claude-family-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn the Claude model family tiers\u2014Opus, Sonnet, and Haiku\u2014and how to make model-selection, prompt, tool, and production decisions that ship better products faster and cheaper."
+        "audioSummary": "Master the Claude model family tiers and the decision chain that turns them into production features."
       },
       {
         "id": "anthropic-claude-claude-models-overview-opus-sonnet-haiku-positioning",
         "title": "Opus / Sonnet / Haiku Positioning",
-        "durationSeconds": 86,
+        "durationSeconds": 279,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/claude-models-overview/opus-sonnet-haiku-positioning.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose between Claude's three model tiers\u2014Opus for complex reasoning, Sonnet for balanced production work, and Haiku for speed and cost\u2014and build them into a defensible engineering system."
+        "audioSummary": "Learn how to choose between Claude's three model tiers\u2014Opus, Sonnet, and Haiku\u2014and build production systems that survive growth and upgrades."
       },
       {
         "id": "anthropic-claude-claude-models-overview-family-pricing-shape",
         "title": "Family Pricing Shape",
-        "durationSeconds": 90,
+        "durationSeconds": 358,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/claude-models-overview/family-pricing-shape.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose the right Claude model tier and build a defensible decision chain for production AI features."
+        "audioSummary": "Learn how to choose the right Claude model tier and build a defensible decision-making chain for shipping production-grade AI features."
       },
       {
         "id": "anthropic-claude-claude-models-overview-context-windows-across-the-family",
         "title": "Context Windows Across the Family",
-        "durationSeconds": 88,
+        "durationSeconds": 305,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/claude-models-overview/context-windows-across-the-family.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose the right Claude model tier, design your prompts and tools, engineer your context strategy, and build evaluation loops before shipping production systems."
+        "audioSummary": "Learn how to choose the right Claude model tier\u2014Opus, Sonnet, or Haiku\u2014and design your context strategy for production systems."
       },
       {
         "id": "anthropic-claude-claude-models-overview-family-vs-external-models",
         "title": "Family vs External Models",
-        "durationSeconds": 99,
+        "durationSeconds": 273,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/claude-models-overview/family-vs-external-models.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master the decision chain for building Claude-backed features: pick the right model tier, design prompts with structure, engineer context strategy, and ship with evals and production safeguards."
+        "audioSummary": "Learn how to choose between Claude's model tiers and external models, then operationalize that choice through a disciplined engineering pattern that covers prompts, tools, evaluation, and production deployment."
       },
       {
         "id": "anthropic-claude-claude-models-overview-picking-a-family-tier",
         "title": "Picking a Family Tier",
-        "durationSeconds": 95,
+        "durationSeconds": 235,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/claude-models-overview/picking-a-family-tier.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose the right Claude model tier\u2014Opus, Sonnet, or Haiku\u2014by matching latency, cost, and quality needs to your production system."
+        "audioSummary": "Learn how to pick the right Claude model tier\u2014Opus, Sonnet, or Haiku\u2014and build a defensible decision-making chain for shipping Claude-backed features into production."
       }
     ]
   },
   {
     "id": "anthropic-claude-opus-deep-dive",
     "title": "Opus Deep Dive",
-    "description": "Learn how to build production Claude applications by treating model selection, prompting, tool design, evaluation, and deployment as a deliberate chain of engineering decisions.",
+    "description": "Master Claude Opus 4.7 by treating AI development as a deliberate chain of engineering decisions: model selection, prompt design, tool integration, context strategy, evaluation, and production scaffolding.",
     "category": "Anthropic Claude",
     "lessons": [
       {
         "id": "anthropic-claude-opus-deep-dive-opus-47-overview",
         "title": "Opus 4.7 Overview",
-        "durationSeconds": 87,
+        "durationSeconds": 252,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/opus-deep-dive/opus-47-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to build production Claude applications by treating model selection, prompting, tool design, evaluation, and deployment as a deliberate chain of engineering decisions."
+        "audioSummary": "Master Claude Opus 4.7 by treating AI development as a deliberate chain of engineering decisions: model selection, prompt design, tool integration, context strategy, evaluation, and production scaffolding."
       },
       {
         "id": "anthropic-claude-opus-deep-dive-1m-context-capability",
         "title": "1M Context Capability",
-        "durationSeconds": 107,
+        "durationSeconds": 253,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/opus-deep-dive/1m-context-capability.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master Claude Opus's million-token context window by anchoring decisions in user value, choosing the right model tier, designing prompts carefully, engineering context strategy, and building evaluation and production monitoring before shipping."
+        "audioSummary": "Master Claude Opus 4.7's 1-million-token context window by anchoring every build decision in user-facing metrics, picking the right model tier, designing structured prompts, wiring tools carefully, engineering your context strategy, building evaluation sets before shipping, and deploying with operational rigor."
       },
       {
         "id": "anthropic-claude-opus-deep-dive-frontier-reasoning",
         "title": "Frontier Reasoning",
-        "durationSeconds": 107,
+        "durationSeconds": 213,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/opus-deep-dive/frontier-reasoning.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn the foundational pattern for building Claude-backed systems in production: anchor your work in user value, pick the right model tier, design prompts deliberately, wire tools carefully, engineer your context strategy, build evaluations before shipping, and deploy with operational safeguards."
+        "audioSummary": "Learn the complete engineering framework for building Claude Opus-backed systems in production, from model selection through deployment with evals and operational safety."
       },
       {
         "id": "anthropic-claude-opus-deep-dive-cost-latency-profile",
         "title": "Cost & Latency Profile",
-        "durationSeconds": 92,
+        "durationSeconds": 220,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/opus-deep-dive/cost-latency-profile.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master the decision chain for building production Claude features: pick the right model tier, design intentional prompts, engineer context strategy, and ship with evals and operational monitoring."
+        "audioSummary": "Learn how to pick the right Claude model tier and operationalize it inside a production system by reasoning through a chain of interconnected engineering decisions."
       },
       {
         "id": "anthropic-claude-opus-deep-dive-opus-vs-sonnet-decision",
         "title": "Opus vs Sonnet Decision",
-        "durationSeconds": 97,
+        "durationSeconds": 238,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/opus-deep-dive/opus-vs-sonnet-decision.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn when to pick Claude Opus versus Sonnet by matching model tier to your latency, cost, and quality needs, then operationalize that choice through prompt design, tool wiring, evaluation, and production scaffolding."
+        "audioSummary": "Learn how to choose between Claude Opus and Sonnet by anchoring decisions in user-facing metrics, then optimizing for latency, cost, and quality alongside prompt design, tooling, evaluation, and production operations."
       },
       {
         "id": "anthropic-claude-opus-deep-dive-opus-workload-patterns",
         "title": "Opus Workload Patterns",
-        "durationSeconds": 91,
+        "durationSeconds": 302,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/opus-deep-dive/opus-workload-patterns.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master the seven-step pattern for building production Claude applications: anchor to user value, pick the right model tier, design prompts carefully, wire tools with error handling, engineer your context strategy, build evals before shipping, and deploy with operational safeguards."
+        "audioSummary": "Learn how to build production Claude features by anchoring decisions in user value, selecting the right model tier, designing prompts and tools methodically, and shipping with evals and operational safeguards."
       }
     ]
   },
   {
     "id": "anthropic-claude-sonnet-deep-dive",
     "title": "Sonnet Deep Dive",
-    "description": "Claude Sonnet 4.6 is the production workhorse model that balances cost, quality, and speed\u2014master the decision chain around model selection, prompt design, tool wiring, evaluation, and operational scaffolding to ship Claude-backed features that scale.",
+    "description": "Master Claude Sonnet 4.6 as a production-ready model by understanding its role in the price-quality-latency trade-off, learning the decision chain that makes Claude features work at scale, and building operational discipline around evals, monitoring, and incident response.",
     "category": "Anthropic Claude",
     "lessons": [
       {
         "id": "anthropic-claude-sonnet-deep-dive-sonnet-46-overview",
         "title": "Sonnet 4.6 Overview",
-        "durationSeconds": 78,
+        "durationSeconds": 186,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/sonnet-deep-dive/sonnet-46-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Claude Sonnet 4.6 is the production workhorse model that balances cost, quality, and speed\u2014master the decision chain around model selection, prompt design, tool wiring, evaluation, and operational scaffolding to ship Claude-backed features that scale."
+        "audioSummary": "Master Claude Sonnet 4.6 as a production-ready model by understanding its role in the price-quality-latency trade-off, learning the decision chain that makes Claude features work at scale, and building operational discipline around evals, monitoring, and incident response."
       },
       {
         "id": "anthropic-claude-sonnet-deep-dive-production-workhorse-positioning",
         "title": "Production Workhorse Positioning",
-        "durationSeconds": 89,
+        "durationSeconds": 276,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/sonnet-deep-dive/production-workhorse-positioning.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to position Claude Sonnet as a production workhorse by anchoring decisions in user value, picking the right model tier, designing prompts carefully, wiring tools with safety, managing context strategy, building evaluation sets before shipping, and deploying with operational safeguards."
+        "audioSummary": "Master Claude Sonnet as your production AI workhorse by treating it as a deliberate chain of engineering decisions from model selection through operational deployment."
       },
       {
         "id": "anthropic-claude-sonnet-deep-dive-price-quality-latency-trade-off",
         "title": "Price / Quality / Latency Trade-off",
-        "durationSeconds": 88,
+        "durationSeconds": 334,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/sonnet-deep-dive/price-quality-latency-trade-off.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn the mental model and operational checklist for making defensible model-selection, prompt-design, and production-deployment decisions when building Claude-backed features at scale."
+        "audioSummary": "Learn how to navigate the price, quality, and latency trade-offs when choosing Claude models and building production systems."
       },
       {
         "id": "anthropic-claude-sonnet-deep-dive-sonnet-workload-patterns",
         "title": "Sonnet Workload Patterns",
-        "durationSeconds": 86,
+        "durationSeconds": 245,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/sonnet-deep-dive/sonnet-workload-patterns.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master Claude Sonnet as a production workhorse by anchoring decisions in user outcomes, picking the right model tier, and building evaluation loops before shipping."
+        "audioSummary": "Learn the practical decision chain for shipping Claude Sonnet features in production, from model selection through deployment with observability and evals."
       },
       {
         "id": "anthropic-claude-sonnet-deep-dive-migrating-from-earlier-sonnet",
         "title": "Migrating from Earlier Sonnet",
-        "durationSeconds": 90,
+        "durationSeconds": 256,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/sonnet-deep-dive/migrating-from-earlier-sonnet.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master the decision chain for building production Claude applications: model selection, prompt design, tool wiring, context strategy, evaluation, and operational deployment."
+        "audioSummary": "Learn a seven-step production pattern for migrating to Claude Sonnet and building reliable AI features that scale."
       },
       {
         "id": "anthropic-claude-sonnet-deep-dive-opus-sonnet-cascade",
         "title": "Opus-Sonnet Cascade",
-        "durationSeconds": 98,
+        "durationSeconds": 331,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/sonnet-deep-dive/opus-sonnet-cascade.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master the Opus-Sonnet cascade pattern to build production Claude systems that balance cost, latency, and quality through deliberate model selection, prompt engineering, tool design, and evaluation before shipping."
+        "audioSummary": "Learn the Opus-Sonnet cascade pattern: a systematic decision-making framework for building production Claude applications that balance cost, latency, and quality."
       }
     ]
   },
   {
     "id": "anthropic-claude-haiku-deep-dive",
     "title": "Haiku Deep Dive",
-    "description": "Master Claude Haiku 4.5 by treating AI engineering as a chain of deliberate decisions: model tier, prompt design, tool wiring, context strategy, evaluation, and production operations.",
+    "description": "Master Claude Haiku 4.5 as your default fast-and-cheap model by understanding when to use it, how to design prompts and tools around it, and how to operationalize it in production with evals and monitoring.",
     "category": "Anthropic Claude",
     "lessons": [
       {
         "id": "anthropic-claude-haiku-deep-dive-haiku-45-overview",
         "title": "Haiku 4.5 Overview",
-        "durationSeconds": 92,
+        "durationSeconds": 196,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/haiku-deep-dive/haiku-45-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master Claude Haiku 4.5 by treating AI engineering as a chain of deliberate decisions: model tier, prompt design, tool wiring, context strategy, evaluation, and production operations."
+        "audioSummary": "Master Claude Haiku 4.5 as your default fast-and-cheap model by understanding when to use it, how to design prompts and tools around it, and how to operationalize it in production with evals and monitoring."
       },
       {
         "id": "anthropic-claude-haiku-deep-dive-fast-cheap-positioning",
         "title": "Fast & Cheap Positioning",
-        "durationSeconds": 97,
+        "durationSeconds": 247,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/haiku-deep-dive/fast-cheap-positioning.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master Claude Haiku for fast, cheap production work by anchoring decisions in user metrics, picking the right model tier, designing prompts carefully, and shipping with evals and operational safeguards."
+        "audioSummary": "Master Claude Haiku for fast and cheap production work by anchoring decisions in user metrics, choosing the right model tier, and building evaluation loops before shipping."
       },
       {
         "id": "anthropic-claude-haiku-deep-dive-haiku-workload-patterns",
         "title": "Haiku Workload Patterns",
-        "durationSeconds": 94,
+        "durationSeconds": 212,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/haiku-deep-dive/haiku-workload-patterns.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master Claude Haiku by treating every AI feature as a chain of engineering decisions: model tier, prompt design, tools, context strategy, evaluation, and production operations."
+        "audioSummary": "Master Claude Haiku by understanding the decision chain for model selection, prompt design, tool wiring, context strategy, evaluation, and production deployment."
       },
       {
         "id": "anthropic-claude-haiku-deep-dive-latency-targets",
         "title": "Latency Targets",
-        "durationSeconds": 95,
+        "durationSeconds": 249,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/haiku-deep-dive/latency-targets.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master latency targets for Claude Haiku by anchoring your work in user metrics, picking the right model tier, and building evaluation loops before shipping to production."
+        "audioSummary": "Learn how to systematically choose Claude models, design prompts, and operationalize AI features in production by anchoring decisions in user value, latency constraints, and evaluation-driven iteration."
       },
       {
         "id": "anthropic-claude-haiku-deep-dive-cost-optimisation",
         "title": "Cost Optimisation",
-        "durationSeconds": 91,
+        "durationSeconds": 235,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/haiku-deep-dive/cost-optimisation.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to build cost-effective Claude integrations by treating it as a chain of deliberate decisions\u2014from model selection through production operations\u2014and always eval before shipping."
+        "audioSummary": "Master cost optimization for Claude by treating AI development as a deliberate chain of decisions from model selection through production operations, with evaluation and monitoring at every step."
       },
       {
         "id": "anthropic-claude-haiku-deep-dive-haiku-first-design-pattern",
         "title": "Haiku-First Design Pattern",
-        "durationSeconds": 112,
+        "durationSeconds": 211,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/haiku-deep-dive/haiku-first-design-pattern.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "The haiku-first design pattern teaches you to build Claude-backed features by anchoring in user metrics, choosing the right model tier for cost and latency, designing prompts with structure, wiring tools with clear error handling, engineering your context strategy, building evaluation sets before shipping, and deploying with operational safeguards."
+        "audioSummary": "Master the haiku-first design pattern: a systematic seven-step approach to building production Claude applications that balance cost, latency, and quality through deliberate model selection, prompt engineering, tooling, context strategy, evaluation, and operational scaffolding."
       }
     ]
   },
   {
     "id": "anthropic-claude-model-selection",
     "title": "Model Selection",
-    "description": "Master the decision framework for picking the right Claude model tier and operationalizing it through prompt design, tool wiring, evaluation, and production deployment.",
+    "description": "Learn the decision framework and operational discipline for selecting the right Claude model and building production-ready AI features.",
     "category": "Anthropic Claude",
     "lessons": [
       {
         "id": "anthropic-claude-model-selection-model-selection-overview",
         "title": "Model Selection Overview",
-        "durationSeconds": 99,
+        "durationSeconds": 236,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/model-selection/model-selection-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Master the decision framework for picking the right Claude model tier and operationalizing it through prompt design, tool wiring, evaluation, and production deployment."
+        "audioSummary": "Learn the decision framework and operational discipline for selecting the right Claude model and building production-ready AI features."
       },
       {
         "id": "anthropic-claude-model-selection-decision-framework",
         "title": "Decision Framework",
-        "durationSeconds": 94,
+        "durationSeconds": 216,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/model-selection/decision-framework.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn the decision framework for choosing Claude models and building production-grade AI features: anchor work in user metrics, pick the right model tier for your latency and cost needs, design prompts carefully, wire tools with clear schemas, engineer context strategy, build evaluation sets before shipping, and deploy with operational safeguards."
+        "audioSummary": "Learn a practical decision framework for choosing Claude models and building production-ready AI features by reasoning through latency, cost, quality, prompts, tools, evaluation, and operational scaffolding."
       },
       {
         "id": "anthropic-claude-model-selection-benchmark-mapping",
         "title": "Benchmark Mapping",
-        "durationSeconds": 101,
+        "durationSeconds": 195,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/model-selection/benchmark-mapping.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn the decision framework and practical patterns for selecting the right Claude model for your use case and building production systems that scale."
+        "audioSummary": "Learn the benchmark mapping framework to select the right Claude model for each production use case by anchoring decisions in user-facing metrics, cost and latency budgets, and rigorous evaluation."
       },
       {
         "id": "anthropic-claude-model-selection-cascade-pattern",
         "title": "Cascade Pattern",
-        "durationSeconds": 84,
+        "durationSeconds": 263,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/model-selection/cascade-pattern.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "The cascade pattern is a decision framework for selecting the right Claude model and building production systems by reasoning through latency, cost, quality, prompts, tools, context strategy, and evaluation before shipping."
+        "audioSummary": "The cascade pattern is a decision-making framework for selecting and deploying Claude models in production systems, balancing latency, cost, and quality through deliberate evaluation and operational scaffolding."
       },
       {
         "id": "anthropic-claude-model-selection-eval-discipline",
         "title": "Eval Discipline",
-        "durationSeconds": 97,
+        "durationSeconds": 279,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/model-selection/eval-discipline.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn the seven-step eval discipline framework that defensible Claude-backed teams use to make repeatable model, prompt, tool, and production decisions."
+        "audioSummary": "Eval discipline is a systematic approach to building and operating Claude-backed features in production by anchoring every decision in measurable outcomes, testing rigorously before shipping, and maintaining observability at scale."
       },
       {
         "id": "anthropic-claude-model-selection-selection-template",
         "title": "Selection Template",
-        "durationSeconds": 95,
+        "durationSeconds": 232,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/anthropic-claude/model-selection/selection-template.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn a decision-driven framework for choosing and deploying Claude models in production by anchoring in user value, matching model tiers to budgets, and building evaluation loops before shipping."
+        "audioSummary": "Learn the end-to-end decision framework and operational pattern for building production Claude features that scale, from model selection through deployment with observability and evals."
       }
     ]
   },
   {
     "id": "ai-tools-claude-code",
     "title": "Claude Code",
-    "description": "Claude Code is a terminal-native AI coding assistant with slash commands, hooks, and configuration options that transform your development workflow when set up intentionally.",
+    "description": "Learn how to set up and master Claude Code, a terminal-native AI coding agent, by understanding its core workflows, slash commands, configuration patterns, and when to use it effectively.",
     "category": "AI Tools",
     "lessons": [
       {
         "id": "ai-tools-claude-code-claude-code-overview",
         "title": "Claude Code Overview",
-        "durationSeconds": 82,
+        "durationSeconds": 247,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/claude-code/claude-code-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Claude Code is a terminal-native AI coding assistant with slash commands, hooks, and configuration options that transform your development workflow when set up intentionally."
+        "audioSummary": "Learn how to set up and master Claude Code, a terminal-native AI coding agent, by understanding its core workflows, slash commands, configuration patterns, and when to use it effectively."
       },
       {
         "id": "ai-tools-claude-code-claude-code-slash-commands",
         "title": "Slash Commands and Skills",
-        "durationSeconds": 74,
+        "durationSeconds": 210,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/claude-code/claude-code-slash-commands.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Learn slash commands and skills in Claude Code CLI to work faster by leaning into the tool's strengths instead of fighting its design."
+        "audioSummary": "Learn slash commands and skills in Claude Code CLI to unlock power-user workflows and automation patterns."
       },
       {
         "id": "ai-tools-claude-code-claude-code-hooks",
         "title": "Hooks and Automation",
-        "durationSeconds": 81,
+        "durationSeconds": 213,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/claude-code/claude-code-hooks.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Hooks and automation let you create intelligent workflows in Claude Code that run tasks automatically after specific coding actions, turning you from a casual user into a power user."
+        "audioSummary": "Learn how to use hooks and automation in Claude Code CLI to trigger actions automatically and build faster, smarter coding workflows."
       },
       {
         "id": "ai-tools-claude-code-claude-code-subagents",
         "title": "Sub-Agents and Parallelism",
-        "durationSeconds": 75,
+        "durationSeconds": 193,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/claude-code/claude-code-subagents.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Sub-agents and parallelism in Claude Code let you run multiple AI tasks at once, but the real power is knowing when to use them deliberately instead of defaulting to complexity."
+        "audioSummary": "Learn how to use sub-agents and parallelism in Claude Code to work faster by understanding when and how to leverage these advanced features effectively."
       },
       {
         "id": "ai-tools-claude-code-claude-code-mcp",
         "title": "MCP Servers",
-        "durationSeconds": 77,
+        "durationSeconds": 226,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/claude-code/claude-code-mcp.html",
         "isAutomotiveSafe": true,
-        "contentType": "code",
-        "audioSummary": "Learn how MCP servers extend Claude Code as a power-user feature to integrate custom data sources and tools into your terminal AI coding workflow."
+        "contentType": "conceptual",
+        "audioSummary": "MCP servers let you extend Claude Code with custom integrations and data sources, turning it from a general-purpose tool into a purpose-built agent for your specific workflow."
       },
       {
         "id": "ai-tools-claude-code-claude-code-team-workflows",
         "title": "Team Workflows and Settings",
-        "durationSeconds": 84,
+        "durationSeconds": 269,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/claude-code/claude-code-team-workflows.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to configure Claude Code as a team tool by mastering workflows, settings, and the mental models that separate casual users from power users."
+        "audioSummary": "Learn how to configure Claude Code CLI for your team by understanding the deliberate workflow choices, core settings, and production patterns that separate casual users from power users."
       }
     ]
   },
   {
     "id": "ai-tools-cursor-editor",
     "title": "Cursor Editor",
-    "description": "Cursor is an AI-first code editor that multiplies your coding speed when you align your workflow with its strengths rather than fighting its design.",
+    "description": "Cursor Overview teaches you how to think strategically about the Cursor AI editor and apply it effectively to real workflows, not just memorize its features.",
     "category": "AI Tools",
     "lessons": [
       {
         "id": "ai-tools-cursor-editor-cursor-overview",
         "title": "Cursor Overview",
-        "durationSeconds": 77,
+        "durationSeconds": 236,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/cursor-editor/cursor-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Cursor is an AI-first code editor that multiplies your coding speed when you align your workflow with its strengths rather than fighting its design."
+        "audioSummary": "Cursor Overview teaches you how to think strategically about the Cursor AI editor and apply it effectively to real workflows, not just memorize its features."
       },
       {
         "id": "ai-tools-cursor-editor-cursor-tab",
         "title": "Cursor Tab Autocomplete",
-        "durationSeconds": 90,
+        "durationSeconds": 192,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/cursor-editor/cursor-tab.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Cursor Tab Autocomplete is a deliberate workflow choice that separates casual users from power users\u2014master it by understanding its strengths, integrating it with your stack, and measuring real time savings."
+        "audioSummary": "Learn how to use Cursor's Tab autocomplete feature effectively by understanding when and why to use it, how to set it up, and the habits that distinguish power users from casual users."
       },
       {
         "id": "ai-tools-cursor-editor-cursor-composer-agent",
         "title": "Composer and Agent Mode",
-        "durationSeconds": 86,
+        "durationSeconds": 206,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/cursor-editor/cursor-composer-agent.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Composer and Agent Mode are deliberate workflow choices in Cursor that separate casual users from power users\u2014understand when and how to use them, not just memorize the menu items."
+        "audioSummary": "Learn when and how to use Composer and Agent Mode in Cursor to write code faster, and understand the mental models that separate power users from casual users."
       },
       {
         "id": "ai-tools-cursor-editor-cursor-rules",
         "title": "cursorrules and Project Rules",
-        "durationSeconds": 74,
+        "durationSeconds": 284,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/cursor-editor/cursor-rules.html",
         "isAutomotiveSafe": true,
-        "contentType": "conceptual",
-        "audioSummary": "Learn how to use .cursorrules and project rules in Cursor to encode your team's coding standards and unlock power-user productivity gains."
+        "contentType": "code",
+        "audioSummary": "Learn how to use .cursorrules and project rules in Cursor to configure your AI coding assistant with team standards, keyboard shortcuts, and context protocols for faster, consistent development workflows."
       },
       {
         "id": "ai-tools-cursor-editor-cursor-mcp",
         "title": "Cursor MCP Integration",
-        "durationSeconds": 82,
+        "durationSeconds": 243,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/cursor-editor/cursor-mcp.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Cursor MCP integration is about deliberately configuring Cursor as your AI coding partner by mastering its core features\u2014Tab autocomplete, Composer mode, project rules, and server connections\u2014rather than using it casually off-the-shelf."
+        "audioSummary": "Learn how to integrate Model Context Protocol servers into Cursor to extend the editor's capabilities and accelerate your coding workflow."
       },
       {
         "id": "ai-tools-cursor-editor-cursor-team",
         "title": "Cursor for Teams",
-        "durationSeconds": 81,
+        "durationSeconds": 182,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/cursor-editor/cursor-team.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Cursor for Teams is a workflow choice that multiplies your shipping speed when you match the tool's strengths to your actual needs and build deliberate habits around it."
+        "audioSummary": "Learn how to set up and use Cursor for Teams effectively by treating it as a deliberate workflow choice with proper configuration, security, and team coordination."
       }
     ]
   },
   {
     "id": "ai-tools-github-copilot-tool",
     "title": "GitHub Copilot Tool",
-    "description": "GitHub Copilot Overview teaches you how to use AI coding assistance deliberately as a workflow tool, not just follow defaults.",
+    "description": "GitHub Copilot Overview teaches you how to use AI coding assistants effectively by understanding the tool's strengths, configuring it deliberately, and building it into your workflow rather than treating it as a silver bullet.",
     "category": "AI Tools",
     "lessons": [
       {
         "id": "ai-tools-github-copilot-tool-copilot-overview",
         "title": "Copilot Overview",
-        "durationSeconds": 86,
+        "durationSeconds": 247,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/github-copilot-tool/copilot-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "GitHub Copilot Overview teaches you how to use AI coding assistance deliberately as a workflow tool, not just follow defaults."
+        "audioSummary": "GitHub Copilot Overview teaches you how to use AI coding assistants effectively by understanding the tool's strengths, configuring it deliberately, and building it into your workflow rather than treating it as a silver bullet."
       },
       {
         "id": "ai-tools-github-copilot-tool-copilot-inline-chat",
         "title": "Inline Suggestions and Chat",
-        "durationSeconds": 71,
+        "durationSeconds": 227,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/github-copilot-tool/copilot-inline-chat.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn when and how to use GitHub Copilot's inline suggestions and chat as a deliberate workflow choice, not a default feature."
+        "audioSummary": "Learn when and how to use GitHub Copilot's inline suggestions and chat features as a deliberate workflow choice, not a default habit."
       },
       {
         "id": "ai-tools-github-copilot-tool-copilot-workspace",
         "title": "Copilot Workspace",
-        "durationSeconds": 81,
+        "durationSeconds": 255,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/github-copilot-tool/copilot-workspace.html",
         "isAutomotiveSafe": true,
-        "contentType": "conceptual",
-        "audioSummary": "Copilot Workspace is a deliberate workflow choice that separates casual users from power users by applying intentional patterns and configurations rather than default behaviors."
+        "contentType": "code",
+        "audioSummary": "Copilot Workspace is a deliberate workflow choice that amplifies your coding speed through configuration, shortcuts, and whole-codebase context."
       },
       {
         "id": "ai-tools-github-copilot-tool-copilot-agent-mode",
         "title": "Copilot Agent Mode",
-        "durationSeconds": 88,
+        "durationSeconds": 247,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/github-copilot-tool/copilot-agent-mode.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Copilot Agent Mode is a deliberate workflow choice that lets you leverage GitHub Copilot's full power by understanding its strengths and building habits around them."
+        "audioSummary": "Copilot Agent Mode is a deliberate workflow choice that separates casual users from power users through understanding underlying patterns and integrating the tool strategically into your development process."
       },
       {
         "id": "ai-tools-github-copilot-tool-copilot-instructions",
         "title": "Custom Instructions",
-        "durationSeconds": 82,
+        "durationSeconds": 209,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/github-copilot-tool/copilot-instructions.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Custom instructions in GitHub Copilot let you guide the AI's behavior toward your workflow, turning casual users into power users through deliberate configuration choices."
+        "audioSummary": "Custom instructions in GitHub Copilot are deliberate workflow choices that let power users shape how the AI assistant behaves, making the difference between casual and expert-level productivity."
       },
       {
         "id": "ai-tools-github-copilot-tool-copilot-enterprise",
         "title": "Copilot Enterprise",
-        "durationSeconds": 83,
+        "durationSeconds": 194,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/github-copilot-tool/copilot-enterprise.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Copilot Enterprise is a powerful AI coding assistant that requires deliberate workflow design and configuration to unlock significant productivity gains for development teams."
+        "audioSummary": "Learn how to use GitHub Copilot Enterprise as a deliberate workflow choice by understanding its strengths, configuring it smartly, and building habits that compound your productivity."
       }
     ]
   },
   {
     "id": "ai-tools-aider",
     "title": "Aider",
-    "description": "Aider is a terminal-based AI pair programmer that helps you code faster by understanding your repo and working with Git, but only if you use it deliberately for the right job.",
+    "description": "Aider is a terminal-based AI pair programmer that edits code with Git awareness, and mastering it means understanding its core workflows and knowing when to actually use it.",
     "category": "AI Tools",
     "lessons": [
       {
         "id": "ai-tools-aider-aider-overview",
         "title": "Aider Overview",
-        "durationSeconds": 73,
+        "durationSeconds": 219,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/aider/aider-overview.html",
         "isAutomotiveSafe": true,
-        "contentType": "conceptual",
-        "audioSummary": "Aider is a terminal-based AI pair programmer that helps you code faster by understanding your repo and working with Git, but only if you use it deliberately for the right job."
+        "contentType": "code",
+        "audioSummary": "Aider is a terminal-based AI pair programmer that edits code with Git awareness, and mastering it means understanding its core workflows and knowing when to actually use it."
       },
       {
         "id": "ai-tools-aider-aider-architect-edit",
         "title": "Architect and Edit Modes",
-        "durationSeconds": 63,
+        "durationSeconds": 178,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/aider/aider-architect-edit.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Learn when and how to use Aider's architect and edit modes to code faster with an AI pair programmer."
+        "audioSummary": "Architect and edit modes in Aider let you choose between planning-first workflows and direct editing, turning you from casual user to power user through deliberate mode selection."
       },
       {
         "id": "ai-tools-aider-aider-repo-map",
         "title": "Repo Map",
-        "durationSeconds": 78,
+        "durationSeconds": 232,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/aider/aider-repo-map.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Repo map is a workflow choice in Aider that separates casual users from power users\u2014understand the underlying patterns and when to use the tool, not just memorizing commands."
+        "audioSummary": "Repo map in Aider is a deliberate workflow choice that separates casual users from power users\u2014learn when to use it, how it fits into your coding process, and the mental models that make AI pair programming faster."
       },
       {
         "id": "ai-tools-aider-aider-git",
         "title": "Git-Aware Editing",
-        "durationSeconds": 74,
+        "durationSeconds": 177,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/aider/aider-git.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Git-aware editing in Aider is a deliberate workflow choice that separates casual users from power users through intentional patterns and configuration."
+        "audioSummary": "Git-aware editing is a deliberate workflow choice that separates casual Aider users from power users through intentional patterns, tool configuration, and habits."
       },
       {
         "id": "ai-tools-aider-aider-voice",
         "title": "Aider Voice Coding",
-        "durationSeconds": 75,
+        "durationSeconds": 220,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/aider/aider-voice.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to use Aider's voice coding feature effectively as a deliberate workflow choice, not a casual add-on, by understanding when it fits your needs and how power users leverage it."
+        "audioSummary": "Master aider voice coding by treating it as a deliberate workflow choice, understanding the tool's idioms, and building habits that compound your productivity over time."
       },
       {
         "id": "ai-tools-aider-aider-models",
         "title": "Choosing Models for Aider",
-        "durationSeconds": 74,
+        "durationSeconds": 187,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/aider/aider-models.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Choosing the right model for Aider means treating it as a deliberate workflow decision based on your needs, not accepting defaults."
+        "audioSummary": "Learn how to deliberately choose the right AI model for Aider based on your workflow needs, pricing, and tool strengths rather than defaulting to recommendations."
       }
     ]
   },
   {
     "id": "ai-tools-continue-dev",
     "title": "Continue Dev",
-    "description": "Continue is an open-source AI coding assistant for VS Code and JetBrains that compounds your workflow speed through intentional configuration and deliberate habit patterns, not casual defaults.",
+    "description": "Continue is an open-source AI coding assistant that integrates into your IDE, and mastering it means understanding its strengths and building deliberate workflows rather than defaulting to how it's marketed.",
     "category": "AI Tools",
     "lessons": [
       {
         "id": "ai-tools-continue-dev-continue-overview",
         "title": "Continue Overview",
-        "durationSeconds": 81,
+        "durationSeconds": 200,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/continue-dev/continue-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Continue is an open-source AI coding assistant for VS Code and JetBrains that compounds your workflow speed through intentional configuration and deliberate habit patterns, not casual defaults."
+        "audioSummary": "Continue is an open-source AI coding assistant that integrates into your IDE, and mastering it means understanding its strengths and building deliberate workflows rather than defaulting to how it's marketed."
       },
       {
         "id": "ai-tools-continue-dev-continue-config",
         "title": "config.json Configuration",
-        "durationSeconds": 76,
+        "durationSeconds": 268,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/continue-dev/continue-config.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Learn how to configure Continue's config.json file to customize your AI coding assistant with models, context providers, and slash commands for faster development workflows."
+        "audioSummary": "Learn how to configure Continue's config.json file to customize your AI coding assistant with models, context providers, and custom commands."
       },
       {
         "id": "ai-tools-continue-dev-continue-context-providers",
         "title": "Context Providers",
-        "durationSeconds": 89,
+        "durationSeconds": 224,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/continue-dev/continue-context-providers.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Context providers in Continue are deliberate workflow choices that separate casual users from power users by controlling what information the AI assistant has access to when helping you code."
+        "audioSummary": "Context providers in Continue let you give your AI coding assistant the right project information at the right time, turning casual users into power users through deliberate workflow choices."
       },
       {
         "id": "ai-tools-continue-dev-continue-custom-commands",
         "title": "Custom Slash Commands",
-        "durationSeconds": 83,
+        "durationSeconds": 158,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/continue-dev/continue-custom-commands.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Learn to create custom slash commands in Continue to build reusable AI coding workflows tailored to your development process."
+        "audioSummary": "Learn how to create and configure custom slash commands in Continue to extend the AI coding assistant's capabilities and match your unique workflow."
       },
       {
         "id": "ai-tools-continue-dev-continue-self-hosted",
         "title": "Self-Hosted Continue",
-        "durationSeconds": 96,
+        "durationSeconds": 241,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/continue-dev/continue-self-hosted.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Learn how to configure and self-host the Continue AI coding assistant to match your workflow, with the right models, context providers, and custom commands."
+        "audioSummary": "Learn how to self-host Continue, configure it for your workflow, and avoid the common pitfall of adopting tools before you understand what you actually need."
       },
       {
         "id": "ai-tools-continue-dev-continue-vs-cursor",
         "title": "Continue vs Cursor",
-        "durationSeconds": 93,
+        "durationSeconds": 202,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-tools/continue-dev/continue-vs-cursor.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose between Continue and Cursor as AI coding assistants and when each tool fits your workflow best."
+        "audioSummary": "Learn when and how to choose between Continue and Cursor as your AI coding assistant, and how to build productive workflows around whichever tool fits your actual needs."
       }
     ]
   },
   {
     "id": "ai-models-gpt-5",
     "title": "GPT-5",
-    "description": "GPT-5 is OpenAI's flagship model; master its capabilities, pricing, and context window to make confident deployment decisions in production systems.",
+    "description": "Learn how to evaluate and choose GPT-5 for your AI project by understanding its real capabilities, tradeoffs, and production patterns rather than relying on marketing hype.",
     "category": "AI Models",
     "lessons": [
       {
         "id": "ai-models-gpt-5-gpt-5-overview",
         "title": "GPT-5 Overview",
-        "durationSeconds": 95,
+        "durationSeconds": 214,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-5/gpt-5-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "GPT-5 is OpenAI's flagship model; master its capabilities, pricing, and context window to make confident deployment decisions in production systems."
+        "audioSummary": "Learn how to evaluate and choose GPT-5 for your AI project by understanding its real capabilities, tradeoffs, and production patterns rather than relying on marketing hype."
       },
       {
         "id": "ai-models-gpt-5-gpt-5-capabilities",
         "title": "GPT-5 Capabilities and Benchmarks",
-        "durationSeconds": 84,
+        "durationSeconds": 249,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-5/gpt-5-capabilities.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to evaluate GPT-5's actual capabilities and benchmarks to make smart model selection decisions for your AI projects."
+        "audioSummary": "Learn how to evaluate GPT-5's real capabilities and benchmarks to make smart model choices for your AI projects instead of just picking the trendy option."
       },
       {
         "id": "ai-models-gpt-5-gpt-5-context-multimodal",
         "title": "Context Window and Multimodal",
-        "durationSeconds": 73,
+        "durationSeconds": 251,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-5/gpt-5-context-multimodal.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to match GPT-5's context window and multimodal capabilities to your workload, and why this engineering decision matters more than following hype."
+        "audioSummary": "Learn how to strategically choose GPT-5 based on context window and multimodal capabilities rather than defaulting to it, and understand the engineering patterns that let you match models to workloads in production."
       },
       {
         "id": "ai-models-gpt-5-gpt-5-tool-use",
         "title": "Native Tool Use",
-        "durationSeconds": 85,
+        "durationSeconds": 217,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-5/gpt-5-tool-use.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Native tool use in GPT-5 is a deliberate engineering choice to match your workload, not a default\u2014pick the model that fits your problem, measure quality and cost on your actual data, and only upgrade when cheaper alternatives fall short."
+        "audioSummary": "Native tool use in GPT-5 is a deliberate engineering decision that should match your workload's actual needs, not be chosen by default."
       },
       {
         "id": "ai-models-gpt-5-gpt-5-pricing",
         "title": "Pricing and Cost Optimization",
-        "durationSeconds": 111,
+        "durationSeconds": 201,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-5/gpt-5-pricing.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose the right AI model by understanding pricing, capabilities, and cost tradeoffs rather than defaulting to the most expensive or popular option."
+        "audioSummary": "Learn how to choose the right AI model for your task by understanding GPT-5's pricing, capabilities, and real-world trade-offs."
       },
       {
         "id": "ai-models-gpt-5-gpt-5-production",
         "title": "GPT-5 in Production",
-        "durationSeconds": 84,
+        "durationSeconds": 201,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-5/gpt-5-production.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose and deploy GPT-5 in production by matching its capabilities, cost, and constraints to your actual workload rather than defaulting to it."
+        "audioSummary": "Learn how to confidently deploy GPT-5 in production by understanding its capabilities, trade-offs, and the engineering patterns that separate successful implementations from costly mistakes."
       }
     ]
   },
   {
     "id": "ai-models-gpt-4o",
     "title": "GPT-4o",
-    "description": "GPT-4o is OpenAI's versatile multimodal model that handles text, vision, and audio\u2014choose it thoughtfully based on your actual workload needs, not hype.",
+    "description": "GPT-4o is OpenAI's versatile multimodal model that handles text, vision, and audio\u2014learn how to choose it wisely by matching its actual capabilities to your workload rather than defaulting to it.",
     "category": "AI Models",
     "lessons": [
       {
         "id": "ai-models-gpt-4o-gpt-4o-overview",
         "title": "GPT-4o Overview",
-        "durationSeconds": 80,
+        "durationSeconds": 219,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-4o/gpt-4o-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "GPT-4o is OpenAI's versatile multimodal model that handles text, vision, and audio\u2014choose it thoughtfully based on your actual workload needs, not hype."
+        "audioSummary": "GPT-4o is OpenAI's versatile multimodal model that handles text, vision, and audio\u2014learn how to choose it wisely by matching its actual capabilities to your workload rather than defaulting to it."
       },
       {
         "id": "ai-models-gpt-4o-gpt-4o-vision",
         "title": "GPT-4o Vision",
-        "durationSeconds": 83,
+        "durationSeconds": 230,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-4o/gpt-4o-vision.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "GPT-4o Vision is OpenAI's multimodal model that processes images alongside text; use it only when your workload actually needs it, after benchmarking against cheaper alternatives."
+        "audioSummary": "Learn when and how to use GPT-4o Vision as a deliberate engineering choice, not a default, by understanding its strengths, costs, and production patterns."
       },
       {
         "id": "ai-models-gpt-4o-gpt-4o-audio",
         "title": "GPT-4o Audio",
-        "durationSeconds": 80,
+        "durationSeconds": 270,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-4o/gpt-4o-audio.html",
         "isAutomotiveSafe": true,
-        "contentType": "conceptual",
-        "audioSummary": "Learn when and how to use GPT-4o Audio Realtime by treating model selection as a deliberate engineering decision based on your actual workload, not marketing hype."
+        "contentType": "code",
+        "audioSummary": "Learn how to use GPT-4o's audio and realtime capabilities in production systems, and understand the engineering trade-offs that determine whether it's the right model choice."
       },
       {
         "id": "ai-models-gpt-4o-gpt-4o-mini",
         "title": "GPT-4o-mini for Cost",
-        "durationSeconds": 79,
+        "durationSeconds": 234,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-4o/gpt-4o-mini.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose gpt-4o-mini strategically based on your actual workload needs rather than defaults, balancing cost, quality, and latency."
+        "audioSummary": "Learn how to pick GPT-4o-mini strategically for cost without sacrificing quality, and the engineering patterns that let you make confident model choices in production."
       },
       {
         "id": "ai-models-gpt-4o-gpt-4o-structured-outputs",
         "title": "Structured Outputs",
-        "durationSeconds": 86,
+        "durationSeconds": 180,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-4o/gpt-4o-structured-outputs.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Structured outputs in GPT-4o let you get reliable, formatted responses from the model, and choosing when to use them is a deliberate engineering decision, not a default."
+        "audioSummary": "Structured outputs is a deliberate engineering choice that lets you get predictable, validated responses from GPT-4o, but only if it actually fits your workload."
       },
       {
         "id": "ai-models-gpt-4o-gpt-4o-production",
         "title": "GPT-4o in Production",
-        "durationSeconds": 82,
+        "durationSeconds": 273,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/gpt-4o/gpt-4o-production.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose and deploy GPT-4o in production by matching model capabilities to your workload rather than fitting your problem to the model."
+        "audioSummary": "Learn how to deploy GPT-4o in production systems by understanding its actual capabilities, measuring performance on your data, and making deliberate model choices rather than defaulting to the flagship."
       }
     ]
   },
   {
     "id": "ai-models-claude-opus-4-7",
     "title": "Claude Opus 4.7",
-    "description": "Claude Opus 4.7 is Anthropic's flagship model for complex reasoning and coding\u2014understand its strengths, costs, and capabilities to make smart model choices in production.",
+    "description": "Learn how to evaluate and choose Claude Opus 4.7 strategically based on your actual workload requirements rather than hype.",
     "category": "AI Models",
     "lessons": [
       {
         "id": "ai-models-claude-opus-4-7-opus-4-7-overview",
         "title": "Claude Opus 4.7 Overview",
-        "durationSeconds": 91,
+        "durationSeconds": 207,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-opus-4-7/opus-4-7-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Claude Opus 4.7 is Anthropic's flagship model for complex reasoning and coding\u2014understand its strengths, costs, and capabilities to make smart model choices in production."
+        "audioSummary": "Learn how to evaluate and choose Claude Opus 4.7 strategically based on your actual workload requirements rather than hype."
       },
       {
         "id": "ai-models-claude-opus-4-7-opus-4-7-1m-context",
         "title": "1M Token Context Window",
-        "durationSeconds": 83,
+        "durationSeconds": 232,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-opus-4-7/opus-4-7-1m-context.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Claude Opus 4.7's 1M token context window lets you fit massive amounts of information into a single request, but you should only use it when your actual workload needs it, not just because it exists."
+        "audioSummary": "Learn when and how to use Claude Opus 4.7's 1M token context window as a deliberate engineering choice, not a default."
       },
       {
         "id": "ai-models-claude-opus-4-7-opus-4-7-coding",
         "title": "Opus 4.7 for Coding",
-        "durationSeconds": 87,
+        "durationSeconds": 174,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-opus-4-7/opus-4-7-coding.html",
         "isAutomotiveSafe": true,
         "contentType": "code",
-        "audioSummary": "Learn when and how to use Claude Opus 4.7 for coding tasks, including its 1M context window and prompt caching capabilities."
+        "audioSummary": "Learn how to choose and use Claude Opus 4.7 for coding tasks by understanding its capabilities, pricing, and production patterns."
       },
       {
         "id": "ai-models-claude-opus-4-7-opus-4-7-agents",
         "title": "Opus 4.7 for Agents",
-        "durationSeconds": 96,
+        "durationSeconds": 222,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-opus-4-7/opus-4-7-agents.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn when and how to use Claude Opus 4.7 for agent applications, and master the engineering decision-making that separates production systems from projects that don't ship."
+        "audioSummary": "Learn how to choose and deploy Claude Opus 4.7 strategically for agent-based systems, focusing on real-world engineering decisions rather than marketing claims."
       },
       {
         "id": "ai-models-claude-opus-4-7-opus-4-7-vs-sonnet",
         "title": "Opus vs Sonnet When to Pick",
-        "durationSeconds": 66,
+        "durationSeconds": 234,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-opus-4-7/opus-4-7-vs-sonnet.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn when to choose Claude Opus versus Sonnet by matching model capabilities to your workload's actual needs, not marketing benchmarks."
+        "audioSummary": "Learn how to choose between Claude Opus and Sonnet by matching model capabilities to your actual workload needs rather than defaults or marketing."
       },
       {
         "id": "ai-models-claude-opus-4-7-opus-4-7-production",
         "title": "Opus 4.7 in Production",
-        "durationSeconds": 89,
+        "durationSeconds": 275,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-opus-4-7/opus-4-7-production.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose and deploy Claude Opus 4.7 in production by matching the model's strengths to your workload, not the other way around."
+        "audioSummary": "Learn how to deploy Claude Opus 4.7 in production by understanding its strengths, when to use it, and the engineering patterns that make the difference between a feature that ships and one that doesn't."
       }
     ]
   },
   {
     "id": "ai-models-claude-sonnet-4-6",
     "title": "Claude Sonnet 4.6",
-    "description": "Claude Sonnet 4.6 is Anthropic's balanced workhorse model\u2014learn when and why to choose it based on cost, quality, and your actual workload needs rather than hype.",
+    "description": "Learn how to evaluate and deploy Claude Sonnet 4.6 as a balanced, cost-effective AI model by understanding its strengths, trade-offs, and production best practices.",
     "category": "AI Models",
     "lessons": [
       {
         "id": "ai-models-claude-sonnet-4-6-sonnet-4-6-overview",
         "title": "Sonnet 4.6 Overview",
-        "durationSeconds": 89,
+        "durationSeconds": 276,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-sonnet-4-6/sonnet-4-6-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Claude Sonnet 4.6 is Anthropic's balanced workhorse model\u2014learn when and why to choose it based on cost, quality, and your actual workload needs rather than hype."
+        "audioSummary": "Learn how to evaluate and deploy Claude Sonnet 4.6 as a balanced, cost-effective AI model by understanding its strengths, trade-offs, and production best practices."
       },
       {
         "id": "ai-models-claude-sonnet-4-6-sonnet-4-6-cost-quality",
         "title": "Cost vs Quality Sweet Spot",
-        "durationSeconds": 82,
+        "durationSeconds": 234,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-sonnet-4-6/sonnet-4-6-cost-quality.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to match Claude Sonnet 4.6 to your workload by balancing cost and quality rather than picking a model by hype."
+        "audioSummary": "Learn how to find the cost-versus-quality sweet spot when choosing Claude Sonnet 4.6 for your AI engineering projects."
       },
       {
         "id": "ai-models-claude-sonnet-4-6-sonnet-4-6-tool-use",
         "title": "Tool Use with Sonnet",
-        "durationSeconds": 87,
+        "durationSeconds": 211,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-sonnet-4-6/sonnet-4-6-tool-use.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to strategically use Claude Sonnet 4.6's tool-use capabilities as an engineering decision, not a default, by understanding when it fits your workload and how to evaluate it properly."
+        "audioSummary": "Tool use with Claude Sonnet 4.6 is a deliberate engineering decision about matching model capabilities to your workload, not a default choice."
       },
       {
         "id": "ai-models-claude-sonnet-4-6-sonnet-4-6-vision",
         "title": "Sonnet Vision",
-        "durationSeconds": 84,
+        "durationSeconds": 232,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-sonnet-4-6/sonnet-4-6-vision.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Claude Sonnet 4.6 Vision is Anthropic's balanced AI model that pairs cost-effectiveness with quality, and choosing it requires understanding your workload's actual needs rather than defaulting to it."
+        "audioSummary": "Learn when and how to use Claude Sonnet 4.6's vision capabilities as a deliberate engineering choice, not a default."
       },
       {
         "id": "ai-models-claude-sonnet-4-6-sonnet-4-6-vs-others",
         "title": "Sonnet vs Haiku vs Opus",
-        "durationSeconds": 86,
+        "durationSeconds": 240,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-sonnet-4-6/sonnet-4-6-vs-others.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to pick the right Claude model\u2014Sonnet, Haiku, or Opus\u2014by matching your workload to each model's strengths, cost, and capabilities rather than defaulting to the obvious choice."
+        "audioSummary": "Learn how to choose between Claude's Sonnet, Haiku, and Opus models by matching each model's strengths to your specific workload needs rather than defaulting to the most powerful option."
       },
       {
         "id": "ai-models-claude-sonnet-4-6-sonnet-4-6-production",
         "title": "Sonnet 4.6 in Production",
-        "durationSeconds": 77,
+        "durationSeconds": 265,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-sonnet-4-6/sonnet-4-6-production.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to choose and deploy Claude Sonnet 4.6 in production by matching the model to your workload, building evals, and monitoring costs and latency."
+        "audioSummary": "Learn how to strategically choose and deploy Claude Sonnet 4.6 in production by matching model capabilities to workload needs, measuring performance, and avoiding common pitfalls."
       }
     ]
   },
   {
     "id": "ai-models-claude-haiku-4-5",
     "title": "Claude Haiku 4.5",
-    "description": "Learn when and how to use Claude Haiku 4.5, Anthropic's fast and affordable model, by understanding its strengths, costs, and real-world deployment patterns.",
+    "description": "Claude Haiku 4.5 is Anthropic's fast, cheap language model\u2014learn when to use it, how to evaluate it, and how to deploy it confidently in production.",
     "category": "AI Models",
     "lessons": [
       {
         "id": "ai-models-claude-haiku-4-5-haiku-4-5-overview",
         "title": "Haiku 4.5 Overview",
-        "durationSeconds": 86,
+        "durationSeconds": 239,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-haiku-4-5/haiku-4-5-overview.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn when and how to use Claude Haiku 4.5, Anthropic's fast and affordable model, by understanding its strengths, costs, and real-world deployment patterns."
+        "audioSummary": "Claude Haiku 4.5 is Anthropic's fast, cheap language model\u2014learn when to use it, how to evaluate it, and how to deploy it confidently in production."
       },
       {
         "id": "ai-models-claude-haiku-4-5-haiku-4-5-latency",
         "title": "Haiku Latency Profile",
-        "durationSeconds": 94,
+        "durationSeconds": 226,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-haiku-4-5/haiku-4-5-latency.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Claude Haiku 4.5 is a fast, cheap model designed for high-volume tasks\u2014learn when to use it, why latency and cost matter, and how to evaluate it against alternatives in production."
+        "audioSummary": "Learn how to evaluate Claude Haiku 4.5's latency profile to make smart model choices for production systems."
       },
       {
         "id": "ai-models-claude-haiku-4-5-haiku-4-5-batch",
         "title": "Haiku in Batch Workflows",
-        "durationSeconds": 95,
+        "durationSeconds": 230,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-haiku-4-5/haiku-4-5-batch.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn when and how to use Claude Haiku 4.5 in batch workflows to process high-volume tasks cheaply and efficiently."
+        "audioSummary": "Learn how to use Claude Haiku 4.5 efficiently in batch workflows by understanding its strengths, costs, and when it's the right choice versus other models."
       },
       {
         "id": "ai-models-claude-haiku-4-5-haiku-4-5-routing",
         "title": "Routing Cheap Tasks to Haiku",
-        "durationSeconds": 74,
+        "durationSeconds": 248,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-haiku-4-5/haiku-4-5-routing.html",
         "isAutomotiveSafe": true,
-        "contentType": "conceptual",
-        "audioSummary": "Learn when and how to route simple tasks to Claude Haiku 4.5, Anthropic's fast and cheap model, by matching workload characteristics to model strengths rather than defaulting to expensive alternatives."
+        "contentType": "code",
+        "audioSummary": "Learn how to route simple, low-cost tasks to Claude Haiku 4.5 to build fast, affordable AI systems that actually ship."
       },
       {
         "id": "ai-models-claude-haiku-4-5-haiku-4-5-vs-mini",
         "title": "Haiku vs GPT-4o-mini vs Flash",
-        "durationSeconds": 84,
+        "durationSeconds": 224,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-haiku-4-5/haiku-4-5-vs-mini.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn when and how to choose between Claude Haiku, GPT-4o-mini, and Flash models based on your actual workload needs rather than marketing hype."
+        "audioSummary": "Learn how to choose between Claude Haiku, GPT-4o-mini, and Flash by matching model capabilities to your workload's cost, latency, and quality needs."
       },
       {
         "id": "ai-models-claude-haiku-4-5-haiku-4-5-production",
         "title": "Haiku 4.5 in Production",
-        "durationSeconds": 80,
+        "durationSeconds": 202,
         "audioUrl": "",
         "visualContentUrl": "https://www.lillytechsystems.com/ai-models/claude-haiku-4-5/haiku-4-5-production.html",
         "isAutomotiveSafe": true,
         "contentType": "conceptual",
-        "audioSummary": "Learn how to deploy Claude Haiku 4.5 in production by matching the model's strengths to your workload, measuring quality and cost, and avoiding the common pitfall of choosing models based on hype rather than actual requirements."
+        "audioSummary": "Learn when and how to deploy Claude Haiku 4.5 in production by matching the model to your workload's actual requirements rather than defaults."
       }
     ]
   }

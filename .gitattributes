@@ -7,3 +7,4 @@
 *.kts  text eol=lf
 *.md   text eol=lf
 gradlew text eol=lf
+*.m4a filter=lfs diff=lfs merge=lfs -text
