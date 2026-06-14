@@ -5,8 +5,12 @@ import Foundation
 enum Endpoints {
     static let baseURL = "https://www.lillytechsystems.com/ai-school/"
     static let indexPage = baseURL + "index.html"
-    static let syllabusJSON = baseURL + "syllabus.json"
-    static let audioBase = baseURL + "audio/"
+    /// Content feed (syllabus + audio) hosted on GitHub Pages. Lessons carry
+    /// absolute audio URLs into this same host. The website links above stay on
+    /// lillytechsystems.com.
+    static let feedBase = "https://toshanthi-stack.github.io/ai-school-feed/"
+    static let syllabusJSON = feedBase + "syllabus.json"
+    static let audioBase = feedBase + "audio/"
 
     static var website: URL { URL(string: baseURL)! }
 

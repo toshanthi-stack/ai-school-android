@@ -10,8 +10,12 @@ package com.lillytech.aischool.core.model
 object AiSchoolEndpoints {
     const val BASE_URL = "https://www.lillytechsystems.com/ai-school/"
     const val INDEX_PAGE = BASE_URL + "index.html"
-    const val SYLLABUS_JSON = BASE_URL + "syllabus.json"
-    const val AUDIO_BASE = BASE_URL + "audio/"
+
+    // Content feed (syllabus + audio) hosted on GitHub Pages. Lessons carry
+    // absolute audio URLs into this host; the website links stay on BASE_URL.
+    const val FEED_BASE = "https://toshanthi-stack.github.io/ai-school-feed/"
+    const val SYLLABUS_JSON = FEED_BASE + "syllabus.json"
+    const val AUDIO_BASE = FEED_BASE + "audio/"
     const val LESSON_BASE = BASE_URL + "lessons/"
 }
 
