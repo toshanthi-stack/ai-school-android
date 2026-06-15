@@ -125,16 +125,15 @@ On the emulator screen (this is the car's display):
    tap a media tile on the home screen).
 2. In Media Center, tap the **source picker** (the grid icon at the top right).
 3. Choose **AI School** (the dark "ai school" knowledge-graph icon).
-4. You now see three pillar tabs across the top:
-   - Generative AI Skills
-   - AI Infrastructure & Hardware
-   - Advanced LLM Tuning
+4. You now see a tab per learning track across the top (from the live feed -
+   currently 8: Anthropic Claude, AI Tools, AI Models, AI Skills, AI Agents,
+   AI Vector Databases, AI Hardware, AI Frameworks). The tab strip scrolls.
 5. Tap a course to open its lessons, then tap a lesson to **play** it. The
    **Now Playing** screen appears with play, pause, and skip controls.
 
-> Audio works with no network: lessons stream first and fall back to bundled
-> narration. Visually heavy lessons are reduced to audio plus a one-line summary
-> before they ever reach the car.
+> Audio streams from the hosted feed, so the car needs connectivity to play; the
+> catalog itself falls back to a bundled seed offline. Visually heavy lessons are
+> reduced to audio plus a one-line summary before they ever reach the car.
 
 ---
 
@@ -199,9 +198,9 @@ adb shell am start -n com.lillytech.aischool.automotive/.vw.VwCatalogActivity
 ```
 
 A dark, VW-styled catalog screen appears: translucent rounded tiles, the Nunito
-rounded typeface, and a per-pillar accent color. Tap the pill tabs to switch
-pillars, and tap a course to open the VW-styled Now Playing screen (the back
-arrow returns).
+rounded typeface, and a per-track accent color. Its tabs come from the live feed
+(one per track, scrollable). Tap a pill to switch tracks, and tap a course to
+open the VW-styled Now Playing screen (the back arrow returns).
 
 This screen demonstrates how AI School fits the VW MIB design language. In
 production, the OEM themes the real in-car UI through car-ui-lib overlays.
@@ -252,8 +251,9 @@ Step 6.
 | AI School is not in the source picker | Reopen Media Center, or in the Terminal: `adb shell am force-stop com.android.car.media`, then open Media Center again. Confirm install: `adb shell pm list packages \| grep lillytech`. |
 | Window-pause does nothing | In the Terminal: `adb shell dumpsys package com.lillytech.aischool.automotive \| grep CONTROL_CAR_WINDOWS` should print `granted=true`. If not, you are not on a `test-keys` Automotive image; recreate the AVD from an **Automotive with Google APIs** image. |
 | `cmd car_service` not recognized | You are on a phone emulator, not an Automotive one. Create the AVD from an Automotive system image (Step 3). |
-| Playback stuck on "buffering" | The remote audio URLs are placeholders; on a slow network the fallback to bundled narration can lag a few seconds. Wait, or tap another lesson. |
-| Emulator very slow to boot | Normal for a cold Automotive boot (2 to 4 minutes). Start it before you need it. |
+| Playback stuck on "buffering" | Audio streams from the hosted feed, so it needs connectivity; on a slow network it can take a few seconds. Check the device has internet, wait, or tap another lesson. |
+| Browse shows fewer tracks than expected | The car fell back to the bundled seed because the live-feed fetch failed (e.g. the Automotive emulator's flaky network). It still shows the full bundled catalog; on a real head unit the live feed loads all tracks. |
+| Emulator very slow to boot | Normal for a cold Automotive boot (2 to 4 minutes); the hardware-GPU cold boot can hang on some Macs - boot with `-gpu swiftshader_indirect`. Start it before you need it. |
 
 ---
 

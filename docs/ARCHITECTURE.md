@@ -34,7 +34,7 @@ A small multi-module monorepo:
   content-safety rules
 - `:core:network` · Ktor client with dual-payload handling (a visual payload for
   mobile, an audio-only payload for the car)
-- `:core:demoaudio` · bundled narration so the experience works with no network
+- `:core:demoaudio` · branded in-car artwork (lesson audio streams from the hosted feed)
 - `:app-mobile` · the rich Compose app
 - `:app-automotive` · the media service, the cabin-signal integration, and a
   VW-styled design preview
@@ -80,10 +80,13 @@ resumes, never one the driver paused by hand. Details:
   browsing are unaffected.
 - The callback is unregistered and the Car connection released on teardown.
 
-**4. Offline-resilient.**
-Streaming is attempted first; if it is unreachable, bundled narration plays
-seamlessly. The catalog falls back to a built-in copy. The cabin experience never
-depends on connectivity.
+**4. Hosted feed, streamed content.**
+The catalog and audio are produced by an AI content pipeline (see
+[CONTENT-PIPELINE.md](CONTENT-PIPELINE.md)) and published to a hosted feed
+(`syllabus.json` + audio). The apps stream it and pick up new tracks with no app
+update. Resolution order is live feed -> a bundled seed catalog, so the browse
+still renders offline; lesson audio is streamed (an on-device download for true
+offline playback is a possible future addition).
 
 ---
 
@@ -122,7 +125,7 @@ sequenceDiagram
 
     Driver->>IVI: picks a lesson
     IVI->>App: play request
-    App->>App: load audio (stream, else bundled)
+    App->>App: stream audio from the hosted feed
     App->>IVI: now playing
 ```
 
@@ -198,9 +201,9 @@ It is an adaptive icon (`mipmap-anydpi-v26/ic_launcher.xml`) with a `<monochrome
 layer for themed icons, and the foreground sits at ~72% so it fills a squircle
 while staying in the safe zone. Source and master art live in `docs/brand/`.
 
-**Per-pillar album art, and an honest AAOS note.** Album art is served to the
+**Per-track album art, and an honest AAOS note.** Album art is served to the
 system Media Center via `ArtworkProvider`, a read-only `ContentProvider` exposing
-`content://.../category/<pillar>`. This is the correct AAOS pattern: the Media
+`content://.../category/<category>`. This is the correct AAOS pattern: the Media
 Center is a separate system process and its image loader can read `content://` but
 not a cross-package `android.resource://` URI. The provider serves valid bytes and
 the Media Center reads them (confirmed in logcat), but the stock AOSP reference
@@ -239,8 +242,9 @@ platform's.
 
 To make that concrete, the build includes a Compose preview
 (`vw.VwCatalogActivity`) styled after the VW MIB design direction: a dark canvas,
-translucent rounded tiles, the Nunito rounded typeface, and per-pillar accent
-colors. It is a design-direction preview on a real screen, not the driver-facing
+translucent rounded tiles, the Nunito rounded typeface, and per-track accent
+colors. It is driven by the same live feed (tabs derived from the real tracks),
+but it is a design-direction preview on a real screen, not the driver-facing
 browse (which the OEM renders). Reference mockup and MIB notes are in
 `docs/vw-reference/`.
 

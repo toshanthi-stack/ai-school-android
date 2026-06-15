@@ -60,20 +60,19 @@ group courses by `category`.
 
 ## Status
 
-- **Proof-of-concept (done)**: three real lessons adapted end to end (a conceptual
-  one and a code-heavy one), real narration generated, a real `syllabus.json`
-  bundled in the iOS app, and the app loads it. See `ios/docs/screenshots/`.
-- **Pipeline implementation (done)**: a runnable pipeline in
-  [`pipeline/`](../pipeline/) automates steps 1-4: `adapt_lesson.py` fetches a
-  lesson URL and uses the Claude API (structured output) to classify it and
-  rewrite it into a spoken script; `tts.py` synthesizes the narration;
-  `build_feed.py` runs every lesson in `lessons.json` and emits
-  `out/syllabus.json` + audio. See `pipeline/README.md`.
-- **Production (Lilly Tech infra)**:
-  1. Provide an `ANTHROPIC_API_KEY` and (optionally) swap the prototype macOS
-     `say` TTS for a production TTS in `tts.py`.
-  2. Host the generated `syllabus.json` + audio at lillytechsystems.com (the app
-     already prefers the live feed and falls back to the bundled one).
-  3. Generate `lessons.json` by crawling the learning-path index pages, and run
-     `build_feed.py` on a schedule when new content is published, so the catalog
-     stays current without app releases.
+The pipeline runs end to end and the feed is **live, hosted, and streamed** by
+the apps. Current catalog: **8 tracks / ~240 lessons**, ~4-minute narrations.
+
+- **Pipeline** ([`pipeline/`](../pipeline/)): `crawl_catalog.py` crawls the site
+  three levels deep (learning path -> topic -> the real lesson pages) into
+  `lessons.json`; `adapt_lesson.py` classifies + rewrites each lesson via the
+  Claude API (structured output); `tts.py` synthesizes narration; `build_feed.py`
+  (incremental - only generates new lessons) emits `out/syllabus.json` + audio.
+- **Hosting**: `publish_to_feed.py` publishes `syllabus.json` + audio to a hosted
+  feed served by **GitHub Pages** (the `ai-school-feed` repo; a custom domain is
+  also possible). The apps prefer the live feed and fall back to a bundled seed
+  catalog so the browse renders offline; lesson audio is streamed.
+- **Adding content (no app release)**: regenerate with `make feed ...` then
+  `python publish_to_feed.py`; the apps pick up the new tracks on next launch.
+  Cost levers: a cheaper Claude model via `ADAPT_MODEL` and the free macOS `say`
+  voice for non-production runs. See `pipeline/README.md`.
