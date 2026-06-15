@@ -6,15 +6,17 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -23,6 +25,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AutoAwesome
+import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.GraphicEq
 import androidx.compose.material.icons.filled.Memory
 import androidx.compose.material.icons.filled.Pause
@@ -30,6 +33,7 @@ import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material.icons.filled.SkipPrevious
 import androidx.compose.material.icons.filled.Tune
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -47,11 +51,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.lillytech.aischool.core.model.AiSchoolPillars
 import com.lillytech.aischool.core.model.Course
 import com.lillytech.aischool.core.model.Lesson
 
@@ -60,6 +62,9 @@ import com.lillytech.aischool.core.model.Lesson
  * typography (Nunito), generous touch targets, dark canvas with translucent
  * tiles and pill tabs, matching the VW MIB design language. No app-drawn
  * status or climate bars: the real AAOS system chrome frames the content.
+ *
+ * Tabs are derived from the live syllabus categories (one pill per track), so
+ * this preview reflects the same catalog the Media Center streams.
  */
 @Composable
 fun VwApp(courses: List<Course>) {
@@ -82,19 +87,10 @@ fun VwApp(courses: List<Course>) {
     }
 }
 
-private data class Pillar(val tab: String, val full: String, val icon: ImageVector)
-
-private val PILLARS = listOf(
-    Pillar("Generative AI", AiSchoolPillars.GENERATIVE_AI, Icons.Filled.AutoAwesome),
-    Pillar("Infrastructure", AiSchoolPillars.INFRASTRUCTURE, Icons.Filled.Memory),
-    Pillar("Advanced Tuning", AiSchoolPillars.ADVANCED_TUNING, Icons.Filled.Tune),
-)
-
 @Composable
 private fun VwHome(courses: List<Course>, onCourse: (Course) -> Unit) {
-    var selected by remember { mutableStateOf(0) }
-    val pillar = PILLARS[selected]
-    val shown = courses.filter { it.category == pillar.full }
+    val categories = remember(courses) { courses.map { it.category }.distinct() }
+    var selected by remember(categories.size) { mutableIntStateOf(0) }
 
     Column(Modifier.fillMaxSize().padding(horizontal = 28.dp)) {
         Spacer(Modifier.height(18.dp))
@@ -111,17 +107,29 @@ private fun VwHome(courses: List<Course>, onCourse: (Course) -> Unit) {
             )
         }
         Spacer(Modifier.height(18.dp))
-        // Pill tabs, short labels, large, never truncate
-        Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-            PILLARS.forEachIndexed { i, p ->
-                val active = i == selected
+
+        if (categories.isEmpty()) {
+            // Still loading the live feed.
+            Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                CircularProgressIndicator(color = Vw.Indigo)
+            }
+            return@Column
+        }
+
+        val sel = selected.coerceIn(0, categories.lastIndex)
+        val category = categories[sel]
+
+        // Pill tabs: one per track, horizontally scrollable (large, never truncate).
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
+            itemsIndexed(categories) { i, cat ->
+                val active = i == sel
                 Row(
                     modifier = Modifier
                         .clip(RoundedCornerShape(26.dp))
-                        .background(if (active) Vw.accentFor(p.full).copy(alpha = 0.20f) else Vw.Tile)
+                        .background(if (active) Vw.accentFor(cat).copy(alpha = 0.20f) else Vw.Tile)
                         .border(
                             1.dp,
-                            if (active) Vw.accentFor(p.full) else Vw.TileBorder,
+                            if (active) Vw.accentFor(cat) else Vw.TileBorder,
                             RoundedCornerShape(26.dp),
                         )
                         .clickable { selected = i }
@@ -129,14 +137,14 @@ private fun VwHome(courses: List<Course>, onCourse: (Course) -> Unit) {
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Icon(
-                        p.icon,
+                        iconFor(cat),
                         contentDescription = null,
-                        tint = if (active) Vw.accentFor(p.full) else Vw.TextDim,
+                        tint = if (active) Vw.accentFor(cat) else Vw.TextDim,
                         modifier = Modifier.size(22.dp),
                     )
                     Spacer(Modifier.width(10.dp))
                     Text(
-                        p.tab,
+                        cat,
                         color = if (active) Vw.Text else Vw.TextDim,
                         fontFamily = Vw.Nunito,
                         fontWeight = FontWeight.Bold,
@@ -147,11 +155,12 @@ private fun VwHome(courses: List<Course>, onCourse: (Course) -> Unit) {
             }
         }
         Spacer(Modifier.height(20.dp))
+        val shown = courses.filter { it.category == category }
         LazyVerticalGrid(
             columns = GridCells.Fixed(3),
             horizontalArrangement = Arrangement.spacedBy(20.dp),
             verticalArrangement = Arrangement.spacedBy(18.dp),
-            contentPadding = androidx.compose.foundation.layout.PaddingValues(bottom = 24.dp),
+            contentPadding = PaddingValues(bottom = 24.dp),
         ) {
             items(shown, key = { it.id }) { c -> CourseTile(c) { onCourse(c) } }
         }
@@ -312,8 +321,10 @@ private fun BrandGlyph(sz: androidx.compose.ui.unit.Dp) {
     }
 }
 
-private fun iconFor(category: String): ImageVector = when (category) {
-    AiSchoolPillars.INFRASTRUCTURE -> Icons.Filled.Memory
-    AiSchoolPillars.ADVANCED_TUNING -> Icons.Filled.Tune
+private fun iconFor(category: String): ImageVector = when {
+    category.contains("Tool", true) -> Icons.Filled.Build
+    category.contains("Model", true) -> Icons.Filled.Memory
+    category.contains("Hardware", true) || category.contains("Infrastructure", true) -> Icons.Filled.Memory
+    category.contains("Tuning", true) -> Icons.Filled.Tune
     else -> Icons.Filled.AutoAwesome
 }
