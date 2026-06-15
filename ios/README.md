@@ -20,18 +20,18 @@ audio-first, and code-heavy lessons open the real web page to read/copy the code
 
 ## Features
 
-- **Catalog** grouped by the three pillars (Generative AI, AI Infrastructure &
-  Hardware, Advanced LLM Tuning), with a tappable link to the AI School website.
+- **Track-first home**: the learning tracks from the live feed as cards, with
+  the AI School lockup, a tappable website link, and a Lilly Tech Systems footer.
 - **Course detail** with the lesson list and an Audio / Interactive badge per
   lesson.
 - **Lesson screen**, two modes that mirror the Android app:
   - *Audio lessons*: a branded player (`AVPlayer`) with progress and play/pause,
-    backed by **bundled narration** so it plays offline.
+    **streaming the audio from the hosted feed**.
   - *Interactive lessons*: the live topic page in a `WKWebView`, with the site's
     global chrome (nav, sidebar, cookie banner) stripped so only the lesson
     content shows.
-- **Data**: prefers the live `syllabus.json` feed, falls back to the bundled
-  `SeedSyllabus` (the contract-of-record), so it works offline.
+- **Data**: prefers the live `syllabus.json` feed, falls back to a bundled
+  `SeedSyllabus` so the catalog still shows offline (audio streams).
 - **Dark-first brand theme** matching the AI School palette.
 - **CarPlay** (audio-only, the iOS analog of the Android Automotive flavor),
   see below.
@@ -41,14 +41,13 @@ audio-first, and code-heavy lessons open the real web page to read/copy the code
 ![](docs/screenshots/07-carplay-home.png)
 
 A CarPlay audio scene mirrors the Android Automotive media service: the driver
-browses pillars then courses then lessons, every item is audio, and playback
+browses tracks then courses then lessons, every item is audio, and playback
 runs through the system Now Playing template and the remote command center
 (steering-wheel / dashboard controls). Like the car flavor on Android, only
 `isAutomotiveSafe` lessons are listed, code-heavy lessons stay on the phone.
 
-It reuses the same `SyllabusStore` (live feed then bundled then seed) and the
-same bundled-narration-first loading as the phone, so it works offline too. The
-implementation is in [`AISchool/CarPlay/`](AISchool/CarPlay):
+It reuses the same `SyllabusStore` (live feed then seed) and streams the hosted
+audio like the phone. The implementation is in [`AISchool/CarPlay/`](AISchool/CarPlay):
 `CarPlaySceneDelegate` builds the templates, `CarPlayPlaybackController` drives
 `AVPlayer` + `MPNowPlayingInfoCenter`.
 
@@ -73,7 +72,7 @@ ios/
     Theme/                    brand palette
     Views/                    CourseList, CourseDetail, Lesson, WebView
     CarPlay/                  CarPlay scene delegate + audio controller
-    Resources/                bundled narration, asset catalog, Info.plist, entitlements
+    Resources/                Inter fonts, asset catalog, bundled feed, Info.plist, entitlements
 ```
 
 ## Build and run

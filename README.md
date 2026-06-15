@@ -29,12 +29,15 @@ driven directly off the Vehicle HAL.
   `CarPropertyManager` callback on `WINDOW_POS` pauses playback through the media
   session the moment any window leaves the closed position, and resumes once every
   window is closed again (only if the window paused it). Systemic, not a local hack.
-- **Offline-resilient** · streaming first, bundled-narration fallback, seeded
-  catalog. The cabin never depends on connectivity.
+- **AI-generated, hosted, streaming content** · an AI content pipeline turns the
+  AI School site into audio-first lessons published to a hosted feed; the apps
+  stream it and pick up new tracks with **no app update**. A bundled catalog
+  seeds the UI offline. (See [Content &amp; hosting](#content--hosting).)
 - **OEM-themable + a VW-styled preview** · the production in-car UI is OEM-themed
-  via car-ui-lib; a Compose preview shows AI School in the VW MIB design language.
-- **Live interactive lessons on mobile** · code, sandboxes, and the real
-  published site rendered in-app.
+  via car-ui-lib; a Compose preview (now feed-driven) shows AI School in the VW
+  MIB design language.
+- **Live interactive lessons on mobile** · code, the real published site, and a
+  "read the full lesson" view rendered in-app.
 
 ## Screenshots
 
@@ -54,7 +57,7 @@ driven directly off the Vehicle HAL.
 > design (details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
 
 ### Mobile
-| Catalog | Course | Audio lesson | Interactive lesson |
+| Tracks | Courses | Lessons | Lesson player |
 |---|---|---|---|
 | ![](docs/screenshots/mobile-1-courses.png) | ![](docs/screenshots/mobile-2-course-detail.png) | ![](docs/screenshots/mobile-3-lesson-audio.png) | ![](docs/screenshots/mobile-4-lesson-interactive.png) |
 
@@ -69,21 +72,46 @@ A multi-module Gradle (Kotlin DSL) monorepo:
 |---|---|
 | `:core:model` | Domain entities, catalog, and the content-safety rules |
 | `:core:network` | Ktor client with dual-payload handling (visual vs audio-only) |
-| `:core:demoaudio` | Bundled narration + branded artwork for offline use |
-| `:app-mobile` | Jetpack Compose app (catalog, audio + interactive lessons) |
-| `:app-automotive` | Media browser service, VHAL cabin monitor, VW-styled preview |
+| `:core:demoaudio` | Branded in-car artwork (lesson audio streams from the hosted feed) |
+| `:app-mobile` | Jetpack Compose app (track -> course -> lesson, audio + read view) |
+| `:app-automotive` | Media browser service, VHAL cabin monitor, feed-driven VW preview |
 
 The full design write-up, sequence diagrams, and branding/theming notes are in
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md); setup and run steps are in
 [docs/RUNNING.md](docs/RUNNING.md).
 
+## Content & hosting
+
+The catalog isn't hand-written. A Python **content pipeline** in [`pipeline/`](pipeline/)
+crawls the AI School site, uses Claude to rewrite each lesson into an audio-first
+spoken script (dropping code/copy-paste), synthesizes narration, and emits a
+`syllabus.json` feed plus audio. That feed is published to **GitHub Pages**
+(served from a separate `ai-school-feed` repo), and the apps **stream** it.
+
+- **Shared feed contract** · `syllabus.json` (tracks -> courses -> lessons, each
+  with an absolute audio URL). All flavors read the same feed.
+- **Resolution order** · live hosted feed -> bundled seed (offline catalog).
+  Audio streams, so the apps stay small (mobile APK ~24 MB).
+- **Add tracks with no app update** · regenerate and publish:
+
+  ```bash
+  cd pipeline
+  export ANTHROPIC_API_KEY=sk-ant-...
+  make feed TTS_BACKEND=say MODEL=claude-haiku-4-5 MAX_PATHS=8 MAX_TOPICS=5 \
+    AUDIO_URL_BASE=https://<owner>.github.io/ai-school-feed/audio   # generate (incremental)
+  python publish_to_feed.py                                         # push to the feed -> Pages
+  ```
+
+  The apps pick up the new tracks on next launch. Current catalog: 8 tracks /
+  ~240 lessons. See [`pipeline/README.md`](pipeline/README.md).
+
 ## iOS (SwiftUI)
 
 A native SwiftUI port of the mobile experience lives in [`ios/`](ios/): the same
-catalog, courses, and lessons, with an `AVPlayer` audio player (bundled offline
-narration), a `WKWebView` for interactive lessons, and the same live-feed with
-seed fallback. It also ships a **CarPlay** audio scene, the iOS analog of the
-Android Automotive flavor (audio-only browse plus Now Playing). See
+tracks, courses, and lessons, with an `AVPlayer` streaming the hosted audio, a
+`WKWebView` for the read-the-full-lesson view, and the same live-feed with seed
+fallback. It also ships a **CarPlay** audio scene, the iOS analog of the Android
+Automotive flavor (audio-only browse plus Now Playing). See
 [`ios/README.md`](ios/README.md) to build and run.
 
 ## Build

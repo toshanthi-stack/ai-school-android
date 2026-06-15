@@ -65,8 +65,9 @@ It maps the site to `lessons.json` three levels deep: category = learning path,
 course = topic, lesson = each real lesson page (a topic links ~6 lesson pages of
 real content). So one topic becomes a course of ~6 audio lessons. Use
 `--max-lessons` to cap lessons per topic. Mind the scale before a full
-`build_feed.py` run: every lesson is one Claude call plus one TTS synthesis, and
-audio is bundled in the apps (keep batches ~100 lessons unless you host audio).
+`build_feed.py` run: every lesson is one Claude call plus one TTS synthesis. The
+audio is **hosted and streamed** by the apps (see Publish below), so the catalog
+can grow freely without bloating the app.
 
 ## Run
 
@@ -76,15 +77,36 @@ Adapt a single lesson (prints the classification + spoken script):
 .venv/bin/python adapt_lesson.py https://www.lillytechsystems.com/ai-prompts/index.html
 ```
 
-Build the whole feed from `lessons.json`:
+Build the whole feed from `lessons.json` (incremental: reuses lessons already in
+`out/`, only generates new ones), stamping the hosted audio URLs:
 
 ```bash
-.venv/bin/python build_feed.py
+.venv/bin/python build_feed.py \
+  --audio-url-base https://<owner>.github.io/ai-school-feed/audio
 # writes out/syllabus.json and out/audio/*.m4a
 ```
 
-Then host `out/syllabus.json` + the audio at lillytechsystems.com (the apps
-prefer the live feed) or bundle them into the apps.
+## Publish (host the feed)
+
+The apps stream from a hosted feed. `publish_to_feed.py` cleans the titles,
+copies `syllabus.json` + the referenced audio into a local clone of the feed
+repo, commits, and pushes - GitHub Pages then serves it and the apps pick up the
+new tracks on next launch (no app rebuild):
+
+```bash
+# one-time: gh repo clone <owner>/ai-school-feed ~/ai-school-feed
+.venv/bin/python publish_to_feed.py
+```
+
+Or use the Makefile end to end:
+
+```bash
+make feed TTS_BACKEND=say MODEL=claude-haiku-4-5 MAX_PATHS=8 MAX_TOPICS=5 \
+  AUDIO_URL_BASE=https://<owner>.github.io/ai-school-feed/audio
+.venv/bin/python publish_to_feed.py
+```
+
+(You can also host the `out/` files on your own domain instead of Pages.)
 
 ## Model and TTS
 
