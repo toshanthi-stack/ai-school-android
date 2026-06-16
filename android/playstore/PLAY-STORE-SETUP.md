@@ -1,9 +1,8 @@
 # AI School - Google Play setup & submission (step by step)
 
-Everything you need to publish the **mobile** app, with the exact answers inline.
-The Android Automotive flavor is a separate gift to VW, not published here.
-
-Publisher: **Lilly Tech Systems LLC** (Organization account).
+Everything to publish the **mobile** app, with exact answers, in the order your
+Play Console dashboard lists them. The Android Automotive flavor is a separate
+gift to VW, not published here. Publisher: **Lilly Tech Systems LLC** (Org account).
 
 ---
 
@@ -14,77 +13,76 @@ Publisher: **Lilly Tech Systems LLC** (Organization account).
 - **Phone screenshots:** `android/playstore/screenshots/01-home.png … 04-lesson.png`
 - **Privacy policy URL (live):** https://toshanthi-stack.github.io/ai-school-feed/privacy.html
 
----
-
-## 1. Account verification (one-time, may still be processing)
-On the Play Console home you may see "Finish setting up your developer account":
-- **Google is verifying your identity** - wait for Google's email (a few days).
-- **Verify your organization's website** and **phone** - these unlock after
-  identity verification. Do them when prompted.
-
-You can prepare the app and store listing while this processes; **publishing to
-production needs verification complete.**
-
-## 2. Back up the upload key (IMPORTANT - do once)
-Already done if you saved these. The release is signed with a key on your Mac;
-lose it (without Play App Signing recovery) and you can't update the app.
-- Keystore file: `android/keystore/upload-keystore.jks`
-- Password / alias: in `android/keystore.properties` (gitignored, only on your Mac)
-Back up BOTH off the machine (you saved the .jks to OneDrive and the password to
-an iCloud note).
+## 0b. Back up the upload key (do once - already done)
+Keystore `android/keystore/upload-keystore.jks` + password in
+`android/keystore.properties` (gitignored). You saved the .jks to OneDrive and
+the password to an iCloud note. Without this (and Play App Signing) you can't
+update the app later.
 
 ---
 
-## 3. On the Play Console Dashboard: "Set up your app"
-Click **Set up your app** and work through each task. Exact answers:
+# "Set up your app" - do these top to bottom (matches your dashboard)
 
-### App access
-- Choose **"All functionality is available without special access"** (the app
-  has no login or gated areas).
+## 1. Set privacy policy
+Paste this URL and Save:
+`https://toshanthi-stack.github.io/ai-school-feed/privacy.html`
 
-### Ads
-- **"No, my app does not contain ads."**
+## 2. Sign in details
+The app has **no login**. Choose **"All functionality is available without
+special access"** (i.e. no sign-in required) -> Save. No test credentials needed.
 
-### Content rating
-- Start the questionnaire. Category: **Reference / Education**.
-- Answer **No** to everything: violence, sexual content, profanity, controlled
-  substances, gambling, user-to-user communication, user-generated content,
-  data sharing for the rating.
-- Result: an **Everyone** rating.
+## 3. Ads
+"Does your app contain ads?" -> **No** -> Save.
 
-### Target audience and content
-- Target age groups: **13+** (select 13-15, 16-17, 18+). Do **not** include
-  under-13.
-- "Is your app designed for children / appealing to children?" -> **No**.
-- This keeps you out of the Families policy program.
+## 4. Content rating
+1. Enter your **contact email**.
+2. Category: choose **Reference / Education** (a "Utility, Productivity,
+   Communication, or Other" / Reference style category - not Game).
+3. Questionnaire: answer **No** to everything - violence, sexual content,
+   profanity, controlled substances, gambling, user-to-user communication,
+   user-generated content, sharing location, digital purchases.
+4. Submit -> you get an **Everyone** rating -> Save.
 
-### Data safety
-- "Does your app collect or share any required user data types?" -> **No.**
-  (v1 has no login, no analytics SDK, no ads SDK; it only fetches/streams content.)
-- "Is all of the user data encrypted in transit?" -> **Yes** (all HTTPS).
-- "Do you provide a way for users to request that their data is deleted?" ->
-  N/A / not applicable (no account, no data collected).
-- Caveat: the app opens lillytechsystems.com lesson pages in an in-app browser.
-  That's the website's own domain; if you want to be conservative you could
-  later disclose "Web browsing" as collected by the embedded site. For v1 with
-  no in-app SDKs, **No data collected** is the honest answer.
+## 5. Target audience
+1. Target age groups: tick **13-15, 16-17, and 18 and over**. Do **not** tick
+   any under-13 group.
+2. "Is your app appealing to children?" / unintended-appeal -> **No**.
+3. Save. (This keeps you out of the Families/children policy program.)
 
-### Other declarations (answer No / as noted)
-- **News app?** No.
-- **COVID-19 contact tracing / status app?** No.
-- **Government app?** No.
-- **Financial features?** No.
-- **Health?** No.
+## 6. Data safety
+1. "Does your app collect or share any of the required user data types?" -> **No.**
+   (v1 has no login, no analytics SDK, no ads SDK; it only fetches/streams content.)
+2. "Is all of the user data encrypted in transit?" -> **Yes** (all HTTPS).
+3. "Do you provide a way for users to request that their data is deleted?" ->
+   not applicable (no data collected).
+4. Review -> Submit.
+   - Note: the app opens lillytechsystems.com lessons in an in-app browser (your
+     own site). For v1 with no in-app SDKs, **No data collected** is the honest
+     answer. If that site later adds analytics/ads, revisit this.
 
-### Store listing (the public page)
-Paste these (also in `listing.md`):
+## 7. Government apps
+"Is your app a government app?" -> **No** -> Save.
 
+## 8. Financial features
+"Does your app provide financial features?" -> **No, my app doesn't provide any
+financial features** -> Save.
+
+## 9. Health
+"Does your app have health features?" (Health Connect, health content, etc.) ->
+**No** -> Save.
+
+## 10. Select an app category and provide contact details
+- **App category:** Education
+- **Tags:** pick the AI / education / developer-tools tags Play offers.
+- **Contact details:** an **email** you monitor (e.g. support@lillytechsystems.com);
+  optionally website `https://www.lillytechsystems.com/ai-school`.
+- Save.
+
+## 11. Set up your store listing
 - **App name (<=30):**
   `AI School: Listen & Learn AI`
-
 - **Short description (<=80):**
   `Learn AI by ear: audio lessons on models, tools & APIs, phone or car.`
-
 - **Full description:**
   ```
   AI School turns the fast-moving world of AI into lessons you can listen to.
@@ -112,51 +110,39 @@ Paste these (also in `listing.md`):
   AI School is a product of Lilly Tech Systems. Learn more at
   lillytechsystems.com/ai-school.
   ```
-
 - **App icon:** upload `android/playstore/icon-512.png`
 - **Feature graphic:** upload `android/playstore/feature-graphic.png`
-- **Phone screenshots:** upload the four in `android/playstore/screenshots/`
-  (Play needs at least 2).
-- **App category:** Education
-- **Tags:** pick AI / education / developer-tools related tags Play offers.
-- **Contact email:** an inbox you monitor (e.g. support@lillytechsystems.com).
-- **Privacy policy:** paste the live URL from section 0.
+- **Phone screenshots:** upload the four in `android/playstore/screenshots/` (min 2).
+- Save.
 
-### Store settings
-- **App category:** Education. **Contact details:** your email/website.
-- **Pricing:** Free (under Monetization setup or the pricing page).
-
-Work down the checklist until every "Set up your app" task shows a green check.
+Each task shows a green check when saved. When all 11 are done, the release
+tracks unlock.
 
 ---
 
-## 4. Create a release
-The release tracks are locked until the setup tasks above are done. Then:
+# Release the app
 
-### 4a. Internal testing first (recommended - instant, no review)
-1. Left menu -> **Testing -> Internal testing -> Create new release**.
-2. When prompted about signing, **use Google Play App Signing** (let Google
-   manage the app signing key; your upload key stays the upload key).
+## 12. Internal testing first (instant, no review - recommended)
+1. Left menu -> **Test and release -> Testing -> Internal testing -> Create new release**.
+2. If prompted about signing, **use Google Play App Signing** (Google holds the
+   app signing key; your upload key stays the upload key).
 3. **Upload** `app-mobile-release.aab`.
-4. Add a release name + short notes, **Save -> Review release -> Start rollout
-   to Internal testing**.
-5. Under **Testers**, add your own email (and anyone else, up to 100). Copy the
-   **opt-in link**, open it on an Android phone, install, and confirm the app
-   runs and **streams the lessons** (needs internet).
+4. Add release notes -> **Save -> Review release -> Start rollout to Internal testing**.
+5. **Testers** tab: add your email (up to 100). Copy the **opt-in link**, open it
+   on an Android phone, install, and confirm the app runs and **streams the
+   lessons** (needs internet).
 
-### 4b. Promote to Production
-1. Once internal testing looks good: **Production -> Create new release** (or
-   **Promote** the internal release to Production).
-2. Confirm the same AAB, add release notes, **Review -> Start rollout to
-   Production**.
-3. Google reviews it (typically a few days). Organization accounts publish
-   straight to production once account verification is complete.
+## 13. Promote to Production
+1. When internal testing looks good: **Production -> Create new release** (or
+   **Promote** the internal release).
+2. Same AAB, add release notes -> **Review -> Start rollout to Production**.
+3. Google reviews (typically a few days). Production publishing also needs your
+   **account verification** complete (identity + org website + phone).
 
 ---
 
-## 5. After launch: adding more lessons (no new release needed)
-Content streams from the hosted feed, so adding tracks does NOT require a Play
-update:
+## 14. After launch: add more lessons with no new release
+Content streams from the hosted feed, so adding tracks needs no Play update:
 ```bash
 cd pipeline
 export ANTHROPIC_API_KEY=sk-ant-...
@@ -164,12 +150,10 @@ make feed TTS_BACKEND=say MODEL=claude-haiku-4-5 MAX_PATHS=10 MAX_TOPICS=5 \
   AUDIO_URL_BASE=https://toshanthi-stack.github.io/ai-school-feed/audio
 .venv/bin/python publish_to_feed.py
 ```
-The app picks up new tracks on next launch. You only upload a new AAB for app
-code changes (new features, fixes).
+The app picks up new tracks on next launch. Upload a new AAB only for app code
+changes (new features / fixes).
 
----
-
-## 6. iOS (separate track, later)
-The App Store needs the Apple Developer Program ($99/yr). Ship the iOS phone app
-first; CarPlay needs Apple to grant the `com.apple.developer.carplay-audio`
-entitlement. Bundle ID: `com.lillytech.aischool`. See `ios/README.md`.
+## 15. iOS (separate track, later)
+Needs the Apple Developer Program ($99/yr). Ship the iOS phone app first; CarPlay
+needs Apple to grant the `com.apple.developer.carplay-audio` entitlement.
+Bundle ID: `com.lillytech.aischool`. See `ios/README.md`.
