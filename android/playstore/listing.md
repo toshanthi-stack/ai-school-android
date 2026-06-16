@@ -3,10 +3,10 @@
 Copy/paste these into the Play Console. Character limits noted; all are within.
 
 ## App name (max 30)
-AI School: Learn AI by Ear
+AI School: Listen & Learn AI
 
 ## Short description (max 80)
-Audio-first AI lessons on models, tools and APIs, for your phone and your car.
+Learn AI by ear: audio lessons on models, tools & APIs, phone or car.
 
 ## Full description (max 4000)
 AI School turns the fast-moving world of AI into lessons you can listen to.

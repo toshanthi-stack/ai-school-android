@@ -51,7 +51,7 @@ Paste that into the Play listing's Privacy policy field. (If you later want it o
 lillytechsystems.com, the text is in `privacy-policy.md`.)
 
 ## Step 4 - Create the app in Play Console (you)
-1. **Create app** -> name "AI School: Learn AI by Ear", Education, Free, App.
+1. **Create app** -> name "AI School: Listen & Learn AI", Education, Free, App.
 2. Paste the **listing** from `android/playstore/listing.md`: short + full
    description.
 3. Upload graphics: **icon-512.png**, **feature-graphic.png**, and the 4
