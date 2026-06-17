@@ -7,15 +7,15 @@ gift to VW, not published here. Publisher: **Lilly Tech Systems LLC** (Org accou
 ---
 
 ## 0. Files you'll upload (already built, in this repo)
-- **App bundle (AAB):** `android/app-mobile/build/outputs/bundle/release/app-mobile-release.aab`
-- **App icon (512x512):** `android/playstore/icon-512.png`
-- **Feature graphic (1024x500):** `android/playstore/feature-graphic.png`
-- **Phone screenshots:** `android/playstore/screenshots/01-home.png … 04-lesson.png`
+- **App bundle (AAB):** `/Users/shantha/ai-school-android/android/app-mobile/build/outputs/bundle/release/app-mobile-release.aab`
+- **App icon (512x512):** `/Users/shantha/ai-school-android/android/playstore/icon-512.png`
+- **Feature graphic (1024x500):** `/Users/shantha/ai-school-android/android/playstore/feature-graphic.png`
+- **Phone screenshots:** `/Users/shantha/ai-school-android/android/playstore/screenshots/01-home.png … 04-lesson.png`
 - **Privacy policy URL (live):** https://toshanthi-stack.github.io/ai-school-feed/privacy.html
 
 ## 0b. Back up the upload key (do once - already done)
-Keystore `android/keystore/upload-keystore.jks` + password in
-`android/keystore.properties` (gitignored). You saved the .jks to OneDrive and
+Keystore `/Users/shantha/ai-school-android/android/keystore/upload-keystore.jks` + password in
+`/Users/shantha/ai-school-android/android/keystore.properties` (gitignored). You saved the .jks to OneDrive and
 the password to an iCloud note. Without this (and Play App Signing) you can't
 update the app later.
 
@@ -73,7 +73,9 @@ financial features** -> Save.
 
 ## 10. Select an app category and provide contact details
 - **App category:** Education
-- **Tags:** pick the AI / education / developer-tools tags Play offers.
+- **Tags:** Play only offers a fixed list per category - for this app that was
+  **Education** and **Tools** (no AI/Technology/Dev tags exist to pick). Select
+  both; the AI keywords live in the title/description, which is what search uses.
 - **Contact details:** an **email** you monitor (e.g. support@lillytechsystems.com);
   optionally website `https://www.lillytechsystems.com/ai-school`.
 - Save.
@@ -110,9 +112,9 @@ financial features** -> Save.
   AI School is a product of Lilly Tech Systems. Learn more at
   lillytechsystems.com/ai-school.
   ```
-- **App icon:** upload `android/playstore/icon-512.png`
-- **Feature graphic:** upload `android/playstore/feature-graphic.png`
-- **Phone screenshots:** upload the four in `android/playstore/screenshots/` (min 2).
+- **App icon:** upload `/Users/shantha/ai-school-android/android/playstore/icon-512.png`
+- **Feature graphic:** upload `/Users/shantha/ai-school-android/android/playstore/feature-graphic.png`
+- **Phone screenshots:** upload the four in `/Users/shantha/ai-school-android/android/playstore/screenshots/` (min 2).
 - Save.
 
 Each task shows a green check when saved. When all 11 are done, the release
@@ -122,22 +124,41 @@ tracks unlock.
 
 # Release the app
 
-## 12. Internal testing first (instant, no review - recommended)
-1. Left menu -> **Test and release -> Testing -> Internal testing -> Create new release**.
+We went the **Open testing** route for the first release (a public-ish beta you
+can launch before full production verification clears). Same AAB, same review.
+
+## 12. Open testing release (current path)
+1. Left menu -> **Test and release -> Testing -> Open testing -> Create new release**.
 2. If prompted about signing, **use Google Play App Signing** (Google holds the
    app signing key; your upload key stays the upload key).
 3. **Upload** `app-mobile-release.aab`.
-4. Add release notes -> **Save -> Review release -> Start rollout to Internal testing**.
-5. **Testers** tab: add your email (up to 100). Copy the **opt-in link**, open it
-   on an Android phone, install, and confirm the app runs and **streams the
-   lessons** (needs internet).
+4. Add release notes -> **Save -> Review release**.
 
-## 13. Promote to Production
-1. When internal testing looks good: **Production -> Create new release** (or
-   **Promote** the internal release).
+## 12b. Countries / regions (required - this gates rollout)
+A release with **zero** countries can't roll out. On the Publishing overview the
+track shows "Add countries / regions".
+1. Under **Open testing -> Countries / regions**, click **Add countries / regions**.
+2. Selected: **United States, India, Canada** (the countries we reside in). You
+   can expand to worldwide anytime later - it's a free app with global content.
+3. Save.
+
+## 12c. Start rollout
+Back on the Publishing overview, click **Start full rollout** under Open testing.
+Your app-content changes (content rating, data safety, declarations, etc.) go
+into Google's review together; "Changes in review" means they're being checked
+(typically a few days).
+
+## 12d. Install and verify
+**Open testing -> Testers**: copy the **opt-in / join link**, open it on an
+Android phone, install, and confirm the app runs and **streams the lessons**
+(needs internet).
+
+## 13. Promote to Production (later)
+1. When open testing looks good: **Production -> Create new release** (or
+   **Promote** the open-testing release).
 2. Same AAB, add release notes -> **Review -> Start rollout to Production**.
-3. Google reviews (typically a few days). Production publishing also needs your
-   **account verification** complete (identity + org website + phone).
+3. Production publishing also needs your **account verification** complete
+   (identity + org website + phone). Finish that in parallel so you can promote.
 
 ---
 

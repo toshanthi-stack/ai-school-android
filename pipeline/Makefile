@@ -22,6 +22,11 @@ OUT            ?= out/syllabus.json
 AUDIO_DIR      ?= out/audio
 URL            ?=
 
+# Where the published audio is served from (the ai-school-feed GitHub Pages).
+# `make publish` stamps audioUrls with this unless AUDIO_URL_BASE is overridden.
+FEED_AUDIO_BASE ?= https://toshanthi-stack.github.io/ai-school-feed/audio
+PUBLISH_AUDIO_BASE := $(if $(strip $(AUDIO_URL_BASE)),$(AUDIO_URL_BASE),$(FEED_AUDIO_BASE))
+
 CRAWL_FLAGS := --out $(LESSONS)
 ifneq ($(MAX_PATHS),0)
 CRAWL_FLAGS += --max-paths $(MAX_PATHS)
@@ -42,7 +47,7 @@ BUILD_FLAGS += --audio-url-base $(AUDIO_URL_BASE)
 endif
 
 .DEFAULT_GOAL := help
-.PHONY: help install crawl build feed adapt check check-anthropic clean distclean
+.PHONY: help install crawl build feed publish adapt check check-anthropic clean distclean
 
 help:
 	@echo "AI School content pipeline"
@@ -53,6 +58,8 @@ help:
 	@echo "  make build           adapt + synthesize $(LESSONS) -> $(OUT) + audio"
 	@echo "                         tunables: AUDIO_URL_BASE=...  MODEL=claude-haiku-4-5"
 	@echo "  make feed            crawl then build (the full chain)"
+	@echo "  make publish         feed + push to the ai-school-feed repo (apps update live)"
+	@echo "                         tunables: MAX_PATHS= MAX_TOPICS=  (0 = everything)"
 	@echo "  make adapt URL=...   adapt one lesson URL and print the result"
 	@echo "  make check           show selected TTS backend and which keys are set"
 	@echo "  make clean           remove generated output ($(OUT), $(AUDIO_DIR))"
@@ -79,6 +86,15 @@ build: $(VENV) check-anthropic
 	ADAPT_MODEL=$(MODEL) $(PY) build_feed.py $(BUILD_FLAGS)
 
 feed: crawl build
+
+# One command: generate the feed with hosted audio URLs, then push it to the
+# ai-school-feed repo. GitHub Pages serves it; the apps pick up new courses on
+# next launch with no app release. Override the target clone with FEED_REPO=...
+publish: $(VENV) check-anthropic
+	$(MAKE) feed AUDIO_URL_BASE=$(PUBLISH_AUDIO_BASE) \
+	  MAX_PATHS=$(MAX_PATHS) MAX_TOPICS=$(MAX_TOPICS) MAX_LESSONS=$(MAX_LESSONS) \
+	  MODEL=$(MODEL) INCLUDE_CORE=$(INCLUDE_CORE)
+	$(PY) publish_to_feed.py
 
 adapt: $(VENV) check-anthropic
 	@test -n "$(URL)" || { echo "usage: make adapt URL=https://..."; exit 2; }
