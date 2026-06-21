@@ -2,9 +2,8 @@
 
 A concept build for driver-safe in-car learning. AI School is a learning platform
 for AI and software topics (lillytechsystems.com/ai-school); this project explores
-how that content can live safely inside a vehicle as a dual-flavor Android app:
-rich and interactive on a phone, strictly audio-only and distraction-safe in the
-car.
+how that content can live safely inside a vehicle — strictly audio-only and
+distraction-safe on Android Automotive OS.
 
 It is a working build, not slideware. This doc covers the architecture, the
 in-vehicle design decisions, the core flows as sequence diagrams, and the
@@ -14,15 +13,14 @@ branding/theming boundary. For setup and run steps see [RUNNING.md](RUNNING.md).
 
 ## At a glance
 
-| | Mobile (`:app-mobile`) | Automotive (`:app-automotive`) |
-|---|---|---|
-| Surface | Phone / tablet | Android Automotive OS head unit |
-| UI | Full Jetpack Compose app | None of its own; rendered by the car's Media Center |
-| Content | Video, code, interactive sandboxes, audio | Audio streams plus short spoken summaries only |
-| Headline feature | Live interactive lessons from the production site | Window-open auto-pause via the Vehicle HAL |
+| | Automotive (`:app-automotive`) |
+|---|---|
+| Surface | Android Automotive OS head unit |
+| UI | None of its own; rendered by the car's Media Center |
+| Content | Audio streams plus short spoken summaries only |
+| Headline feature | Window-open auto-pause via the Vehicle HAL |
 
-Both flavors are driven by one shared domain model, so the catalog stays
-consistent across surfaces and the in-car rules are enforced in data, not UI.
+The in-car safety rules are enforced in the data layer, not in UI logic.
 
 ---
 
@@ -32,10 +30,8 @@ A small multi-module monorepo:
 
 - `:core:model` · domain entities (Course, Lesson), the catalog, and the
   content-safety rules
-- `:core:network` · Ktor client with dual-payload handling (a visual payload for
-  mobile, an audio-only payload for the car)
+- `:core:network` · Ktor client with audio-only payload handling
 - `:core:demoaudio` · branded in-car artwork (lesson audio streams from the hosted feed)
-- `:app-mobile` · the rich Compose app
 - `:app-automotive` · the media service, the cabin-signal integration, and a
   VW-styled design preview
 
@@ -272,6 +268,6 @@ vehicle stack.
 ## Materials in this repo
 
 - `docs/automotive-demo.mp4` · captioned walkthrough
-- `docs/screenshots/` · full screenshot set (mobile and automotive)
+- `docs/screenshots/` · automotive screenshot set
 - `docs/vw-reference/` · VW-styled integration mockup and MIB design reference
 - `docs/brand/` · brand assets (logo, graph mark, launcher master)

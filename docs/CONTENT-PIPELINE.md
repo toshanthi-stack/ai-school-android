@@ -1,10 +1,9 @@
 # AI School Content Pipeline (the "smart service")
 
 The AI School website publishes thousands of web tutorials, many heavy with code,
-steps, and copy-paste. That content is great to read but useless to listen to. The
-apps are audio-first (the car is audio-only by necessity; mobile is audio-first
-with reading for code). So the content has to be **adapted per surface** by an
-AI pipeline before the apps consume it.
+steps, and copy-paste. That content is great to read but useless to listen to.
+The car is audio-only by necessity, so content has to be **adapted** by an AI
+pipeline before the app consumes it.
 
 ## The pipeline
 
@@ -23,17 +22,15 @@ Source web tutorial (text, code, steps, visuals)
         ▼
   syllabus.json (feed) + audio files
         │
-        ├─► Automotive app : audio only (code-heavy collapses to a spoken summary)
-        └─► Mobile app     : audio first, plus a "read the full lesson" web view
-                             (the real page) for code-heavy lessons
+        └─► Automotive app : audio only (code-heavy collapses to a spoken summary)
 ```
 
-This is the same "sanitize in the data layer" idea the apps already use, made
+This is the same "sanitize in the data layer" idea the app already uses, made
 AI-powered and automatic.
 
 ## Feed contract (`syllabus.json`)
 
-The apps consume a JSON array of courses. Each lesson:
+The app consumes a JSON array of courses. Each lesson:
 
 | Field | Type | Meaning |
 |---|---|---|
@@ -41,38 +38,27 @@ The apps consume a JSON array of courses. Each lesson:
 | `title` | string | Lesson title |
 | `durationSeconds` | int | **Real** narration length |
 | `audioUrl` | string | URL of the adapted narration audio |
-| `visualContentUrl` | string? | The real web lesson, for the "read the full lesson" view |
-| `contentType` | string | `conceptual` (audio is the lesson) or `code` (audio is an overview; read for the code) |
+| `visualContentUrl` | string? | The real web lesson (for reference) |
+| `contentType` | string | `conceptual` (audio is the lesson) or `code` (audio is an overview) |
 | `isAutomotiveSafe` | bool | Safe to surface in the car (always true once it has audio) |
 | `audioSummary` | string | Short glanceable summary |
 
-Courses carry `id`, `title`, `description`, `category`, and `lessons[]`; the apps
-group courses by `category`.
+Courses carry `id`, `title`, `description`, `category`, and `lessons[]`; the app
+groups courses by `category`.
 
 ## Per-surface behavior
 
 - **Automotive**: audio only. Code-heavy lessons play the spoken overview; no code
   is ever shown (driver-distraction safety).
-- **Mobile**: audio first. Conceptual lessons show a subtle "Read the full lesson"
-  link; code-heavy lessons show a prominent "View the full lesson & code" button
-  that opens the real web page (chrome stripped) so the code is readable and
-  copyable.
 
 ## Status
 
 The pipeline runs end to end and the feed is **live, hosted, and streamed** by
-the apps. Current catalog: **8 tracks / ~240 lessons**, ~4-minute narrations.
+the app. Current catalog: **8 tracks / ~240 lessons**, ~4-minute narrations.
 
-- **Pipeline** ([`pipeline/`](../pipeline/)): `crawl_catalog.py` crawls the site
-  three levels deep (learning path -> topic -> the real lesson pages) into
-  `lessons.json`; `adapt_lesson.py` classifies + rewrites each lesson via the
-  Claude API (structured output); `tts.py` synthesizes narration; `build_feed.py`
-  (incremental - only generates new lessons) emits `out/syllabus.json` + audio.
-- **Hosting**: `publish_to_feed.py` publishes `syllabus.json` + audio to a hosted
-  feed served by **GitHub Pages** (the `ai-school-feed` repo; a custom domain is
-  also possible). The apps prefer the live feed and fall back to a bundled seed
-  catalog so the browse renders offline; lesson audio is streamed.
-- **Adding content (no app release)**: regenerate with `make feed ...` then
-  `python publish_to_feed.py`; the apps pick up the new tracks on next launch.
-  Cost levers: a cheaper Claude model via `ADAPT_MODEL` and the free macOS `say`
-  voice for non-production runs. See `pipeline/README.md`.
+- **Hosting**: the pipeline publishes `syllabus.json` + audio to a hosted feed
+  served by **GitHub Pages** (the `ai-school-feed` repo). The app prefers the live
+  feed and falls back to a bundled seed catalog so the browse renders offline;
+  lesson audio is streamed.
+- **Adding content (no app release)**: regenerate and publish via the pipeline;
+  the app picks up new tracks on next launch.

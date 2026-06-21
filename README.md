@@ -1,10 +1,10 @@
 <div align="center">
 
-# AI School · Android &amp; iOS
+# AI School · Android Automotive OS
 
-**A dual-flavor Android app for the AI School learning platform (rich and interactive on a phone, strictly audio-only and distraction-safe in the car), plus a native SwiftUI iOS app.**
+**An Android Automotive OS app for the AI School learning platform — strictly audio-only and distraction-safe in the car.**
 
-[Architecture](docs/ARCHITECTURE.md) · [Run guide](docs/RUNNING.md) · [iOS app](ios/) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
+[Architecture](docs/ARCHITECTURE.md) · [Run guide](docs/RUNNING.md) · [Demo video](docs/automotive-demo.mp4) · [Screenshots](#screenshots) · [Build](#build)
 
 </div>
 
@@ -36,9 +36,6 @@ driven directly off the Vehicle HAL.
 - **OEM-themable + a VW-styled preview** · the production in-car UI is OEM-themed
   via car-ui-lib; a Compose preview (now feed-driven) shows AI School in the VW
   MIB design language.
-- **Live interactive lessons on mobile** · code, the real published site, and a
-  "read the full lesson" view rendered in-app.
-
 ## Screenshots
 
 ### Android Automotive OS
@@ -56,11 +53,6 @@ driven directly off the Vehicle HAL.
 > OEM's car-ui-lib overlays, with no app changes. This app/OEM boundary is by
 > design (details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
 
-### Mobile
-| Tracks | Courses | Lessons | Lesson player |
-|---|---|---|---|
-| ![](docs/screenshots/mobile-1-courses.png) | ![](docs/screenshots/mobile-2-course-detail.png) | ![](docs/screenshots/mobile-3-lesson-audio.png) | ![](docs/screenshots/mobile-4-lesson-interactive.png) |
-
 A 26-second captioned walkthrough is at
 [`docs/automotive-demo.mp4`](docs/automotive-demo.mp4).
 
@@ -71,9 +63,8 @@ A multi-module Gradle (Kotlin DSL) monorepo:
 | Module | Role |
 |---|---|
 | `:core:model` | Domain entities, catalog, and the content-safety rules |
-| `:core:network` | Ktor client with dual-payload handling (visual vs audio-only) |
+| `:core:network` | Ktor client with audio-only payload handling |
 | `:core:demoaudio` | Branded in-car artwork (lesson audio streams from the hosted feed) |
-| `:app-mobile` | Jetpack Compose app (track -> course -> lesson, audio + read view) |
 | `:app-automotive` | Media browser service, VHAL cabin monitor, feed-driven VW preview |
 
 The full design write-up, sequence diagrams, and branding/theming notes are in
@@ -82,55 +73,31 @@ The full design write-up, sequence diagrams, and branding/theming notes are in
 
 ## Content & hosting
 
-The catalog isn't hand-written. A Python **content pipeline** in [`pipeline/`](pipeline/)
-crawls the AI School site, uses Claude to rewrite each lesson into an audio-first
-spoken script (dropping code/copy-paste), synthesizes narration, and emits a
-`syllabus.json` feed plus audio. That feed is published to **GitHub Pages**
-(served from a separate `ai-school-feed` repo), and the apps **stream** it.
+The catalog isn't hand-written. An AI content pipeline crawls the AI School site,
+rewrites each lesson into an audio-first spoken script (dropping code/copy-paste),
+synthesizes narration, and emits a `syllabus.json` feed plus audio. That feed is
+published to **GitHub Pages** (the `ai-school-feed` repo), and the app **streams** it.
 
-- **Shared feed contract** · `syllabus.json` (tracks -> courses -> lessons, each
-  with an absolute audio URL). All flavors read the same feed.
+- **Feed contract** · `syllabus.json` (tracks -> courses -> lessons, each with an
+  absolute audio URL).
 - **Resolution order** · live hosted feed -> bundled seed (offline catalog).
-  Audio streams, so the apps stay small (mobile APK ~24 MB).
-- **Add tracks with no app update** · regenerate and publish:
-
-  ```bash
-  cd pipeline
-  export ANTHROPIC_API_KEY=sk-ant-...
-  make feed TTS_BACKEND=say MODEL=claude-haiku-4-5 MAX_PATHS=8 MAX_TOPICS=5 \
-    AUDIO_URL_BASE=https://<owner>.github.io/ai-school-feed/audio   # generate (incremental)
-  python publish_to_feed.py                                         # push to the feed -> Pages
-  ```
-
-  The apps pick up the new tracks on next launch. Current catalog: 8 tracks /
-  ~240 lessons. See [`pipeline/README.md`](pipeline/README.md).
-
-## iOS (SwiftUI)
-
-A native SwiftUI port of the mobile experience lives in [`ios/`](ios/): the same
-tracks, courses, and lessons, with an `AVPlayer` streaming the hosted audio, a
-`WKWebView` for the read-the-full-lesson view, and the same live-feed with seed
-fallback. It also ships a **CarPlay** audio scene, the iOS analog of the Android
-Automotive flavor (audio-only browse plus Now Playing). See
-[`ios/README.md`](ios/README.md) to build and run.
+  Audio streams, so the app stays small.
+- **Add tracks with no app update** · the pipeline regenerates and publishes; the
+  app picks up new tracks on next launch. Current catalog: 8 tracks / ~240 lessons.
 
 ## Build
 
 Requires a current Android Studio with the Android 36 SDK and JDK 17+. The Gradle
-project lives in [`android/`](android/) (the iOS app is in [`ios/`](ios/)).
+project lives in [`android/`](android/).
 
 ```bash
 cd android
-
-# Mobile (phone/tablet emulator, API 26+)
-./gradlew :app-mobile:assembleDebug
 
 # Automotive (Android Automotive emulator, API 29+)
 ./gradlew :app-automotive:assembleDebug
 ```
 
-Pre-built debug APKs are in [`android/release/`](android/release/). Run
-`:app-automotive` on an
+Run `:app-automotive` on an
 Automotive emulator; AI School then appears in the Media Center. To exercise the
 window-pause on an emulator while a lesson plays:
 
