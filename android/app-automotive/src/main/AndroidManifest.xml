@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- This flavor installs ONLY on Android Automotive OS head units. -->
     <uses-feature
@@ -76,6 +77,17 @@
                 <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>
         </service>
+
+        <!--
+            Auto-added by androidx.profileinstaller (transitive via Compose/media).
+            This project doesn't use Baseline Profiles/Macrobenchmark, so the
+            receiver is removed rather than kept as dead surface area. It was
+            already gated by the signature-level DUMP permission, but there's
+            no reason to ship it unused.
+        -->
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            tools:node="remove" />
     </application>
 
 </manifest>
